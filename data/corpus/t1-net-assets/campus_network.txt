@@ -1,0 +1,12 @@
+# 校园网运维台账摘录（示意语料，用于流水线冒烟）
+hostname CORE-SW-01
+description 主数据中心核心交换机 Cisco N9K-C93180
+Gi0/1 uplink 连接 ACC-SW-12 Gi0/24，链路速率 10Gbps，互联 VLAN 10
+Gi0/2 ip address 10.10.20.1/24 作为 VLAN 20 网关
+VLAN 20 配置于核心交换机，服务于教学楼
+hostname ACC-SW-12
+Gi0/1 ip address 10.10.20.0/24 网段内的网关地址 10.10.20.254
+Gi0/24 uplink 对接 CORE-SW-01 Gi0/1
+该设备角色为接入交换机，厂商为 Huawei，位于教学楼
+服务：DHCP、NTP、SNMP 在核心交换机上启用
+INC-20260714 故障事件：ACC-SW-12 上联链路中断导致 VLAN 20 业务中断，受影响设备包含 CORE-SW-01

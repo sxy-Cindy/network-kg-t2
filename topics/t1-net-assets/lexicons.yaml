@@ -1,0 +1,37 @@
+DeviceRole:
+- core switch
+- aggregation switch
+- access switch
+- border router
+- 核心交换机
+- 汇聚交换机
+- 接入交换机
+- 出口路由器
+- 防火墙
+Vendor:
+- Cisco
+- Huawei
+- H3C
+- Juniper
+- Arista
+- Ruijie
+- 锐捷
+- 华为
+- 思科
+Service:
+- DHCP
+- NTP
+- SNMP
+- Syslog
+- SSH
+- RADIUS
+- DNS relay
+- OSPF
+- BGP
+Site:
+- 主数据中心
+- 同城灾备
+- 校区
+- 教学楼
+- 图书馆
+- 实验楼

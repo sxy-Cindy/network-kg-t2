@@ -1,0 +1,1754 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://kgcourse.org/ontology/protocol#> .
+
+:SecRfc21191 a :Section ;
+    rdfs:label "1 MUST This word, or the terms "REQUIRED" or "SHALL", mean that the" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc2119:1> .
+
+:SecRfc21192 a :Section ;
+    rdfs:label "2 MUST NOT This phrase, or the phrase "SHALL NOT", mean that the" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc2119:2> .
+
+:SecRfc21193 a :Section ;
+    rdfs:label "3 SHOULD This word, or the adjective "RECOMMENDED", mean that there" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc2119:3> .
+
+:SecRfc21194 a :Section ;
+    rdfs:label "4 SHOULD NOT This phrase, or the phrase "NOT RECOMMENDED" mean that" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc2119:4> .
+
+:SecRfc21195 a :Section ;
+    rdfs:label "5 MAY This word, or the adjective "OPTIONAL", mean that an item is" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc2119:5> .
+
+:SecRfc21196 a :Section ;
+    rdfs:label "6 Guidance in the use of these Imperatives" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc2119:6> .
+
+:SecRfc21197 a :Section ;
+    rdfs:label "7 Security Considerations" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc2119:7> .
+
+:SecRfc21198 a :Section ;
+    rdfs:label "8 Acknowledgments" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc2119:8> .
+
+:SecRfc21199 a :Section ;
+    rdfs:label "9 Author's Address" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc2119:9> .
+
+:KwMUST a :NormativeKeyword ;
+    rdfs:label "MUST" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#kw:MUST> .
+
+:KwMUSTNOT a :NormativeKeyword ;
+    rdfs:label "MUST NOT" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#kw:MUST NOT> .
+
+:KwREQUIRED a :NormativeKeyword ;
+    rdfs:label "REQUIRED" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#kw:REQUIRED> .
+
+:KwSHALL a :NormativeKeyword ;
+    rdfs:label "SHALL" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#kw:SHALL> .
+
+:KwSHOULD a :NormativeKeyword ;
+    rdfs:label "SHOULD" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#kw:SHOULD> .
+
+:KwSHOULDNOT a :NormativeKeyword ;
+    rdfs:label "SHOULD NOT" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#kw:SHOULD NOT> .
+
+:KwRECOMMENDED a :NormativeKeyword ;
+    rdfs:label "RECOMMENDED" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#kw:RECOMMENDED> .
+
+:KwMAY a :NormativeKeyword ;
+    rdfs:label "MAY" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#kw:MAY> .
+
+:KwOPTIONAL a :NormativeKeyword ;
+    rdfs:label "OPTIONAL" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#kw:OPTIONAL> .
+
+:KwNOTRECOMMENDED a :NormativeKeyword ;
+    rdfs:label "NOT RECOMMENDED" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#kw:NOT RECOMMENDED> .
+
+:ProtocolHttps a :Protocol ;
+    rdfs:label "HTTPS" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#Protocol:https> .
+
+:ProtoTCP a :Protocol ;
+    rdfs:label "TCP" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#proto:TCP> .
+
+:ProtoUDP a :Protocol ;
+    rdfs:label "UDP" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#proto:UDP> .
+
+:FieldChecksum a :MessageField ;
+    rdfs:label "Checksum" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#field:Checksum> .
+
+:FieldSourcePort a :MessageField ;
+    rdfs:label "Source Port" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#field:Source Port> .
+
+:MessageFieldProtocol-number a :MessageField ;
+    rdfs:label "Protocol Number" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:protocol-number> .
+
+:SecRfc7911 a :Section ;
+    rdfs:label "1 INTRODUCTION ..................................................... 1" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc791:1> .
+
+:SecRfc7912 a :Section ;
+    rdfs:label "2 OVERVIEW ......................................................... 5" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc791:2> .
+
+:SecRfc7913 a :Section ;
+    rdfs:label "3 SPECIFICATION ................................................... 11" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc791:3> .
+
+:SecRfc7911.1 a :Section ;
+    rdfs:label "1.1 Motivation" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc791:1.1> .
+
+:SecRfc7911.2 a :Section ;
+    rdfs:label "1.2 Scope" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc791:1.2> .
+
+:SecRfc7911.3 a :Section ;
+    rdfs:label "1.3 Interfaces" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc791:1.3> .
+
+:SecRfc7911.4 a :Section ;
+    rdfs:label "1.4 Operation" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc791:1.4> .
+
+:SecRfc7912.1 a :Section ;
+    rdfs:label "2.1 Relation to Other Protocols" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc791:2.1> .
+
+:SecRfc7912.2 a :Section ;
+    rdfs:label "2.2 Model of Operation" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc791:2.2> .
+
+:SecRfc7912.3 a :Section ;
+    rdfs:label "2.3 Function Description" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc791:2.3> .
+
+:SecRfc7912.4 a :Section ;
+    rdfs:label "2.4 Gateways" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc791:2.4> .
+
+:SecRfc7913.1 a :Section ;
+    rdfs:label "3.1 Internet Header Format" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc791:3.1> .
+
+:SecRfc7913.2 a :Section ;
+    rdfs:label "3.2 Discussion" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc791:3.2> .
+
+:SecRfc7913.3 a :Section ;
+    rdfs:label "3.3 Interfaces" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc791:3.3> .
+
+:ProtocolIcmp a :Protocol ;
+    rdfs:label "ICMP" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#Protocol:icmp> .
+
+:MessageFieldFlags a :MessageField ;
+    rdfs:label "Flags" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:flags> .
+
+:MessageFieldOptions a :MessageField ;
+    rdfs:label "Options" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:options> .
+
+:MessageFieldHeader-length a :MessageField ;
+    rdfs:label "Header Length" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:header-length> .
+
+:MessageFieldReserved a :MessageField ;
+    rdfs:label "Reserved" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:reserved> .
+
+:MessageFieldVersion a :MessageField ;
+    rdfs:label "Version" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:version> .
+
+:MessageFieldType-of-service a :MessageField ;
+    rdfs:label "Type of Service" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:type-of-service> .
+
+:MessageFieldTotal-length a :MessageField ;
+    rdfs:label "Total Length" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:total-length> .
+
+:MessageFieldIdentification a :MessageField ;
+    rdfs:label "Identification" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:identification> .
+
+:MessageFieldFragment-offset a :MessageField ;
+    rdfs:label "Fragment Offset" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:fragment-offset> .
+
+:MessageFieldTime-to-live a :MessageField ;
+    rdfs:label "Time to Live" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:time-to-live> .
+
+:ExtensionTimestamp-option a :Extension ;
+    rdfs:label "Timestamp Option" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#Extension:timestamp-option> .
+
+:SecRfc82001 a :Section ;
+    rdfs:label "1 Introduction . . . . . . . . . . . . . . . . . . . . . . . . 4" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc8200:1> .
+
+:SecRfc82002 a :Section ;
+    rdfs:label "2 Terminology . . . . . . . . . . . . . . . . . . . . . . . . . 5" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc8200:2> .
+
+:SecRfc82003 a :Section ;
+    rdfs:label "3 IPv6 Header Format . . . . . . . . . . . . . . . . . . . . . 6" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc8200:3> .
+
+:SecRfc82004 a :Section ;
+    rdfs:label "4 IPv6 Extension Headers . . . . . . . . . . . . . . . . . . . 7" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc8200:4> .
+
+:SecRfc82005 a :Section ;
+    rdfs:label "5 Packet Size Issues . . . . . . . . . . . . . . . . . . . . . 25" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc8200:5> .
+
+:SecRfc82006 a :Section ;
+    rdfs:label "6 Flow Labels . . . . . . . . . . . . . . . . . . . . . . . . . 26" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc8200:6> .
+
+:SecRfc82007 a :Section ;
+    rdfs:label "7 Traffic Classes . . . . . . . . . . . . . . . . . . . . . . . 26" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc8200:7> .
+
+:SecRfc82008 a :Section ;
+    rdfs:label "8 Upper-Layer Protocol Issues . . . . . . . . . . . . . . . . . 27" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc8200:8> .
+
+:SecRfc82009 a :Section ;
+    rdfs:label "9 IANA Considerations . . . . . . . . . . . . . . . . . . . . . 29" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc8200:9> .
+
+:SecRfc820010 a :Section ;
+    rdfs:label "10 Security Considerations . . . . . . . . . . . . . . . . . . . 30" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc8200:10> .
+
+:SecRfc820011 a :Section ;
+    rdfs:label "11 References . . . . . . . . . . . . . . . . . . . . . . . . . 32" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc8200:11> .
+
+:SecRfc82004.1 a :Section ;
+    rdfs:label "4.1 Extension Header Order" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc8200:4.1> .
+
+:SecRfc82004.2 a :Section ;
+    rdfs:label "4.2 Options" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc8200:4.2> .
+
+:SecRfc82004.3 a :Section ;
+    rdfs:label "4.3 Hop-by-Hop Options Header" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc8200:4.3> .
+
+:SecRfc82004.4 a :Section ;
+    rdfs:label "4.4 Routing Header" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc8200:4.4> .
+
+:SecRfc82004.5 a :Section ;
+    rdfs:label "4.5 Fragment Header" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc8200:4.5> .
+
+:SecRfc82004.6 a :Section ;
+    rdfs:label "4.6 Destination Options Header" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc8200:4.6> .
+
+:SecRfc82004.7 a :Section ;
+    rdfs:label "4.7 No Next Header" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc8200:4.7> .
+
+:SecRfc82004.8 a :Section ;
+    rdfs:label "4.8 Defining New Extension Headers and Options" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc8200:4.8> .
+
+:SecRfc82008.1 a :Section ;
+    rdfs:label "8.1 Upper-Layer Checksums" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc8200:8.1> .
+
+:SecRfc82008.2 a :Section ;
+    rdfs:label "8.2 Maximum Packet Lifetime" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc8200:8.2> .
+
+:SecRfc82008.3 a :Section ;
+    rdfs:label "8.3 Maximum Upper-Layer Payload Size" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc8200:8.3> .
+
+:SecRfc82008.4 a :Section ;
+    rdfs:label "8.4 Responding to Packets Carrying Routing Headers" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc8200:8.4> .
+
+:SecRfc820011.1 a :Section ;
+    rdfs:label "11.1 Normative References" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc8200:11.1> .
+
+:SecRfc820011.2 a :Section ;
+    rdfs:label "11.2 Informative References" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc8200:11.2> .
+
+:ProtoIPv4 a :Protocol ;
+    rdfs:label "IPv4" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#proto:IPv4> .
+
+:ProtoIPv6 a :Protocol ;
+    rdfs:label "IPv6" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#proto:IPv6> .
+
+:ProtoICMPv6 a :Protocol ;
+    rdfs:label "ICMPv6" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#proto:ICMPv6> .
+
+:ProtocolOspf a :Protocol ;
+    rdfs:label "OSPF" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#Protocol:ospf> .
+
+:ProtocolHttp a :Protocol ;
+    rdfs:label "HTTP" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#Protocol:http> .
+
+:ProtocolTls a :Protocol ;
+    rdfs:label "TLS" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#Protocol:tls> .
+
+:ProtocolPpp a :Protocol ;
+    rdfs:label "PPP" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#Protocol:ppp> .
+
+:ProtocolSsh a :Protocol ;
+    rdfs:label "SSH" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#Protocol:ssh> .
+
+:LayerTransportLayer a :Layer ;
+    rdfs:label "Transport Layer" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#layer:Transport Layer> .
+
+:LayerInternet-layer a :Layer ;
+    rdfs:label "Internet Layer" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#Layer:internet-layer> .
+
+:LayerLink-layer a :Layer ;
+    rdfs:label "Link Layer" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#Layer:link-layer> .
+
+:FieldHopLimit a :MessageField ;
+    rdfs:label "Hop Limit" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#field:Hop Limit> .
+
+:MessageFieldTraffic-class a :MessageField ;
+    rdfs:label "Traffic Class" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:traffic-class> .
+
+:FieldFlowLabel a :MessageField ;
+    rdfs:label "Flow Label" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#field:Flow Label> .
+
+:FieldPayloadLength a :MessageField ;
+    rdfs:label "Payload Length" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#field:Payload Length> .
+
+:FieldNextHeader a :MessageField ;
+    rdfs:label "Next Header" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#field:Next Header> .
+
+:MessageFieldMaximum-segment-size a :MessageField ;
+    rdfs:label "Maximum Segment Size" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:maximum-segment-size> .
+
+:ExtExtensionHeader a :Extension ;
+    rdfs:label "Extension Header" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#ext:Extension Header> .
+
+:ExtensionHop-by-hop-options a :Extension ;
+    rdfs:label "Hop-by-Hop Options" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#Extension:hop-by-hop-options> .
+
+:ExtensionPath-mtu-discovery a :Extension ;
+    rdfs:label "Path MTU Discovery" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#Extension:path-mtu-discovery> .
+
+:SecRfc92931 a :Section ;
+    rdfs:label "1 Purpose and Scope" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:1> .
+
+:SecRfc92932 a :Section ;
+    rdfs:label "2 Introduction" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:2> .
+
+:SecRfc92933 a :Section ;
+    rdfs:label "3 Functional Specification" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3> .
+
+:SecRfc92934 a :Section ;
+    rdfs:label "4 Glossary" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:4> .
+
+:SecRfc92935 a :Section ;
+    rdfs:label "5 Changes from RFC 793" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:5> .
+
+:SecRfc92936 a :Section ;
+    rdfs:label "6 IANA Considerations" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:6> .
+
+:SecRfc92937 a :Section ;
+    rdfs:label "7 Security and Privacy Considerations" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:7> .
+
+:SecRfc92938 a :Section ;
+    rdfs:label "8 References" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:8> .
+
+:SecRfc92932.1 a :Section ;
+    rdfs:label "2.1 Requirements Language" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:2.1> .
+
+:SecRfc92932.2 a :Section ;
+    rdfs:label "2.2 Key TCP Concepts" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:2.2> .
+
+:SecRfc92933.1 a :Section ;
+    rdfs:label "3.1 Header Format" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.1> .
+
+:SecRfc92933.2 a :Section ;
+    rdfs:label "3.2 Specific Option Definitions" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.2> .
+
+:SecRfc92933.2.1 a :Section ;
+    rdfs:label "3.2.1 Other Common Options" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.2.1> .
+
+:SecRfc92933.2.2 a :Section ;
+    rdfs:label "3.2.2 Experimental TCP Options" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.2.2> .
+
+:SecRfc92933.3 a :Section ;
+    rdfs:label "3.3 TCP Terminology Overview" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.3> .
+
+:SecRfc92933.3.1 a :Section ;
+    rdfs:label "3.3.1 Key Connection State Variables" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.3.1> .
+
+:SecRfc92933.3.2 a :Section ;
+    rdfs:label "3.3.2 State Machine Overview" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.3.2> .
+
+:SecRfc92933.4 a :Section ;
+    rdfs:label "3.4 Sequence Numbers" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.4> .
+
+:SecRfc92933.4.1 a :Section ;
+    rdfs:label "3.4.1 Initial Sequence Number Selection" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.4.1> .
+
+:SecRfc92933.4.2 a :Section ;
+    rdfs:label "3.4.2 Knowing When to Keep Quiet" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.4.2> .
+
+:SecRfc92933.4.3 a :Section ;
+    rdfs:label "3.4.3 The TCP Quiet Time Concept" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.4.3> .
+
+:SecRfc92933.5 a :Section ;
+    rdfs:label "3.5 Establishing a Connection" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.5> .
+
+:SecRfc92933.5.1 a :Section ;
+    rdfs:label "3.5.1 Half-Open Connections and Other Anomalies" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.5.1> .
+
+:SecRfc92933.5.2 a :Section ;
+    rdfs:label "3.5.2 Reset Generation" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.5.2> .
+
+:SecRfc92933.5.3 a :Section ;
+    rdfs:label "3.5.3 Reset Processing" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.5.3> .
+
+:SecRfc92933.6 a :Section ;
+    rdfs:label "3.6 Closing a Connection" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.6> .
+
+:SecRfc92933.6.1 a :Section ;
+    rdfs:label "3.6.1 Half-Closed Connections" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.6.1> .
+
+:SecRfc92933.7 a :Section ;
+    rdfs:label "3.7 Segmentation" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.7> .
+
+:SecRfc92933.7.1 a :Section ;
+    rdfs:label "3.7.1 Maximum Segment Size Option" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.7.1> .
+
+:SecRfc92933.7.2 a :Section ;
+    rdfs:label "3.7.2 Path MTU Discovery" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.7.2> .
+
+:SecRfc92933.7.3 a :Section ;
+    rdfs:label "3.7.3 Interfaces with Variable MTU Values" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.7.3> .
+
+:SecRfc92933.7.4 a :Section ;
+    rdfs:label "3.7.4 Nagle Algorithm" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.7.4> .
+
+:SecRfc92933.7.5 a :Section ;
+    rdfs:label "3.7.5 IPv6 Jumbograms" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.7.5> .
+
+:SecRfc92933.8 a :Section ;
+    rdfs:label "3.8 Data Communication" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.8> .
+
+:SecRfc92933.8.1 a :Section ;
+    rdfs:label "3.8.1 Retransmission Timeout" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.8.1> .
+
+:SecRfc92933.8.2 a :Section ;
+    rdfs:label "3.8.2 TCP Congestion Control" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.8.2> .
+
+:SecRfc92933.8.3 a :Section ;
+    rdfs:label "3.8.3 TCP Connection Failures" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.8.3> .
+
+:SecRfc92933.8.4 a :Section ;
+    rdfs:label "3.8.4 TCP Keep-Alives" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.8.4> .
+
+:SecRfc92933.8.5 a :Section ;
+    rdfs:label "3.8.5 The Communication of Urgent Information" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.8.5> .
+
+:SecRfc92933.8.6 a :Section ;
+    rdfs:label "3.8.6 Managing the Window" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.8.6> .
+
+:SecRfc92933.8.6.1 a :Section ;
+    rdfs:label "3.8.6.1 Zero-Window Probing" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.8.6.1> .
+
+:SecRfc92933.8.6.2 a :Section ;
+    rdfs:label "3.8.6.2 Silly Window Syndrome Avoidance" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.8.6.2> .
+
+:SecRfc92933.8.6.3 a :Section ;
+    rdfs:label "3.8.6.3 Delayed Acknowledgments -- When to Send an ACK Segment" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.8.6.3> .
+
+:SecRfc92933.9 a :Section ;
+    rdfs:label "3.9 Interfaces" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.9> .
+
+:SecRfc92933.9.1 a :Section ;
+    rdfs:label "3.9.1 User/TCP Interface" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.9.1> .
+
+:SecRfc92933.9.1.1 a :Section ;
+    rdfs:label "3.9.1.1 Open" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.9.1.1> .
+
+:SecRfc92933.9.1.2 a :Section ;
+    rdfs:label "3.9.1.2 Send" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.9.1.2> .
+
+:SecRfc92933.9.1.3 a :Section ;
+    rdfs:label "3.9.1.3 Receive" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.9.1.3> .
+
+:SecRfc92933.9.1.4 a :Section ;
+    rdfs:label "3.9.1.4 Close" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.9.1.4> .
+
+:SecRfc92933.9.1.5 a :Section ;
+    rdfs:label "3.9.1.5 Status" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.9.1.5> .
+
+:SecRfc92933.9.1.6 a :Section ;
+    rdfs:label "3.9.1.6 Abort" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.9.1.6> .
+
+:SecRfc92933.9.1.7 a :Section ;
+    rdfs:label "3.9.1.7 Flush" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.9.1.7> .
+
+:SecRfc92933.9.1.8 a :Section ;
+    rdfs:label "3.9.1.8 Asynchronous Reports" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.9.1.8> .
+
+:SecRfc92933.9.1.9 a :Section ;
+    rdfs:label "3.9.1.9 Set Differentiated Services Field (IPv4 TOS or IPv6 Traffic" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.9.1.9> .
+
+:SecRfc92933.9.2 a :Section ;
+    rdfs:label "3.9.2 TCP/Lower-Level Interface" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.9.2> .
+
+:SecRfc92933.9.2.1 a :Section ;
+    rdfs:label "3.9.2.1 Source Routing" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.9.2.1> .
+
+:SecRfc92933.9.2.2 a :Section ;
+    rdfs:label "3.9.2.2 ICMP Messages" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.9.2.2> .
+
+:SecRfc92933.9.2.3 a :Section ;
+    rdfs:label "3.9.2.3 Source Address Validation" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.9.2.3> .
+
+:SecRfc92933.10 a :Section ;
+    rdfs:label "3.10 Event Processing" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.10> .
+
+:SecRfc92933.10.1 a :Section ;
+    rdfs:label "3.10.1 OPEN Call" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.10.1> .
+
+:SecRfc92933.10.2 a :Section ;
+    rdfs:label "3.10.2 SEND Call" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.10.2> .
+
+:SecRfc92933.10.3 a :Section ;
+    rdfs:label "3.10.3 RECEIVE Call" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.10.3> .
+
+:SecRfc92933.10.4 a :Section ;
+    rdfs:label "3.10.4 CLOSE Call" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.10.4> .
+
+:SecRfc92933.10.5 a :Section ;
+    rdfs:label "3.10.5 ABORT Call" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.10.5> .
+
+:SecRfc92933.10.6 a :Section ;
+    rdfs:label "3.10.6 STATUS Call" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.10.6> .
+
+:SecRfc92933.10.7 a :Section ;
+    rdfs:label "3.10.7 SEGMENT ARRIVES" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.10.7> .
+
+:SecRfc92933.10.7.1 a :Section ;
+    rdfs:label "3.10.7.1 CLOSED STATE" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.10.7.1> .
+
+:SecRfc92933.10.7.2 a :Section ;
+    rdfs:label "3.10.7.2 LISTEN STATE" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.10.7.2> .
+
+:SecRfc92933.10.7.3 a :Section ;
+    rdfs:label "3.10.7.3 SYN-SENT STATE" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.10.7.3> .
+
+:SecRfc92933.10.7.4 a :Section ;
+    rdfs:label "3.10.7.4 Other States" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.10.7.4> .
+
+:SecRfc92933.10.8 a :Section ;
+    rdfs:label "3.10.8 Timeouts" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:3.10.8> .
+
+:SecRfc92938.1 a :Section ;
+    rdfs:label "8.1 Normative References" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:8.1> .
+
+:SecRfc92938.2 a :Section ;
+    rdfs:label "8.2 Informative References" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#sec:rfc9293:8.2> .
+
+:ProtocolQuic a :Protocol ;
+    rdfs:label "QUIC" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#Protocol:quic> .
+
+:ProtocolIpsec a :Protocol ;
+    rdfs:label "IPsec" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#Protocol:ipsec> .
+
+:LayerApplication-layer a :Layer ;
+    rdfs:label "Application Layer" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#Layer:application-layer> .
+
+:FieldSequenceNumber a :MessageField ;
+    rdfs:label "Sequence Number" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#field:Sequence Number> .
+
+:MessageFieldAcknowledgment-number a :MessageField ;
+    rdfs:label "Acknowledgment Number" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:acknowledgment-number> .
+
+:FieldWindow a :MessageField ;
+    rdfs:label "Window" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#field:Window> .
+
+:MessageFieldDestination-port a :MessageField ;
+    rdfs:label "Destination Port" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:destination-port> .
+
+:MessageFieldUrgent-pointer a :MessageField ;
+    rdfs:label "Urgent Pointer" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:urgent-pointer> .
+
+:MessageFieldData-offset a :MessageField ;
+    rdfs:label "Data Offset" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:data-offset> .
+
+:FieldInitialSequenceNumber a :MessageField ;
+    rdfs:label "Initial Sequence Number" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#field:Initial Sequence Number> .
+
+:ExtensionWindow-scale a :Extension ;
+    rdfs:label "Window Scale" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#Extension:window-scale> .
+
+:ExtensionSelective-acknowledgment a :Extension ;
+    rdfs:label "Selective Acknowledgment" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#Extension:selective-acknowledgment> .
+
+:RFCRfc a :RFC ;
+    rdfs:label "rfc" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc> .
+
+:RFCRfc2119 a :RFC ;
+    rdfs:label "rfc2119" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc2119> .
+
+:NormativeKeywordNot a :NormativeKeyword ;
+    rdfs:label "NOT" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#NormativeKeyword:not> .
+
+:MessageFieldTime-to a :MessageField ;
+    rdfs:label "time to" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:time-to> .
+
+:RFCRfc768 a :RFC ;
+    rdfs:label "rfc768" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc768> .
+
+:MessageFieldLength a :MessageField ;
+    rdfs:label "Length" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:length> .
+
+:MessageFieldNumber a :MessageField ;
+    rdfs:label "Number" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:number> .
+
+:RFCRfc791 a :RFC ;
+    rdfs:label "rfc791" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc791> .
+
+:MessageFieldOf-service a :MessageField ;
+    rdfs:label "of service" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:of-service> .
+
+:MessageFieldService a :MessageField ;
+    rdfs:label "service" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:service> .
+
+:MessageFieldNext a :MessageField ;
+    rdfs:label "next" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:next> .
+
+:MessageFieldTime-limit a :MessageField ;
+    rdfs:label "time limit" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:time-limit> .
+
+:ExtensionHop-by-hop a :Extension ;
+    rdfs:label "hop-by-hop" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#Extension:hop-by-hop> .
+
+:MessageFieldOffset a :MessageField ;
+    rdfs:label "offset" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:offset> .
+
+:MessageFieldRestrictions a :MessageField ;
+    rdfs:label "Restrictions" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:restrictions> .
+
+:MessageFieldOption a :MessageField ;
+    rdfs:label "option" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:option> .
+
+:MessageFieldOption-length a :MessageField ;
+    rdfs:label "Option Length" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:option-length> .
+
+:MessageFieldMaximum-length a :MessageField ;
+    rdfs:label "maximum length" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:maximum-length> .
+
+:ExtensionTimestamp a :Extension ;
+    rdfs:label "timestamp" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#Extension:timestamp> .
+
+:MessageFieldType a :MessageField ;
+    rdfs:label "type" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:type> .
+
+:MessageFieldClass a :MessageField ;
+    rdfs:label "Class" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:class> .
+
+:RFCRfc8200 a :RFC ;
+    rdfs:label "RFC 8200" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc8200> .
+
+:MessageFieldSize a :MessageField ;
+    rdfs:label "Size" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:size> .
+
+:ExtensionPath a :Extension ;
+    rdfs:label "path" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#Extension:path> .
+
+:MessageFieldType-of a :MessageField ;
+    rdfs:label "type of" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:type-of> .
+
+:ExtensionHop-by-hop-option a :Extension ;
+    rdfs:label "hop-by-hop option" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#Extension:hop-by-hop-option> .
+
+:ExtensionPath-mtu a :Extension ;
+    rdfs:label "path MTU" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#Extension:path-mtu> .
+
+:MessageFieldLabel a :MessageField ;
+    rdfs:label "label" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:label> .
+
+:MessageFieldLive a :MessageField ;
+    rdfs:label "Live" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:live> .
+
+:ExtensionHop-mtu a :Extension ;
+    rdfs:label "-Hop MTU" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#Extension:hop-mtu> .
+
+:RFCRfc2474 a :RFC ;
+    rdfs:label "rfc2474" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc2474> .
+
+:RFCRfc3168 a :RFC ;
+    rdfs:label "rfc3168" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc3168> .
+
+:RFCRfc4291 a :RFC ;
+    rdfs:label "rfc4291" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc4291> .
+
+:RFCRfc4443 a :RFC ;
+    rdfs:label "rfc4443" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc4443> .
+
+:RFCRfc6437 a :RFC ;
+    rdfs:label "rfc6437" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc6437> .
+
+:RFCRfc1661 a :RFC ;
+    rdfs:label "rfc1661" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc1661> .
+
+:RFCRfc2460 a :RFC ;
+    rdfs:label "rfc2460" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc2460> .
+
+:RFCRfc4301 a :RFC ;
+    rdfs:label "rfc4301" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc4301> .
+
+:RFCRfc4302 a :RFC ;
+    rdfs:label "rfc4302" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc4302> .
+
+:RFCRfc4303 a :RFC ;
+    rdfs:label "rfc4303" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc4303> .
+
+:RFCRfc5095 a :RFC ;
+    rdfs:label "rfc5095" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc5095> .
+
+:RFCRfc5722 a :RFC ;
+    rdfs:label "rfc5722" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc5722> .
+
+:RFCRfc5871 a :RFC ;
+    rdfs:label "rfc5871" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc5871> .
+
+:RFCRfc6564 a :RFC ;
+    rdfs:label "rfc6564" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc6564> .
+
+:RFCRfc6936 a :RFC ;
+    rdfs:label "rfc6936" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc6936> .
+
+:RFCRfc6946 a :RFC ;
+    rdfs:label "rfc6946" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc6946> .
+
+:RFCRfc7045 a :RFC ;
+    rdfs:label "rfc7045" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc7045> .
+
+:RFCRfc7112 a :RFC ;
+    rdfs:label "rfc7112" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc7112> .
+
+:RFCRfc7707 a :RFC ;
+    rdfs:label "rfc7707" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc7707> .
+
+:RFCRfc7721 a :RFC ;
+    rdfs:label "rfc7721" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc7721> .
+
+:RFCRfc7739 a :RFC ;
+    rdfs:label "rfc7739" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc7739> .
+
+:RFCRfc8021 a :RFC ;
+    rdfs:label "rfc8021" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc8021> .
+
+:RFCRfc8201 a :RFC ;
+    rdfs:label "rfc8201" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc8201> .
+
+:ExtensionHop a :Extension ;
+    rdfs:label "-Hop" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#Extension:hop> .
+
+:MessageFieldVersions a :MessageField ;
+    rdfs:label "versions" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:versions> .
+
+:RFCRfc9293 a :RFC ;
+    rdfs:label "RFC 9293" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc9293> .
+
+:MessageFieldTime a :MessageField ;
+    rdfs:label "Time" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:time> .
+
+:MessageFieldSegment-size a :MessageField ;
+    rdfs:label "Segment Size" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:segment-size> .
+
+:MessageFieldSegment a :MessageField ;
+    rdfs:label "Segment" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:segment> .
+
+:ExtensionBy a :Extension ;
+    rdfs:label "-by-" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#Extension:by> .
+
+:MessageFieldMaximum-segment a :MessageField ;
+    rdfs:label "Maximum Segment" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:maximum-segment> .
+
+:MessageFieldOptimizations a :MessageField ;
+    rdfs:label "optimizations" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:optimizations> .
+
+:MessageFieldTotal a :MessageField ;
+    rdfs:label "total" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:total> .
+
+:RFCRfc1191 a :RFC ;
+    rdfs:label "rfc1191" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc1191> .
+
+:RFCRfc2914 a :RFC ;
+    rdfs:label "rfc2914" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc2914> .
+
+:RFCRfc5033 a :RFC ;
+    rdfs:label "rfc5033" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc5033> .
+
+:RFCRfc5681 a :RFC ;
+    rdfs:label "rfc5681" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc5681> .
+
+:RFCRfc5961 a :RFC ;
+    rdfs:label "rfc5961" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc5961> .
+
+:RFCRfc6298 a :RFC ;
+    rdfs:label "rfc6298" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc6298> .
+
+:RFCRfc6633 a :RFC ;
+    rdfs:label "rfc6633" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc6633> .
+
+:RFCRfc8174 a :RFC ;
+    rdfs:label "rfc8174" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc8174> .
+
+:RFCRfc8961 a :RFC ;
+    rdfs:label "rfc8961" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc8961> .
+
+:RFCRfc793 a :RFC ;
+    rdfs:label "rfc793" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc793> .
+
+:RFCRfc896 a :RFC ;
+    rdfs:label "rfc896" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc896> .
+
+:RFCRfc1011 a :RFC ;
+    rdfs:label "rfc1011" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc1011> .
+
+:RFCRfc1122 a :RFC ;
+    rdfs:label "rfc1122" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc1122> .
+
+:RFCRfc1349 a :RFC ;
+    rdfs:label "rfc1349" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc1349> .
+
+:RFCRfc1644 a :RFC ;
+    rdfs:label "rfc1644" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc1644> .
+
+:RFCRfc2018 a :RFC ;
+    rdfs:label "rfc2018" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc2018> .
+
+:RFCRfc2525 a :RFC ;
+    rdfs:label "rfc2525" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc2525> .
+
+:RFCRfc2675 a :RFC ;
+    rdfs:label "rfc2675" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc2675> .
+
+:RFCRfc2873 a :RFC ;
+    rdfs:label "rfc2873" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc2873> .
+
+:ExtensionExtension a :Extension ;
+    rdfs:label "Extension" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#Extension:extension> .
+
+:RFCRfc2883 a :RFC ;
+    rdfs:label "rfc2883" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc2883> .
+
+:RFCRfc2923 a :RFC ;
+    rdfs:label "rfc2923" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc2923> .
+
+:RFCRfc3449 a :RFC ;
+    rdfs:label "rfc3449" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc3449> .
+
+:RFCRfc3465 a :RFC ;
+    rdfs:label "rfc3465" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc3465> .
+
+:ProtocolIcmpv4 a :Protocol ;
+    rdfs:label "ICMPv4" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#Protocol:icmpv4> .
+
+:RFCRfc4727 a :RFC ;
+    rdfs:label "rfc4727" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc4727> .
+
+:RFCRfc4821 a :RFC ;
+    rdfs:label "rfc4821" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc4821> .
+
+:RFCRfc4987 a :RFC ;
+    rdfs:label "rfc4987" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc4987> .
+
+:RFCRfc4953 a :RFC ;
+    rdfs:label "rfc4953" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc4953> .
+
+:RFCRfc5044 a :RFC ;
+    rdfs:label "rfc5044" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc5044> .
+
+:RFCRfc5461 a :RFC ;
+    rdfs:label "rfc5461" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc5461> .
+
+:RFCRfc5570 a :RFC ;
+    rdfs:label "rfc5570" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc5570> .
+
+:RFCRfc5795 a :RFC ;
+    rdfs:label "rfc5795" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc5795> .
+
+:RFCRfc5925 a :RFC ;
+    rdfs:label "rfc5925" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc5925> .
+
+:RFCRfc6093 a :RFC ;
+    rdfs:label "rfc6093" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc6093> .
+
+:RFCRfc6191 a :RFC ;
+    rdfs:label "rfc6191" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc6191> .
+
+:RFCRfc6429 a :RFC ;
+    rdfs:label "rfc6429" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc6429> .
+
+:RFCRfc6528 a :RFC ;
+    rdfs:label "rfc6528" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc6528> .
+
+:RFCRfc6691 a :RFC ;
+    rdfs:label "rfc6691" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc6691> .
+
+:RFCRfc6864 a :RFC ;
+    rdfs:label "rfc6864" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc6864> .
+
+:RFCRfc6994 a :RFC ;
+    rdfs:label "rfc6994" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc6994> .
+
+:RFCRfc7094 a :RFC ;
+    rdfs:label "rfc7094" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc7094> .
+
+:RFCRfc7323 a :RFC ;
+    rdfs:label "rfc7323" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc7323> .
+
+:RFCRfc7413 a :RFC ;
+    rdfs:label "rfc7413" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc7413> .
+
+:RFCRfc7414 a :RFC ;
+    rdfs:label "rfc7414" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc7414> .
+
+:RFCRfc7657 a :RFC ;
+    rdfs:label "rfc7657" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc7657> .
+
+:RFCRfc8087 a :RFC ;
+    rdfs:label "rfc8087" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc8087> .
+
+:RFCRfc8095 a :RFC ;
+    rdfs:label "rfc8095" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc8095> .
+
+:RFCRfc8303 a :RFC ;
+    rdfs:label "rfc8303" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc8303> .
+
+:RFCRfc8311 a :RFC ;
+    rdfs:label "rfc8311" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc8311> .
+
+:RFCRfc8504 a :RFC ;
+    rdfs:label "rfc8504" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc8504> .
+
+:RFCRfc8546 a :RFC ;
+    rdfs:label "rfc8546" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc8546> .
+
+:RFCRfc8548 a :RFC ;
+    rdfs:label "rfc8548" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc8548> .
+
+:RFCRfc8558 a :RFC ;
+    rdfs:label "rfc8558" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc8558> .
+
+:RFCRfc8684 a :RFC ;
+    rdfs:label "rfc8684" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc8684> .
+
+:RFCRfc9000 a :RFC ;
+    rdfs:label "rfc9000" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc9000> .
+
+:RFCRfc9065 a :RFC ;
+    rdfs:label "rfc9065" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc9065> .
+
+:RFCRfc9170 a :RFC ;
+    rdfs:label "rfc9170" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc9170> .
+
+:RFCRfc5927 a :RFC ;
+    rdfs:label "rfc5927" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#RFC:rfc5927> .
+
+:MessageFieldInclude a :MessageField ;
+    rdfs:label "Include" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#MessageField:include> .
+
+:OblMUST a :Obligation ;
+    rdfs:label "absolute requirement of the specification" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#obl:MUST> .
+
+:OblMUSTNOT a :Obligation ;
+    rdfs:label "absolute prohibition of the specification" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#obl:MUST NOT> .
+
+:OblMAY a :Obligation ;
+    rdfs:label "truly optional" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#obl:MAY> .
+
+:ProtoInternetProtocol a :Protocol ;
+    rdfs:label "Internet Protocol" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#proto:Internet Protocol> .
+
+:ExtHop-by-HopOptionsHeader a :Extension ;
+    rdfs:label "Hop-by-Hop Options Header" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#ext:Hop-by-Hop Options Header> .
+
+:DocRfc8200 a :Document ;
+    rdfs:label "rfc8200" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#doc:rfc8200> .
+
+:DocRfc9293 a :Document ;
+    rdfs:label "rfc9293" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#doc:rfc9293> .
+
+:DocRfc791 a :Document ;
+    rdfs:label "rfc791" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#doc:rfc791> .
+
+:DocRfc2119 a :Document ;
+    rdfs:label "rfc2119" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#doc:rfc2119> .
+
+:DocRfc768 a :Document ;
+    rdfs:label "rfc768" ;
+    rdfs:isDefinedBy <kg:t5-protocol-rfc#doc:rfc768> .
+
+:ProtoIPv6 :has_field :FieldFlowLabel .
+:ProtoIPv6 :has_field :FieldNextHeader .
+:ProtoIPv6 :has_field :FieldPayloadLength .
+:ProtoTCP :has_field :FieldChecksum .
+:ProtoTCP :has_field :FieldWindow .
+:ExtensionPath-mtu-discovery :mentioned_in :DocRfc8200 .
+:ExtensionPath-mtu-discovery :mentioned_in :DocRfc9293 .
+:ExtensionTimestamp-option :mentioned_in :DocRfc791 .
+:ExtensionTimestamp-option :mentioned_in :DocRfc9293 .
+:LayerInternet-layer :mentioned_in :DocRfc8200 .
+:LayerLink-layer :mentioned_in :DocRfc8200 .
+:MessageFieldFlags :mentioned_in :DocRfc791 .
+:MessageFieldFlags :mentioned_in :DocRfc9293 .
+:MessageFieldFragment-offset :mentioned_in :DocRfc791 .
+:MessageFieldFragment-offset :mentioned_in :DocRfc8200 .
+:MessageFieldHeader-length :mentioned_in :DocRfc791 .
+:MessageFieldHeader-length :mentioned_in :DocRfc9293 .
+:MessageFieldIdentification :mentioned_in :DocRfc791 .
+:MessageFieldIdentification :mentioned_in :DocRfc8200 .
+:MessageFieldIdentification :mentioned_in :DocRfc9293 .
+:MessageFieldMaximum-segment-size :mentioned_in :DocRfc8200 .
+:MessageFieldMaximum-segment-size :mentioned_in :DocRfc9293 .
+:MessageFieldOptions :mentioned_in :DocRfc791 .
+:MessageFieldOptions :mentioned_in :DocRfc8200 .
+:MessageFieldOptions :mentioned_in :DocRfc9293 .
+:MessageFieldReserved :mentioned_in :DocRfc791 .
+:MessageFieldReserved :mentioned_in :DocRfc8200 .
+:MessageFieldReserved :mentioned_in :DocRfc9293 .
+:MessageFieldTime-to-live :mentioned_in :DocRfc791 .
+:MessageFieldTime-to-live :mentioned_in :DocRfc9293 .
+:MessageFieldTotal-length :mentioned_in :DocRfc791 .
+:MessageFieldTraffic-class :mentioned_in :DocRfc8200 .
+:MessageFieldType-of-service :mentioned_in :DocRfc791 .
+:MessageFieldType-of-service :mentioned_in :DocRfc9293 .
+:MessageFieldVersion :mentioned_in :DocRfc791 .
+:MessageFieldVersion :mentioned_in :DocRfc8200 .
+:MessageFieldVersion :mentioned_in :DocRfc9293 .
+:ProtocolHttp :mentioned_in :DocRfc8200 .
+:ProtocolHttps :mentioned_in :DocRfc2119 .
+:ProtocolHttps :mentioned_in :DocRfc768 .
+:ProtocolHttps :mentioned_in :DocRfc791 .
+:ProtocolHttps :mentioned_in :DocRfc8200 .
+:ProtocolHttps :mentioned_in :DocRfc9293 .
+:ProtocolIcmp :has_field :FieldChecksum .
+:ProtocolIcmp :has_field :FieldNextHeader .
+:ProtocolIcmp :has_field :FieldPayloadLength .
+:ProtocolIcmp :mentioned_in :DocRfc791 .
+:ProtocolIcmp :mentioned_in :DocRfc8200 .
+:ProtocolIcmp :mentioned_in :DocRfc9293 .
+:ProtocolOspf :mentioned_in :DocRfc8200 .
+:ProtocolPpp :mentioned_in :DocRfc8200 .
+:ProtocolSsh :mentioned_in :DocRfc8200 .
+:ProtocolSsh :operates_at :LayerTransportLayer .
+:ProtocolTls :mentioned_in :DocRfc8200 .
+:ProtocolTls :mentioned_in :DocRfc9293 .
+:ProtocolTls :operates_at :LayerTransportLayer .
+:ExtExtensionHeader :mentioned_in :DocRfc8200 .
+:FieldChecksum :mentioned_in :DocRfc768 .
+:FieldChecksum :mentioned_in :DocRfc791 .
+:FieldChecksum :mentioned_in :DocRfc8200 .
+:FieldChecksum :mentioned_in :DocRfc9293 .
+:FieldFlowLabel :mentioned_in :DocRfc8200 .
+:FieldHopLimit :mentioned_in :DocRfc8200 .
+:FieldNextHeader :mentioned_in :DocRfc8200 .
+:FieldNextHeader :mentioned_in :DocRfc9293 .
+:FieldPayloadLength :mentioned_in :DocRfc8200 .
+:FieldSourcePort :mentioned_in :DocRfc768 .
+:FieldSourcePort :mentioned_in :DocRfc9293 .
+:KwMAY :mentioned_in :DocRfc2119 .
+:KwMAY :mentioned_in :DocRfc768 .
+:KwMAY :mentioned_in :DocRfc791 .
+:KwMAY :mentioned_in :DocRfc8200 .
+:KwMAY :mentioned_in :DocRfc9293 .
+:KwMUST :mentioned_in :DocRfc2119 .
+:KwMUST :mentioned_in :DocRfc768 .
+:KwMUST :mentioned_in :DocRfc791 .
+:KwMUST :mentioned_in :DocRfc8200 .
+:KwMUST :mentioned_in :DocRfc9293 .
+:KwMUSTNOT :mentioned_in :DocRfc2119 .
+:KwMUSTNOT :mentioned_in :DocRfc8200 .
+:KwMUSTNOT :mentioned_in :DocRfc9293 .
+:KwOPTIONAL :mentioned_in :DocRfc2119 .
+:KwOPTIONAL :mentioned_in :DocRfc768 .
+:KwOPTIONAL :mentioned_in :DocRfc791 .
+:KwOPTIONAL :mentioned_in :DocRfc8200 .
+:KwOPTIONAL :mentioned_in :DocRfc9293 .
+:KwRECOMMENDED :mentioned_in :DocRfc2119 .
+:KwRECOMMENDED :mentioned_in :DocRfc791 .
+:KwRECOMMENDED :mentioned_in :DocRfc8200 .
+:KwRECOMMENDED :mentioned_in :DocRfc9293 .
+:KwREQUIRED :mentioned_in :DocRfc2119 .
+:KwREQUIRED :mentioned_in :DocRfc791 .
+:KwREQUIRED :mentioned_in :DocRfc8200 .
+:KwREQUIRED :mentioned_in :DocRfc9293 .
+:KwSHALL :mentioned_in :DocRfc2119 .
+:KwSHALL :mentioned_in :DocRfc9293 .
+:KwSHOULD :mentioned_in :DocRfc2119 .
+:KwSHOULD :mentioned_in :DocRfc768 .
+:KwSHOULD :mentioned_in :DocRfc791 .
+:KwSHOULD :mentioned_in :DocRfc8200 .
+:KwSHOULD :mentioned_in :DocRfc9293 .
+:KwSHOULDNOT :mentioned_in :DocRfc2119 .
+:KwSHOULDNOT :mentioned_in :DocRfc8200 .
+:KwSHOULDNOT :mentioned_in :DocRfc9293 .
+:LayerTransportLayer :mentioned_in :DocRfc8200 .
+:LayerTransportLayer :mentioned_in :DocRfc9293 .
+:ProtoICMPv6 :mentioned_in :DocRfc8200 .
+:ProtoICMPv6 :mentioned_in :DocRfc9293 .
+:ProtoIPv4 :has_field :MessageFieldIdentification .
+:ProtoIPv4 :has_field :MessageFieldType-of-service .
+:ProtoIPv4 :has_field :FieldHopLimit .
+:ProtoIPv4 :has_field :FieldNextHeader .
+:ProtoIPv4 :mentioned_in :DocRfc8200 .
+:ProtoIPv4 :mentioned_in :DocRfc9293 .
+:ProtoIPv4 :operates_at :LayerInternet-layer .
+:ProtoIPv6 :has_field :MessageFieldOptions .
+:ProtoIPv6 :has_field :MessageFieldTraffic-class .
+:ProtoIPv6 :has_field :FieldChecksum .
+:ProtoIPv6 :mentioned_in :DocRfc8200 .
+:ProtoIPv6 :mentioned_in :DocRfc9293 .
+:ProtoIPv6 :operates_at :LayerInternet-layer .
+:ProtoTCP :has_field :MessageFieldFlags .
+:ProtoTCP :has_field :MessageFieldOptions .
+:ProtoTCP :has_field :FieldNextHeader .
+:ProtoTCP :has_field :FieldPayloadLength .
+:ProtoTCP :has_field :FieldSourcePort .
+:ProtoTCP :mentioned_in :DocRfc768 .
+:ProtoTCP :mentioned_in :DocRfc791 .
+:ProtoTCP :mentioned_in :DocRfc8200 .
+:ProtoTCP :mentioned_in :DocRfc9293 .
+:ProtoUDP :has_field :FieldNextHeader .
+:ProtoUDP :mentioned_in :DocRfc768 .
+:ProtoUDP :mentioned_in :DocRfc791 .
+:ProtoUDP :mentioned_in :DocRfc8200 .
+:ProtoUDP :mentioned_in :DocRfc9293 .
+:OblMAY :keyword_of :KwMAY .
+:OblMUST :keyword_of :KwMUST .
+:OblMUSTNOT :keyword_of :KwMUSTNOT .
+:ProtoIPv6 :depends_on :ProtoICMPv6 .
+:ProtoIPv6 :has_extension :ExtExtensionHeader .
+:ProtoIPv6 :has_extension :ExtHop-by-HopOptionsHeader .
+:ProtoIPv6 :has_field :FieldHopLimit .
+:ProtoIPv6 :operates_at :ProtoInternetProtocol .
+:ProtoInternetProtocol :has_field :FieldChecksum .
+:ProtoTCP :depends_on :ProtoInternetProtocol .
+:ProtoTCP :has_field :FieldInitialSequenceNumber .
+:ProtoTCP :has_field :FieldSequenceNumber .
+:ProtoTCP :operates_at :LayerTransportLayer .
+:ProtoUDP :has_field :FieldChecksum .
+:ProtoUDP :has_field :FieldSourcePort .
+:ExtensionHop-by-hop-options :mentioned_in :DocRfc8200 .
+:ExtensionSelective-acknowledgment :mentioned_in :DocRfc9293 .
+:ExtensionWindow-scale :mentioned_in :DocRfc9293 .
+:LayerApplication-layer :mentioned_in :DocRfc9293 .
+:MessageFieldAcknowledgment-number :mentioned_in :DocRfc9293 .
+:MessageFieldData-offset :mentioned_in :DocRfc9293 .
+:MessageFieldDestination-port :mentioned_in :DocRfc9293 .
+:MessageFieldProtocol-number :mentioned_in :DocRfc768 .
+:MessageFieldProtocol-number :mentioned_in :DocRfc9293 .
+:MessageFieldUrgent-pointer :mentioned_in :DocRfc9293 .
+:ProtocolIpsec :mentioned_in :DocRfc9293 .
+:ProtocolQuic :mentioned_in :DocRfc9293 .
+:FieldInitialSequenceNumber :mentioned_in :DocRfc9293 .
+:FieldSequenceNumber :mentioned_in :DocRfc9293 .
+:FieldWindow :mentioned_in :DocRfc9293 .
+:KwNOTRECOMMENDED :mentioned_in :DocRfc2119 .
+:KwNOTRECOMMENDED :mentioned_in :DocRfc8200 .
+:KwNOTRECOMMENDED :mentioned_in :DocRfc9293 .
+:ProtoIPv4 :operates_at :LayerApplication-layer .
+:ProtoIPv6 :operates_at :LayerApplication-layer .
+:ProtoTCP :has_field :MessageFieldData-offset .
+:ProtoTCP :has_field :MessageFieldUrgent-pointer .
+:ProtoTCP :operates_at :LayerApplication-layer .
+:SecRfc21191 :mentioned_in :DocRfc2119 .
+:SecRfc21192 :mentioned_in :DocRfc2119 .
+:SecRfc21193 :mentioned_in :DocRfc2119 .
+:SecRfc21194 :mentioned_in :DocRfc2119 .
+:SecRfc21195 :mentioned_in :DocRfc2119 .
+:SecRfc21196 :mentioned_in :DocRfc2119 .
+:SecRfc21197 :mentioned_in :DocRfc2119 .
+:SecRfc21198 :mentioned_in :DocRfc2119 .
+:SecRfc21199 :mentioned_in :DocRfc2119 .
+:SecRfc7911 :mentioned_in :DocRfc791 .
+:SecRfc7911.1 :mentioned_in :DocRfc791 .
+:SecRfc7911.2 :mentioned_in :DocRfc791 .
+:SecRfc7911.3 :mentioned_in :DocRfc791 .
+:SecRfc7911.4 :mentioned_in :DocRfc791 .
+:SecRfc7912 :mentioned_in :DocRfc791 .
+:SecRfc7912.1 :mentioned_in :DocRfc791 .
+:SecRfc7912.2 :mentioned_in :DocRfc791 .
+:SecRfc7912.3 :mentioned_in :DocRfc791 .
+:SecRfc7912.4 :mentioned_in :DocRfc791 .
+:SecRfc7913 :mentioned_in :DocRfc791 .
+:SecRfc7913.1 :mentioned_in :DocRfc791 .
+:SecRfc7913.2 :mentioned_in :DocRfc791 .
+:SecRfc7913.3 :mentioned_in :DocRfc791 .
+:SecRfc82001 :mentioned_in :DocRfc8200 .
+:SecRfc820010 :mentioned_in :DocRfc8200 .
+:SecRfc820011 :mentioned_in :DocRfc8200 .
+:SecRfc820011.1 :mentioned_in :DocRfc8200 .
+:SecRfc820011.2 :mentioned_in :DocRfc8200 .
+:SecRfc82002 :mentioned_in :DocRfc8200 .
+:SecRfc82003 :mentioned_in :DocRfc8200 .
+:SecRfc82004 :mentioned_in :DocRfc8200 .
+:SecRfc82004.1 :mentioned_in :DocRfc8200 .
+:SecRfc82004.2 :mentioned_in :DocRfc8200 .
+:SecRfc82004.3 :mentioned_in :DocRfc8200 .
+:SecRfc82004.4 :mentioned_in :DocRfc8200 .
+:SecRfc82004.5 :mentioned_in :DocRfc8200 .
+:SecRfc82004.6 :mentioned_in :DocRfc8200 .
+:SecRfc82004.7 :mentioned_in :DocRfc8200 .
+:SecRfc82004.8 :mentioned_in :DocRfc8200 .
+:SecRfc82005 :mentioned_in :DocRfc8200 .
+:SecRfc82006 :mentioned_in :DocRfc8200 .
+:SecRfc82007 :mentioned_in :DocRfc8200 .
+:SecRfc82008 :mentioned_in :DocRfc8200 .
+:SecRfc82008.1 :mentioned_in :DocRfc8200 .
+:SecRfc82008.2 :mentioned_in :DocRfc8200 .
+:SecRfc82008.3 :mentioned_in :DocRfc8200 .
+:SecRfc82008.4 :mentioned_in :DocRfc8200 .
+:SecRfc82009 :mentioned_in :DocRfc8200 .
+:SecRfc92931 :mentioned_in :DocRfc9293 .
+:SecRfc92932 :mentioned_in :DocRfc9293 .
+:SecRfc92932.1 :mentioned_in :DocRfc9293 .
+:SecRfc92932.2 :mentioned_in :DocRfc9293 .
+:SecRfc92933 :mentioned_in :DocRfc9293 .
+:SecRfc92933.1 :mentioned_in :DocRfc9293 .
+:SecRfc92933.10 :mentioned_in :DocRfc9293 .
+:SecRfc92933.10.1 :mentioned_in :DocRfc9293 .
+:SecRfc92933.10.2 :mentioned_in :DocRfc9293 .
+:SecRfc92933.10.3 :mentioned_in :DocRfc9293 .
+:SecRfc92933.10.4 :mentioned_in :DocRfc9293 .
+:SecRfc92933.10.5 :mentioned_in :DocRfc9293 .
+:SecRfc92933.10.6 :mentioned_in :DocRfc9293 .
+:SecRfc92933.10.7 :mentioned_in :DocRfc9293 .
+:SecRfc92933.10.7.1 :mentioned_in :DocRfc9293 .
+:SecRfc92933.10.7.2 :mentioned_in :DocRfc9293 .
+:SecRfc92933.10.7.3 :mentioned_in :DocRfc9293 .
+:SecRfc92933.10.7.4 :mentioned_in :DocRfc9293 .
+:SecRfc92933.10.8 :mentioned_in :DocRfc9293 .
+:SecRfc92933.2 :mentioned_in :DocRfc9293 .
+:SecRfc92933.2.1 :mentioned_in :DocRfc9293 .
+:SecRfc92933.2.2 :mentioned_in :DocRfc9293 .
+:SecRfc92933.3 :mentioned_in :DocRfc9293 .
+:SecRfc92933.3.1 :mentioned_in :DocRfc9293 .
+:SecRfc92933.3.2 :mentioned_in :DocRfc9293 .
+:SecRfc92933.4 :mentioned_in :DocRfc9293 .
+:SecRfc92933.4.1 :mentioned_in :DocRfc9293 .
+:SecRfc92933.4.2 :mentioned_in :DocRfc9293 .
+:SecRfc92933.4.3 :mentioned_in :DocRfc9293 .
+:SecRfc92933.5 :mentioned_in :DocRfc9293 .
+:SecRfc92933.5.1 :mentioned_in :DocRfc9293 .
+:SecRfc92933.5.2 :mentioned_in :DocRfc9293 .
+:SecRfc92933.5.3 :mentioned_in :DocRfc9293 .
+:SecRfc92933.6 :mentioned_in :DocRfc9293 .
+:SecRfc92933.6.1 :mentioned_in :DocRfc9293 .
+:SecRfc92933.7 :mentioned_in :DocRfc9293 .
+:SecRfc92933.7.1 :mentioned_in :DocRfc9293 .
+:SecRfc92933.7.2 :mentioned_in :DocRfc9293 .
+:SecRfc92933.7.3 :mentioned_in :DocRfc9293 .
+:SecRfc92933.7.4 :mentioned_in :DocRfc9293 .
+:SecRfc92933.7.5 :mentioned_in :DocRfc9293 .
+:SecRfc92933.8 :mentioned_in :DocRfc9293 .
+:SecRfc92933.8.1 :mentioned_in :DocRfc9293 .
+:SecRfc92933.8.2 :mentioned_in :DocRfc9293 .
+:SecRfc92933.8.3 :mentioned_in :DocRfc9293 .
+:SecRfc92933.8.4 :mentioned_in :DocRfc9293 .
+:SecRfc92933.8.5 :mentioned_in :DocRfc9293 .
+:SecRfc92933.8.6 :mentioned_in :DocRfc9293 .
+:SecRfc92933.8.6.1 :mentioned_in :DocRfc9293 .
+:SecRfc92933.8.6.2 :mentioned_in :DocRfc9293 .
+:SecRfc92933.8.6.3 :mentioned_in :DocRfc9293 .
+:SecRfc92933.9 :mentioned_in :DocRfc9293 .
+:SecRfc92933.9.1 :mentioned_in :DocRfc9293 .
+:SecRfc92933.9.1.1 :mentioned_in :DocRfc9293 .
+:SecRfc92933.9.1.2 :mentioned_in :DocRfc9293 .
+:SecRfc92933.9.1.3 :mentioned_in :DocRfc9293 .
+:SecRfc92933.9.1.4 :mentioned_in :DocRfc9293 .
+:SecRfc92933.9.1.5 :mentioned_in :DocRfc9293 .
+:SecRfc92933.9.1.6 :mentioned_in :DocRfc9293 .
+:SecRfc92933.9.1.7 :mentioned_in :DocRfc9293 .
+:SecRfc92933.9.1.8 :mentioned_in :DocRfc9293 .
+:SecRfc92933.9.1.9 :mentioned_in :DocRfc9293 .
+:SecRfc92933.9.2 :mentioned_in :DocRfc9293 .
+:SecRfc92933.9.2.1 :mentioned_in :DocRfc9293 .
+:SecRfc92933.9.2.2 :mentioned_in :DocRfc9293 .
+:SecRfc92933.9.2.3 :mentioned_in :DocRfc9293 .
+:SecRfc92934 :mentioned_in :DocRfc9293 .
+:SecRfc92935 :mentioned_in :DocRfc9293 .
+:SecRfc92936 :mentioned_in :DocRfc9293 .
+:SecRfc92937 :mentioned_in :DocRfc9293 .
+:SecRfc92938 :mentioned_in :DocRfc9293 .
+:SecRfc92938.1 :mentioned_in :DocRfc9293 .
+:SecRfc92938.2 :mentioned_in :DocRfc9293 .
+:ExtensionBy :mentioned_in :DocRfc9293 .
+:ExtensionExtension :mentioned_in :DocRfc9293 .
+:ExtensionHop :mentioned_in :DocRfc8200 .
+:ExtensionHop-by-hop :mentioned_in :DocRfc791 .
+:ExtensionHop-by-hop :mentioned_in :DocRfc8200 .
+:ExtensionHop-by-hop-option :mentioned_in :DocRfc8200 .
+:ExtensionHop-mtu :mentioned_in :DocRfc8200 .
+:ExtensionPath :mentioned_in :DocRfc8200 .
+:ExtensionPath-mtu :mentioned_in :DocRfc8200 .
+:ExtensionPath-mtu :mentioned_in :DocRfc9293 .
+:ExtensionTimestamp :mentioned_in :DocRfc791 .
+:ExtensionTimestamp :mentioned_in :DocRfc9293 .
+:MessageFieldClass :mentioned_in :DocRfc791 .
+:MessageFieldClass :mentioned_in :DocRfc9293 .
+:MessageFieldInclude :mentioned_in :DocRfc9293 .
+:MessageFieldLabel :mentioned_in :DocRfc8200 .
+:MessageFieldLabel :mentioned_in :DocRfc9293 .
+:MessageFieldLength :mentioned_in :DocRfc768 .
+:MessageFieldLength :mentioned_in :DocRfc791 .
+:MessageFieldLength :mentioned_in :DocRfc8200 .
+:MessageFieldLength :mentioned_in :DocRfc9293 .
+:MessageFieldLive :mentioned_in :DocRfc8200 .
+:MessageFieldMaximum-length :mentioned_in :DocRfc791 .
+:MessageFieldMaximum-segment :mentioned_in :DocRfc9293 .
+:MessageFieldNext :mentioned_in :DocRfc791 .
+:MessageFieldNext :mentioned_in :DocRfc8200 .
+:MessageFieldNext :mentioned_in :DocRfc9293 .
+:MessageFieldNumber :mentioned_in :DocRfc768 .
+:MessageFieldOf-service :mentioned_in :DocRfc791 .
+:MessageFieldOffset :mentioned_in :DocRfc791 .
+:MessageFieldOffset :mentioned_in :DocRfc8200 .
+:MessageFieldOffset :mentioned_in :DocRfc9293 .
+:MessageFieldOptimizations :mentioned_in :DocRfc9293 .
+:MessageFieldOption :mentioned_in :DocRfc791 .
+:MessageFieldOption :mentioned_in :DocRfc9293 .
+:MessageFieldOption-length :mentioned_in :DocRfc791 .
+:MessageFieldRestrictions :mentioned_in :DocRfc791 .
+:MessageFieldRestrictions :mentioned_in :DocRfc9293 .
+:MessageFieldSegment :mentioned_in :DocRfc9293 .
+:MessageFieldSegment-size :mentioned_in :DocRfc9293 .
+:MessageFieldService :mentioned_in :DocRfc791 .
+:MessageFieldService :mentioned_in :DocRfc9293 .
+:MessageFieldSize :mentioned_in :DocRfc8200 .
+:MessageFieldTime :mentioned_in :DocRfc9293 .
+:MessageFieldTime-limit :mentioned_in :DocRfc791 .
+:MessageFieldTime-to :mentioned_in :DocRfc2119 .
+:MessageFieldTime-to :mentioned_in :DocRfc9293 .
+:MessageFieldTotal :mentioned_in :DocRfc9293 .
+:MessageFieldTraffic-class :mentioned_in :DocRfc9293 .
+:MessageFieldType :mentioned_in :DocRfc791 .
+:MessageFieldType :mentioned_in :DocRfc8200 .
+:MessageFieldType-of :mentioned_in :DocRfc8200 .
+:MessageFieldType-of :mentioned_in :DocRfc9293 .
+:MessageFieldVersions :mentioned_in :DocRfc8200 .
+:MessageFieldVersions :mentioned_in :DocRfc9293 .
+:NormativeKeywordNot :mentioned_in :DocRfc2119 .
+:NormativeKeywordNot :mentioned_in :DocRfc791 .
+:NormativeKeywordNot :mentioned_in :DocRfc8200 .
+:NormativeKeywordNot :mentioned_in :DocRfc9293 .
+:ProtocolIcmp :has_field :MessageFieldNext .
+:ProtocolIcmpv4 :mentioned_in :DocRfc9293 .
+:RFCRfc :cites :RFCRfc2460 .
+:RFCRfc :cites :RFCRfc791 .
+:RFCRfc :mentioned_in :DocRfc2119 .
+:RFCRfc :mentioned_in :DocRfc768 .
+:RFCRfc :mentioned_in :DocRfc791 .
+:RFCRfc :mentioned_in :DocRfc8200 .
+:RFCRfc :mentioned_in :DocRfc9293 .
+:RFCRfc :obsoletes :RFCRfc2460 .
+:RFCRfc :updates :RFCRfc5095 .
+:RFCRfc :updates :RFCRfc5871 .
+:RFCRfc1011 :mentioned_in :DocRfc9293 .
+:RFCRfc1122 :mentioned_in :DocRfc9293 .
+:RFCRfc1191 :mentioned_in :DocRfc9293 .
+:RFCRfc1349 :mentioned_in :DocRfc9293 .
+:RFCRfc1644 :mentioned_in :DocRfc9293 .
+:RFCRfc1661 :mentioned_in :DocRfc8200 .
+:RFCRfc2018 :mentioned_in :DocRfc9293 .
+:RFCRfc2119 :mentioned_in :DocRfc2119 .
+:RFCRfc2119 :mentioned_in :DocRfc9293 .
+:RFCRfc2460 :cites :RFCRfc .
+:RFCRfc2460 :mentioned_in :DocRfc8200 .
+:RFCRfc2460 :obsoletes :RFCRfc .
+:RFCRfc2474 :cites :RFCRfc3168 .
+:RFCRfc2474 :mentioned_in :DocRfc8200 .
+:RFCRfc2474 :mentioned_in :DocRfc9293 .
+:RFCRfc2525 :mentioned_in :DocRfc9293 .
+:RFCRfc2675 :mentioned_in :DocRfc9293 .
+:RFCRfc2873 :mentioned_in :DocRfc9293 .
+:RFCRfc2883 :mentioned_in :DocRfc9293 .
+:RFCRfc2914 :mentioned_in :DocRfc9293 .
+:RFCRfc2923 :mentioned_in :DocRfc9293 .
+:RFCRfc3168 :cites :RFCRfc2474 .
+:RFCRfc3168 :mentioned_in :DocRfc8200 .
+:RFCRfc3168 :mentioned_in :DocRfc9293 .
+:RFCRfc3449 :mentioned_in :DocRfc9293 .
+:RFCRfc3465 :mentioned_in :DocRfc9293 .
+:RFCRfc4291 :mentioned_in :DocRfc8200 .
+:RFCRfc4301 :mentioned_in :DocRfc8200 .
+:RFCRfc4302 :cites :RFCRfc4303 .
+:RFCRfc4302 :mentioned_in :DocRfc8200 .
+:RFCRfc4303 :cites :RFCRfc4302 .
+:RFCRfc4303 :mentioned_in :DocRfc8200 .
+:RFCRfc4443 :mentioned_in :DocRfc8200 .
+:RFCRfc4727 :mentioned_in :DocRfc9293 .
+:RFCRfc4821 :mentioned_in :DocRfc9293 .
+:RFCRfc4953 :mentioned_in :DocRfc9293 .
+:RFCRfc4987 :mentioned_in :DocRfc9293 .
+:RFCRfc5033 :mentioned_in :DocRfc9293 .
+:RFCRfc5044 :mentioned_in :DocRfc9293 .
+:RFCRfc5095 :mentioned_in :DocRfc8200 .
+:RFCRfc5095 :updates :RFCRfc5871 .
+:RFCRfc5461 :mentioned_in :DocRfc9293 .
+:RFCRfc5570 :mentioned_in :DocRfc9293 .
+:RFCRfc5681 :mentioned_in :DocRfc9293 .
+:RFCRfc5722 :mentioned_in :DocRfc8200 .
+:RFCRfc5795 :mentioned_in :DocRfc9293 .
+:RFCRfc5871 :mentioned_in :DocRfc8200 .
+:RFCRfc5871 :updates :RFCRfc5095 .
+:RFCRfc5925 :mentioned_in :DocRfc9293 .
+:RFCRfc5927 :mentioned_in :DocRfc9293 .
+:RFCRfc5961 :mentioned_in :DocRfc9293 .
+:RFCRfc6093 :mentioned_in :DocRfc9293 .
+:RFCRfc6191 :mentioned_in :DocRfc9293 .
+:RFCRfc6298 :mentioned_in :DocRfc9293 .
+:RFCRfc6429 :mentioned_in :DocRfc9293 .
+:RFCRfc6528 :mentioned_in :DocRfc9293 .
+:RFCRfc6564 :mentioned_in :DocRfc8200 .
+:RFCRfc6633 :mentioned_in :DocRfc9293 .
+:RFCRfc6691 :mentioned_in :DocRfc9293 .
+:RFCRfc6864 :mentioned_in :DocRfc9293 .
+:RFCRfc6936 :mentioned_in :DocRfc8200 .
+:RFCRfc6946 :cites :RFCRfc8021 .
+:RFCRfc6946 :mentioned_in :DocRfc8200 .
+:RFCRfc6994 :mentioned_in :DocRfc9293 .
+:RFCRfc7045 :mentioned_in :DocRfc8200 .
+:RFCRfc7094 :cites :RFCRfc .
+:RFCRfc7094 :mentioned_in :DocRfc9293 .
+:RFCRfc7112 :mentioned_in :DocRfc8200 .
+:RFCRfc7323 :mentioned_in :DocRfc9293 .
+:RFCRfc7413 :mentioned_in :DocRfc9293 .
+:RFCRfc7414 :mentioned_in :DocRfc9293 .
+:RFCRfc7657 :mentioned_in :DocRfc9293 .
+:RFCRfc768 :mentioned_in :DocRfc768 .
+:RFCRfc7707 :mentioned_in :DocRfc8200 .
+:RFCRfc7721 :mentioned_in :DocRfc8200 .
+:RFCRfc7739 :mentioned_in :DocRfc8200 .
+:RFCRfc791 :cites :RFCRfc .
+:RFCRfc791 :mentioned_in :DocRfc791 .
+:RFCRfc791 :mentioned_in :DocRfc8200 .
+:RFCRfc791 :mentioned_in :DocRfc9293 .
+:RFCRfc793 :mentioned_in :DocRfc9293 .
+:RFCRfc8021 :cites :RFCRfc .
+:RFCRfc8021 :cites :RFCRfc6946 .
+:RFCRfc8021 :mentioned_in :DocRfc8200 .
+:RFCRfc8087 :mentioned_in :DocRfc9293 .
+:RFCRfc8095 :mentioned_in :DocRfc9293 .
+:RFCRfc8174 :mentioned_in :DocRfc9293 .
+:RFCRfc8200 :mentioned_in :DocRfc8200 .
+:RFCRfc8200 :mentioned_in :DocRfc9293 .
+:RFCRfc8201 :mentioned_in :DocRfc8200 .
+:RFCRfc8201 :mentioned_in :DocRfc9293 .
+:RFCRfc8303 :mentioned_in :DocRfc9293 .
+:RFCRfc8311 :mentioned_in :DocRfc9293 .
+:RFCRfc8504 :mentioned_in :DocRfc9293 .
+:RFCRfc8546 :mentioned_in :DocRfc9293 .
+:RFCRfc8548 :mentioned_in :DocRfc9293 .
+:RFCRfc8558 :mentioned_in :DocRfc9293 .
+:RFCRfc8684 :mentioned_in :DocRfc9293 .
+:RFCRfc896 :mentioned_in :DocRfc9293 .
+:RFCRfc8961 :mentioned_in :DocRfc9293 .
+:RFCRfc9000 :mentioned_in :DocRfc9293 .
+:RFCRfc9065 :mentioned_in :DocRfc9293 .
+:RFCRfc9170 :mentioned_in :DocRfc9293 .
+:RFCRfc9293 :mentioned_in :DocRfc9293 .
+:ProtoIPv4 :has_field :MessageFieldClass .
+:ProtoIPv4 :has_field :MessageFieldNext .
+:ProtoIPv4 :has_field :MessageFieldService .
+:ProtoIPv4 :has_field :MessageFieldTime .
+:ProtoIPv4 :has_field :MessageFieldTime-to .
+:ProtoIPv4 :has_field :MessageFieldType-of .
+:ProtoIPv6 :has_field :MessageFieldClass .
+:ProtoIPv6 :has_field :MessageFieldLabel .
+:ProtoIPv6 :has_field :MessageFieldLength .
+:ProtoIPv6 :has_field :MessageFieldNext .
+:ProtoIPv6 :has_field :MessageFieldType .
+:ProtoIPv6 :has_field :MessageFieldType-of .
+:ProtoTCP :has_field :MessageFieldLength .
+:ProtoTCP :has_field :MessageFieldNext .
+:ProtoTCP :has_field :MessageFieldOffset .
+:ProtoTCP :has_field :MessageFieldSegment .
+:ProtoUDP :has_field :MessageFieldLength .
+:ProtoUDP :has_field :MessageFieldNext .
+
+# 边数/节点数摘要（便于快速核对导入结果）
+<kg:t5-protocol-rfc> a owl:Ontology ;
+    rdfs:label "t5-protocol-rfc KG (ensemble)" ;
+    rdfs:comment "nodes=314 edges=487" .

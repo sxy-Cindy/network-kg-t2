@@ -1,0 +1,231 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d2" for="edge" attr.name="relation" attr.type="string" />
+  <key id="d1" for="node" attr.name="type" attr.type="string" />
+  <key id="d0" for="node" attr.name="label" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="host:core-sw-01">
+      <data key="d0">core-sw-01</data>
+      <data key="d1">Host</data>
+    </node>
+    <node id="host:agg-sw-03">
+      <data key="d0">agg-sw-03</data>
+      <data key="d1">Host</data>
+    </node>
+    <node id="host:node-17">
+      <data key="d0">node-17</data>
+      <data key="d1">Host</data>
+    </node>
+    <node id="host:edge-rt-02">
+      <data key="d0">edge-rt-02</data>
+      <data key="d1">Host</data>
+    </node>
+    <node id="anom:BGP peer down">
+      <data key="d0">BGP peer down</data>
+      <data key="d1">Anomaly</data>
+    </node>
+    <node id="anom:interface down">
+      <data key="d0">interface down</data>
+      <data key="d1">Anomaly</data>
+    </node>
+    <node id="anom:link flapped">
+      <data key="d0">link flapped</data>
+      <data key="d1">Anomaly</data>
+    </node>
+    <node id="anom:packet loss">
+      <data key="d0">packet loss</data>
+      <data key="d1">Anomaly</data>
+    </node>
+    <node id="fault:traffic drop">
+      <data key="d0">traffic drop</data>
+      <data key="d1">Fault</data>
+    </node>
+    <node id="fault:blackhole">
+      <data key="d0">blackhole</data>
+      <data key="d1">Fault</data>
+    </node>
+    <node id="act:failover">
+      <data key="d0">failover</data>
+      <data key="d1">Action</data>
+    </node>
+    <node id="act:switchover">
+      <data key="d0">switchover</data>
+      <data key="d1">Action</data>
+    </node>
+    <node id="act:restart">
+      <data key="d0">restart</data>
+      <data key="d1">Action</data>
+    </node>
+    <node id="act:rollback">
+      <data key="d0">rollback</data>
+      <data key="d1">Action</data>
+    </node>
+    <node id="Metric:packet-loss">
+      <data key="d0">packet loss</data>
+      <data key="d1">Metric</data>
+    </node>
+    <node id="Metric:jitter">
+      <data key="d0">jitter</data>
+      <data key="d1">Metric</data>
+    </node>
+    <node id="RootCause:fiber-cut">
+      <data key="d0">fiber cut</data>
+      <data key="d1">RootCause</data>
+    </node>
+    <node id="Service:bgpd">
+      <data key="d0">bgpd</data>
+      <data key="d1">Service</data>
+    </node>
+    <node id="Service:ospfd">
+      <data key="d0">ospfd</data>
+      <data key="d1">Service</data>
+    </node>
+    <node id="Service:syslog-ng">
+      <data key="d0">syslog-ng</data>
+      <data key="d1">Service</data>
+    </node>
+    <node id="Service:kubelet">
+      <data key="d0">kubelet</data>
+      <data key="d1">Service</data>
+    </node>
+    <node id="doc:network_device_log_sample">
+      <data key="d0">network_device_log_sample</data>
+      <data key="d1">Document</data>
+    </node>
+    <edge source="host:core-sw-01" target="doc:network_device_log_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="host:agg-sw-03" target="doc:network_device_log_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="host:node-17" target="doc:network_device_log_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="host:edge-rt-02" target="doc:network_device_log_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="anom:BGP peer down" target="act:failover">
+      <data key="d2">correlates_with</data>
+    </edge>
+    <edge source="anom:BGP peer down" target="act:restart">
+      <data key="d2">correlates_with</data>
+    </edge>
+    <edge source="anom:BGP peer down" target="act:rollback">
+      <data key="d2">correlates_with</data>
+    </edge>
+    <edge source="anom:BGP peer down" target="act:switchover">
+      <data key="d2">correlates_with</data>
+    </edge>
+    <edge source="anom:BGP peer down" target="fault:blackhole">
+      <data key="d2">indicates</data>
+    </edge>
+    <edge source="anom:BGP peer down" target="fault:traffic drop">
+      <data key="d2">indicates</data>
+    </edge>
+    <edge source="anom:BGP peer down" target="doc:network_device_log_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="anom:interface down" target="act:failover">
+      <data key="d2">correlates_with</data>
+    </edge>
+    <edge source="anom:interface down" target="act:restart">
+      <data key="d2">correlates_with</data>
+    </edge>
+    <edge source="anom:interface down" target="act:rollback">
+      <data key="d2">correlates_with</data>
+    </edge>
+    <edge source="anom:interface down" target="act:switchover">
+      <data key="d2">correlates_with</data>
+    </edge>
+    <edge source="anom:interface down" target="fault:blackhole">
+      <data key="d2">indicates</data>
+    </edge>
+    <edge source="anom:interface down" target="fault:traffic drop">
+      <data key="d2">indicates</data>
+    </edge>
+    <edge source="anom:interface down" target="doc:network_device_log_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="anom:link flapped" target="act:failover">
+      <data key="d2">correlates_with</data>
+    </edge>
+    <edge source="anom:link flapped" target="act:restart">
+      <data key="d2">correlates_with</data>
+    </edge>
+    <edge source="anom:link flapped" target="act:rollback">
+      <data key="d2">correlates_with</data>
+    </edge>
+    <edge source="anom:link flapped" target="act:switchover">
+      <data key="d2">correlates_with</data>
+    </edge>
+    <edge source="anom:link flapped" target="fault:blackhole">
+      <data key="d2">indicates</data>
+    </edge>
+    <edge source="anom:link flapped" target="fault:traffic drop">
+      <data key="d2">indicates</data>
+    </edge>
+    <edge source="anom:link flapped" target="doc:network_device_log_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="anom:packet loss" target="act:failover">
+      <data key="d2">correlates_with</data>
+    </edge>
+    <edge source="anom:packet loss" target="act:restart">
+      <data key="d2">correlates_with</data>
+    </edge>
+    <edge source="anom:packet loss" target="act:rollback">
+      <data key="d2">correlates_with</data>
+    </edge>
+    <edge source="anom:packet loss" target="act:switchover">
+      <data key="d2">correlates_with</data>
+    </edge>
+    <edge source="anom:packet loss" target="fault:blackhole">
+      <data key="d2">indicates</data>
+    </edge>
+    <edge source="anom:packet loss" target="fault:traffic drop">
+      <data key="d2">indicates</data>
+    </edge>
+    <edge source="anom:packet loss" target="doc:network_device_log_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="fault:traffic drop" target="doc:network_device_log_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="fault:blackhole" target="doc:network_device_log_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="act:failover" target="doc:network_device_log_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="act:switchover" target="doc:network_device_log_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="act:restart" target="doc:network_device_log_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="act:rollback" target="doc:network_device_log_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="Metric:packet-loss" target="doc:network_device_log_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="Metric:jitter" target="doc:network_device_log_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="RootCause:fiber-cut" target="doc:network_device_log_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="Service:bgpd" target="doc:network_device_log_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="Service:ospfd" target="doc:network_device_log_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="Service:syslog-ng" target="doc:network_device_log_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="Service:kubelet" target="doc:network_device_log_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+  </graph>
+</graphml>

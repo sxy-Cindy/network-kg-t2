@@ -1,0 +1,16 @@
+# 设备配置摘录（示意语料，语法取自 Cisco IOS / Huawei VRP 常见形态）
+hostname ACC-SW-12
+!
+interface Gi0/1
+ description uplink to CORE-SW-01
+ ip address 10.10.20.254 255.255.255.0
+ switchport mode trunk
+!
+interface Vlanif20
+ ip address 10.10.20.254 255.255.255.0
+!
+router ospf 1
+ network 10.10.20.0 0.0.0.255 area 0
+ redistribute connected
+!
+# 意图：提供 DHCP 服务、实现双上行冗余；风险：单点故障、广播风暴

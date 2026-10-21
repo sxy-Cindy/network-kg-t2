@@ -1,0 +1,881 @@
+{
+  "topic": "t1-net-assets",
+  "method": "ensemble",
+  "methods_available": [
+    "rule"
+  ],
+  "weights": {
+    "rule": 1.0,
+    "model": 0.8,
+    "llm": 1.2
+  },
+  "entity_count": 20,
+  "relation_count": 38,
+  "triple_vote_distribution": {
+    "1": 38
+  },
+  "dropped": {
+    "invalid_label": [],
+    "out_of_controlled": []
+  },
+  "dropped_counts": {
+    "invalid_label": 0,
+    "out_of_controlled": 0
+  },
+  "domain_range_violations": [],
+  "domain_range_violation_count": 0,
+  "entities": [
+    {
+      "id": "dev:CORE-SW-01",
+      "label": "CORE-SW-01",
+      "type": "Device",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "dev:ACC-SW-12",
+      "label": "ACC-SW-12",
+      "type": "Device",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "if:campus_network:Gi0/1",
+      "label": "Gi0/1",
+      "type": "Interface",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "if:campus_network:Gi0/24",
+      "label": "Gi0/24",
+      "type": "Interface",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "if:campus_network:Gi0/2",
+      "label": "Gi0/2",
+      "type": "Interface",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "net:10.10.20.1/24",
+      "label": "10.10.20.1/24",
+      "type": "IPSubnet",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "net:10.10.20.0/24",
+      "label": "10.10.20.0/24",
+      "type": "IPSubnet",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "ip:10.10.20.254",
+      "label": "10.10.20.254",
+      "type": "IPAddress",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "vlan:10",
+      "label": "VLAN 10",
+      "type": "VLAN",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "vlan:20",
+      "label": "VLAN 20",
+      "type": "VLAN",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "inc:INC-20260714",
+      "label": "INC-20260714",
+      "type": "Incident",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "DeviceRole:核心交换机",
+      "label": "核心交换机",
+      "type": "DeviceRole",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "DeviceRole:接入交换机",
+      "label": "接入交换机",
+      "type": "DeviceRole",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Vendor:cisco",
+      "label": "Cisco",
+      "type": "Vendor",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Vendor:huawei",
+      "label": "Huawei",
+      "type": "Vendor",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Service:dhcp",
+      "label": "DHCP",
+      "type": "Service",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Service:ntp",
+      "label": "NTP",
+      "type": "Service",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Service:snmp",
+      "label": "SNMP",
+      "type": "Service",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Site:主数据中心",
+      "label": "主数据中心",
+      "type": "Site",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Site:教学楼",
+      "label": "教学楼",
+      "type": "Site",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    }
+  ],
+  "relations": [
+    {
+      "source": "DeviceRole:接入交换机",
+      "relation": "mentioned_in",
+      "target": "doc:campus_network",
+      "doc": "campus_network",
+      "evidence": "[rule] 内的网关地址 10.10.20.254 Gi0/24 uplink 对接 CORE-SW-01 Gi0/1 该设备角色为接入交换机，厂商为 Huawei，位于教学楼 服务：DHCP、NTP、SNMP 在核心交换机上启用 INC-20260714 故障",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "DeviceRole:核心交换机",
+      "relation": "mentioned_in",
+      "target": "doc:campus_network",
+      "doc": "campus_network",
+      "evidence": "[rule] 园网运维台账摘录（示意语料，用于流水线冒烟） hostname CORE-SW-01 description 主数据中心核心交换机 Cisco N9K-C93180 Gi0/1 uplink 连接 ACC-SW-12 Gi0/24，链路速率 10Gb",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "Service:dhcp",
+      "relation": "mentioned_in",
+      "target": "doc:campus_network",
+      "doc": "campus_network",
+      "evidence": "[rule] uplink 对接 CORE-SW-01 Gi0/1 该设备角色为接入交换机，厂商为 Huawei，位于教学楼 服务：DHCP、NTP、SNMP 在核心交换机上启用 INC-20260714 故障事件：ACC-SW-12 上联链路中断导致 VLA",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "Service:ntp",
+      "relation": "mentioned_in",
+      "target": "doc:campus_network",
+      "doc": "campus_network",
+      "evidence": "[rule] nk 对接 CORE-SW-01 Gi0/1 该设备角色为接入交换机，厂商为 Huawei，位于教学楼 服务：DHCP、NTP、SNMP 在核心交换机上启用 INC-20260714 故障事件：ACC-SW-12 上联链路中断导致 VLAN 20",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "Service:snmp",
+      "relation": "mentioned_in",
+      "target": "doc:campus_network",
+      "doc": "campus_network",
+      "evidence": "[rule] 接 CORE-SW-01 Gi0/1 该设备角色为接入交换机，厂商为 Huawei，位于教学楼 服务：DHCP、NTP、SNMP 在核心交换机上启用 INC-20260714 故障事件：ACC-SW-12 上联链路中断导致 VLAN 20 业务中断",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "Site:主数据中心",
+      "relation": "mentioned_in",
+      "target": "doc:campus_network",
+      "doc": "campus_network",
+      "evidence": "[rule] # 校园网运维台账摘录（示意语料，用于流水线冒烟） hostname CORE-SW-01 description 主数据中心核心交换机 Cisco N9K-C93180 Gi0/1 uplink 连接 ACC-SW-12 Gi0/24，链路速率",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "Site:教学楼",
+      "relation": "mentioned_in",
+      "target": "doc:campus_network",
+      "doc": "campus_network",
+      "evidence": "[rule] ip address 10.10.20.1/24 作为 VLAN 20 网关 VLAN 20 配置于核心交换机，服务于教学楼 hostname ACC-SW-12 Gi0/1 ip address 10.10.20.0/24 网段内的网关地址",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "Vendor:cisco",
+      "relation": "mentioned_in",
+      "target": "doc:campus_network",
+      "doc": "campus_network",
+      "evidence": "[rule] 摘录（示意语料，用于流水线冒烟） hostname CORE-SW-01 description 主数据中心核心交换机 Cisco N9K-C93180 Gi0/1 uplink 连接 ACC-SW-12 Gi0/24，链路速率 10Gbps，互联",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "Vendor:huawei",
+      "relation": "mentioned_in",
+      "target": "doc:campus_network",
+      "doc": "campus_network",
+      "evidence": "[rule] 10.20.254 Gi0/24 uplink 对接 CORE-SW-01 Gi0/1 该设备角色为接入交换机，厂商为 Huawei，位于教学楼 服务：DHCP、NTP、SNMP 在核心交换机上启用 INC-20260714 故障事件：ACC-SW-1",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "dev:ACC-SW-12",
+      "relation": "mentioned_in",
+      "target": "doc:campus_network",
+      "doc": "campus_network",
+      "evidence": "[rule] address 10.10.20.1/24 作为 VLAN 20 网关 VLAN 20 配置于核心交换机，服务于教学楼 hostname ACC-SW-12 Gi0/1 ip address 10.10.20.0/24 网段内的网关地址 10.10.20.254 Gi0/24",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "dev:ACC-SW-12",
+      "relation": "runs",
+      "target": "Service:dhcp",
+      "doc": "campus_network",
+      "evidence": "[rule] # 校园网运维台账摘录(示意语料,用于流水线冒烟) hostname CORE-SW-01 description 主数据中心核心交换机 Cisco N9K-C93180 Gi0/1 uplink 连接 ACC-SW-12 Gi0/24,链路速率 10Gbps,互联 VLAN 10 Gi0/2 ip address 10.10.20.1/24 作为 VLAN 20 网关 VLAN 20 配置于核心",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "dev:ACC-SW-12",
+      "relation": "runs",
+      "target": "Service:ntp",
+      "doc": "campus_network",
+      "evidence": "[rule] # 校园网运维台账摘录(示意语料,用于流水线冒烟) hostname CORE-SW-01 description 主数据中心核心交换机 Cisco N9K-C93180 Gi0/1 uplink 连接 ACC-SW-12 Gi0/24,链路速率 10Gbps,互联 VLAN 10 Gi0/2 ip address 10.10.20.1/24 作为 VLAN 20 网关 VLAN 20 配置于核心",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "dev:ACC-SW-12",
+      "relation": "runs",
+      "target": "Service:snmp",
+      "doc": "campus_network",
+      "evidence": "[rule] # 校园网运维台账摘录(示意语料,用于流水线冒烟) hostname CORE-SW-01 description 主数据中心核心交换机 Cisco N9K-C93180 Gi0/1 uplink 连接 ACC-SW-12 Gi0/24,链路速率 10Gbps,互联 VLAN 10 Gi0/2 ip address 10.10.20.1/24 作为 VLAN 20 网关 VLAN 20 配置于核心",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "dev:CORE-SW-01",
+      "relation": "mentioned_in",
+      "target": "doc:campus_network",
+      "doc": "campus_network",
+      "evidence": "[rule] # 校园网运维台账摘录（示意语料，用于流水线冒烟） hostname CORE-SW-01 description 主数据中心核心交换机 Cisco N9K-C93180 Gi0/1 uplink 连接 ACC",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "dev:CORE-SW-01",
+      "relation": "runs",
+      "target": "Service:dhcp",
+      "doc": "campus_network",
+      "evidence": "[rule] # 校园网运维台账摘录(示意语料,用于流水线冒烟) hostname CORE-SW-01 description 主数据中心核心交换机 Cisco N9K-C93180 Gi0/1 uplink 连接 ACC-SW-12 Gi0/24,链路速率 10Gbps,互联 VLAN 10 Gi0/2 ip address 10.10.20.1/24 作为 VLAN 20 网关 VLAN 20 配置于核心",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "dev:CORE-SW-01",
+      "relation": "runs",
+      "target": "Service:ntp",
+      "doc": "campus_network",
+      "evidence": "[rule] # 校园网运维台账摘录(示意语料,用于流水线冒烟) hostname CORE-SW-01 description 主数据中心核心交换机 Cisco N9K-C93180 Gi0/1 uplink 连接 ACC-SW-12 Gi0/24,链路速率 10Gbps,互联 VLAN 10 Gi0/2 ip address 10.10.20.1/24 作为 VLAN 20 网关 VLAN 20 配置于核心",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "dev:CORE-SW-01",
+      "relation": "runs",
+      "target": "Service:snmp",
+      "doc": "campus_network",
+      "evidence": "[rule] # 校园网运维台账摘录(示意语料,用于流水线冒烟) hostname CORE-SW-01 description 主数据中心核心交换机 Cisco N9K-C93180 Gi0/1 uplink 连接 ACC-SW-12 Gi0/24,链路速率 10Gbps,互联 VLAN 10 Gi0/2 ip address 10.10.20.1/24 作为 VLAN 20 网关 VLAN 20 配置于核心",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "if:campus_network:Gi0/1",
+      "relation": "connects_to",
+      "target": "if:campus_network:Gi0/2",
+      "doc": "campus_network",
+      "evidence": "[rule] # 校园网运维台账摘录(示意语料,用于流水线冒烟) hostname CORE-SW-01 description 主数据中心核心交换机 Cisco N9K-C93180 Gi0/1 uplink 连接 ACC-SW-12 Gi0/24,链路速率 10Gbps,互联 VLAN 10 Gi0/2 ip address 10.10.20.1/24 作为 VLAN 20 网关 VLAN 20 配置于核心",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "if:campus_network:Gi0/1",
+      "relation": "connects_to",
+      "target": "if:campus_network:Gi0/24",
+      "doc": "campus_network",
+      "evidence": "[rule] # 校园网运维台账摘录(示意语料,用于流水线冒烟) hostname CORE-SW-01 description 主数据中心核心交换机 Cisco N9K-C93180 Gi0/1 uplink 连接 ACC-SW-12 Gi0/24,链路速率 10Gbps,互联 VLAN 10 Gi0/2 ip address 10.10.20.1/24 作为 VLAN 20 网关 VLAN 20 配置于核心",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "if:campus_network:Gi0/1",
+      "relation": "has_subnet",
+      "target": "net:10.10.20.0/24",
+      "doc": "campus_network",
+      "evidence": "[rule] # 校园网运维台账摘录(示意语料,用于流水线冒烟) hostname CORE-SW-01 description 主数据中心核心交换机 Cisco N9K-C93180 Gi0/1 uplink 连接 ACC-SW-12 Gi0/24,链路速率 10Gbps,互联 VLAN 10 Gi0/2 ip address 10.10.20.1/24 作为 VLAN 20 网关 VLAN 20 配置于核心",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "if:campus_network:Gi0/1",
+      "relation": "has_subnet",
+      "target": "net:10.10.20.1/24",
+      "doc": "campus_network",
+      "evidence": "[rule] # 校园网运维台账摘录(示意语料,用于流水线冒烟) hostname CORE-SW-01 description 主数据中心核心交换机 Cisco N9K-C93180 Gi0/1 uplink 连接 ACC-SW-12 Gi0/24,链路速率 10Gbps,互联 VLAN 10 Gi0/2 ip address 10.10.20.1/24 作为 VLAN 20 网关 VLAN 20 配置于核心",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "if:campus_network:Gi0/1",
+      "relation": "mentioned_in",
+      "target": "doc:campus_network",
+      "doc": "campus_network",
+      "evidence": "[rule] hostname CORE-SW-01 description 主数据中心核心交换机 Cisco N9K-C93180 Gi0/1 uplink 连接 ACC-SW-12 Gi0/24，链路速率 10Gbps，互联 VLAN 10 Gi0/2 ip",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "if:campus_network:Gi0/2",
+      "relation": "connects_to",
+      "target": "if:campus_network:Gi0/1",
+      "doc": "campus_network",
+      "evidence": "[rule] # 校园网运维台账摘录(示意语料,用于流水线冒烟) hostname CORE-SW-01 description 主数据中心核心交换机 Cisco N9K-C93180 Gi0/1 uplink 连接 ACC-SW-12 Gi0/24,链路速率 10Gbps,互联 VLAN 10 Gi0/2 ip address 10.10.20.1/24 作为 VLAN 20 网关 VLAN 20 配置于核心",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "if:campus_network:Gi0/2",
+      "relation": "connects_to",
+      "target": "if:campus_network:Gi0/24",
+      "doc": "campus_network",
+      "evidence": "[rule] # 校园网运维台账摘录(示意语料,用于流水线冒烟) hostname CORE-SW-01 description 主数据中心核心交换机 Cisco N9K-C93180 Gi0/1 uplink 连接 ACC-SW-12 Gi0/24,链路速率 10Gbps,互联 VLAN 10 Gi0/2 ip address 10.10.20.1/24 作为 VLAN 20 网关 VLAN 20 配置于核心",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "if:campus_network:Gi0/2",
+      "relation": "has_subnet",
+      "target": "net:10.10.20.0/24",
+      "doc": "campus_network",
+      "evidence": "[rule] # 校园网运维台账摘录(示意语料,用于流水线冒烟) hostname CORE-SW-01 description 主数据中心核心交换机 Cisco N9K-C93180 Gi0/1 uplink 连接 ACC-SW-12 Gi0/24,链路速率 10Gbps,互联 VLAN 10 Gi0/2 ip address 10.10.20.1/24 作为 VLAN 20 网关 VLAN 20 配置于核心",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "if:campus_network:Gi0/2",
+      "relation": "has_subnet",
+      "target": "net:10.10.20.1/24",
+      "doc": "campus_network",
+      "evidence": "[rule] # 校园网运维台账摘录(示意语料,用于流水线冒烟) hostname CORE-SW-01 description 主数据中心核心交换机 Cisco N9K-C93180 Gi0/1 uplink 连接 ACC-SW-12 Gi0/24,链路速率 10Gbps,互联 VLAN 10 Gi0/2 ip address 10.10.20.1/24 作为 VLAN 20 网关 VLAN 20 配置于核心",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "if:campus_network:Gi0/2",
+      "relation": "mentioned_in",
+      "target": "doc:campus_network",
+      "doc": "campus_network",
+      "evidence": "[rule] 180 Gi0/1 uplink 连接 ACC-SW-12 Gi0/24，链路速率 10Gbps，互联 VLAN 10 Gi0/2 ip address 10.10.20.1/24 作为 VLAN 20 网关 VLAN 20 配置于核心交换机，服务于",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "if:campus_network:Gi0/24",
+      "relation": "connects_to",
+      "target": "if:campus_network:Gi0/1",
+      "doc": "campus_network",
+      "evidence": "[rule] # 校园网运维台账摘录(示意语料,用于流水线冒烟) hostname CORE-SW-01 description 主数据中心核心交换机 Cisco N9K-C93180 Gi0/1 uplink 连接 ACC-SW-12 Gi0/24,链路速率 10Gbps,互联 VLAN 10 Gi0/2 ip address 10.10.20.1/24 作为 VLAN 20 网关 VLAN 20 配置于核心",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "if:campus_network:Gi0/24",
+      "relation": "connects_to",
+      "target": "if:campus_network:Gi0/2",
+      "doc": "campus_network",
+      "evidence": "[rule] # 校园网运维台账摘录(示意语料,用于流水线冒烟) hostname CORE-SW-01 description 主数据中心核心交换机 Cisco N9K-C93180 Gi0/1 uplink 连接 ACC-SW-12 Gi0/24,链路速率 10Gbps,互联 VLAN 10 Gi0/2 ip address 10.10.20.1/24 作为 VLAN 20 网关 VLAN 20 配置于核心",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "if:campus_network:Gi0/24",
+      "relation": "has_subnet",
+      "target": "net:10.10.20.0/24",
+      "doc": "campus_network",
+      "evidence": "[rule] # 校园网运维台账摘录(示意语料,用于流水线冒烟) hostname CORE-SW-01 description 主数据中心核心交换机 Cisco N9K-C93180 Gi0/1 uplink 连接 ACC-SW-12 Gi0/24,链路速率 10Gbps,互联 VLAN 10 Gi0/2 ip address 10.10.20.1/24 作为 VLAN 20 网关 VLAN 20 配置于核心",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "if:campus_network:Gi0/24",
+      "relation": "has_subnet",
+      "target": "net:10.10.20.1/24",
+      "doc": "campus_network",
+      "evidence": "[rule] # 校园网运维台账摘录(示意语料,用于流水线冒烟) hostname CORE-SW-01 description 主数据中心核心交换机 Cisco N9K-C93180 Gi0/1 uplink 连接 ACC-SW-12 Gi0/24,链路速率 10Gbps,互联 VLAN 10 Gi0/2 ip address 10.10.20.1/24 作为 VLAN 20 网关 VLAN 20 配置于核心",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "if:campus_network:Gi0/24",
+      "relation": "mentioned_in",
+      "target": "doc:campus_network",
+      "doc": "campus_network",
+      "evidence": "[rule] ption 主数据中心核心交换机 Cisco N9K-C93180 Gi0/1 uplink 连接 ACC-SW-12 Gi0/24，链路速率 10Gbps，互联 VLAN 10 Gi0/2 ip address 10.10.20.1/24 作为 VL",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "inc:INC-20260714",
+      "relation": "mentioned_in",
+      "target": "doc:campus_network",
+      "doc": "campus_network",
+      "evidence": "[rule] 0/1 该设备角色为接入交换机，厂商为 Huawei，位于教学楼 服务：DHCP、NTP、SNMP 在核心交换机上启用 INC-20260714 故障事件：ACC-SW-12 上联链路中断导致 VLAN 20 业务中断，受影响设备包含 CORE-SW-01",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "ip:10.10.20.254",
+      "relation": "mentioned_in",
+      "target": "doc:campus_network",
+      "doc": "campus_network",
+      "evidence": "[rule] hostname ACC-SW-12 Gi0/1 ip address 10.10.20.0/24 网段内的网关地址 10.10.20.254 Gi0/24 uplink 对接 CORE-SW-01 Gi0/1 该设备角色为接入交换机，厂商为 Huawei，位于",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "net:10.10.20.0/24",
+      "relation": "mentioned_in",
+      "target": "doc:campus_network",
+      "doc": "campus_network",
+      "evidence": "[rule] VLAN 20 配置于核心交换机，服务于教学楼 hostname ACC-SW-12 Gi0/1 ip address 10.10.20.0/24 网段内的网关地址 10.10.20.254 Gi0/24 uplink 对接 CORE-SW-01 Gi0/1 该设备",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "net:10.10.20.1/24",
+      "relation": "mentioned_in",
+      "target": "doc:campus_network",
+      "doc": "campus_network",
+      "evidence": "[rule] 连接 ACC-SW-12 Gi0/24，链路速率 10Gbps，互联 VLAN 10 Gi0/2 ip address 10.10.20.1/24 作为 VLAN 20 网关 VLAN 20 配置于核心交换机，服务于教学楼 hostname ACC-SW-12 Gi",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "vlan:10",
+      "relation": "mentioned_in",
+      "target": "doc:campus_network",
+      "doc": "campus_network",
+      "evidence": "[rule] N9K-C93180 Gi0/1 uplink 连接 ACC-SW-12 Gi0/24，链路速率 10Gbps，互联 VLAN 10 Gi0/2 ip address 10.10.20.1/24 作为 VLAN 20 网关 VLAN 20 配置于核心交",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "vlan:20",
+      "relation": "mentioned_in",
+      "target": "doc:campus_network",
+      "doc": "campus_network",
+      "evidence": "[rule] 24，链路速率 10Gbps，互联 VLAN 10 Gi0/2 ip address 10.10.20.1/24 作为 VLAN 20 网关 VLAN 20 配置于核心交换机，服务于教学楼 hostname ACC-SW-12 Gi0/1 ip addr",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+{"type": "ConfigBlock", "label": "interface Gi0/1", "doc": "device_config_sample"}
+{"type": "Command", "label": "ip address", "doc": "device_config_sample"}

@@ -1,0 +1,156 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://kgcourse.org/ontology/mlps#> .
+
+<> a owl:Ontology ;
+    owl:versionInfo "v1.0" ;
+    rdfs:seeAlso <https://openstd.samr.gov.cn/> ;
+    rdfs:label "网络安全等级保护（等保 2.0）合规知识图谱"@zh ;
+    rdfs:comment "把标准条款、控制项、等级、资产与合规证据连成合规图谱，支撑差距分析与整改清单生成。"@zh .
+
+:ComplianceObject a owl:Class ;
+    rdfs:label "合规对象"@zh ;
+    rdfs:comment "合规域顶层概念"@zh ;
+    .
+
+:Standard a owl:Class ;
+    rdfs:subClassOf :ComplianceObject ;
+    rdfs:label "标准/法规"@zh ;
+    rdfs:comment "GB/T 22239、网络安全法等"@zh ;
+    .
+
+:Clause a owl:Class ;
+    rdfs:subClassOf :ComplianceObject ;
+    rdfs:label "条款"@zh ;
+    rdfs:comment "标准中的编号条款"@zh ;
+    .
+
+:ControlItem a owl:Class ;
+    rdfs:subClassOf :ComplianceObject ;
+    rdfs:label "控制项"@zh ;
+    rdfs:comment "可测评的控制要求"@zh ;
+    .
+
+:ControlFamily a owl:Class ;
+    rdfs:subClassOf :ComplianceObject ;
+    rdfs:label "控制类"@zh ;
+    rdfs:comment "安全物理环境/通信网络/区域边界等"@zh ;
+    .
+
+:Level a owl:Class ;
+    rdfs:subClassOf :ComplianceObject ;
+    rdfs:label "安全保护等级"@zh ;
+    rdfs:comment "第一级至第五级"@zh ;
+    .
+
+:Asset a owl:Class ;
+    rdfs:subClassOf :ComplianceObject ;
+    rdfs:label "被保护对象"@zh ;
+    rdfs:comment "系统/网络/主机/数据"@zh ;
+    .
+
+:Evidence a owl:Class ;
+    rdfs:subClassOf :ComplianceObject ;
+    rdfs:label "合规证据"@zh ;
+    rdfs:comment "配置截图/日志/制度文档"@zh ;
+    .
+
+:Risk a owl:Class ;
+    rdfs:subClassOf :ComplianceObject ;
+    rdfs:label "风险项"@zh ;
+    rdfs:comment "未满足要求的风险"@zh ;
+    .
+
+:Role a owl:Class ;
+    rdfs:subClassOf :ComplianceObject ;
+    rdfs:label "责任角色"@zh ;
+    rdfs:comment "责任部门/岗位"@zh ;
+    .
+
+:contains_clause a owl:ObjectProperty ;
+    rdfs:domain :Standard ;
+    rdfs:range :Clause ;
+    rdfs:label "包含条款"@zh ;
+    rdfs:comment "标准包含条款"@zh ;
+    .
+
+:has_control a owl:ObjectProperty ;
+    rdfs:domain :Clause ;
+    rdfs:range :ControlItem ;
+    rdfs:label "包含控制项"@zh ;
+    rdfs:comment "条款对应的控制项"@zh ;
+    .
+
+:belongs_to_family a owl:ObjectProperty ;
+    rdfs:domain :ControlItem ;
+    rdfs:range :ControlFamily ;
+    rdfs:label "归属控制类"@zh ;
+    rdfs:comment "控制项所属安全类"@zh ;
+    .
+
+:requires_level a owl:ObjectProperty ;
+    rdfs:domain :ControlItem ;
+    rdfs:range :Level ;
+    rdfs:label "适用于等级"@zh ;
+    rdfs:comment "控制项适用于哪一等级"@zh ;
+    .
+
+:applies_to a owl:ObjectProperty ;
+    rdfs:domain :ControlItem ;
+    rdfs:range :Asset ;
+    rdfs:label "适用于"@zh ;
+    rdfs:comment "控制项适用对象"@zh ;
+    .
+
+:satisfied_by a owl:ObjectProperty ;
+    rdfs:domain :ControlItem ;
+    rdfs:range :Evidence ;
+    rdfs:label "由证据满足"@zh ;
+    rdfs:comment "控制项由合规证据支撑"@zh ;
+    .
+
+:catches_risk a owl:ObjectProperty ;
+    rdfs:domain :ControlItem ;
+    rdfs:range :Risk ;
+    rdfs:label "识别风险"@zh ;
+    rdfs:comment "未满足则产生风险"@zh ;
+    .
+
+:owned_by_role a owl:ObjectProperty ;
+    rdfs:domain :ControlItem ;
+    rdfs:range :Role ;
+    rdfs:label "责任角色"@zh ;
+    rdfs:comment "控制项责任角色"@zh ;
+    .
+
+:quoted_from a owl:ObjectProperty ;
+    rdfs:domain :Clause ;
+    rdfs:range :Standard ;
+    rdfs:label "引用自"@zh ;
+    rdfs:comment "条款引用上位法规"@zh ;
+    .
+
+:mentioned_in a owl:ObjectProperty ;
+    rdfs:label "出现在"@zh ;
+    rdfs:comment "实体出现在来源文档中（结构关系）"@zh ;
+    .
+
+:clause_id a owl:DatatypeProperty ;
+    rdfs:domain :Clause ;
+    rdfs:range :xsd:string ;
+    rdfs:label "条款号"@zh ;
+    .
+
+:level_no a owl:DatatypeProperty ;
+    rdfs:domain :Level ;
+    rdfs:range :xsd:integer ;
+    rdfs:label "等级"@zh ;
+    .
+
+:evidence_type a owl:DatatypeProperty ;
+    rdfs:domain :Evidence ;
+    rdfs:range :xsd:string ;
+    rdfs:label "证据类型"@zh ;
+    .

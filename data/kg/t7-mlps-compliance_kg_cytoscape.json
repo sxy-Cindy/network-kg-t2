@@ -1,0 +1,314 @@
+{
+  "elements": {
+    "nodes": [
+      {
+        "data": {
+          "id": "std:GB/T 22239-2019",
+          "label": "GB/T 22239-2019",
+          "type": "Standard"
+        }
+      },
+      {
+        "data": {
+          "id": "clause:8.1.3",
+          "label": "8.1.3 安全区域边界",
+          "type": "Clause"
+        }
+      },
+      {
+        "data": {
+          "id": "clause:8.1.3.1",
+          "label": "8.1.3.1 边界防护",
+          "type": "Clause"
+        }
+      },
+      {
+        "data": {
+          "id": "clause:8.1.4",
+          "label": "8.1.4 安全计算环境",
+          "type": "Clause"
+        }
+      },
+      {
+        "data": {
+          "id": "lvl:三",
+          "label": "第三级",
+          "type": "Level"
+        }
+      },
+      {
+        "data": {
+          "id": "ControlFamily:安全区域边界",
+          "label": "安全区域边界",
+          "type": "ControlFamily"
+        }
+      },
+      {
+        "data": {
+          "id": "ControlFamily:安全计算环境",
+          "label": "安全计算环境",
+          "type": "ControlFamily"
+        }
+      },
+      {
+        "data": {
+          "id": "Asset:网络设备",
+          "label": "网络设备",
+          "type": "Asset"
+        }
+      },
+      {
+        "data": {
+          "id": "Asset:安全设备",
+          "label": "安全设备",
+          "type": "Asset"
+        }
+      },
+      {
+        "data": {
+          "id": "Asset:业务系统",
+          "label": "业务系统",
+          "type": "Asset"
+        }
+      },
+      {
+        "data": {
+          "id": "Evidence:配置截图",
+          "label": "配置截图",
+          "type": "Evidence"
+        }
+      },
+      {
+        "data": {
+          "id": "Evidence:审计日志",
+          "label": "审计日志",
+          "type": "Evidence"
+        }
+      },
+      {
+        "data": {
+          "id": "Evidence:测评报告",
+          "label": "测评报告",
+          "type": "Evidence"
+        }
+      },
+      {
+        "data": {
+          "id": "Risk:未授权访问",
+          "label": "未授权访问",
+          "type": "Risk"
+        }
+      },
+      {
+        "data": {
+          "id": "Risk:数据泄露",
+          "label": "数据泄露",
+          "type": "Risk"
+        }
+      },
+      {
+        "data": {
+          "id": "Role:网络管理员",
+          "label": "网络管理员",
+          "type": "Role"
+        }
+      },
+      {
+        "data": {
+          "id": "Role:安全管理员",
+          "label": "安全管理员",
+          "type": "Role"
+        }
+      },
+      {
+        "data": {
+          "id": "doc:mlps_clause_sample",
+          "label": "mlps_clause_sample",
+          "type": "Document"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "data": {
+          "id": "e0",
+          "source": "Asset:业务系统",
+          "target": "doc:mlps_clause_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e1",
+          "source": "Asset:安全设备",
+          "target": "doc:mlps_clause_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e2",
+          "source": "Asset:网络设备",
+          "target": "doc:mlps_clause_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e3",
+          "source": "ControlFamily:安全区域边界",
+          "target": "doc:mlps_clause_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e4",
+          "source": "ControlFamily:安全计算环境",
+          "target": "doc:mlps_clause_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e5",
+          "source": "Evidence:审计日志",
+          "target": "doc:mlps_clause_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e6",
+          "source": "Evidence:测评报告",
+          "target": "doc:mlps_clause_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e7",
+          "source": "Evidence:配置截图",
+          "target": "doc:mlps_clause_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e8",
+          "source": "Risk:数据泄露",
+          "target": "doc:mlps_clause_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e9",
+          "source": "Risk:未授权访问",
+          "target": "doc:mlps_clause_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e10",
+          "source": "Role:安全管理员",
+          "target": "doc:mlps_clause_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e11",
+          "source": "Role:网络管理员",
+          "target": "doc:mlps_clause_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e12",
+          "source": "clause:8.1.3",
+          "target": "ControlFamily:安全区域边界",
+          "label": "belongs_to_family"
+        }
+      },
+      {
+        "data": {
+          "id": "e13",
+          "source": "clause:8.1.3",
+          "target": "doc:mlps_clause_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e14",
+          "source": "clause:8.1.3",
+          "target": "std:GB/T 22239-2019",
+          "label": "quoted_from"
+        }
+      },
+      {
+        "data": {
+          "id": "e15",
+          "source": "clause:8.1.3.1",
+          "target": "ControlFamily:安全区域边界",
+          "label": "belongs_to_family"
+        }
+      },
+      {
+        "data": {
+          "id": "e16",
+          "source": "clause:8.1.3.1",
+          "target": "doc:mlps_clause_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e17",
+          "source": "clause:8.1.3.1",
+          "target": "std:GB/T 22239-2019",
+          "label": "quoted_from"
+        }
+      },
+      {
+        "data": {
+          "id": "e18",
+          "source": "clause:8.1.4",
+          "target": "ControlFamily:安全计算环境",
+          "label": "belongs_to_family"
+        }
+      },
+      {
+        "data": {
+          "id": "e19",
+          "source": "clause:8.1.4",
+          "target": "doc:mlps_clause_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e20",
+          "source": "lvl:三",
+          "target": "doc:mlps_clause_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e21",
+          "source": "std:GB/T 22239-2019",
+          "target": "doc:mlps_clause_sample",
+          "label": "mentioned_in"
+        }
+      }
+    ]
+  },
+  "stats": {
+    "nodes": 18,
+    "edges": 22
+  }
+}

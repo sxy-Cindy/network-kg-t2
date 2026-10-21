@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d2" for="edge" attr.name="relation" attr.type="string" />
+  <key id="d1" for="node" attr.name="type" attr.type="string" />
+  <key id="d0" for="node" attr.name="label" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="proto:MRC">
+      <data key="d0">MRC</data>
+      <data key="d1">Protocol</data>
+    </node>
+    <node id="proto:RoCEv2">
+      <data key="d0">RoCEv2</data>
+      <data key="d1">Protocol</data>
+    </node>
+    <node id="proto:SRv6">
+      <data key="d0">SRv6</data>
+      <data key="d1">Protocol</data>
+    </node>
+    <node id="tech:packet spraying">
+      <data key="d0">packet spraying</data>
+      <data key="d1">Technique</data>
+    </node>
+    <node id="tech:source routing">
+      <data key="d0">source routing</data>
+      <data key="d1">Technique</data>
+    </node>
+    <node id="tech:multi-plane">
+      <data key="d0">multi-plane</data>
+      <data key="d1">Technique</data>
+    </node>
+    <node id="tech:packet trimming">
+      <data key="d0">packet trimming</data>
+      <data key="d1">Technique</data>
+    </node>
+    <node id="fm:congestion">
+      <data key="d0">congestion</data>
+      <data key="d1">FailureMode</data>
+    </node>
+    <node id="fm:link flap">
+      <data key="d0">link flap</data>
+      <data key="d1">FailureMode</data>
+    </node>
+    <node id="fm:switch reboot">
+      <data key="d0">switch reboot</data>
+      <data key="d1">FailureMode</data>
+    </node>
+    <node id="fm:packet loss">
+      <data key="d0">packet loss</data>
+      <data key="d1">FailureMode</data>
+    </node>
+    <node id="fm:incast">
+      <data key="d0">incast</data>
+      <data key="d1">FailureMode</data>
+    </node>
+    <node id="fm:path failure">
+      <data key="d0">path failure</data>
+      <data key="d1">FailureMode</data>
+    </node>
+    <node id="comp:800G">
+      <data key="d0">800G</data>
+      <data key="d1">Component</data>
+    </node>
+    <node id="comp:100G">
+      <data key="d0">100G</data>
+      <data key="d1">Component</data>
+    </node>
+    <node id="std:OCP">
+      <data key="d0">OCP</data>
+      <data key="d1">Standard</data>
+    </node>
+    <node id="std:UEC">
+      <data key="d0">UEC</data>
+      <data key="d1">Standard</data>
+    </node>
+    <node id="std:Ultra Ethernet Consortium">
+      <data key="d0">Ultra Ethernet Consortium</data>
+      <data key="d1">Standard</data>
+    </node>
+    <node id="Benefit:lower-power">
+      <data key="d0">lower power</data>
+      <data key="d1">Benefit</data>
+    </node>
+    <node id="Benefit:fewer-components">
+      <data key="d0">fewer components</data>
+      <data key="d1">Benefit</data>
+    </node>
+    <node id="Benefit:path-diversity">
+      <data key="d0">path diversity</data>
+      <data key="d1">Benefit</data>
+    </node>
+    <node id="Benefit:failure-resilience">
+      <data key="d0">failure resilience</data>
+      <data key="d1">Benefit</data>
+    </node>
+    <node id="Workload:synchronous-training">
+      <data key="d0">synchronous training</data>
+      <data key="d1">Workload</data>
+    </node>
+    <node id="Workload:checkpoint">
+      <data key="d0">checkpoint</data>
+      <data key="d1">Workload</data>
+    </node>
+    <node id="Component:switch">
+      <data key="d0">switch</data>
+      <data key="d1">Component</data>
+    </node>
+    <node id="Component:交换机">
+      <data key="d0">交换机</data>
+      <data key="d1">Component</data>
+    </node>
+    <node id="doc:ai_dcn_notes">
+      <data key="d0">ai_dcn_notes</data>
+      <data key="d1">Document</data>
+    </node>
+    <edge source="proto:MRC" target="doc:ai_dcn_notes">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="proto:MRC" target="tech:packet spraying">
+      <data key="d2">uses</data>
+    </edge>
+    <edge source="proto:MRC" target="tech:source routing">
+      <data key="d2">uses</data>
+    </edge>
+    <edge source="proto:RoCEv2" target="doc:ai_dcn_notes">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="proto:SRv6" target="doc:ai_dcn_notes">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="proto:SRv6" target="tech:source routing">
+      <data key="d2">uses</data>
+    </edge>
+    <edge source="tech:packet spraying" target="doc:ai_dcn_notes">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="tech:packet spraying" target="fm:congestion">
+      <data key="d2">mitigates</data>
+    </edge>
+    <edge source="tech:source routing" target="doc:ai_dcn_notes">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="tech:multi-plane" target="doc:ai_dcn_notes">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="tech:packet trimming" target="doc:ai_dcn_notes">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="fm:congestion" target="doc:ai_dcn_notes">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="fm:link flap" target="doc:ai_dcn_notes">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="fm:switch reboot" target="doc:ai_dcn_notes">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="fm:packet loss" target="doc:ai_dcn_notes">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="fm:incast" target="doc:ai_dcn_notes">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="fm:path failure" target="doc:ai_dcn_notes">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="comp:800G" target="doc:ai_dcn_notes">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="comp:100G" target="doc:ai_dcn_notes">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="std:OCP" target="doc:ai_dcn_notes">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="std:UEC" target="doc:ai_dcn_notes">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="std:Ultra Ethernet Consortium" target="doc:ai_dcn_notes">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="Benefit:lower-power" target="doc:ai_dcn_notes">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="Benefit:fewer-components" target="doc:ai_dcn_notes">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="Benefit:path-diversity" target="doc:ai_dcn_notes">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="Benefit:failure-resilience" target="doc:ai_dcn_notes">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="Workload:synchronous-training" target="doc:ai_dcn_notes">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="Workload:checkpoint" target="doc:ai_dcn_notes">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="Component:switch" target="doc:ai_dcn_notes">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="Component:交换机" target="doc:ai_dcn_notes">
+      <data key="d2">mentioned_in</data>
+    </edge>
+  </graph>
+</graphml>

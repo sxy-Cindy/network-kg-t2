@@ -1,0 +1,8 @@
+# BGP 路由事件摘录（示意语料，AS_PATH 与采集点命名遵循 RouteViews/RIS 惯例）
+BGP update observed at collector route-views2 for prefix 203.0.113.0/24
+AS_PATH: 64500 64510 12345  ->  前缀由 AS12345 始发
+AS12345 owned_by ExampleNet, prefix 203.0.113.0/24 authorized_by ROA (RPKI valid)
+BGP hijack detected: AS66666 announced 203.0.113.0/24 with AS_PATH 64600 66666
+Route leak detected involving AS64600 and AS12345
+collector rrc00 also observed the same prefix with AS_PATH 64500 64510 12345
+MOAS conflict for 203.0.113.0/24 between AS12345 and AS66666

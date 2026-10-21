@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>《知识图谱技术与应用》网络工程实践作业 · 选题图文介绍</title>
+<style>
+  :root{
+    --ink:#0f172a; --muted:#5b6b82; --line:#e2e8f0; --bg:#f7f9fc; --card:#fff;
+    --blue:#2563eb; --blue-bg:#eff6ff; --teal:#0f766e; --teal-bg:#ecfdf5;
+    --amber:#b45309; --amber-bg:#fffbeb; --rose:#be123c; --rose-bg:#fff1f2;
+    --violet:#6d28d9; --violet-bg:#f5f3ff; --slate-bg:#f1f5f9;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.7 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px 64px}
+  h1,h2,h3,h4{line-height:1.35;margin:0 0 10px}
+  h2{font-size:24px;margin-top:44px;padding-bottom:8px;border-bottom:2px solid var(--line)}
+  h3{font-size:19px}
+  p{margin:0 0 10px}
+  a{color:var(--blue);text-decoration:none}
+  code{background:var(--slate-bg);padding:1px 5px;border-radius:4px;font-size:.9em;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  .muted{color:var(--muted)}
+  .small{font-size:13.5px}
+
+  /* ---- hero ---- */
+  header.hero{background:linear-gradient(135deg,#0f172a,#1e3a8a 60%,#0f766e);color:#fff;
+    padding:40px 0 34px;margin-bottom:24px}
+  header.hero .wrap{padding-bottom:0}
+  .hero h1{font-size:32px;margin-bottom:6px}
+  .hero .sub{opacity:.9;font-size:15px}
+  .kpis{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+  .kpi{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
+    border-radius:12px;padding:10px 16px;min-width:150px}
+  .kpi b{display:block;font-size:22px;line-height:1.2}
+  .kpi span{font-size:12.5px;opacity:.85}
+
+  /* ---- generic blocks ---- */
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:20px;margin:16px 0;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  @media(max-width:820px){.grid2,.grid3{grid-template-columns:1fr}}
+  .note{background:var(--blue-bg);border-left:4px solid var(--blue);border-radius:8px;
+    padding:10px 14px;font-size:14.5px;margin:12px 0}
+  .warn{background:var(--amber-bg);border-left:4px solid var(--amber);border-radius:8px;
+    padding:10px 14px;font-size:14.5px;margin:12px 0}
+  .danger{background:var(--rose-bg);border-left:4px solid var(--rose);border-radius:8px;
+    padding:10px 14px;font-size:14.5px;margin:12px 0}
+  table{width:100%;border-collapse:collapse;font-size:14.5px;margin:10px 0}
+  th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+  th{background:var(--slate-bg);font-weight:600}
+  tr:nth-child(even) td{background:#fbfdff}
+  ul{margin:6px 0 6px 20px;padding:0}
+  li{margin:3px 0}
+
+  /* ---- badges ---- */
+  .badge{display:inline-block;font-size:12px;padding:2px 9px;border-radius:999px;
+    border:1px solid transparent;margin:2px 6px 2px 0;white-space:nowrap}
+  .b-blue{background:var(--blue-bg);color:var(--blue);border-color:#c7dbfe}
+  .b-teal{background:var(--teal-bg);color:var(--teal);border-color:#b9ead9}
+  .b-amber{background:var(--amber-bg);color:var(--amber);border-color:#fbe3b5}
+  .b-violet{background:var(--violet-bg);color:var(--violet);border-color:#ddd3fb}
+  .b-slate{background:var(--slate-bg);color:var(--muted);border-color:#dbe3ec}
+  .stars{letter-spacing:1px;color:var(--amber)}
+  .topic-id{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;color:var(--muted)}
+
+  /* ---- topic card ---- */
+  .topic{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--blue);
+    border-radius:14px;padding:20px 22px;margin:20px 0;box-shadow:0 1px 2px rgba(15,23,42,.05)}
+  .topic.adv{border-left-color:var(--violet)}
+  .topic-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:4px}
+  .idx{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;
+    border-radius:9px;background:var(--blue);color:#fff;font-weight:700}
+  .topic.adv .idx{background:var(--violet)}
+  .topic-head h3{margin:0;font-size:20px}
+  .stage{background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .stage h4{font-size:15px;margin-bottom:6px;color:var(--teal)}
+  .stage.s1 h4{color:var(--blue)} .stage.s2 h4{color:var(--teal)} .stage.s3 h4{color:var(--violet)}
+  figure{margin:12px 0 4px}
+  figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+  svg{max-width:100%;height:auto;display:block}
+  .nb{font:600 12.5px -apple-system,"PingFang SC",sans-serif;fill:#0f172a}
+  .nbs{font:11.5px -apple-system,"PingFang SC",sans-serif;fill:#475569}
+  .el{font:11px ui-monospace,Menlo,monospace;fill:#475569}
+  .ax{font:12px -apple-system,"PingFang SC",sans-serif;fill:#334155}
+
+  .foot{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:13.5px}
+  /* 打印/导出 PDF：A4 纵向，按卡片与图表分页 */
+  /* 上留 15mm 给叠印页眉、下留 12mm 给页码（正文不会进入这两条带） */
+  @page{size:A4 portrait;margin:15mm 9mm 12mm}
+  @media print{
+    body{background:#fff;font-size:12.5px}
+    .wrap{max-width:none;padding:0}
+    /* 选题卡允许跨页（否则每张卡各自占一页，21 页里一半是空白）；
+       但卡内的图表/阶段块/表格必须完整不拆 */
+    /* 大卡片整体 avoid 会把整页推空（实测 p2 只填 30%）；改为可跨页，
+       由内部的 figure/table/grid 各自保证不拆 */
+    .card{box-shadow:none;break-inside:auto;page-break-inside:auto;margin:8px 0}
+    .topic{box-shadow:none;break-inside:auto;page-break-inside:auto;margin:8px 0}
+    /* 阶段块的三列容器允许跨页（否则整块被推走、留半页空白）；
+       单个 .stage 仍由下面的规则保证不拆 */
+    .grid2,.grid3{break-inside:auto;page-break-inside:auto}
+    h2{break-after:avoid;page-break-after:avoid;margin-top:20px}
+    h3,h4{break-after:avoid}
+    header.hero{background:#0f172a !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    svg,.stage,table,figure{break-inside:avoid;page-break-inside:avoid}
+    .kpi{background:rgba(255,255,255,.14)}
+    a{color:var(--ink);text-decoration:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- 共享 SVG defs：箭头 marker + 节点渐变 -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7f8ea3"/>
+    </marker>
+    <marker id="arB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/>
+    </marker>
+    <linearGradient id="gBlue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eff6ff"/><stop offset="1" stop-color="#dbeafe"/>
+    </linearGradient>
+    <linearGradient id="gTeal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ecfdf5"/><stop offset="1" stop-color="#ccfbf1"/>
+    </linearGradient>
+    <linearGradient id="gViolet" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f5f3ff"/><stop offset="1" stop-color="#ede9fe"/>
+    </linearGradient>
+    <linearGradient id="gAmber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffbeb"/><stop offset="1" stop-color="#fef3c7"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>《知识图谱技术与应用》· 网络工程专业实践作业</h1>
+    <div class="sub">8 个选题 × 三阶段流水线：本体构建 → 三种方法构建知识图谱 → 基于 KG 的 Agent 应用（接入 Intellect Agent）</div>
+    <div class="kpis">
+      <div class="kpi"><b>8 个</b><span>选题（基础层 4 · 进阶层 4）</span></div>
+      <div class="kpi"><b>3 阶段</b><span>本体 → 三方法 KG → Agent 应用</span></div>
+      <div class="kpi"><b>4 周 / 16 学时</b><span>每周 4 学时 + 课外约 10 学时</span></div>
+      <div class="kpi"><b>0.653</b><span>LLM 法三元组实测 F1（最高）</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<h2>一、三阶段流水线（所有选题统一）</h2>
+<div class="card">
+<figure>
+<svg viewBox="0 0 1020 300" role="img" aria-label="三阶段流水线示意图">
+  <!-- 阶段底衬 -->
+  <rect x="10"  y="40" width="300" height="230" rx="14" fill="#f8fbff" stroke="#cfe0f5"/>
+  <rect x="322" y="40" width="376" height="230" rx="14" fill="#f6fffb" stroke="#c9ecdf"/>
+  <rect x="710" y="40" width="300" height="230" rx="14" fill="#faf8ff" stroke="#ded5fb"/>
+  <text x="24" y="30" class="ax" font-weight="700">阶段一 · 本体构建</text>
+  <text x="336" y="30" class="ax" font-weight="700">阶段二 · 三种方法构建知识图谱</text>
+  <text x="724" y="30" class="ax" font-weight="700">阶段三 · KG 增强应用</text>
+
+  <!-- 阶段一 -->
+  <rect x="30" y="60" width="120" height="46" rx="9" fill="url(#gBlue)" stroke="#93b8ef"/>
+  <text x="90" y="80" class="nb" text-anchor="middle">标准/规范/语料</text>
+  <text x="90" y="96" class="nbs" text-anchor="middle">真实公开数据</text>
+  <path d="M150 83 L188 83" class="e" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+  <rect x="190" y="60" width="120" height="46" rx="9" fill="url(#gBlue)" stroke="#93b8ef"/>
+  <text x="250" y="80" class="nb" text-anchor="middle">本体种子</text>
+  <text x="250" y="96" class="nbs" text-anchor="middle">ontology.json</text>
+  <path d="M250 106 L250 134" class="e" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+  <rect x="190" y="136" width="120" height="46" rx="9" fill="#fff" stroke="#93b8ef"/>
+  <text x="250" y="156" class="nb" text-anchor="middle">ontology.ttl</text>
+  <text x="250" y="172" class="nbs" text-anchor="middle">OWL/RDFS · 可被 rdflib 解析</text>
+  <path d="M250 182 L250 210" class="e" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+  <rect x="178" y="212" width="144" height="40" rx="9" fill="#fff" stroke="#93b8ef" stroke-dasharray="4 3"/>
+  <text x="250" y="230" class="nb" text-anchor="middle">本体自检</text>
+  <text x="250" y="245" class="nbs" text-anchor="middle">重复ID / 父类 / 域值域 = 0 问题</text>
+
+  <!-- 阶段二：三方法 -->
+  <rect x="342" y="60" width="106" height="52" rx="9" fill="url(#gTeal)" stroke="#7fd3b6"/>
+  <text x="395" y="80" class="nb" text-anchor="middle">① 规则/词典</text>
+  <text x="395" y="97" class="nbs" text-anchor="middle">可解释·零标注</text>
+  <rect x="342" y="122" width="106" height="52" rx="9" fill="url(#gTeal)" stroke="#7fd3b6"/>
+  <text x="395" y="142" class="nb" text-anchor="middle">② 机器学习</text>
+  <text x="395" y="159" class="nbs" text-anchor="middle">序列标注 / BERT</text>
+  <rect x="342" y="184" width="106" height="52" rx="9" fill="url(#gTeal)" stroke="#7fd3b6"/>
+  <text x="395" y="204" class="nb" text-anchor="middle">③ LLM 抽取</text>
+  <text x="395" y="221" class="nbs" text-anchor="middle">本体约束+证据</text>
+  <path d="M448 86 L486 86" class="e" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+  <path d="M448 148 L486 148" class="e" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+  <path d="M448 210 L486 210" class="e" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+  <rect x="488" y="96" width="118" height="108" rx="9" fill="#fff" stroke="#7fd3b6"/>
+  <text x="547" y="120" class="nb" text-anchor="middle">融合 · 消歧</text>
+  <text x="547" y="140" class="nbs" text-anchor="middle">投票 + 置信度</text>
+  <text x="547" y="158" class="nbs" text-anchor="middle">质量门槛</text>
+  <text x="547" y="176" class="nbs" text-anchor="middle">标签/受控词表/域值域</text>
+  <text x="547" y="194" class="nbs" text-anchor="middle">→ 丢弃清单留痕</text>
+  <path d="M606 150 L644 150" class="e" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+  <rect x="646" y="120" width="44" height="60" rx="9" fill="#fff" stroke="#7fd3b6"/>
+  <text x="668" y="145" class="nb" text-anchor="middle">金</text>
+  <text x="668" y="162" class="nb" text-anchor="middle">标</text>
+  <text x="668" y="177" class="nbs" text-anchor="middle">准</text>
+  <text x="547" y="248" class="nbs" text-anchor="middle">产出：data/extraction/ + data/kg/（JSON · TTL · GraphML · Cytoscape）</text>
+
+  <!-- 阶段三 -->
+  <rect x="730" y="60" width="120" height="46" rx="9" fill="url(#gViolet)" stroke="#b9a6f1"/>
+  <text x="790" y="80" class="nb" text-anchor="middle">Intellect Agent</text>
+  <text x="790" y="96" class="nbs" text-anchor="middle">Skill 路线 / MCP 路线</text>
+  <path d="M790 106 L790 134" class="e" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+  <rect x="730" y="136" width="120" height="46" rx="9" fill="#fff" stroke="#b9a6f1"/>
+  <text x="790" y="156" class="nb" text-anchor="middle">④ 检索 → 子图</text>
+  <text x="790" y="172" class="nbs" text-anchor="middle">问题→实体→三元组(带证据)</text>
+  <path d="M790 182 L790 206" class="e" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+  <rect x="730" y="208" width="120" height="46" rx="9" fill="#fff" stroke="#b9a6f1"/>
+  <text x="790" y="228" class="nb" text-anchor="middle">⑤ 生成 + 逐句验证</text>
+  <text x="790" y="244" class="nbs" text-anchor="middle">幻觉率 · 三级溯源</text>
+  <text x="548" y="66" class="el">同一语料 · 同一本体 · 同一评测口径</text>
+</svg>
+<figcaption>三阶段是递进依赖：本体的类/关系分别约束<b>抽取</b>（越界即丢弃）与<b>查询路径</b>；阶段二的产物是阶段三唯一允许的事实来源。</figcaption>
+</figure>
+</div>
+
+<h2>二、实测基线（脚手架已跑通，可作为你们的参照）</h2>
+<div class="card">
+<figure>
+<svg viewBox="0 0 1020 430" role="img" aria-label="四种方法的实测指标对比">
+  <text x="20" y="24" class="ax" font-weight="700">三元组级 F1（t5-protocol-rfc，5 篇真实 RFC，金标准 23 实体 / 18 三元组）</text>
+  <line x1="150" y1="34" x2="150" y2="380" stroke="#dbe3ec"/>
+  <line x1="290" y1="34" x2="290" y2="380" stroke="#eef2f7"/>
+  <line x1="430" y1="34" x2="430" y2="380" stroke="#eef2f7"/>
+  <line x1="570" y1="34" x2="570" y2="380" stroke="#eef2f7"/>
+  <line x1="710" y1="34" x2="710" y2="380" stroke="#eef2f7"/>
+  <line x1="850" y1="34" x2="850" y2="380" stroke="#eef2f7"/>
+  <text x="150" y="398" class="el" text-anchor="middle">0</text>
+  <text x="290" y="398" class="el" text-anchor="middle">0.2</text>
+  <text x="430" y="398" class="el" text-anchor="middle">0.4</text>
+  <text x="570" y="398" class="el" text-anchor="middle">0.6</text>
+  <text x="710" y="398" class="el" text-anchor="middle">0.8</text>
+  <text x="850" y="398" class="el" text-anchor="middle">1.0</text>
+
+  <text x="20" y="70" class="ax">① 规则/词典（基线）</text>
+  <rect x="150" y="56" width="127" height="22" rx="5" fill="#93c5fd"/>
+  <text x="286" y="72" class="nb">0.182</text>
+  <text x="20" y="112" class="ax">② 机器学习（弱监督）</text>
+  <rect x="150" y="98" width="31" height="22" rx="5" fill="#fca5a5"/>
+  <text x="190" y="114" class="nb">0.044　← 最弱：小样本弱监督，过度召回</text>
+  <text x="20" y="154" class="ax">③ LLM（本体约束+证据）</text>
+  <rect x="150" y="140" width="457" height="22" rx="5" fill="#6ee7b7"/>
+  <text x="616" y="156" class="nb">0.653　← 最强：长距离语义关系</text>
+  <text x="20" y="196" class="ax">融合（三路投票）</text>
+  <rect x="150" y="182" width="102" height="22" rx="5" fill="#c4b5fd"/>
+  <text x="261" y="198" class="nb">0.146　召回最高 0.944，精度靠质量门槛治理</text>
+
+  <text x="20" y="246" class="ax" font-weight="700">实体级 F1（同一金标准）</text>
+  <text x="20" y="286" class="ax">① 规则 / ② 模型</text>
+  <rect x="150" y="272" width="100" height="20" rx="5" fill="#93c5fd"/>
+  <rect x="150" y="296" width="89" height="20" rx="5" fill="#fca5a5"/>
+  <text x="262" y="288" class="nb">0.142</text><text x="251" y="312" class="nb">0.128</text>
+  <text x="20" y="344" class="ax">③ LLM / 融合</text>
+  <rect x="150" y="330" width="531" height="20" rx="5" fill="#6ee7b7"/>
+  <rect x="150" y="354" width="73" height="20" rx="5" fill="#c4b5fd"/>
+  <text x="691" y="346" class="nb">0.759</text><text x="233" y="370" class="nb">0.105</text>
+</svg>
+<figcaption>⚠ 金标准是<b>抽样</b>（几十条量级），因此上表的 precision 是<b>下界</b>；正式报告必须同时给召回率并说明归一化口径与阈值（模型 <code>min_prob=0.6</code>、规则邻近窗口 <code>max_gap=40</code>）。</figcaption>
+</figure>
+<table>
+  <tr><th>阶段三实测（题库 8 题）</th><th>数值</th><th>说明</th></tr>
+  <tr><td>图谱可回答率</td><td>0.75</td><td>6/8 题检索命中期望三元组</td></tr>
+  <tr><td>平均期望三元组覆盖率</td><td>0.667</td><td>检索层是本类应用的瓶颈（见选题卡 T5 的坑）</td></tr>
+  <tr><td>图谱规模</td><td>421 节点 / 739 边</td><td>垃圾实体 0 · 域值域违规 1（已降权）</td></tr>
+</table>
+</div>
+
+<h2>三、选题分层与选择规则</h2>
+<div class="grid2">
+  <div class="card" style="border-left:5px solid var(--blue)">
+    <h3 style="color:var(--blue)">基础层 · 优先分配（不限额）</h3>
+    <p class="small">语料现成或一条命令可下载，清洗成本低、模式清晰 —— 4 周节奏下<b>第 3 周能出指标</b>的概率最高。</p>
+    <p><span class="badge b-blue">T1 资产拓扑</span><span class="badge b-blue">T2 威胁情报</span><span class="badge b-blue">T5 协议规范</span><span class="badge b-blue">T7 等保合规</span></p>
+  </div>
+  <div class="card" style="border-left:5px solid var(--violet)">
+    <h3 style="color:var(--violet)">进阶层 · 学有余力（每类 ≤2 组）</h3>
+    <p class="small">需要日志解析 / MRT 解析 / 多文档整理 / 厂商配置语法等额外语料工程。<b>须在第 1 周提交"数据通道验证通过"证据</b>；未通过者第 2 周起转入基础层（不扣分）。</p>
+    <p><span class="badge b-violet">T3 日志根因</span><span class="badge b-violet">T4 BGP 路由</span><span class="badge b-violet">T6 AI 数据中心网络</span><span class="badge b-violet">T8 配置校验</span></p>
+  </div>
+</div>
+
+<h2>四、8 个选题详解</h2>
+
+<!-- ============ T1 ============ -->
+<section class="topic">
+  <div class="topic-head">
+    <span class="idx">T1</span>
+    <h3>网络设备、接口与链路资产知识图谱</h3>
+    <span class="badge b-blue">网络管理与运维</span>
+    <span class="badge b-slate">难度 <span class="stars">★★☆</span></span>
+    <span class="badge b-teal">数据可得性：高</span>
+  </div>
+  <p class="topic-id">题目 ID：<code>t1-net-assets</code> · 脚手架自带：12 类 / 11 关系 · 示意语料可抽 20 实体 / 38 关系</p>
+  <p><b>一句话</b>：把散落在设备配置、运维台账、DCIM/IPAM 里的"设备—接口—链路—网段—角色"关系汇成资产图，回答"某设备宕机影响哪些业务网段""这条链路是否双上行"。</p>
+
+  <figure>
+  <svg viewBox="0 0 660 175" role="img" aria-label="T1 本体骨架示意">
+    <rect x="20"  y="30" width="118" height="36" rx="9" fill="url(#gBlue)" stroke="#93b8ef"/>
+    <text x="79" y="53" class="nb" text-anchor="middle">Device 设备</text>
+    <rect x="180" y="30" width="118" height="36" rx="9" fill="url(#gBlue)" stroke="#93b8ef"/>
+    <text x="239" y="53" class="nb" text-anchor="middle">Interface 接口</text>
+    <rect x="340" y="30" width="118" height="36" rx="9" fill="url(#gBlue)" stroke="#93b8ef"/>
+    <text x="399" y="53" class="nb" text-anchor="middle">Link 链路</text>
+    <rect x="500" y="30" width="140" height="36" rx="9" fill="url(#gTeal)" stroke="#7fd3b6"/>
+    <text x="570" y="53" class="nb" text-anchor="middle">Incident 故障事件</text>
+    <path d="M138 48 L180 48" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="159" y="41" class="el" text-anchor="middle">has_interface</text>
+    <path d="M298 48 L340 48" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="319" y="41" class="el" text-anchor="middle">connects_to</text>
+    <path d="M458 48 L500 48" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="479" y="41" class="el" text-anchor="middle">affected_by</text>
+    <rect x="180" y="112" width="118" height="36" rx="9" fill="url(#gTeal)" stroke="#7fd3b6"/>
+    <text x="239" y="135" class="nb" text-anchor="middle">IPSubnet 网段</text>
+    <path d="M239 66 L239 112" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="258" y="95" class="el">has_subnet</text>
+    <rect x="360" y="112" width="118" height="36" rx="9" fill="#fff" stroke="#cbd5e1"/>
+    <text x="419" y="135" class="nb" text-anchor="middle">DeviceRole 角色</text>
+  </svg>
+  <figcaption>图示为脚手架自带本体骨架（12 类 / 11 关系）；<b>你必须扩展</b>到至少 10 类 / 10 关系并注明来源（ITIL CI 关系、YANG 模型 container/list 可作上位参考）。</figcaption>
+  </figure>
+
+  <div class="grid3">
+    <div class="stage s1"><h4>① 本体构建</h4><ul class="small">
+      <li>类：Device / Interface / Link / IPSubnet / IPAddress / VLAN / DeviceRole / Site / Vendor / Service / Incident</li>
+      <li>关系：has_interface · connects_to(对称) · has_subnet · located_at · runs · affected_by …</li>
+      <li>加分：把 YANG 模型映射为类与关系</li></ul></div>
+    <div class="stage s2"><h4>② 三种方法</h4><ul class="small">
+      <li><b>A 规则</b>：配置块正则（hostname / interface / ip address / switchport）</li>
+      <li><b>B 模型</b>：设备/接口/网段序列标注；进阶做关系分类器</li>
+      <li><b>C LLM</b>：台账描述性文本（"这条链路上联到核心交换机"）</li></ul></div>
+    <div class="stage s3"><h4>③ Agent 应用</h4><ul class="small">
+      <li>影响面问答：故障设备 → 受影响网段/服务（2–3 跳）</li>
+      <li>配置核查：接口是否已有网关、上行是否双链路</li>
+      <li>Skill 或 MCP 接入 Intellect Agent</li></ul></div>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 1020 120" role="img" aria-label="T1 数据来源">
+      <rect x="10" y="20" width="230" height="80" rx="10" fill="#fff" stroke="#cfe0f5"/>
+      <text x="125" y="45" class="nb" text-anchor="middle">NetBox ★21689</text>
+      <text x="125" y="63" class="nbs" text-anchor="middle">DCIM/IPAM，CSV/REST 导出</text>
+      <text x="125" y="82" class="nbs" text-anchor="middle">Apache-2.0 · 2026-10-14 活跃</text>
+      <rect x="255" y="20" width="230" height="80" rx="10" fill="#fff" stroke="#cfe0f5"/>
+      <text x="370" y="45" class="nb" text-anchor="middle">Batfish ★1503</text>
+      <text x="370" y="63" class="nbs" text-anchor="middle">网络配置快照与校验</text>
+      <text x="370" y="82" class="nbs" text-anchor="middle">Apache-2.0 · 2026-10-14 活跃</text>
+      <rect x="500" y="20" width="230" height="80" rx="10" fill="#fff" stroke="#cfe0f5"/>
+      <text x="615" y="45" class="nb" text-anchor="middle">SNDlib 公开拓扑</text>
+      <text x="615" y="63" class="nbs" text-anchor="middle">真实网络拓扑（GML）</text>
+      <text x="615" y="82" class="nbs" text-anchor="middle">站点本机可达（200）</text>
+      <rect x="745" y="20" width="265" height="80" rx="10" fill="#fffbed" stroke="#fbe3b5"/>
+      <text x="877" y="45" class="nb" text-anchor="middle">设备配置样本</text>
+      <text x="877" y="63" class="nbs" text-anchor="middle">校内实验室导出（须脱敏）</text>
+      <text x="877" y="82" class="nbs" text-anchor="middle">⚠ Internet Topology Zoo 本机不可达</text>
+    </svg>
+  </figure>
+
+  <p class="small"><b>数据</b>：NetBox ★21689（DCIM/IPAM，Apache-2.0，CSV/REST 导出，2026-10 活跃）· Batfish ★1503（配置快照与校验，Apache-2.0）· SNDlib 公开拓扑（GML，真实网络，本机可达）· 校内实验室设备配置样本（<b>须脱敏</b>；无实验条件者用 Batfish 自带快照样例）。⚠ Internet Topology Zoo 本机不可达。</p>
+  <p class="small"><b>代码入口</b>：<code>topics/t1-net-assets/</code>（本体种子 · 抽取模式 · 词表 · 示意语料） · <code>kgc/ontology.py</code> → <code>kgc/rule.py</code>〡<code>kgc/model.py</code>〡<code>kgc/llm.py</code> → <code>kgc/fuse.py</code> → <code>kgc/kg.py</code> → <code>kgc/agent_app.py</code>；一键 <code>bash scripts/run_all.sh t1-net-assets</code></p>
+  <p class="small"><b>参考文献</b>：Batfish, <i>A General Approach to Network Configuration Analysis</i>, NSDI 2015；IETF YANG 1.1（RFC 7950，设备/接口建模上位参考）；Noy &amp; McGuinness, <i>Ontology Development 101</i>（本体七步法）；ITIL 4 配置管理实践（CI 与 CI 关系）；Mininet, NSDI 2010（如需仿真拓扑）。</p>
+  <p class="small"><b>验收点</b>：本体 TTL 可解析且自检 0 问题 · 三方法对金标准报 P/R/F1 · ≥3 个多跳查询题（含 1 个"图谱中无此知识"拒答题）· 答案验证器未支撑句 = 0 · 输出资产拓扑图（GraphML/Cytoscape）。</p>
+  <div class="warn"><b>坑</b>：设备配置含管理地址、口令散列、内网拓扑 —— 提交前必须脱敏（见"数据合规"）；<code>connects_to</code> 是对称关系，建图时要避免重复边。</div>
+</section>
+
+<!-- ============ T2 ============ -->
+<section class="topic">
+  <div class="topic-head">
+    <span class="idx">T2</span>
+    <h3>网络安全威胁情报知识图谱（CVE × CWE × CPE × ATT&amp;CK）</h3>
+    <span class="badge b-blue">网络安全</span>
+    <span class="badge b-slate">难度 <span class="stars">★★☆</span></span>
+    <span class="badge b-teal">数据可得性：很高</span>
+  </div>
+  <p class="topic-id">题目 ID：<code>t2-cve-attack</code> · 脚手架自带：13 类 / 13 关系 · 示意语料可抽 11 实体 / 12 关系</p>
+  <p><b>一句话</b>：跨源打通漏洞、弱点、受影响产品与攻击技术，回答"我们这批设备当前暴露什么攻击面、有没有检测覆盖"。这是<b>跨源 ID 对齐</b>的真实战场。</p>
+
+  <figure>
+  <svg viewBox="0 0 660 175" role="img" aria-label="T2 本体骨架示意">
+    <rect x="20"  y="30" width="130" height="36" rx="9" fill="url(#gAmber)" stroke="#fbe3b5"/>
+    <text x="85" y="53" class="nb" text-anchor="middle">Vulnerability CVE</text>
+    <rect x="190" y="30" width="120" height="36" rx="9" fill="url(#gAmber)" stroke="#fbe3b5"/>
+    <text x="250" y="53" class="nb" text-anchor="middle">Weakness CWE</text>
+    <rect x="350" y="30" width="130" height="36" rx="9" fill="url(#gAmber)" stroke="#fbe3b5"/>
+    <text x="415" y="53" class="nb" text-anchor="middle">AttackPattern CAPEC</text>
+    <rect x="520" y="30" width="120" height="36" rx="9" fill="url(#gBlue)" stroke="#93b8ef"/>
+    <text x="580" y="53" class="nb" text-anchor="middle">Technique T####</text>
+    <path d="M150 48 L190 48" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="170" y="41" class="el" text-anchor="middle">has_weakness</text>
+    <path d="M310 48 L350 48" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="330" y="41" class="el" text-anchor="middle">relates_to</text>
+    <path d="M480 48 L520 48" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="500" y="41" class="el" text-anchor="middle">implemented_by</text>
+    <rect x="190" y="112" width="130" height="36" rx="9" fill="url(#gBlue)" stroke="#93b8ef"/>
+    <text x="255" y="135" class="nb" text-anchor="middle">Product CPE</text>
+    <path d="M85 66 L200 112" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="118" y="99" class="el">affects_product</text>
+    <rect x="350" y="112" width="140" height="36" rx="9" fill="url(#gTeal)" stroke="#7fd3b6"/>
+    <text x="420" y="135" class="nb" text-anchor="middle">DetectionRule 检测规则</text>
+    <path d="M560 66 L470 112" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="536" y="99" class="el">detects</text>
+  </svg>
+  <figcaption>命名空间必须与 MITRE 官方 ID 对齐（<code>T1059.001</code> 作主键，人类可读名称会变）——这是本选题的核心验收点。</figcaption>
+  </figure>
+
+  <div class="grid3">
+    <div class="stage s1"><h4>① 本体构建</h4><ul class="small">
+      <li>13 类：Vulnerability / Weakness / AttackPattern / Product / Technique / Tactic / Group / Malware / Mitigation / DetectionRule / Exploit / Advisory</li>
+      <li>关系：has_weakness · affects_product · exploited_by · known_exploited · detects · mitigates …</li>
+      <li>ID 主键化 + 版本标注（ATT&amp;CK 每季度更新）</li></ul></div>
+    <div class="stage s2"><h4>② 三种方法</h4><ul class="small">
+      <li><b>A 规则</b>：ID 正则（CVE/CWE/CAPEC/CPE/T####）+ 结构化源直接映射</li>
+      <li><b>B 模型</b>：安全文本 NER；对比 <b>SecureBERT</b> 与通用 BERT</li>
+      <li><b>C LLM</b>：从 APT 报告/公告抽 TTP（Group uses Technique）</li></ul></div>
+    <div class="stage s3"><h4>③ Agent 应用</h4><ul class="small">
+      <li>暴露面问答：PAN-OS 10.2 有无在野利用漏洞？对应哪条检测规则？</li>
+      <li>检测覆盖分析：一组技术（T1190…）哪些有 Sigma/D3FEND 对应</li>
+      <li>跨源 join 覆盖率必须抽样报告</li></ul></div>
+  </div>
+
+  <div class="danger"><b>取数范围（重要）</b>：security-kg 全量 <b>3136 万条 / 527.8 MB</b> 不要全量导入。只取 <b><code>cve</code>（4,457,511 条）+ <code>kev</code>（19,069 条）</b> 即可覆盖"漏洞—弱点—在野利用"主线；要加检测覆盖再取 <code>sigma</code>（33,498 条）。数据集按源分文件，直接选文件下载即可。</div>
+
+  <p class="small"><b>其他数据</b>：MITRE ATT&amp;CK STIX（<code>mitre-attack/attack-stix-data</code> ★699，2026-10-13 更新）· CVE 官方 API（<code>cveawg.mitre.org</code>，脚手架已实现）· EPSS / CISA KEV（站点 200 可达）· GraphKer（Neo4j dump，数据停 2023-09）· CVE-KGRAG（KG+RAG 应用壳 ★21）。</p>
+  <p class="small"><b>代码入口</b>：<code>topics/t2-cve-attack/</code>（本体种子 · 抽取模式 · 词表 · 示意语料） · <code>kgc/ontology.py</code> → <code>kgc/rule.py</code>〡<code>kgc/model.py</code>〡<code>kgc/llm.py</code> → <code>kgc/fuse.py</code> → <code>kgc/kg.py</code> → <code>kgc/agent_app.py</code>；一键 <code>bash scripts/run_all.sh t2-cve-attack</code></p>
+  <p class="small"><b>参考文献</b>：MITRE ATT&amp;CK（Strom et al., 2018, <i>Design and Philosophy</i>）；NVD/CVE JSON 5.0 规范；EPSS（Jacobs et al., 2021, <i>Exploit Prediction Scoring System</i>）；SEPSES <code>cyber-kg-converter</code>（三元组转换开源实现）；Hogan et al., <i>Knowledge Graphs</i>, arXiv:2003.02320（综述，本体与评测口径）。</p>
+  <p class="small"><b>验收点</b>：≥3 组跨源 ID 映射并抽检覆盖率 · 本体命名空间与官方 ID 一致 · KEV 覆盖率 · 幻觉率（单方法 vs 融合对比）· <b>逐源许可清单</b>（商用可依性取决于最严条款）。</p>
+  <div class="warn"><b>坑</b>：① 许可证拼盘（ExploitDB GPLv2+、Sigma DRL 1.1、ENGAGE 非商用）；② 实例层（CVE/KEV/EPSS）日更、本体层（CWE/CAPEC）季度更新，必须分层记录时间戳；③ 名称易错：HF 上是 <code>s0u9ata/security-kg</code>，<code>S0UGATA</code> 是 GitHub 组织名。</div>
+</section>
+
+<!-- ============ T3 ============ -->
+<section class="topic adv">
+  <div class="topic-head">
+    <span class="idx">T3</span>
+    <h3>网络与系统日志驱动的故障根因知识图谱</h3>
+    <span class="badge b-violet">AIOps / 网络运维</span>
+    <span class="badge b-slate">难度 <span class="stars">★★★</span></span>
+    <span class="badge b-teal">数据可得性：高</span>
+  </div>
+  <p class="topic-id">题目 ID：<code>t3-log-rca</code> · 脚手架自带：10 类 / 10 关系 · 示意语料可抽 25 实体 / 49 关系 · <b>进阶层</b></p>
+  <p><b>一句话</b>：走完"日志解析 → 事件模板 → 因果图 → 根因推理"全链条，让 Agent 能从一段日志给出候选根因链与处置动作。</p>
+
+  <figure>
+  <svg viewBox="0 0 660 175" role="img" aria-label="T3 本体骨架示意">
+    <rect x="20"  y="30" width="120" height="36" rx="9" fill="url(#gViolet)" stroke="#ddd3fb"/>
+    <text x="80" y="53" class="nb" text-anchor="middle">LogEvent 日志</text>
+    <rect x="190" y="30" width="130" height="36" rx="9" fill="url(#gBlue)" stroke="#93b8ef"/>
+    <text x="255" y="53" class="nb" text-anchor="middle">LogTemplate 模板</text>
+    <rect x="370" y="30" width="120" height="36" rx="9" fill="url(#gAmber)" stroke="#fbe3b5"/>
+    <text x="430" y="53" class="nb" text-anchor="middle">Anomaly 异常</text>
+    <rect x="540" y="30" width="110" height="36" rx="9" fill="url(#gAmber)" stroke="#fbe3b5"/>
+    <text x="595" y="53" class="nb" text-anchor="middle">Fault 故障</text>
+    <path d="M140 48 L190 48" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="165" y="41" class="el" text-anchor="middle">has_template</text>
+    <path d="M320 48 L370 48" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="345" y="41" class="el" text-anchor="middle">indicates</text>
+    <path d="M490 48 L540 48" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="515" y="41" class="el" text-anchor="middle">causes</text>
+    <rect x="200" y="112" width="120" height="36" rx="9" fill="#fff" stroke="#cbd5e1"/>
+    <text x="260" y="135" class="nb" text-anchor="middle">Host 主机</text>
+    <rect x="350" y="112" width="120" height="36" rx="9" fill="#fff" stroke="#cbd5e1"/>
+    <text x="410" y="135" class="nb" text-anchor="middle">Service 服务</text>
+    <rect x="500" y="112" width="140" height="36" rx="9" fill="url(#gTeal)" stroke="#7fd3b6"/>
+    <text x="570" y="135" class="nb" text-anchor="middle">RootCause 根因</text>
+    <path d="M80 66 L200 130" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)" marker-start="url(#ar)"/>
+    <text x="96" y="108" class="el">produced_by</text>
+    <path d="M470 130 L500 130" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="485" y="123" class="el" text-anchor="middle">root_cause_of</text>
+  </svg>
+  <figcaption><code>precedes</code>（时序）与 <code>causes</code>（因果）必须分开建模：<b>因果不能由共现直接推出</b>——这是本选题的核心科学问题。</figcaption>
+  </figure>
+
+  <div class="grid3">
+    <div class="stage s1"><h4>① 本体构建</h4><ul class="small">
+      <li>10 类：LogTemplate / LogEvent / Host / Service / Anomaly / Fault / RootCause / Metric / Action</li>
+      <li>关系：has_template · produced_by · runs_on · precedes · indicates · causes · root_cause_of · mitigated_by</li>
+      <li>时序关系与因果关系分别标注</li></ul></div>
+    <div class="stage s2"><h4>② 三种方法</h4><ul class="small">
+      <li><b>A 规则</b>：Drain/Spell 类日志解析（生成模板）+ 因果触发词（caused by / due to / 导致）</li>
+      <li><b>B 模型</b>：模板序列 → n-gram 特征分类（LogBERT/DeepLog 思路的缩小版）</li>
+      <li><b>C LLM</b>：日志片段 → <code>Anomaly causes Fault</code> 与根因；对比"直接给日志"vs"先给模板"</li></ul></div>
+    <div class="stage s3"><h4>③ Agent 应用</h4><ul class="small">
+      <li>根因问答：贴 5 条日志 → Top-3 候选根因 + 处置动作 + 证据</li>
+      <li>时序因果链导出：从故障点反向遍历 <code>causes</code>/<code>indicates</code></li>
+      <li>回答必须带日志原文证据</li></ul></div>
+  </div>
+
+  <figure>
+  <svg viewBox="0 0 1020 120" role="img" aria-label="T3 数据来源">
+    <rect x="10" y="20" width="320" height="80" rx="10" fill="#fff" stroke="#ddd3fb"/>
+    <text x="170" y="45" class="nb" text-anchor="middle">Loghub（LogPAI）★2880</text>
+    <text x="170" y="64" class="nbs" text-anchor="middle">19 数据集 / 4.95 亿行 / ≈83.4 GiB</text>
+    <text x="170" y="83" class="nbs" text-anchor="middle">其中 6 个带标注（可算 P/R）· 2026-10-13 活跃</text>
+    <rect x="345" y="20" width="300" height="80" rx="10" fill="#fff" stroke="#ddd3fb"/>
+    <text x="495" y="45" class="nb" text-anchor="middle">建议子集：HDFS_v1 / BGL / OpenSSH</text>
+    <text x="495" y="64" class="nbs" text-anchor="middle">HDFS_v1 1.47 GiB / 1117 万行；BGL 708 MiB</text>
+    <text x="495" y="83" class="nbs" text-anchor="middle">只取 1–2 个子集即可（预算按 83.4 GiB 总量估）</text>
+    <rect x="660" y="20" width="350" height="80" rx="10" fill="#fffbed" stroke="#fbe3b5"/>
+    <text x="835" y="45" class="nb" text-anchor="middle">⚠ Zenodo 分发本机不可达</text>
+    <text x="835" y="64" class="nbs" text-anchor="middle">需代理或校内镜像；解析器参考 logpai/logparser</text>
+    <text x="835" y="83" class="nbs" text-anchor="middle">规模口径按 README 实测（非"440 GB"）</text>
+  </svg>
+  </figure>
+
+  <p class="small"><b>代码入口</b>：<code>topics/t3-log-rca/</code>（本体种子 · 抽取模式 · 词表 · 示意语料） · <code>kgc/ontology.py</code> → <code>kgc/rule.py</code>〡<code>kgc/model.py</code>〡<code>kgc/llm.py</code> → <code>kgc/fuse.py</code> → <code>kgc/kg.py</code> → <code>kgc/agent_app.py</code>；一键 <code>bash scripts/run_all.sh t3-log-rca</code></p>
+  <p class="small"><b>参考文献</b>：Zhu et al., <i>Loghub: A Large Collection of System Log Datasets</i>, ISSRE 2023；Jiang et al., <i>A Large-scale Evaluation for Log Parsing Techniques: How Far Are We?</i>, ISSTA 2024（Loghub-2.0，解析器排名可直接引用）；He et al., <i>Drain</i>, ICWS 2017；Du et al., <i>DeepLog</i>, CCS 2017；Guo et al., <i>LogBERT</i>, IJCNN 2021。</p>
+  <p class="small"><b>验收点</b>：日志模板抽取准确率（人工抽检 100 条或标注子集）· 因果边人工抽检精度 ≥50 条 · 时序与因果不混用 · 根因问答 Top-3 命中率 · 幻觉率不高于基线。</p>
+  <div class="warn"><b>坑</b>：① 规模预算按 <b>83.4 GiB / 4.95 亿行</b>（中文资料常写"440 GB / 17 种系统"，实测 README 为 19 个数据集）；② 日志含真实内网 IP/主机名，研究可用 ≠ 可再分发；③ Loghub 有 v1/v2/v3 并存，实验必须钉版本。</div>
+</section>
+
+<!-- ============ T4 ============ -->
+<section class="topic adv">
+  <div class="topic-head">
+    <span class="idx">T4</span>
+    <h3>BGP 路由事件与 AS 关系知识图谱</h3>
+    <span class="badge b-violet">路由与互联网</span>
+    <span class="badge b-slate">难度 <span class="stars">★★★</span></span>
+    <span class="badge b-amber">数据可得性：中</span>
+  </div>
+  <p class="topic-id">题目 ID：<code>t4-bgp-routing</code> · 脚手架自带：10 类 / 11 关系 · 示意语料可抽 16 实体 / 39 关系 · <b>进阶层</b></p>
+  <p><b>一句话</b>：用归档 BGP 数据构建"AS—前缀—AS_PATH—事件"图，做路径一致性与 ROA 授权检查，用于劫持/路由泄露事件研判。</p>
+
+  <figure>
+  <svg viewBox="0 0 660 175" role="img" aria-label="T4 本体骨架示意">
+    <rect x="20"  y="30" width="110" height="36" rx="9" fill="url(#gViolet)" stroke="#ddd3fb"/>
+    <text x="75" y="53" class="nb" text-anchor="middle">AS 自治系统</text>
+    <rect x="180" y="30" width="120" height="36" rx="9" fill="url(#gBlue)" stroke="#93b8ef"/>
+    <text x="240" y="53" class="nb" text-anchor="middle">Prefix 前缀</text>
+    <rect x="350" y="30" width="130" height="36" rx="9" fill="url(#gBlue)" stroke="#93b8ef"/>
+    <text x="415" y="53" class="nb" text-anchor="middle">Announcement 通告</text>
+    <rect x="530" y="30" width="110" height="36" rx="9" fill="url(#gBlue)" stroke="#93b8ef"/>
+    <text x="585" y="53" class="nb" text-anchor="middle">ASPath 路径</text>
+    <path d="M130 48 L180 48" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="155" y="41" class="el" text-anchor="middle">originates</text>
+    <path d="M300 48 L350 48" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="325" y="41" class="el" text-anchor="middle">had_prefix</text>
+    <path d="M480 48 L530 48" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="505" y="41" class="el" text-anchor="middle">has_path</text>
+    <rect x="380" y="112" width="140" height="36" rx="9" fill="url(#gAmber)" stroke="#fbe3b5"/>
+    <text x="450" y="135" class="nb" text-anchor="middle">HijackEvent 劫持事件</text>
+    <path d="M450 66 L450 112" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="470" y="95" class="el">involves_as / involves_prefix</text>
+    <rect x="200" y="112" width="130" height="36" rx="9" fill="url(#gTeal)" stroke="#7fd3b6"/>
+    <text x="265" y="135" class="nb" text-anchor="middle">ROA 授权</text>
+    <path d="M240 66 L255 112" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="170" y="99" class="el">authorized_by</text>
+  </svg>
+  <figcaption><code>ASPath</code> 是<b>有序序列对象</b>（不能当无序集合），<code>path_contains</code> 需带序号属性——这是与 T2/T5 本体设计最大的不同。</figcaption>
+  </figure>
+
+  <div class="grid3">
+    <div class="stage s1"><h4>① 本体构建</h4><ul class="small">
+      <li>10 类：AS / Organization / Prefix / ASPath / Announcement / Withdrawal / ROA / HijackEvent / Collector</li>
+      <li>关系：originates · has_path · path_contains · authorized_by · involves_as · detected_at</li>
+      <li>机构名与商业关系需带 <code>valid_time</code>（会随时间变更）</li></ul></div>
+    <div class="stage s2"><h4>② 三种方法</h4><ul class="small">
+      <li><b>A 规则/解析</b>：MRT update 解析 → 三元组；ROA 校验（RFC 6480 语义）；谷底违规检查</li>
+      <li><b>B 模型/图算法</b>：valley-free 违背计数、MOAS 突增检测、AS_PATH 序列异常打分</li>
+      <li><b>C LLM</b>：从事件通告抽 <code>HijackEvent involves_as/Prefix</code>，要求 AS 号与前缀字面出现</li></ul></div>
+    <div class="stage s3"><h4>③ Agent 应用</h4><ul class="small">
+      <li>事件研判：AS66666 通告某 /24 是否构成劫持？授权情况如何？</li>
+      <li>前缀所有权与路径检查：给定 AS_PATH 判谷底违规与 MOAS 冲突</li>
+      <li>结论必须带采集点与时间窗</li></ul></div>
+  </div>
+
+  <figure>
+  <svg viewBox="0 0 1020 120" role="img" aria-label="T4 数据来源">
+    <rect x="10" y="20" width="240" height="80" rx="10" fill="#fff" stroke="#ddd3fb"/>
+    <text x="130" y="45" class="nb" text-anchor="middle">RouteViews / RIPE RIS</text>
+    <text x="130" y="64" class="nbs" text-anchor="middle">MRT 归档（建议先取 1 小时窗口）</text>
+    <text x="130" y="83" class="nbs" text-anchor="middle">routeviews.org 200；RIPE 路径需代理</text>
+    <rect x="265" y="20" width="240" height="80" rx="10" fill="#fff" stroke="#ddd3fb"/>
+    <text x="385" y="45" class="nb" text-anchor="middle">bgpstream ★123 / bgpkit</text>
+    <text x="385" y="64" class="nbs" text-anchor="middle">归档与实时分析框架</text>
+    <text x="385" y="83" class="nbs" text-anchor="middle">⚠ GPL-2.0，最后推送 2019-12-19（停更）</text>
+    <rect x="520" y="20" width="230" height="80" rx="10" fill="#fff" stroke="#ddd3fb"/>
+    <text x="635" y="45" class="nb" text-anchor="middle">CAIDA AS Relationships</text>
+    <text x="635" y="64" class="nbs" text-anchor="middle">AS 商业关系推断数据</text>
+    <text x="635" y="83" class="nbs" text-anchor="middle">caida.org 本机可达（200）</text>
+    <rect x="765" y="20" width="245" height="80" rx="10" fill="#fff" stroke="#ddd3fb"/>
+    <text x="887" y="45" class="nb" text-anchor="middle">ARTEMIS ★334 / BSD-3</text>
+    <text x="887" y="64" class="nbs" text-anchor="middle">开源 BGP 劫持检测系统</text>
+    <text x="887" y="83" class="nbs" text-anchor="middle">2023-08-16 最后推送</text>
+  </svg>
+  </figure>
+
+  <p class="small"><b>代码入口</b>：<code>topics/t4-bgp-routing/</code>（本体种子 · 抽取模式 · 词表 · 示意语料） · <code>kgc/ontology.py</code> → <code>kgc/rule.py</code>〡<code>kgc/model.py</code>〡<code>kgc/llm.py</code> → <code>kgc/fuse.py</code> → <code>kgc/kg.py</code> → <code>kgc/agent_app.py</code>；一键 <code>bash scripts/run_all.sh t4-bgp-routing</code></p>
+  <p class="small"><b>参考文献</b>：Orsini et al., <i>BGPStream</i>, IMC 2016；Sermpezis et al., <i>ARTEMIS: Neutralizing BGP Hijacking Within a Minute</i>, IMC 2018；RFC 4271（BGP-4）；RFC 6480（RPKI/ROA 架构）；CAIDA <i>AS Relationships</i> 数据集文档（商业关系推断口径）。</p>
+  <p class="small"><b>验收点</b>：≥1 采集点 × 1 小时真实 update 解析成功并给出规模统计 · <code>ASPath</code> 有序性在数据模型中显式体现 · 谷底违规检测召回 · ROA 覆盖率 · 报告须说明工具链停更风险。</p>
+  <div class="warn"><b>坑</b>：MRT 体积大，先 1 小时窗口验证流水线；采集器时间戳为 UTC，时区口径必须统一否则时序推理全错；AS 号与机构名会变更。</div>
+</section>
+
+<!-- ============ T5 ============ -->
+<section class="topic">
+  <div class="topic-head">
+    <span class="idx">T5</span>
+    <h3>TCP/IP 协议栈与 RFC 规范知识图谱</h3>
+    <span class="badge b-blue">协议原理</span>
+    <span class="badge b-slate">难度 <span class="stars">★★☆</span></span>
+    <span class="badge b-teal">数据可得性：很高</span>
+    <span class="badge b-amber">★ 全组公共热身题</span>
+  </div>
+  <p class="topic-id">题目 ID：<code>t5-protocol-rfc</code> · 脚手架自带：11 类 / 13 关系 · 已下载 5 篇真实 RFC · 金标准 39 行</p>
+  <p><b>一句话</b>：把 RFC 的文档结构（章节/引用/废弃）、协议、分层、报文域与规范关键字（RFC 2119）连成图谱，做到<b>任何协议结论都能追到 RFC 的哪一节</b>。此选题同时是<b>全组第 1 周的公共热身</b>。</p>
+
+  <figure>
+  <svg viewBox="0 0 660 175" role="img" aria-label="T5 本体骨架示意">
+    <rect x="20"  y="30" width="110" height="36" rx="9" fill="url(#gBlue)" stroke="#93b8ef"/>
+    <text x="75" y="53" class="nb" text-anchor="middle">RFC 文档</text>
+    <rect x="180" y="30" width="120" height="36" rx="9" fill="url(#gBlue)" stroke="#93b8ef"/>
+    <text x="240" y="53" class="nb" text-anchor="middle">Section 章节</text>
+    <rect x="350" y="30" width="120" height="36" rx="9" fill="url(#gTeal)" stroke="#7fd3b6"/>
+    <text x="410" y="53" class="nb" text-anchor="middle">Protocol 协议</text>
+    <rect x="520" y="30" width="120" height="36" rx="9" fill="url(#gTeal)" stroke="#7fd3b6"/>
+    <text x="580" y="53" class="nb" text-anchor="middle">Layer 分层</text>
+    <path d="M130 48 L180 48" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="155" y="41" class="el" text-anchor="middle">contains</text>
+    <path d="M300 48 L350 48" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="325" y="41" class="el" text-anchor="middle">specifies</text>
+    <path d="M470 48 L520 48" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="495" y="41" class="el" text-anchor="middle">operates_at</text>
+    <rect x="350" y="112" width="130" height="36" rx="9" fill="url(#gViolet)" stroke="#ddd3fb"/>
+    <text x="415" y="135" class="nb" text-anchor="middle">MessageField 域</text>
+    <path d="M410 66 L415 112" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="430" y="95" class="el">has_field</text>
+    <rect x="180" y="112" width="130" height="36" rx="9" fill="url(#gAmber)" stroke="#fbe3b5"/>
+    <text x="245" y="135" class="nb" text-anchor="middle">NormativeKeyword</text>
+    <path d="M245 66 L245 112" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="150" y="95" class="el">requires / keyword_of</text>
+  </svg>
+  <figcaption>RFC 2119 关键字（MUST/SHOULD/MAY）是受控词表，可用来把"规范强度"建模到图谱里。</figcaption>
+  </figure>
+
+  <div class="grid3">
+    <div class="stage s1"><h4>① 本体构建</h4><ul class="small">
+      <li>11 类：Document→RFC / Section / Protocol / Layer / MessageField / NormativeKeyword / Obligation / Port / Extension</li>
+      <li>关系：defined_in · specifies · contains · cites · obsoletes(传递) · updates · has_field · operates_at · depends_on</li>
+      <li>上位参考：Dublin Core（文档元数据）、SKOS（受控词表）</li></ul></div>
+    <div class="stage s2"><h4>② 三种方法</h4><ul class="small">
+      <li><b>A 规则</b>：<code>RFC \d+</code>、章节标题正则、RFC 2119 关键字表、ABNF（RFC 5234）、<code>Obsoletes:</code> 头部字段</li>
+      <li><b>B 模型</b>：词特征 + BIO 序列标注（须做训练/评估文档分离）</li>
+      <li><b>C LLM</b>：本体约束提示 + 证据回填 + JSON 校验（实测 F1 最高）</li></ul></div>
+    <div class="stage s3"><h4>③ Agent 应用</h4><ul class="small">
+      <li>规范问答：IPv6 首部有哪些字段？RFC 8200 取代了谁？（带节号与原文证据）</li>
+      <li>多跳溯源：TCP → depends_on → Internet Protocol → has_field → Checksum</li>
+      <li>配置核查：字段取值是否符合 MUST/MUST NOT</li></ul></div>
+  </div>
+
+  <div class="note"><b>公共热身交付（第 1 周，单独 5 分作准入）</b>：<code>bash scripts/run_all.sh t5-protocol-rfc</code> 的完整日志 · <code>data/reports/t5-protocol-rfc_eval.md</code> 三方法指标表 · <code>*_qa_bench.json</code> 问答与幻觉率 · ≤3 页《三方法对比初探》· 一次成功的 MCP 工具调用。<b>T5 也可作为正式选题</b>，但须做实质扩展（金标准新增 ≥20 条 / 新增抽取后端或指标 / 问答集 ≥20 题并改进检索排序，三选二）。</div>
+
+  <p class="small"><b>数据</b>：<code>data/corpus/t5-protocol-rfc/</code> 随脚手架提供 5 篇真实 RFC（rfc768 / 791 / 2119 / 8200 / 9293，IETF Trust 许可可再分发）+ 金标准 39 行；可自行扩充（如 RFC 8446、RFC 9000），扩充后须过 <code>scripts/check_gold.py</code> 自检。</p>
+  <p class="small"><b>代码入口</b>：<code>topics/t5-protocol-rfc/</code>（本体种子 · 抽取模式 · 词表 · 示意语料） · <code>data/corpus/t5-protocol-rfc/</code>（5 篇真实 RFC） · <code>kgc/ontology.py</code> → <code>kgc/rule.py</code>〡<code>kgc/model.py</code>〡<code>kgc/llm.py</code> → <code>kgc/fuse.py</code> → <code>kgc/kg.py</code> → <code>kgc/agent_app.py</code>；一键 <code>bash scripts/run_all.sh t5-protocol-rfc</code></p>
+  <p class="small"><b>参考文献</b>：RFC 2119 + RFC 8174（BCP 14，规范关键字语义）；RFC 9293（TCP）/ RFC 8200（IPv6）/ RFC 791 / RFC 768；RFC 5234（ABNF）；Hogan et al., arXiv:2003.02320；W3C <i>OWL 2 Primer</i>；Dublin Core（ISO 15836）与 SKOS（W3C Rec 2009）作上位本体。</p>
+  <p class="small"><b>验收点</b>：本体 TTL 通过解析与自检 · 三方法对金标准报 P/R/F1（金标准建议扩到 20–30 条以上）· 金标准自检通过 · ≥8 题问答 + 幻觉率 · ≥3 条多跳路径正确 · 报告写明 precision 下界口径。</p>
+  <div class="warn"><b>坑（实测记录）</b>：① 文档节点是"超级枢纽"——<code>mentioned_in</code> 让任意两实体 2 跳连通，路径查询须排除 Document 类；② 置信度截断会丢关键事实——<code>TCP operates_at Transport Layer</code>（置信度 0.4）在 12 个配额中被 4 条结构边挤掉，导致该题问答失败；③ 标签归一化口径会虚假抬高指标（Section 标签只留编号时，规则法实体 F1 虚高到 0.156，修正后为 0.142）。</div>
+</section>
+
+<!-- ============ T6 ============ -->
+<section class="topic adv">
+  <div class="topic-head">
+    <span class="idx">T6</span>
+    <h3>AI 数据中心高性能网络架构知识图谱</h3>
+    <span class="badge b-violet">网络架构前沿</span>
+    <span class="badge b-slate">难度 <span class="stars">★★★</span></span>
+    <span class="badge b-amber">数据可得性：中</span>
+  </div>
+  <p class="topic-id">题目 ID：<code>t6-ai-dcn</code> · 脚手架自带：10 类 / 10 关系 · 示意语料可抽 26 实体 / 30 关系 · <b>进阶层</b></p>
+  <p><b>一句话</b>：把 MRC / RoCE / SRv6 / 多平面 / 包喷洒等前沿架构与"机制—收益—失效模式"连成技术图谱，用于选型对比与故障模式分析。</p>
+
+  <figure>
+  <svg viewBox="0 0 660 175" role="img" aria-label="T6 本体骨架示意">
+    <rect x="20"  y="30" width="120" height="36" rx="9" fill="url(#gViolet)" stroke="#ddd3fb"/>
+    <text x="80" y="53" class="nb" text-anchor="middle">Protocol 协议</text>
+    <rect x="190" y="30" width="130" height="36" rx="9" fill="url(#gBlue)" stroke="#93b8ef"/>
+    <text x="255" y="53" class="nb" text-anchor="middle">Technique 机制</text>
+    <rect x="370" y="30" width="120" height="36" rx="9" fill="url(#gTeal)" stroke="#7fd3b6"/>
+    <text x="430" y="53" class="nb" text-anchor="middle">Benefit 收益</text>
+    <rect x="530" y="30" width="120" height="36" rx="9" fill="url(#gAmber)" stroke="#fbe3b5"/>
+    <text x="590" y="53" class="nb" text-anchor="middle">FailureMode</text>
+    <path d="M140 48 L190 48" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="165" y="41" class="el" text-anchor="middle">uses</text>
+    <path d="M320 48 L370 48" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="345" y="41" class="el" text-anchor="middle">enables</text>
+    <path d="M490 48 L530 48" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="510" y="41" class="el" text-anchor="middle">mitigates</text>
+    <rect x="190" y="112" width="140" height="36" rx="9" fill="#fff" stroke="#cbd5e1"/>
+    <text x="260" y="135" class="nb" text-anchor="middle">Standard 标准组织</text>
+    <path d="M260 112 L110 66" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="150" y="99" class="el">specified_in</text>
+    <rect x="370" y="112" width="130" height="36" rx="9" fill="#fff" stroke="#cbd5e1"/>
+    <text x="435" y="135" class="nb" text-anchor="middle">Component 组件</text>
+    <path d="M435 112 L330 66" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="360" y="99" class="el">implemented_in</text>
+  </svg>
+  <figcaption>本选题关系带"论证性"（<code>enables</code>/<code>mitigates</code> 必须能指出"哪份文档的哪句话"），证据要求比其他选题更严。</figcaption>
+  </figure>
+
+  <div class="grid3">
+    <div class="stage s1"><h4>① 本体构建</h4><ul class="small">
+      <li>10 类：Protocol / Architecture / Technique / Component / Standard / Document / Benefit / FailureMode / Workload</li>
+      <li>关系：extends · uses · enables · replaces · mitigates · specified_in · implemented_in · optimized_for</li>
+      <li>版本与访问日期必须记录（前沿资料更新快）</li></ul></div>
+    <div class="stage s2"><h4>② 三种方法</h4><ul class="small">
+      <li><b>A 规则</b>：技术术语词典 + 触发词模板（uses / mitigates）</li>
+      <li><b>B 模型</b>：英文技术术语 NER + 句子级关系分类</li>
+      <li><b>C LLM</b>：从论文摘要/规范章节抽三元组，强制 evidence ≤120 字；对比有/无本体约束的越界率</li></ul></div>
+    <div class="stage s3"><h4>③ Agent 应用</h4><ul class="small">
+      <li>选型问答：多平面+包喷洒相比传统 RoCE 在哪些失效模式下更稳？代价是什么？</li>
+      <li>失效模式影响分析：给定 link flap / switch reboot 查影响面与缓解机制</li>
+      <li>自动生成技术对比表（而非手写）</li></ul></div>
+  </div>
+
+  <p class="small"><b>数据</b>：OCP MRC 规范与 SRv6（RFC 8986）· UEC 规范 · arXiv 论文（可用 <code>arxiv</code> 技能检索）· 本机 LLM WIKI 收录页（<code>~/workspace/wiki/concepts/mrc.md</code> 等，含 SRv6/多平面/包喷洒事实与来源标注）。⚠ <code>huggingface.co</code> 本机不可达，模型走 <code>hf-mirror.com</code>。</p>
+  <p class="small"><b>代码入口</b>：<code>topics/t6-ai-dcn/</code>（本体种子 · 抽取模式 · 词表 · 示意语料） · <code>kgc/ontology.py</code> → <code>kgc/rule.py</code>〡<code>kgc/model.py</code>〡<code>kgc/llm.py</code> → <code>kgc/fuse.py</code> → <code>kgc/kg.py</code> → <code>kgc/agent_app.py</code>；一键 <code>bash scripts/run_all.sh t6-ai-dcn</code></p>
+  <p class="small"><b>参考文献</b>：OpenAI/OCP《Resilient AI Supercomputer Networking using MRC and SRv6》（规范 + 配套论文，本机整理稿见 <code>~/workspace/wiki/raw/articles/openai-mrc-supercomputer-networking.md</code>）；RFC 8986（SRv6 Network Programming）；UEC 1.0 规范；IBTA RoCE 规范（Annex A16）；Peng et al., <i>Graph RAG: A Survey</i>, arXiv:2408.08921。</p>
+  <p class="small"><b>验收点</b>：技术—机制—收益/失效四类节点齐全 · 每条 <code>enables</code>/<code>mitigates</code> 有可核对来源（URL 或文档名+章节）· 本体约束 vs 无约束的越界率与证据缺失率对比 · 图谱自动生成的选型对比表。</p>
+  <div class="warn"><b>坑</b>：容易把"厂商宣传口径"当事实——要求证据指向规范/论文而非营销材料；规范草案到正式发布版本会变，必须记录版本号。</div>
+</section>
+
+<!-- ============ T7 ============ -->
+<section class="topic">
+  <div class="topic-head">
+    <span class="idx">T7</span>
+    <h3>网络安全等级保护（等保 2.0）合规知识图谱</h3>
+    <span class="badge b-blue">合规 / 安全管理</span>
+    <span class="badge b-slate">难度 <span class="stars">★★☆</span></span>
+    <span class="badge b-amber">数据可得性：中（标准文本需正版渠道）</span>
+  </div>
+  <p class="topic-id">题目 ID：<code>t7-mlps-compliance</code> · 脚手架自带：10 类 / 10 关系 · 示意语料可抽 17 实体 / 22 关系</p>
+  <p><b>一句话</b>：把标准条款、控制项、等级、资产与合规证据连成图谱，自动做差距分析并生成整改清单。</p>
+
+  <figure>
+  <svg viewBox="0 0 660 175" role="img" aria-label="T7 本体骨架示意">
+    <rect x="20"  y="30" width="120" height="36" rx="9" fill="url(#gBlue)" stroke="#93b8ef"/>
+    <text x="80" y="53" class="nb" text-anchor="middle">Standard 标准</text>
+    <rect x="190" y="30" width="110" height="36" rx="9" fill="url(#gBlue)" stroke="#93b8ef"/>
+    <text x="245" y="53" class="nb" text-anchor="middle">Clause 条款</text>
+    <rect x="350" y="30" width="130" height="36" rx="9" fill="url(#gTeal)" stroke="#7fd3b6"/>
+    <text x="415" y="53" class="nb" text-anchor="middle">ControlItem 控制项</text>
+    <rect x="530" y="30" width="120" height="36" rx="9" fill="url(#gTeal)" stroke="#7fd3b6"/>
+    <text x="590" y="53" class="nb" text-anchor="middle">Evidence 证据</text>
+    <path d="M140 48 L190 48" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="165" y="41" class="el" text-anchor="middle">contains_clause</text>
+    <path d="M300 48 L350 48" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="325" y="41" class="el" text-anchor="middle">has_control</text>
+    <path d="M480 48 L530 48" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="505" y="41" class="el" text-anchor="middle">satisfied_by</text>
+    <rect x="350" y="112" width="120" height="36" rx="9" fill="url(#gAmber)" stroke="#fbe3b5"/>
+    <text x="410" y="135" class="nb" text-anchor="middle">Risk 风险</text>
+    <path d="M415 66 L413 112" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="428" y="95" class="el">catches_risk</text>
+    <rect x="190" y="112" width="120" height="36" rx="9" fill="#fff" stroke="#cbd5e1"/>
+    <text x="250" y="135" class="nb" text-anchor="middle">Level 等级</text>
+    <path d="M350 130 L310 130" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="330" y="123" class="el" text-anchor="middle">requires_level</text>
+  </svg>
+  <figcaption>精髓在"可测评性"：<code>ControlItem</code> 必须能挂 <code>Evidence</code>（配置截图/日志/制度/测评报告），否则图谱无法产出整改清单。</figcaption>
+  </figure>
+
+  <div class="grid3">
+    <div class="stage s1"><h4>① 本体构建</h4><ul class="small">
+      <li>10 类：Standard / Clause / ControlItem / ControlFamily（十个安全类）/ Level（一–五级）/ Asset / Evidence / Risk / Role</li>
+      <li>关系：contains_clause · has_control · belongs_to_family · requires_level · applies_to · satisfied_by · catches_risk</li>
+      <li>"应/宜/可"的强制性差异要建模（决定整改优先级）</li></ul></div>
+    <div class="stage s2"><h4>② 三种方法</h4><ul class="small">
+      <li><b>A 规则</b>：条款号正则（8.1.3.2）与标题层级解析 + 控制类词表 + 情态词映射</li>
+      <li><b>B 模型</b>：条款文本分类（→ 控制类 / 是否技术类），中文 BERT 小样本</li>
+      <li><b>C LLM</b>：条款 → 控制项 → 证据类型 → 风险的隐含关系抽取（规则法覆盖差，LLM 优势区）</li></ul></div>
+    <div class="stage s3"><h4>③ Agent 应用</h4><ul class="small">
+      <li>差距分析：三级系统边界防护要求有哪些？我方证据缺哪些？</li>
+      <li>整改清单：按控制类分组输出未满足项 + 责任角色 + 建议证据</li>
+      <li>引用必须可回溯到标准章节号</li></ul></div>
+  </div>
+
+  <div class="danger"><b>版权红线</b>：GB/T 22239-2019、GB/T 28448-2019 为<b>推荐性国家标准，无再分发授权</b> —— 标准全文<b>不得</b>上传到任何仓库（含个人公开仓库）；请通过校内正版渠道/图书馆获取，仓库里只放条款编号与自写示意语料（<code>mlps_clause_sample.txt</code> 即为此类）。已在 <code>tools/check_restricted_data.py</code> 中配了机器化门禁。</div>
+
+  <p class="small"><b>数据</b>：GB/T 22239-2019 与 GB/T 28448-2019 条款（经校内正版渠道/图书馆获取，<b>全文不入库</b>，仓库只放条款编号与自写示意语料 <code>topics/t7-mlps-compliance/fixtures/mlps_clause_sample.txt</code>）· 测评报告模板与整改单样例（课程提供）· NIST SP 800-53 Rev.5（公开，可作条款结构对照）。</p>
+  <p class="small"><b>代码入口</b>：<code>topics/t7-mlps-compliance/</code>（本体种子 · 抽取模式 · 词表 · 示意语料） · <code>kgc/ontology.py</code> → <code>kgc/rule.py</code>〡<code>kgc/model.py</code>〡<code>kgc/llm.py</code> → <code>kgc/fuse.py</code> → <code>kgc/kg.py</code> → <code>kgc/agent_app.py</code>；一键 <code>bash scripts/run_all.sh t7-mlps-compliance</code></p>
+  <p class="small"><b>参考文献</b>：GB/T 22239-2019（基本要求）；GB/T 28448-2019（测评要求）；GB/T 25058-2019（实施指南）；GB/T 25070-2019（安全设计技术要求，可选）；《中华人民共和国网络安全法》(2016)；同 T2 的 KG 综述文献（Hogan et al., arXiv:2003.02320）。</p>
+  <p class="small"><b>验收点</b>：≥3 个控制类 + 五级等级建模 · <code>ControlItem → Evidence</code> 关系必须由模型/LLM 产出（规则法覆盖不足要有量化证据）· 差距分析问答正确率（人工核对 10 题）· 条款编号可溯源。</p>
+  <div class="warn"><b>坑</b>：条款数庞大（数百条），必须先划定范围（如"第三级 安全区域边界"一节），否则进度失控。</div>
+</section>
+
+<!-- ============ T8 ============ -->
+<section class="topic adv">
+  <div class="topic-head">
+    <span class="idx">T8</span>
+    <h3>网络设备配置知识图谱与配置生成校验（进阶）</h3>
+    <span class="badge b-violet">网络自动化</span>
+    <span class="badge b-slate">难度 <span class="stars">★★★</span></span>
+    <span class="badge b-teal">数据可得性：高</span>
+  </div>
+  <p class="topic-id">题目 ID：<code>t8-netconfig</code> · 脚手架自带：8 类 / 7 关系（建议扩到 ≥10/≥10）· 示意语料可抽 14 实体 / 20 关系 · <b>进阶层</b></p>
+  <p><b>一句话</b>：把厂商命令、配置块、意图与校验规则建成图，让 Agent 从"自然语言意图"生成配置片段并自动校验（配置即代码 / 意图网络的闭环）。</p>
+
+  <figure>
+  <svg viewBox="0 0 660 175" role="img" aria-label="T8 本体骨架示意">
+    <rect x="20"  y="30" width="130" height="36" rx="9" fill="url(#gViolet)" stroke="#ddd3fb"/>
+    <text x="85" y="53" class="nb" text-anchor="middle">ConfigBlock 配置块</text>
+    <rect x="200" y="30" width="120" height="36" rx="9" fill="url(#gBlue)" stroke="#93b8ef"/>
+    <text x="260" y="53" class="nb" text-anchor="middle">Command 命令</text>
+    <rect x="370" y="30" width="120" height="36" rx="9" fill="url(#gTeal)" stroke="#7fd3b6"/>
+    <text x="430" y="53" class="nb" text-anchor="middle">Intent 意图</text>
+    <rect x="540" y="30" width="110" height="36" rx="9" fill="url(#gAmber)" stroke="#fbe3b5"/>
+    <text x="595" y="53" class="nb" text-anchor="middle">CheckRule 规则</text>
+    <path d="M150 48 L200 48" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="175" y="41" class="el" text-anchor="middle">in_block</text>
+    <path d="M320 48 L370 48" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="345" y="41" class="el" text-anchor="middle">implements</text>
+    <path d="M490 48 L540 48" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="515" y="41" class="el" text-anchor="middle">violates</text>
+    <rect x="200" y="112" width="120" height="36" rx="9" fill="#fff" stroke="#cbd5e1"/>
+    <text x="260" y="135" class="nb" text-anchor="middle">Parameter 参数</text>
+    <path d="M260 66 L260 112" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="278" y="95" class="el">has_param</text>
+    <rect x="370" y="112" width="110" height="36" rx="9" fill="url(#gAmber)" stroke="#fbe3b5"/>
+    <text x="425" y="135" class="nb" text-anchor="middle">Risk 风险</text>
+    <path d="M85 66 L390 112" stroke="#7f8ea3" stroke-width="1.6" marker-end="url(#ar)"/>
+    <text x="120" y="99" class="el">causes</text>
+  </svg>
+  <figcaption>关键在"图谱能驱动校验"：<code>CheckRule</code> 建议与 Batfish 的检查名对齐，这样生成的配置能真正被校验器验证。</figcaption>
+  </figure>
+
+  <div class="grid3">
+    <div class="stage s1"><h4>① 本体构建</h4><ul class="small">
+      <li>8 类（建议扩展）：Command / ConfigBlock / Parameter / Intent / CheckRule / Platform / Risk</li>
+      <li>关系：has_param · in_block · implements · violates · causes · available_on</li>
+      <li><code>Parameter</code> 需带取值范围；<code>CheckRule</code> 对齐 Batfish 检查名</li></ul></div>
+    <div class="stage s2"><h4>② 三种方法</h4><ul class="small">
+      <li><b>A 规则/语法</b>：配置块缩进层级解析 + 命令正则与参数抽取；YANG 模型映射为 <code>has_param</code></li>
+      <li><b>B 模型</b>：配置块 → 业务意图分类；命令序列标注</li>
+      <li><b>C LLM</b>：语义判断（implements / violates / causes）——规则法几乎做不到</li></ul></div>
+    <div class="stage s3"><h4>③ Agent 应用</h4><ul class="small">
+      <li>意图→配置生成+校验："给 VLAN 20 配网关并启用 DHCP 中继"</li>
+      <li>配置漂移检测：给定配置回答违反了哪些规则、引入哪些风险</li>
+      <li>生成的每条命令必须能追溯到图谱中的模板</li></ul></div>
+  </div>
+
+  <p class="small"><b>数据</b>：Batfish 示例快照（★1503 / Apache-2.0 / 2026-10-14 活跃）· YANG 模型（<code>YangModels/yang</code> ★1720、<code>openconfig/public</code> ★995）· <code>ciscoconfparse</code> · 实验室配置（**须脱敏**）。</p>
+  <p class="small"><b>代码入口</b>：<code>topics/t8-netconfig/</code>（本体种子 · 抽取模式 · 词表 · 示意语料） · <code>kgc/ontology.py</code> → <code>kgc/rule.py</code>〡<code>kgc/model.py</code>〡<code>kgc/llm.py</code> → <code>kgc/fuse.py</code> → <code>kgc/kg.py</code> → <code>kgc/agent_app.py</code>；一键 <code>bash scripts/run_all.sh t8-netconfig</code></p>
+  <p class="small"><b>参考文献</b>：Fogel et al., <i>A General Approach to Network Configuration Analysis</i>, NSDI 2015（Batfish 原理）；Beckett et al., <i>A General Approach to Network Configuration Verification</i>, SIGCOMM 2017；RFC 7950（YANG 1.1）；OpenConfig 模型文档；Mininet, NSDI 2010（可选仿真）。</p>
+  <p class="small"><b>验收点</b>：≥2 个厂商配置解析成功 · 生成配置能通过校验规则（可引用 Batfish 检查）· 配置块→意图映射精度 · 生成结果可溯源到命令模板（不允许 LLM 直接编命令）。</p>
+  <div class="warn"><b>坑</b>：设备配置含敏感信息（同 T1）；厂商命令差异大，<b>不要一次覆盖 3 家</b>；校验规则必须有明确出处，否则"校验"变成主观判断。</div>
+</section>
+
+<h2>五、4 周时间线与检查点</h2>
+<div class="card">
+<figure>
+<svg viewBox="0 0 1020 250" role="img" aria-label="4 周时间线">
+  <line x1="40" y1="120" x2="990" y2="120" stroke="#cbd5e1" stroke-width="2"/>
+  <!-- 周列 -->
+  <rect x="45"  y="40" width="215" height="150" rx="10" fill="#f8fbff" stroke="#cfe0f5"/>
+  <rect x="275" y="40" width="215" height="150" rx="10" fill="#f6fffb" stroke="#c9ecdf"/>
+  <rect x="505" y="40" width="215" height="150" rx="10" fill="#faf8ff" stroke="#ded5fb"/>
+  <rect x="735" y="40" width="250" height="150" rx="10" fill="#fffbed" stroke="#fbe3b5"/>
+  <text x="152" y="30" class="ax" font-weight="700" text-anchor="middle">第 1 周</text>
+  <text x="382" y="30" class="ax" font-weight="700" text-anchor="middle">第 2 周</text>
+  <text x="612" y="30" class="ax" font-weight="700" text-anchor="middle">第 3 周</text>
+  <text x="860" y="30" class="ax" font-weight="700" text-anchor="middle">第 4 周</text>
+  <text x="152" y="66" class="nb" text-anchor="middle">说明 + T5 热身实操</text>
+  <text x="152" y="88" class="nbs" text-anchor="middle">选题核对（进阶层验证数据通道）</text>
+  <text x="152" y="110" class="nbs" text-anchor="middle">环境排错</text>
+  <text x="382" y="66" class="nb" text-anchor="middle">本体设计 + Protégé 实操</text>
+  <text x="382" y="88" class="nbs" text-anchor="middle">各组语料与本体评审</text>
+  <text x="612" y="66" class="nb" text-anchor="middle">三方法抽取</text>
+  <text x="612" y="88" class="nbs" text-anchor="middle">金标准与评测口径</text>
+  <text x="612" y="110" class="nbs" text-anchor="middle">（LLM 提示词包第 2 周即下发）</text>
+  <text x="860" y="66" class="nb" text-anchor="middle">融合与质量治理 + Agent 接入</text>
+  <text x="860" y="88" class="nbs" text-anchor="middle">答辩：演示 + 讲代码 + 提问</text>
+  <!-- 交付/检查点标注 -->
+  <text x="152" y="150" class="nbs" text-anchor="middle">交付：《三方法对比初探》≤3 页</text>
+  <text x="382" y="150" class="nbs" text-anchor="middle">交付：本体种子 v1 + 真实语料</text>
+  <text x="612" y="150" class="nbs" text-anchor="middle">交付：三方法指标表 + 金标准 20–30 条</text>
+  <text x="860" y="150" class="nbs" text-anchor="middle">交付：融合 + Agent + ≥8 题问答 + 报告</text>
+  <circle cx="152" cy="120" r="9" fill="#2563eb"/>
+  <circle cx="382" cy="120" r="9" fill="#0f766e"/>
+  <circle cx="612" cy="120" r="9" fill="#6d28d9"/>
+  <circle cx="860" cy="120" r="9" fill="#b45309"/>
+  <text x="152" y="182" class="nbs" text-anchor="middle" font-weight="700">准入检查点：T5 热身（5 分）</text>
+  <text x="382" y="182" class="nbs" text-anchor="middle">检查点：自检 0 问题</text>
+  <text x="612" y="182" class="nbs" text-anchor="middle">检查点：三方法均出指标</text>
+  <text x="860" y="182" class="nbs" text-anchor="middle">检查点：答辩与提交</text>
+  <text x="40" y="225" class="el">课内 16 学时（每周 4 学时）+ 课外约 40 学时 · 进阶层未通过第 1 周验证者，第 2 周起转入基础层（不扣分）</text>
+</svg>
+</figure>
+</div>
+
+<h2>六、提交、合规与评分</h2>
+<div class="grid2">
+  <div class="card">
+    <h3>提交方式</h3>
+    <ul>
+      <li>代码提交到<b>本组自己的 GitHub / Gitee 仓库</b>（按脚手架模板组织），报告附仓库链接与"一条命令跑通"的说明</li>
+      <li>可选：愿意的组另发 PR 汇总到 <code>kgcase/network/topics/&lt;选题&gt;-&lt;组名&gt;/</code></li>
+      <li>必须附<b>数据来源与合规声明</b>（数据集/来源/版本/许可/是否含真实环境信息/脱敏方式）</li>
+      <li>提交前自检：<code>tools/check_restricted_data.py</code>（高风险项不得提交）</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>评分（100 分 + 热身 5 + 加分 ≤10）</h3>
+    <table>
+      <tr><th>维度</th><th>分</th><th>维度</th><th>分</th></tr>
+      <tr><td>本体质量</td><td>15</td><td>融合与质量</td><td>10</td></tr>
+      <tr><td>数据与合规</td><td>10</td><td>阶段三应用</td><td>15</td></tr>
+      <tr><td>方法A 规则</td><td>8</td><td>报告与可复现</td><td>8</td></tr>
+      <tr><td>方法B 模型</td><td>12</td><td><b>答辩（演示+讲代码+提问）</b></td><td><b>10</b></td></tr>
+      <tr><td>方法C LLM</td><td>12</td><td>公共热身 T5（准入）</td><td>5</td></tr>
+    </table>
+    <p class="small muted">加分项（累计 ≤10）：金标准标注工作坊 5 · 脚手架改进 5 · 多跳问答扩展 5。</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>三条数据红线</h3>
+  <ol>
+    <li>只用<b>公开可下载且许可明确</b>的数据，或自造/脱敏样本（≤100 行并标注"示意"）。</li>
+    <li><b>不上传</b>推荐性国家标准全文（GB/T 系列）、实验室设备配置、自采日志到任何公开仓库（含个人仓库）；必要时仅置私有仓库，报告中只引条款号与结论。</li>
+    <li>提交时附合规声明；门禁脚本会拦标准全文、设备配置、真实凭据、日志、二进制数据集等。详见 <code>docs/数据分发与合规.md</code>。</li>
+  </ol>
+</div>
+
+<h2>七、快速开始 &amp; 文档索引</h2>
+<div class="card">
+<pre class="small" style="background:#0f172a;color:#e2e8f0;padding:14px;border-radius:10px;overflow:auto"><code>cd network
+python3.11 -m venv .venv &amp;&amp; .venv/bin/pip install -r requirements.txt
+bash scripts/run_all.sh t5-protocol-rfc                 # 第 1 周：T5 公共热身，一键跑通三阶段
+.venv/bin/python -m kgc.agent_app --topic t5-protocol-rfc bench   # 问答可回答率 + 幻觉率
+.venv/bin/python scripts/mcp_smoke_client.py --topic t5-protocol-rfc  # MCP 链路自检
+bash scripts/run_all.sh &lt;你的选题 id&gt; --fixture          # 换到自己的选题（先跑离线示意语料）</code></pre>
+  <p class="small"><b>改什么</b>：<code>topics/&lt;选题&gt;/</code> 下的 <code>ontology.json</code>（本体）、<code>patterns.yaml</code>（正则/模板）、<code>lexicons.yaml</code>（词典）、<code>gold.jsonl</code>（金标准）；<b>不用改</b> <code>kgc/</code> 引擎。</p>
+</div>
+
+<div class="foot">
+  <p>仓库：<code>gitee.com/ontoweb/kgcase</code> → <code>network/</code>（脚手架与参考答案已开放）</p>
+  <p>文档：<a href="学生作业说明.md">学生作业说明（一页纸）</a> · <a href="作业方案.md">完整作业方案</a> · <a href="数据分发与合规.md">数据分发与合规</a> · <a href="评审报告-2026-10-14.md">方案评审报告</a> · <a href="../README.md">脚手架 README</a></p>
+  <p>打印版 PDF：<a href="学生作业说明.pdf">学生作业说明.pdf</a>（A4 单页）· <a href="选题介绍.pdf">选题介绍.pdf</a>（A4，本页 15 页）——两份均由 <code>tools/build_pdf.py</code> 一键重新生成。</p>
+  <p class="small">本页所有指标均为脚手架在 5 篇真实 RFC 上的实测值（2026-10-14）；图片为内联 SVG，无外部依赖，可离线查看与打印。</p>
+</div>
+
+</div>
+</body>
+</html>

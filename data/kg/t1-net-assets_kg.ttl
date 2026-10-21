@@ -1,0 +1,133 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://kgcourse.org/ontology/net-assets#> .
+
+:DevCORE-SW-01 a :Device ;
+    rdfs:label "CORE-SW-01" ;
+    rdfs:isDefinedBy <kg:t1-net-assets#dev:CORE-SW-01> .
+
+:DevACC-SW-12 a :Device ;
+    rdfs:label "ACC-SW-12" ;
+    rdfs:isDefinedBy <kg:t1-net-assets#dev:ACC-SW-12> .
+
+:IfCampus_networkGi0/1 a :Interface ;
+    rdfs:label "Gi0/1" ;
+    rdfs:isDefinedBy <kg:t1-net-assets#if:campus_network:Gi0/1> .
+
+:IfCampus_networkGi0/24 a :Interface ;
+    rdfs:label "Gi0/24" ;
+    rdfs:isDefinedBy <kg:t1-net-assets#if:campus_network:Gi0/24> .
+
+:IfCampus_networkGi0/2 a :Interface ;
+    rdfs:label "Gi0/2" ;
+    rdfs:isDefinedBy <kg:t1-net-assets#if:campus_network:Gi0/2> .
+
+:Net10.10.20.1/24 a :IPSubnet ;
+    rdfs:label "10.10.20.1/24" ;
+    rdfs:isDefinedBy <kg:t1-net-assets#net:10.10.20.1/24> .
+
+:Net10.10.20.0/24 a :IPSubnet ;
+    rdfs:label "10.10.20.0/24" ;
+    rdfs:isDefinedBy <kg:t1-net-assets#net:10.10.20.0/24> .
+
+:Ip10.10.20.254 a :IPAddress ;
+    rdfs:label "10.10.20.254" ;
+    rdfs:isDefinedBy <kg:t1-net-assets#ip:10.10.20.254> .
+
+:Vlan10 a :VLAN ;
+    rdfs:label "VLAN 10" ;
+    rdfs:isDefinedBy <kg:t1-net-assets#vlan:10> .
+
+:Vlan20 a :VLAN ;
+    rdfs:label "VLAN 20" ;
+    rdfs:isDefinedBy <kg:t1-net-assets#vlan:20> .
+
+:IncINC-20260714 a :Incident ;
+    rdfs:label "INC-20260714" ;
+    rdfs:isDefinedBy <kg:t1-net-assets#inc:INC-20260714> .
+
+:DeviceRole核心交换机 a :DeviceRole ;
+    rdfs:label "核心交换机" ;
+    rdfs:isDefinedBy <kg:t1-net-assets#DeviceRole:核心交换机> .
+
+:DeviceRole接入交换机 a :DeviceRole ;
+    rdfs:label "接入交换机" ;
+    rdfs:isDefinedBy <kg:t1-net-assets#DeviceRole:接入交换机> .
+
+:VendorCisco a :Vendor ;
+    rdfs:label "Cisco" ;
+    rdfs:isDefinedBy <kg:t1-net-assets#Vendor:cisco> .
+
+:VendorHuawei a :Vendor ;
+    rdfs:label "Huawei" ;
+    rdfs:isDefinedBy <kg:t1-net-assets#Vendor:huawei> .
+
+:ServiceDhcp a :Service ;
+    rdfs:label "DHCP" ;
+    rdfs:isDefinedBy <kg:t1-net-assets#Service:dhcp> .
+
+:ServiceNtp a :Service ;
+    rdfs:label "NTP" ;
+    rdfs:isDefinedBy <kg:t1-net-assets#Service:ntp> .
+
+:ServiceSnmp a :Service ;
+    rdfs:label "SNMP" ;
+    rdfs:isDefinedBy <kg:t1-net-assets#Service:snmp> .
+
+:Site主数据中心 a :Site ;
+    rdfs:label "主数据中心" ;
+    rdfs:isDefinedBy <kg:t1-net-assets#Site:主数据中心> .
+
+:Site教学楼 a :Site ;
+    rdfs:label "教学楼" ;
+    rdfs:isDefinedBy <kg:t1-net-assets#Site:教学楼> .
+
+:DocCampus_network a :Document ;
+    rdfs:label "campus_network" ;
+    rdfs:isDefinedBy <kg:t1-net-assets#doc:campus_network> .
+
+:DeviceRole接入交换机 :mentioned_in :DocCampus_network .
+:DeviceRole核心交换机 :mentioned_in :DocCampus_network .
+:ServiceDhcp :mentioned_in :DocCampus_network .
+:ServiceNtp :mentioned_in :DocCampus_network .
+:ServiceSnmp :mentioned_in :DocCampus_network .
+:Site主数据中心 :mentioned_in :DocCampus_network .
+:Site教学楼 :mentioned_in :DocCampus_network .
+:VendorCisco :mentioned_in :DocCampus_network .
+:VendorHuawei :mentioned_in :DocCampus_network .
+:DevACC-SW-12 :mentioned_in :DocCampus_network .
+:DevACC-SW-12 :runs :ServiceDhcp .
+:DevACC-SW-12 :runs :ServiceNtp .
+:DevACC-SW-12 :runs :ServiceSnmp .
+:DevCORE-SW-01 :mentioned_in :DocCampus_network .
+:DevCORE-SW-01 :runs :ServiceDhcp .
+:DevCORE-SW-01 :runs :ServiceNtp .
+:DevCORE-SW-01 :runs :ServiceSnmp .
+:IfCampus_networkGi0/1 :connects_to :IfCampus_networkGi0/2 .
+:IfCampus_networkGi0/1 :connects_to :IfCampus_networkGi0/24 .
+:IfCampus_networkGi0/1 :has_subnet :Net10.10.20.0/24 .
+:IfCampus_networkGi0/1 :has_subnet :Net10.10.20.1/24 .
+:IfCampus_networkGi0/1 :mentioned_in :DocCampus_network .
+:IfCampus_networkGi0/2 :connects_to :IfCampus_networkGi0/1 .
+:IfCampus_networkGi0/2 :connects_to :IfCampus_networkGi0/24 .
+:IfCampus_networkGi0/2 :has_subnet :Net10.10.20.0/24 .
+:IfCampus_networkGi0/2 :has_subnet :Net10.10.20.1/24 .
+:IfCampus_networkGi0/2 :mentioned_in :DocCampus_network .
+:IfCampus_networkGi0/24 :connects_to :IfCampus_networkGi0/1 .
+:IfCampus_networkGi0/24 :connects_to :IfCampus_networkGi0/2 .
+:IfCampus_networkGi0/24 :has_subnet :Net10.10.20.0/24 .
+:IfCampus_networkGi0/24 :has_subnet :Net10.10.20.1/24 .
+:IfCampus_networkGi0/24 :mentioned_in :DocCampus_network .
+:IncINC-20260714 :mentioned_in :DocCampus_network .
+:Ip10.10.20.254 :mentioned_in :DocCampus_network .
+:Net10.10.20.0/24 :mentioned_in :DocCampus_network .
+:Net10.10.20.1/24 :mentioned_in :DocCampus_network .
+:Vlan10 :mentioned_in :DocCampus_network .
+:Vlan20 :mentioned_in :DocCampus_network .
+
+# 边数/节点数摘要（便于快速核对导入结果）
+<kg:t1-net-assets> a owl:Ontology ;
+    rdfs:label "t1-net-assets KG (ensemble)" ;
+    rdfs:comment "nodes=21 edges=38" .

@@ -1,0 +1,8 @@
+{"question": "TCP 首部包含哪些字段？", "expect": [["TCP", "has_field", "Checksum"], ["TCP", "has_field", "Sequence Number"], ["TCP", "has_field", "Window"]], "answer": "TCP 首部包含 Checksum 字段。TCP 首部包含 Sequence Number 字段。TCP 还包含 Window 字段用于流量控制。TCP 协议由 RFC 793 定义且已被 RFC 9293 替代。"}
+{"question": "IPv6 首部包含哪些字段？", "expect": [["IPv6", "has_field", "Hop Limit"], ["IPv6", "has_field", "Flow Label"], ["IPv6", "has_field", "Payload Length"]], "answer": "IPv6 首部包含 Hop Limit 字段。IPv6 首部包含 Flow Label 字段。IPv6 首部包含 Payload Length 字段。IPv6 的地址空间由 NASA 与欧盟共同分配。"}
+{"question": "RFC 8200 取代了哪个文档？", "expect": [["RFC 8200", "obsoletes", "RFC 2460"]], "answer": "RFC 8200 取代了 RFC 2460。"}
+{"question": "TCP 工作在协议栈的哪一层？", "expect": [["TCP", "operates_at", "Transport Layer"]], "answer": "TCP 工作在 Transport Layer。TCP 与 UDP 都由 ISO 组织在 1985 年发布。"}
+{"question": "RFC 9293 引用了哪些文档？", "expect": [["RFC 9293", "cites", "RFC 2119"], ["RFC 9293", "cites", "RFC 8200"]], "answer": "RFC 9293 引用了 RFC 2119。RFC 9293 引用了 RFC 8200。"}
+{"question": "UDP 的作用是什么？", "expect": [["UDP", "has_field", "Source Port"], ["UDP", "has_field", "Checksum"]], "answer": "UDP 首部包含 Source Port 与 Checksum 字段。UDP 由 RFC 768 定义，是无连接传输协议。"}
+{"question": "等保三级系统对边界防护的要求是什么？", "expect": [], "answer": "图谱中无此知识。"}
+{"question": "TCP 与 Transport Layer 之间的关系？", "expect": [["TCP", "operates_at", "Transport Layer"]], "answer": "TCP 的 operates_at 关系指向 Transport Layer。"}

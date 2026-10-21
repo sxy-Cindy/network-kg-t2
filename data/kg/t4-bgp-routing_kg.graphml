@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d2" for="edge" attr.name="relation" attr.type="string" />
+  <key id="d1" for="node" attr.name="type" attr.type="string" />
+  <key id="d0" for="node" attr.name="label" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="as:12345">
+      <data key="d0">AS12345</data>
+      <data key="d1">AS</data>
+    </node>
+    <node id="as:66666">
+      <data key="d0">AS66666</data>
+      <data key="d1">AS</data>
+    </node>
+    <node id="as:64600">
+      <data key="d0">AS64600</data>
+      <data key="d1">AS</data>
+    </node>
+    <node id="prefix:203.0.113.0/24">
+      <data key="d0">203.0.113.0/24</data>
+      <data key="d1">Prefix</data>
+    </node>
+    <node id="path:bgp_update_sample:1">
+      <data key="d0">64500 64510 12345</data>
+      <data key="d1">ASPath</data>
+    </node>
+    <node id="path:bgp_update_sample:2">
+      <data key="d0">64600 66666</data>
+      <data key="d1">ASPath</data>
+    </node>
+    <node id="evt:bgp_update_sample:1">
+      <data key="d0">hijack</data>
+      <data key="d1">HijackEvent</data>
+    </node>
+    <node id="evt:bgp_update_sample:2">
+      <data key="d0">Route leak</data>
+      <data key="d1">HijackEvent</data>
+    </node>
+    <node id="collector:route-views2">
+      <data key="d0">route-views2</data>
+      <data key="d1">Collector</data>
+    </node>
+    <node id="collector:rrc00">
+      <data key="d0">rrc00</data>
+      <data key="d1">Collector</data>
+    </node>
+    <node id="HijackEvent:bgp-hijack">
+      <data key="d0">BGP hijack</data>
+      <data key="d1">HijackEvent</data>
+    </node>
+    <node id="HijackEvent:moas-conflict">
+      <data key="d0">MOAS conflict</data>
+      <data key="d1">HijackEvent</data>
+    </node>
+    <node id="doc:bgp_update_sample">
+      <data key="d0">bgp_update_sample</data>
+      <data key="d1">Document</data>
+    </node>
+    <edge source="as:12345" target="doc:bgp_update_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="as:12345" target="prefix:203.0.113.0/24">
+      <data key="d2">originates</data>
+    </edge>
+    <edge source="as:66666" target="doc:bgp_update_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="as:66666" target="prefix:203.0.113.0/24">
+      <data key="d2">originates</data>
+    </edge>
+    <edge source="as:64600" target="doc:bgp_update_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="as:64600" target="prefix:203.0.113.0/24">
+      <data key="d2">originates</data>
+    </edge>
+    <edge source="prefix:203.0.113.0/24" target="doc:bgp_update_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="path:bgp_update_sample:1" target="doc:bgp_update_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="path:bgp_update_sample:2" target="doc:bgp_update_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="evt:bgp_update_sample:1" target="as:12345">
+      <data key="d2">involves_as</data>
+    </edge>
+    <edge source="evt:bgp_update_sample:1" target="as:64600">
+      <data key="d2">involves_as</data>
+    </edge>
+    <edge source="evt:bgp_update_sample:1" target="as:66666">
+      <data key="d2">involves_as</data>
+    </edge>
+    <edge source="evt:bgp_update_sample:1" target="prefix:203.0.113.0/24">
+      <data key="d2">involves_prefix</data>
+    </edge>
+    <edge source="evt:bgp_update_sample:1" target="doc:bgp_update_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="evt:bgp_update_sample:2" target="as:12345">
+      <data key="d2">involves_as</data>
+    </edge>
+    <edge source="evt:bgp_update_sample:2" target="as:64600">
+      <data key="d2">involves_as</data>
+    </edge>
+    <edge source="evt:bgp_update_sample:2" target="as:66666">
+      <data key="d2">involves_as</data>
+    </edge>
+    <edge source="evt:bgp_update_sample:2" target="prefix:203.0.113.0/24">
+      <data key="d2">involves_prefix</data>
+    </edge>
+    <edge source="evt:bgp_update_sample:2" target="doc:bgp_update_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="collector:route-views2" target="doc:bgp_update_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="collector:rrc00" target="doc:bgp_update_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="HijackEvent:bgp-hijack" target="as:12345">
+      <data key="d2">involves_as</data>
+    </edge>
+    <edge source="HijackEvent:bgp-hijack" target="as:64600">
+      <data key="d2">involves_as</data>
+    </edge>
+    <edge source="HijackEvent:bgp-hijack" target="as:66666">
+      <data key="d2">involves_as</data>
+    </edge>
+    <edge source="HijackEvent:bgp-hijack" target="prefix:203.0.113.0/24">
+      <data key="d2">involves_prefix</data>
+    </edge>
+    <edge source="HijackEvent:bgp-hijack" target="doc:bgp_update_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="HijackEvent:moas-conflict" target="as:12345">
+      <data key="d2">involves_as</data>
+    </edge>
+    <edge source="HijackEvent:moas-conflict" target="as:64600">
+      <data key="d2">involves_as</data>
+    </edge>
+    <edge source="HijackEvent:moas-conflict" target="as:66666">
+      <data key="d2">involves_as</data>
+    </edge>
+    <edge source="HijackEvent:moas-conflict" target="prefix:203.0.113.0/24">
+      <data key="d2">involves_prefix</data>
+    </edge>
+    <edge source="HijackEvent:moas-conflict" target="doc:bgp_update_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+  </graph>
+</graphml>

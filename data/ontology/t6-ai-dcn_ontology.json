@@ -1,0 +1,182 @@
+{
+  "namespace": "http://kgcourse.org/ontology/ai-dcn#",
+  "title": "AI 数据中心高性能网络架构知识图谱（RoCE / MRC / SRv6 / 多平面）",
+  "version": "v1.0",
+  "topic": "t6-ai-dcn",
+  "class_count": 10,
+  "relation_count": 10,
+  "classes": [
+    {
+      "id": "TechObject",
+      "label": "技术对象",
+      "definition": "AI 网络域顶层概念",
+      "parent": null,
+      "source": ""
+    },
+    {
+      "id": "Protocol",
+      "label": "网络协议",
+      "definition": "RoCE/IB/UEC/MRC 等",
+      "parent": "TechObject",
+      "source": ""
+    },
+    {
+      "id": "Architecture",
+      "label": "架构范式",
+      "definition": "多平面/无阻塞/Spine-Leaf 等",
+      "parent": "TechObject",
+      "source": ""
+    },
+    {
+      "id": "Technique",
+      "label": "关键技术",
+      "definition": "packet spraying/源路由/拥塞控制",
+      "parent": "TechObject",
+      "source": ""
+    },
+    {
+      "id": "Component",
+      "label": "组件",
+      "definition": "GPU/NIC/交换机/光模块",
+      "parent": "TechObject",
+      "source": ""
+    },
+    {
+      "id": "Standard",
+      "label": "标准组织与规范",
+      "definition": "OCP/UEC/IETF IBTA",
+      "parent": "TechObject",
+      "source": ""
+    },
+    {
+      "id": "Document",
+      "label": "文献",
+      "definition": "规范文档、论文、白皮书",
+      "parent": "TechObject",
+      "source": ""
+    },
+    {
+      "id": "Benefit",
+      "label": "收益",
+      "definition": "吞吐/成本/功耗/弹性等",
+      "parent": "TechObject",
+      "source": ""
+    },
+    {
+      "id": "FailureMode",
+      "label": "失效模式",
+      "definition": "链路抖动/交换机重启/拥塞",
+      "parent": "TechObject",
+      "source": ""
+    },
+    {
+      "id": "Workload",
+      "label": "负载类型",
+      "definition": "同步训练/推理/checkpoint",
+      "parent": "TechObject",
+      "source": ""
+    }
+  ],
+  "relations": [
+    {
+      "id": "extends",
+      "label": "扩展自",
+      "definition": "协议/技术扩展自另一技术",
+      "domain": "TechObject",
+      "range": "TechObject",
+      "parent": null
+    },
+    {
+      "id": "uses",
+      "label": "使用",
+      "definition": "架构/协议使用某技术",
+      "domain": "TechObject",
+      "range": "TechObject",
+      "parent": null
+    },
+    {
+      "id": "enables",
+      "label": "使能",
+      "definition": "技术使能某能力",
+      "domain": "Technique",
+      "range": "Benefit",
+      "parent": null
+    },
+    {
+      "id": "replaces",
+      "label": "替代",
+      "definition": "新技术替代旧机制",
+      "domain": "TechObject",
+      "range": "TechObject",
+      "parent": null
+    },
+    {
+      "id": "mitigates",
+      "label": "缓解",
+      "definition": "机制缓解某失效模式",
+      "domain": "TechObject",
+      "range": "FailureMode",
+      "parent": null
+    },
+    {
+      "id": "specified_in",
+      "label": "规范于",
+      "definition": "技术在哪个文档/标准中定义",
+      "domain": "TechObject",
+      "range": "Document",
+      "parent": null
+    },
+    {
+      "id": "implemented_in",
+      "label": "实现于",
+      "definition": "技术在哪些组件中实现",
+      "domain": "TechObject",
+      "range": "Component",
+      "parent": null
+    },
+    {
+      "id": "optimized_for",
+      "label": "面向负载",
+      "definition": "架构面向某类负载优化",
+      "domain": "Architecture",
+      "range": "Workload",
+      "parent": null
+    },
+    {
+      "id": "has_constraint",
+      "label": "受限于",
+      "definition": "技术的约束条件",
+      "domain": "TechObject",
+      "range": "FailureMode",
+      "parent": null
+    },
+    {
+      "id": "mentioned_in",
+      "label": "出现在",
+      "definition": "实体出现在来源文档中（结构关系）",
+      "domain": null,
+      "range": null,
+      "parent": null
+    }
+  ],
+  "attributes": [
+    {
+      "id": "bandwidth_gbps",
+      "label": "带宽",
+      "domain": "TechObject",
+      "range": "xsd:decimal"
+    },
+    {
+      "id": "tier_count",
+      "label": "交换层级",
+      "domain": "Architecture",
+      "range": "xsd:integer"
+    },
+    {
+      "id": "source_url",
+      "label": "来源链接",
+      "domain": "Document",
+      "range": "xsd:string"
+    }
+  ]
+}

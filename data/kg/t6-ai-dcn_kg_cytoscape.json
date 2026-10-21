@@ -1,0 +1,441 @@
+{
+  "elements": {
+    "nodes": [
+      {
+        "data": {
+          "id": "proto:MRC",
+          "label": "MRC",
+          "type": "Protocol"
+        }
+      },
+      {
+        "data": {
+          "id": "proto:RoCEv2",
+          "label": "RoCEv2",
+          "type": "Protocol"
+        }
+      },
+      {
+        "data": {
+          "id": "proto:SRv6",
+          "label": "SRv6",
+          "type": "Protocol"
+        }
+      },
+      {
+        "data": {
+          "id": "tech:packet spraying",
+          "label": "packet spraying",
+          "type": "Technique"
+        }
+      },
+      {
+        "data": {
+          "id": "tech:source routing",
+          "label": "source routing",
+          "type": "Technique"
+        }
+      },
+      {
+        "data": {
+          "id": "tech:multi-plane",
+          "label": "multi-plane",
+          "type": "Technique"
+        }
+      },
+      {
+        "data": {
+          "id": "tech:packet trimming",
+          "label": "packet trimming",
+          "type": "Technique"
+        }
+      },
+      {
+        "data": {
+          "id": "fm:congestion",
+          "label": "congestion",
+          "type": "FailureMode"
+        }
+      },
+      {
+        "data": {
+          "id": "fm:link flap",
+          "label": "link flap",
+          "type": "FailureMode"
+        }
+      },
+      {
+        "data": {
+          "id": "fm:switch reboot",
+          "label": "switch reboot",
+          "type": "FailureMode"
+        }
+      },
+      {
+        "data": {
+          "id": "fm:packet loss",
+          "label": "packet loss",
+          "type": "FailureMode"
+        }
+      },
+      {
+        "data": {
+          "id": "fm:incast",
+          "label": "incast",
+          "type": "FailureMode"
+        }
+      },
+      {
+        "data": {
+          "id": "fm:path failure",
+          "label": "path failure",
+          "type": "FailureMode"
+        }
+      },
+      {
+        "data": {
+          "id": "comp:800G",
+          "label": "800G",
+          "type": "Component"
+        }
+      },
+      {
+        "data": {
+          "id": "comp:100G",
+          "label": "100G",
+          "type": "Component"
+        }
+      },
+      {
+        "data": {
+          "id": "std:OCP",
+          "label": "OCP",
+          "type": "Standard"
+        }
+      },
+      {
+        "data": {
+          "id": "std:UEC",
+          "label": "UEC",
+          "type": "Standard"
+        }
+      },
+      {
+        "data": {
+          "id": "std:Ultra Ethernet Consortium",
+          "label": "Ultra Ethernet Consortium",
+          "type": "Standard"
+        }
+      },
+      {
+        "data": {
+          "id": "Benefit:lower-power",
+          "label": "lower power",
+          "type": "Benefit"
+        }
+      },
+      {
+        "data": {
+          "id": "Benefit:fewer-components",
+          "label": "fewer components",
+          "type": "Benefit"
+        }
+      },
+      {
+        "data": {
+          "id": "Benefit:path-diversity",
+          "label": "path diversity",
+          "type": "Benefit"
+        }
+      },
+      {
+        "data": {
+          "id": "Benefit:failure-resilience",
+          "label": "failure resilience",
+          "type": "Benefit"
+        }
+      },
+      {
+        "data": {
+          "id": "Workload:synchronous-training",
+          "label": "synchronous training",
+          "type": "Workload"
+        }
+      },
+      {
+        "data": {
+          "id": "Workload:checkpoint",
+          "label": "checkpoint",
+          "type": "Workload"
+        }
+      },
+      {
+        "data": {
+          "id": "Component:switch",
+          "label": "switch",
+          "type": "Component"
+        }
+      },
+      {
+        "data": {
+          "id": "Component:交换机",
+          "label": "交换机",
+          "type": "Component"
+        }
+      },
+      {
+        "data": {
+          "id": "doc:ai_dcn_notes",
+          "label": "ai_dcn_notes",
+          "type": "Document"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "data": {
+          "id": "e0",
+          "source": "Benefit:failure-resilience",
+          "target": "doc:ai_dcn_notes",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e1",
+          "source": "Benefit:fewer-components",
+          "target": "doc:ai_dcn_notes",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e2",
+          "source": "Benefit:lower-power",
+          "target": "doc:ai_dcn_notes",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e3",
+          "source": "Benefit:path-diversity",
+          "target": "doc:ai_dcn_notes",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e4",
+          "source": "Component:switch",
+          "target": "doc:ai_dcn_notes",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e5",
+          "source": "Component:交换机",
+          "target": "doc:ai_dcn_notes",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e6",
+          "source": "Workload:checkpoint",
+          "target": "doc:ai_dcn_notes",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e7",
+          "source": "Workload:synchronous-training",
+          "target": "doc:ai_dcn_notes",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e8",
+          "source": "comp:100G",
+          "target": "doc:ai_dcn_notes",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e9",
+          "source": "comp:800G",
+          "target": "doc:ai_dcn_notes",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e10",
+          "source": "fm:congestion",
+          "target": "doc:ai_dcn_notes",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e11",
+          "source": "fm:incast",
+          "target": "doc:ai_dcn_notes",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e12",
+          "source": "fm:link flap",
+          "target": "doc:ai_dcn_notes",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e13",
+          "source": "fm:packet loss",
+          "target": "doc:ai_dcn_notes",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e14",
+          "source": "fm:path failure",
+          "target": "doc:ai_dcn_notes",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e15",
+          "source": "fm:switch reboot",
+          "target": "doc:ai_dcn_notes",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e16",
+          "source": "proto:MRC",
+          "target": "doc:ai_dcn_notes",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e17",
+          "source": "proto:MRC",
+          "target": "tech:packet spraying",
+          "label": "uses"
+        }
+      },
+      {
+        "data": {
+          "id": "e18",
+          "source": "proto:MRC",
+          "target": "tech:source routing",
+          "label": "uses"
+        }
+      },
+      {
+        "data": {
+          "id": "e19",
+          "source": "proto:RoCEv2",
+          "target": "doc:ai_dcn_notes",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e20",
+          "source": "proto:SRv6",
+          "target": "doc:ai_dcn_notes",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e21",
+          "source": "proto:SRv6",
+          "target": "tech:source routing",
+          "label": "uses"
+        }
+      },
+      {
+        "data": {
+          "id": "e22",
+          "source": "std:OCP",
+          "target": "doc:ai_dcn_notes",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e23",
+          "source": "std:UEC",
+          "target": "doc:ai_dcn_notes",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e24",
+          "source": "std:Ultra Ethernet Consortium",
+          "target": "doc:ai_dcn_notes",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e25",
+          "source": "tech:multi-plane",
+          "target": "doc:ai_dcn_notes",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e26",
+          "source": "tech:packet spraying",
+          "target": "doc:ai_dcn_notes",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e27",
+          "source": "tech:packet spraying",
+          "target": "fm:congestion",
+          "label": "mitigates"
+        }
+      },
+      {
+        "data": {
+          "id": "e28",
+          "source": "tech:packet trimming",
+          "target": "doc:ai_dcn_notes",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e29",
+          "source": "tech:source routing",
+          "target": "doc:ai_dcn_notes",
+          "label": "mentioned_in"
+        }
+      }
+    ]
+  },
+  "stats": {
+    "nodes": 27,
+    "edges": 30
+  }
+}

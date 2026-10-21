@@ -1,0 +1,277 @@
+{
+  "elements": {
+    "nodes": [
+      {
+        "data": {
+          "id": "block:if:Gi0/1",
+          "label": "interface Gi0/1",
+          "type": "ConfigBlock"
+        }
+      },
+      {
+        "data": {
+          "id": "block:if:Vlanif20",
+          "label": "interface Vlanif20",
+          "type": "ConfigBlock"
+        }
+      },
+      {
+        "data": {
+          "id": "block:ospf:1",
+          "label": "router ospf 1",
+          "type": "ConfigBlock"
+        }
+      },
+      {
+        "data": {
+          "id": "cmd:description",
+          "label": "description",
+          "type": "Command"
+        }
+      },
+      {
+        "data": {
+          "id": "cmd:ip address",
+          "label": "ip address",
+          "type": "Command"
+        }
+      },
+      {
+        "data": {
+          "id": "cmd:switchport",
+          "label": "switchport",
+          "type": "Command"
+        }
+      },
+      {
+        "data": {
+          "id": "cmd:network",
+          "label": "network",
+          "type": "Command"
+        }
+      },
+      {
+        "data": {
+          "id": "cmd:redistribute",
+          "label": "redistribute",
+          "type": "Command"
+        }
+      },
+      {
+        "data": {
+          "id": "Intent:提供-dhcp-服务",
+          "label": "提供 DHCP 服务",
+          "type": "Intent"
+        }
+      },
+      {
+        "data": {
+          "id": "Intent:实现双上行冗余",
+          "label": "实现双上行冗余",
+          "type": "Intent"
+        }
+      },
+      {
+        "data": {
+          "id": "Risk:单点故障",
+          "label": "单点故障",
+          "type": "Risk"
+        }
+      },
+      {
+        "data": {
+          "id": "Risk:广播风暴",
+          "label": "广播风暴",
+          "type": "Risk"
+        }
+      },
+      {
+        "data": {
+          "id": "Platform:cisco-ios",
+          "label": "Cisco IOS",
+          "type": "Platform"
+        }
+      },
+      {
+        "data": {
+          "id": "Platform:huawei-vrp",
+          "label": "Huawei VRP",
+          "type": "Platform"
+        }
+      },
+      {
+        "data": {
+          "id": "doc:device_config_sample",
+          "label": "device_config_sample",
+          "type": "Document"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "data": {
+          "id": "e0",
+          "source": "Intent:实现双上行冗余",
+          "target": "doc:device_config_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e1",
+          "source": "Intent:提供-dhcp-服务",
+          "target": "doc:device_config_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e2",
+          "source": "Platform:cisco-ios",
+          "target": "doc:device_config_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e3",
+          "source": "Platform:huawei-vrp",
+          "target": "doc:device_config_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e4",
+          "source": "Risk:单点故障",
+          "target": "doc:device_config_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e5",
+          "source": "Risk:广播风暴",
+          "target": "doc:device_config_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e6",
+          "source": "block:if:Gi0/1",
+          "target": "doc:device_config_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e7",
+          "source": "block:if:Vlanif20",
+          "target": "doc:device_config_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e8",
+          "source": "block:ospf:1",
+          "target": "doc:device_config_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e9",
+          "source": "cmd:description",
+          "target": "block:if:Gi0/1",
+          "label": "in_block"
+        }
+      },
+      {
+        "data": {
+          "id": "e10",
+          "source": "cmd:description",
+          "target": "doc:device_config_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e11",
+          "source": "cmd:ip address",
+          "target": "block:if:Gi0/1",
+          "label": "in_block"
+        }
+      },
+      {
+        "data": {
+          "id": "e12",
+          "source": "cmd:ip address",
+          "target": "block:if:Vlanif20",
+          "label": "in_block"
+        }
+      },
+      {
+        "data": {
+          "id": "e13",
+          "source": "cmd:ip address",
+          "target": "doc:device_config_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e14",
+          "source": "cmd:network",
+          "target": "block:ospf:1",
+          "label": "in_block"
+        }
+      },
+      {
+        "data": {
+          "id": "e15",
+          "source": "cmd:network",
+          "target": "doc:device_config_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e16",
+          "source": "cmd:redistribute",
+          "target": "block:ospf:1",
+          "label": "in_block"
+        }
+      },
+      {
+        "data": {
+          "id": "e17",
+          "source": "cmd:redistribute",
+          "target": "doc:device_config_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e18",
+          "source": "cmd:switchport",
+          "target": "block:if:Gi0/1",
+          "label": "in_block"
+        }
+      },
+      {
+        "data": {
+          "id": "e19",
+          "source": "cmd:switchport",
+          "target": "doc:device_config_sample",
+          "label": "mentioned_in"
+        }
+      }
+    ]
+  },
+  "stats": {
+    "nodes": 15,
+    "edges": 20
+  }
+}

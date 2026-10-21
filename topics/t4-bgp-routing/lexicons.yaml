@@ -1,0 +1,14 @@
+HijackEvent:
+- BGP hijack
+- route leak
+- prefix hijack
+- MOAS conflict
+- 路由劫持
+- 路由泄露
+- 多源始发
+Collector:
+- route-views2
+- route-views6
+- rrc00
+- rrc01
+- rrc24

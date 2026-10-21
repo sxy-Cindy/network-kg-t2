@@ -1,0 +1,385 @@
+{
+  "topic": "t8-netconfig",
+  "method": "rule",
+  "doc_count": 1,
+  "entity_count": 14,
+  "relation_count": 20,
+  "entities": [
+    {
+      "id": "block:if:Gi0/1",
+      "label": "interface Gi0/1",
+      "type": "ConfigBlock",
+      "doc": "device_config_sample",
+      "evidence": "示意语料，语法取自 Cisco IOS / Huawei VRP 常见形态） hostname ACC-SW-12 ! interface Gi0/1 description uplink to CORE-SW-01 ip address 10.10.20.254",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "match": "interface Gi0/1"
+      }
+    },
+    {
+      "id": "block:if:Vlanif20",
+      "label": "interface Vlanif20",
+      "type": "ConfigBlock",
+      "doc": "device_config_sample",
+      "evidence": "address 10.10.20.254 255.255.255.0 switchport mode trunk ! interface Vlanif20 ip address 10.10.20.254 255.255.255.0 ! router ospf 1 net",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "match": "interface Vlanif20"
+      }
+    },
+    {
+      "id": "block:ospf:1",
+      "label": "router ospf 1",
+      "type": "ConfigBlock",
+      "doc": "device_config_sample",
+      "evidence": "interface Vlanif20 ip address 10.10.20.254 255.255.255.0 ! router ospf 1 network 10.10.20.0 0.0.0.255 area 0 redistribute connecte",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "match": "router ospf 1"
+      }
+    },
+    {
+      "id": "cmd:description",
+      "label": "description",
+      "type": "Command",
+      "doc": "device_config_sample",
+      "evidence": "IOS / Huawei VRP 常见形态） hostname ACC-SW-12 ! interface Gi0/1 description uplink to CORE-SW-01 ip address 10.10.20.254 255.255.255.0",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "match": " description"
+      }
+    },
+    {
+      "id": "cmd:ip address",
+      "label": "ip address",
+      "type": "Command",
+      "doc": "device_config_sample",
+      "evidence": "C-SW-12 ! interface Gi0/1 description uplink to CORE-SW-01 ip address 10.10.20.254 255.255.255.0 switchport mode trunk ! interfa",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "match": " ip address"
+      }
+    },
+    {
+      "id": "cmd:switchport",
+      "label": "switchport",
+      "type": "Command",
+      "doc": "device_config_sample",
+      "evidence": "uplink to CORE-SW-01 ip address 10.10.20.254 255.255.255.0 switchport mode trunk ! interface Vlanif20 ip address 10.10.20.254 25",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "match": " switchport"
+      }
+    },
+    {
+      "id": "cmd:network",
+      "label": "network",
+      "type": "Command",
+      "doc": "device_config_sample",
+      "evidence": "if20 ip address 10.10.20.254 255.255.255.0 ! router ospf 1 network 10.10.20.0 0.0.0.255 area 0 redistribute connected ! # 意图：",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "match": " network"
+      }
+    },
+    {
+      "id": "cmd:redistribute",
+      "label": "redistribute",
+      "type": "Command",
+      "doc": "device_config_sample",
+      "evidence": ".255.0 ! router ospf 1 network 10.10.20.0 0.0.0.255 area 0 redistribute connected ! # 意图：提供 DHCP 服务、实现双上行冗余；风险：单点故障、广播风暴",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "match": " redistribute"
+      }
+    },
+    {
+      "id": "Intent:提供-dhcp-服务",
+      "label": "提供 DHCP 服务",
+      "type": "Intent",
+      "doc": "device_config_sample",
+      "evidence": "10.10.20.0 0.0.0.255 area 0 redistribute connected ! # 意图：提供 DHCP 服务、实现双上行冗余；风险：单点故障、广播风暴",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "surface": "提供 DHCP 服务"
+      }
+    },
+    {
+      "id": "Intent:实现双上行冗余",
+      "label": "实现双上行冗余",
+      "type": "Intent",
+      "doc": "device_config_sample",
+      "evidence": "0.0.0.255 area 0 redistribute connected ! # 意图：提供 DHCP 服务、实现双上行冗余；风险：单点故障、广播风暴",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "surface": "实现双上行冗余"
+      }
+    },
+    {
+      "id": "Risk:单点故障",
+      "label": "单点故障",
+      "type": "Risk",
+      "doc": "device_config_sample",
+      "evidence": "area 0 redistribute connected ! # 意图：提供 DHCP 服务、实现双上行冗余；风险：单点故障、广播风暴",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "surface": "单点故障"
+      }
+    },
+    {
+      "id": "Risk:广播风暴",
+      "label": "广播风暴",
+      "type": "Risk",
+      "doc": "device_config_sample",
+      "evidence": "0 redistribute connected ! # 意图：提供 DHCP 服务、实现双上行冗余；风险：单点故障、广播风暴",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "surface": "广播风暴"
+      }
+    },
+    {
+      "id": "Platform:cisco-ios",
+      "label": "Cisco IOS",
+      "type": "Platform",
+      "doc": "device_config_sample",
+      "evidence": "# 设备配置摘录（示意语料，语法取自 Cisco IOS / Huawei VRP 常见形态） hostname ACC-SW-12 ! interface Gi0/1 de",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "surface": "Cisco IOS"
+      }
+    },
+    {
+      "id": "Platform:huawei-vrp",
+      "label": "Huawei VRP",
+      "type": "Platform",
+      "doc": "device_config_sample",
+      "evidence": "# 设备配置摘录（示意语料，语法取自 Cisco IOS / Huawei VRP 常见形态） hostname ACC-SW-12 ! interface Gi0/1 description upl",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "surface": "Huawei VRP"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "source": "block:if:Gi0/1",
+      "relation": "mentioned_in",
+      "target": "doc:device_config_sample",
+      "doc": "device_config_sample",
+      "evidence": "示意语料，语法取自 Cisco IOS / Huawei VRP 常见形态） hostname ACC-SW-12 ! interface Gi0/1 description uplink to CORE-SW-01 ip address 10.10.20.254",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "block:if:Vlanif20",
+      "relation": "mentioned_in",
+      "target": "doc:device_config_sample",
+      "doc": "device_config_sample",
+      "evidence": "address 10.10.20.254 255.255.255.0 switchport mode trunk ! interface Vlanif20 ip address 10.10.20.254 255.255.255.0 ! router ospf 1 net",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "block:ospf:1",
+      "relation": "mentioned_in",
+      "target": "doc:device_config_sample",
+      "doc": "device_config_sample",
+      "evidence": "interface Vlanif20 ip address 10.10.20.254 255.255.255.0 ! router ospf 1 network 10.10.20.0 0.0.0.255 area 0 redistribute connecte",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "cmd:description",
+      "relation": "mentioned_in",
+      "target": "doc:device_config_sample",
+      "doc": "device_config_sample",
+      "evidence": "IOS / Huawei VRP 常见形态） hostname ACC-SW-12 ! interface Gi0/1 description uplink to CORE-SW-01 ip address 10.10.20.254 255.255.255.0",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "cmd:ip address",
+      "relation": "mentioned_in",
+      "target": "doc:device_config_sample",
+      "doc": "device_config_sample",
+      "evidence": "C-SW-12 ! interface Gi0/1 description uplink to CORE-SW-01 ip address 10.10.20.254 255.255.255.0 switchport mode trunk ! interfa",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "cmd:switchport",
+      "relation": "mentioned_in",
+      "target": "doc:device_config_sample",
+      "doc": "device_config_sample",
+      "evidence": "uplink to CORE-SW-01 ip address 10.10.20.254 255.255.255.0 switchport mode trunk ! interface Vlanif20 ip address 10.10.20.254 25",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "cmd:network",
+      "relation": "mentioned_in",
+      "target": "doc:device_config_sample",
+      "doc": "device_config_sample",
+      "evidence": "if20 ip address 10.10.20.254 255.255.255.0 ! router ospf 1 network 10.10.20.0 0.0.0.255 area 0 redistribute connected ! # 意图：",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "cmd:redistribute",
+      "relation": "mentioned_in",
+      "target": "doc:device_config_sample",
+      "doc": "device_config_sample",
+      "evidence": ".255.0 ! router ospf 1 network 10.10.20.0 0.0.0.255 area 0 redistribute connected ! # 意图：提供 DHCP 服务、实现双上行冗余；风险：单点故障、广播风暴",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "Intent:提供-dhcp-服务",
+      "relation": "mentioned_in",
+      "target": "doc:device_config_sample",
+      "doc": "device_config_sample",
+      "evidence": "10.10.20.0 0.0.0.255 area 0 redistribute connected ! # 意图：提供 DHCP 服务、实现双上行冗余；风险：单点故障、广播风暴",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "Intent:实现双上行冗余",
+      "relation": "mentioned_in",
+      "target": "doc:device_config_sample",
+      "doc": "device_config_sample",
+      "evidence": "0.0.0.255 area 0 redistribute connected ! # 意图：提供 DHCP 服务、实现双上行冗余；风险：单点故障、广播风暴",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "Risk:单点故障",
+      "relation": "mentioned_in",
+      "target": "doc:device_config_sample",
+      "doc": "device_config_sample",
+      "evidence": "area 0 redistribute connected ! # 意图：提供 DHCP 服务、实现双上行冗余；风险：单点故障、广播风暴",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "Risk:广播风暴",
+      "relation": "mentioned_in",
+      "target": "doc:device_config_sample",
+      "doc": "device_config_sample",
+      "evidence": "0 redistribute connected ! # 意图：提供 DHCP 服务、实现双上行冗余；风险：单点故障、广播风暴",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "Platform:cisco-ios",
+      "relation": "mentioned_in",
+      "target": "doc:device_config_sample",
+      "doc": "device_config_sample",
+      "evidence": "# 设备配置摘录（示意语料，语法取自 Cisco IOS / Huawei VRP 常见形态） hostname ACC-SW-12 ! interface Gi0/1 de",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "Platform:huawei-vrp",
+      "relation": "mentioned_in",
+      "target": "doc:device_config_sample",
+      "doc": "device_config_sample",
+      "evidence": "# 设备配置摘录（示意语料，语法取自 Cisco IOS / Huawei VRP 常见形态） hostname ACC-SW-12 ! interface Gi0/1 description upl",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "cmd:description",
+      "relation": "in_block",
+      "target": "block:if:Gi0/1",
+      "doc": "device_config_sample",
+      "evidence": "interface Gi0/1 description uplink to CORE-SW-01 ip address 10.10.20.254 255.255.255.0 switchport mode trunk !",
+      "method": "rule",
+      "properties": {
+        "trigger": "",
+        "gap": 0,
+        "rule": "in_block"
+      }
+    },
+    {
+      "source": "cmd:ip address",
+      "relation": "in_block",
+      "target": "block:if:Gi0/1",
+      "doc": "device_config_sample",
+      "evidence": "interface Gi0/1 description uplink to CORE-SW-01 ip address 10.10.20.254 255.255.255.0 switchport mode trunk !",
+      "method": "rule",
+      "properties": {
+        "trigger": "",
+        "gap": 0,
+        "rule": "in_block"
+      }
+    },
+    {
+      "source": "cmd:switchport",
+      "relation": "in_block",
+      "target": "block:if:Gi0/1",
+      "doc": "device_config_sample",
+      "evidence": "interface Gi0/1 description uplink to CORE-SW-01 ip address 10.10.20.254 255.255.255.0 switchport mode trunk !",
+      "method": "rule",
+      "properties": {
+        "trigger": "",
+        "gap": 0,
+        "rule": "in_block"
+      }
+    },
+    {
+      "source": "cmd:ip address",
+      "relation": "in_block",
+      "target": "block:if:Vlanif20",
+      "doc": "device_config_sample",
+      "evidence": "interface Vlanif20 ip address 10.10.20.254 255.255.255.0 !",
+      "method": "rule",
+      "properties": {
+        "trigger": "",
+        "gap": 0,
+        "rule": "in_block"
+      }
+    },
+    {
+      "source": "cmd:network",
+      "relation": "in_block",
+      "target": "block:ospf:1",
+      "doc": "device_config_sample",
+      "evidence": "router ospf 1 network 10.10.20.0 0.0.0.255 area 0 redistribute connected !",
+      "method": "rule",
+      "properties": {
+        "trigger": "",
+        "gap": 0,
+        "rule": "in_block"
+      }
+    },
+    {
+      "source": "cmd:redistribute",
+      "relation": "in_block",
+      "target": "block:ospf:1",
+      "doc": "device_config_sample",
+      "evidence": "router ospf 1 network 10.10.20.0 0.0.0.255 area 0 redistribute connected !",
+      "method": "rule",
+      "properties": {
+        "trigger": "",
+        "gap": 0,
+        "rule": "in_block"
+      }
+    }
+  ],
+  "unknown_types": [],
+  "unknown_relations": []
+}

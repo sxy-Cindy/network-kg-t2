@@ -1,0 +1,49 @@
+entity_patterns:
+- type: RFC
+  regex: \bRFC[\s-]?(\d{3,5})\b
+  id_template: rfc:{1}
+  label_template: RFC {1}
+  flags:
+  - IGNORECASE
+- type: Section
+  regex: (?m)^\s{0,3}(\d{1,2}(?:\.\d{1,2}){0,3})\.\s+([A-Z][^\n]{2,70})$
+  id_template: sec:{doc}:{1}
+  label_template: '{1} {2}'
+  flags:
+  - MULTILINE
+- type: NormativeKeyword
+  regex: \b(MUST NOT|SHOULD NOT|NOT RECOMMENDED|MUST|SHOULD|RECOMMENDED|MAY|OPTIONAL|REQUIRED|SHALL)\b
+  id_template: kw:{1}
+  label_template: '{1}'
+- type: Port
+  regex: (?i)\bport\s*(?:number)?\s*[:=]?\s*(\d{1,5})\b
+  id_template: port:{1}
+  label_template: Port {1}
+relations:
+- name: obsoletes
+  relation: obsoletes
+  source_type: RFC
+  target_type: RFC
+  trigger: (?i)\bobsolet
+- name: updates
+  relation: updates
+  source_type: RFC
+  target_type: RFC
+  trigger: (?i)\bupdates?\b
+- name: cites
+  relation: cites
+  source_type: RFC
+  target_type: RFC
+  trigger: (?i)\b(refer|see|specified in|defined in|consider)
+- name: operates_at
+  relation: operates_at
+  source_type: Protocol
+  target_type: Layer
+  trigger: (?i)\b(layer|分层|层)\b
+- name: has_field
+  relation: has_field
+  source_type: Protocol
+  target_type: MessageField
+  trigger: (?i)\b(field|header|域|首部|字段)\b
+structural:
+  mentioned_in: true

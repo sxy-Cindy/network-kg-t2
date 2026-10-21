@@ -1,0 +1,117 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://kgcourse.org/ontology/netconfig#> .
+
+<> a owl:Ontology ;
+    owl:versionInfo "v1.0" ;
+    rdfs:seeAlso <https://github.com/batfish/batfish> ;
+    rdfs:label "网络设备配置知识图谱与配置生成校验（进阶选题）"@zh ;
+    rdfs:comment "把厂商命令、配置块、意图与合规检查规则连成图，支撑「自然语言意图 → 配置片段 → 校验」的闭环。"@zh .
+
+:ConfigObject a owl:Class ;
+    rdfs:label "配置对象"@zh ;
+    rdfs:comment "配置域顶层概念"@zh ;
+    .
+
+:Command a owl:Class ;
+    rdfs:subClassOf :ConfigObject ;
+    rdfs:label "命令"@zh ;
+    rdfs:comment "厂商 CLI 命令"@zh ;
+    .
+
+:ConfigBlock a owl:Class ;
+    rdfs:subClassOf :ConfigObject ;
+    rdfs:label "配置块"@zh ;
+    rdfs:comment "接口/VLAN/路由进程等配置段"@zh ;
+    .
+
+:Parameter a owl:Class ;
+    rdfs:subClassOf :ConfigObject ;
+    rdfs:label "参数"@zh ;
+    rdfs:comment "命令参数及取值范围"@zh ;
+    .
+
+:Intent a owl:Class ;
+    rdfs:subClassOf :ConfigObject ;
+    rdfs:label "配置意图"@zh ;
+    rdfs:comment "业务意图（如「提供 DHCP 服务」）"@zh ;
+    .
+
+:CheckRule a owl:Class ;
+    rdfs:subClassOf :ConfigObject ;
+    rdfs:label "校验规则"@zh ;
+    rdfs:comment "Batfish/自定义合规检查"@zh ;
+    .
+
+:Platform a owl:Class ;
+    rdfs:subClassOf :ConfigObject ;
+    rdfs:label "平台型号"@zh ;
+    rdfs:comment "厂商与型号"@zh ;
+    .
+
+:Risk a owl:Class ;
+    rdfs:subClassOf :ConfigObject ;
+    rdfs:label "配置风险"@zh ;
+    rdfs:comment "错误配置导致的后果"@zh ;
+    .
+
+:has_param a owl:ObjectProperty ;
+    rdfs:domain :Command ;
+    rdfs:range :Parameter ;
+    rdfs:label "含参数"@zh ;
+    rdfs:comment "命令参数"@zh ;
+    .
+
+:in_block a owl:ObjectProperty ;
+    rdfs:domain :Command ;
+    rdfs:range :ConfigBlock ;
+    rdfs:label "属于配置块"@zh ;
+    rdfs:comment "命令出现在配置块中"@zh ;
+    .
+
+:implements a owl:ObjectProperty ;
+    rdfs:domain :ConfigBlock ;
+    rdfs:range :Intent ;
+    rdfs:label "实现意图"@zh ;
+    rdfs:comment "配置块实现业务意图"@zh ;
+    .
+
+:violates a owl:ObjectProperty ;
+    rdfs:domain :ConfigBlock ;
+    rdfs:range :CheckRule ;
+    rdfs:label "违反"@zh ;
+    rdfs:comment "配置违反校验规则"@zh ;
+    .
+
+:causes a owl:ObjectProperty ;
+    rdfs:domain :ConfigBlock ;
+    rdfs:range :Risk ;
+    rdfs:label "导致"@zh ;
+    rdfs:comment "错误配置导致风险"@zh ;
+    .
+
+:available_on a owl:ObjectProperty ;
+    rdfs:domain :Command ;
+    rdfs:range :Platform ;
+    rdfs:label "可用平台"@zh ;
+    rdfs:comment "命令支持的平台"@zh ;
+    .
+
+:mentioned_in a owl:ObjectProperty ;
+    rdfs:label "出现在"@zh ;
+    rdfs:comment "实体出现在来源文档中（结构关系）"@zh ;
+    .
+
+:syntax a owl:DatatypeProperty ;
+    rdfs:domain :Command ;
+    rdfs:range :xsd:string ;
+    rdfs:label "语法"@zh ;
+    .
+
+:vendor a owl:DatatypeProperty ;
+    rdfs:domain :Platform ;
+    rdfs:range :xsd:string ;
+    rdfs:label "厂商"@zh ;
+    .

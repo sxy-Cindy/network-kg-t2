@@ -1,0 +1,12 @@
+id: t3-log-rca
+title: 网络与系统日志驱动的故障根因知识图谱
+description: 把日志模板、事件、组件与故障根因连成因果图，支持「日志 → 异常 → 根因」链式推理。
+namespace: http://kgcourse.org/ontology/log-rca#
+version: v1.0
+source_url: https://github.com/logpai/loghub
+corpus_glob: data/corpus/t3-log-rca/*.txt
+fusion:
+  weights:
+    rule: 1.0
+    model: 1.0
+    llm: 1.1

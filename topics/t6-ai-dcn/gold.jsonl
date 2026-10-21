@@ -1,0 +1,4 @@
+{"type": "Protocol", "label": "MRC", "doc": "ai_dcn_notes"}
+{"type": "Protocol", "label": "SRv6", "doc": "ai_dcn_notes"}
+{"type": "FailureMode", "label": "congestion", "doc": "ai_dcn_notes"}
+{"head": "MRC", "head_type": "Protocol", "relation": "uses", "tail": "packet spraying", "tail_type": "Technique", "doc": "ai_dcn_notes"}

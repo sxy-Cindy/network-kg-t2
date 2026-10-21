@@ -1,0 +1,351 @@
+{
+  "elements": {
+    "nodes": [
+      {
+        "data": {
+          "id": "as:12345",
+          "label": "AS12345",
+          "type": "AS"
+        }
+      },
+      {
+        "data": {
+          "id": "as:66666",
+          "label": "AS66666",
+          "type": "AS"
+        }
+      },
+      {
+        "data": {
+          "id": "as:64600",
+          "label": "AS64600",
+          "type": "AS"
+        }
+      },
+      {
+        "data": {
+          "id": "prefix:203.0.113.0/24",
+          "label": "203.0.113.0/24",
+          "type": "Prefix"
+        }
+      },
+      {
+        "data": {
+          "id": "path:bgp_update_sample:1",
+          "label": "64500 64510 12345",
+          "type": "ASPath"
+        }
+      },
+      {
+        "data": {
+          "id": "path:bgp_update_sample:2",
+          "label": "64600 66666",
+          "type": "ASPath"
+        }
+      },
+      {
+        "data": {
+          "id": "evt:bgp_update_sample:1",
+          "label": "hijack",
+          "type": "HijackEvent"
+        }
+      },
+      {
+        "data": {
+          "id": "evt:bgp_update_sample:2",
+          "label": "Route leak",
+          "type": "HijackEvent"
+        }
+      },
+      {
+        "data": {
+          "id": "collector:route-views2",
+          "label": "route-views2",
+          "type": "Collector"
+        }
+      },
+      {
+        "data": {
+          "id": "collector:rrc00",
+          "label": "rrc00",
+          "type": "Collector"
+        }
+      },
+      {
+        "data": {
+          "id": "HijackEvent:bgp-hijack",
+          "label": "BGP hijack",
+          "type": "HijackEvent"
+        }
+      },
+      {
+        "data": {
+          "id": "HijackEvent:moas-conflict",
+          "label": "MOAS conflict",
+          "type": "HijackEvent"
+        }
+      },
+      {
+        "data": {
+          "id": "doc:bgp_update_sample",
+          "label": "bgp_update_sample",
+          "type": "Document"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "data": {
+          "id": "e0",
+          "source": "HijackEvent:bgp-hijack",
+          "target": "as:12345",
+          "label": "involves_as"
+        }
+      },
+      {
+        "data": {
+          "id": "e1",
+          "source": "HijackEvent:bgp-hijack",
+          "target": "as:64600",
+          "label": "involves_as"
+        }
+      },
+      {
+        "data": {
+          "id": "e2",
+          "source": "HijackEvent:bgp-hijack",
+          "target": "as:66666",
+          "label": "involves_as"
+        }
+      },
+      {
+        "data": {
+          "id": "e3",
+          "source": "HijackEvent:bgp-hijack",
+          "target": "prefix:203.0.113.0/24",
+          "label": "involves_prefix"
+        }
+      },
+      {
+        "data": {
+          "id": "e4",
+          "source": "HijackEvent:bgp-hijack",
+          "target": "doc:bgp_update_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e5",
+          "source": "HijackEvent:moas-conflict",
+          "target": "as:12345",
+          "label": "involves_as"
+        }
+      },
+      {
+        "data": {
+          "id": "e6",
+          "source": "HijackEvent:moas-conflict",
+          "target": "as:64600",
+          "label": "involves_as"
+        }
+      },
+      {
+        "data": {
+          "id": "e7",
+          "source": "HijackEvent:moas-conflict",
+          "target": "as:66666",
+          "label": "involves_as"
+        }
+      },
+      {
+        "data": {
+          "id": "e8",
+          "source": "HijackEvent:moas-conflict",
+          "target": "prefix:203.0.113.0/24",
+          "label": "involves_prefix"
+        }
+      },
+      {
+        "data": {
+          "id": "e9",
+          "source": "HijackEvent:moas-conflict",
+          "target": "doc:bgp_update_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e10",
+          "source": "as:12345",
+          "target": "doc:bgp_update_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e11",
+          "source": "as:12345",
+          "target": "prefix:203.0.113.0/24",
+          "label": "originates"
+        }
+      },
+      {
+        "data": {
+          "id": "e12",
+          "source": "as:64600",
+          "target": "doc:bgp_update_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e13",
+          "source": "as:64600",
+          "target": "prefix:203.0.113.0/24",
+          "label": "originates"
+        }
+      },
+      {
+        "data": {
+          "id": "e14",
+          "source": "as:66666",
+          "target": "doc:bgp_update_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e15",
+          "source": "as:66666",
+          "target": "prefix:203.0.113.0/24",
+          "label": "originates"
+        }
+      },
+      {
+        "data": {
+          "id": "e16",
+          "source": "collector:route-views2",
+          "target": "doc:bgp_update_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e17",
+          "source": "collector:rrc00",
+          "target": "doc:bgp_update_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e18",
+          "source": "evt:bgp_update_sample:1",
+          "target": "as:12345",
+          "label": "involves_as"
+        }
+      },
+      {
+        "data": {
+          "id": "e19",
+          "source": "evt:bgp_update_sample:1",
+          "target": "as:64600",
+          "label": "involves_as"
+        }
+      },
+      {
+        "data": {
+          "id": "e20",
+          "source": "evt:bgp_update_sample:1",
+          "target": "as:66666",
+          "label": "involves_as"
+        }
+      },
+      {
+        "data": {
+          "id": "e21",
+          "source": "evt:bgp_update_sample:1",
+          "target": "prefix:203.0.113.0/24",
+          "label": "involves_prefix"
+        }
+      },
+      {
+        "data": {
+          "id": "e22",
+          "source": "evt:bgp_update_sample:1",
+          "target": "doc:bgp_update_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e23",
+          "source": "evt:bgp_update_sample:2",
+          "target": "as:12345",
+          "label": "involves_as"
+        }
+      },
+      {
+        "data": {
+          "id": "e24",
+          "source": "evt:bgp_update_sample:2",
+          "target": "as:64600",
+          "label": "involves_as"
+        }
+      },
+      {
+        "data": {
+          "id": "e25",
+          "source": "evt:bgp_update_sample:2",
+          "target": "as:66666",
+          "label": "involves_as"
+        }
+      },
+      {
+        "data": {
+          "id": "e26",
+          "source": "evt:bgp_update_sample:2",
+          "target": "prefix:203.0.113.0/24",
+          "label": "involves_prefix"
+        }
+      },
+      {
+        "data": {
+          "id": "e27",
+          "source": "evt:bgp_update_sample:2",
+          "target": "doc:bgp_update_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e28",
+          "source": "path:bgp_update_sample:1",
+          "target": "doc:bgp_update_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e29",
+          "source": "path:bgp_update_sample:2",
+          "target": "doc:bgp_update_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e30",
+          "source": "prefix:203.0.113.0/24",
+          "target": "doc:bgp_update_sample",
+          "label": "mentioned_in"
+        }
+      }
+    ]
+  },
+  "stats": {
+    "nodes": 13,
+    "edges": 31
+  }
+}

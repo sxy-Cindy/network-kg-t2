@@ -1,0 +1,12 @@
+id: t4-bgp-routing
+title: BGP 路由事件与 AS 关系知识图谱
+description: 以 AS/前缀/AS_PATH 为主干，构建路由事件图，支撑劫持/泄露事件的路径一致性检查。
+namespace: http://kgcourse.org/ontology/bgp#
+version: v1.0
+source_url: https://bgpstream.caida.org/
+corpus_glob: data/corpus/t4-bgp-routing/*.txt
+fusion:
+  weights:
+    rule: 1.2
+    model: 0.8
+    llm: 1.0

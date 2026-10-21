@@ -1,0 +1,16 @@
+id: t5-protocol-rfc
+title: TCP/IP 协议栈与 RFC 规范知识图谱
+description: 把 RFC 文档结构（章节/引用/废弃关系）、协议、协议分层、规范关键字（RFC 2119）与报文域连成规范图谱，支撑「协议行为可溯源」的问答与配置核查。
+namespace: http://kgcourse.org/ontology/protocol#
+version: v1.0
+source_url: https://www.rfc-editor.org/
+corpus_glob: data/corpus/t5-protocol-rfc/*.txt
+fusion:
+  weights:
+    rule: 1.0
+    model: 0.8
+    llm: 1.2
+  max_gap: 40
+  controlled_classes:
+  - Layer
+  enforce_controlled: true

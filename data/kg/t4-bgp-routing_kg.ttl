@@ -1,0 +1,94 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://kgcourse.org/ontology/bgp#> .
+
+:As12345 a :AS ;
+    rdfs:label "AS12345" ;
+    rdfs:isDefinedBy <kg:t4-bgp-routing#as:12345> .
+
+:As66666 a :AS ;
+    rdfs:label "AS66666" ;
+    rdfs:isDefinedBy <kg:t4-bgp-routing#as:66666> .
+
+:As64600 a :AS ;
+    rdfs:label "AS64600" ;
+    rdfs:isDefinedBy <kg:t4-bgp-routing#as:64600> .
+
+:Prefix203.0.113.0/24 a :Prefix ;
+    rdfs:label "203.0.113.0/24" ;
+    rdfs:isDefinedBy <kg:t4-bgp-routing#prefix:203.0.113.0/24> .
+
+:PathBgp_update_sample1 a :ASPath ;
+    rdfs:label "64500 64510 12345" ;
+    rdfs:isDefinedBy <kg:t4-bgp-routing#path:bgp_update_sample:1> .
+
+:PathBgp_update_sample2 a :ASPath ;
+    rdfs:label "64600 66666" ;
+    rdfs:isDefinedBy <kg:t4-bgp-routing#path:bgp_update_sample:2> .
+
+:EvtBgp_update_sample1 a :HijackEvent ;
+    rdfs:label "hijack" ;
+    rdfs:isDefinedBy <kg:t4-bgp-routing#evt:bgp_update_sample:1> .
+
+:EvtBgp_update_sample2 a :HijackEvent ;
+    rdfs:label "Route leak" ;
+    rdfs:isDefinedBy <kg:t4-bgp-routing#evt:bgp_update_sample:2> .
+
+:CollectorRoute-views2 a :Collector ;
+    rdfs:label "route-views2" ;
+    rdfs:isDefinedBy <kg:t4-bgp-routing#collector:route-views2> .
+
+:CollectorRrc00 a :Collector ;
+    rdfs:label "rrc00" ;
+    rdfs:isDefinedBy <kg:t4-bgp-routing#collector:rrc00> .
+
+:HijackEventBgp-hijack a :HijackEvent ;
+    rdfs:label "BGP hijack" ;
+    rdfs:isDefinedBy <kg:t4-bgp-routing#HijackEvent:bgp-hijack> .
+
+:HijackEventMoas-conflict a :HijackEvent ;
+    rdfs:label "MOAS conflict" ;
+    rdfs:isDefinedBy <kg:t4-bgp-routing#HijackEvent:moas-conflict> .
+
+:DocBgp_update_sample a :Document ;
+    rdfs:label "bgp_update_sample" ;
+    rdfs:isDefinedBy <kg:t4-bgp-routing#doc:bgp_update_sample> .
+
+:HijackEventBgp-hijack :involves_as :As12345 .
+:HijackEventBgp-hijack :involves_as :As64600 .
+:HijackEventBgp-hijack :involves_as :As66666 .
+:HijackEventBgp-hijack :involves_prefix :Prefix203.0.113.0/24 .
+:HijackEventBgp-hijack :mentioned_in :DocBgp_update_sample .
+:HijackEventMoas-conflict :involves_as :As12345 .
+:HijackEventMoas-conflict :involves_as :As64600 .
+:HijackEventMoas-conflict :involves_as :As66666 .
+:HijackEventMoas-conflict :involves_prefix :Prefix203.0.113.0/24 .
+:HijackEventMoas-conflict :mentioned_in :DocBgp_update_sample .
+:As12345 :mentioned_in :DocBgp_update_sample .
+:As12345 :originates :Prefix203.0.113.0/24 .
+:As64600 :mentioned_in :DocBgp_update_sample .
+:As64600 :originates :Prefix203.0.113.0/24 .
+:As66666 :mentioned_in :DocBgp_update_sample .
+:As66666 :originates :Prefix203.0.113.0/24 .
+:CollectorRoute-views2 :mentioned_in :DocBgp_update_sample .
+:CollectorRrc00 :mentioned_in :DocBgp_update_sample .
+:EvtBgp_update_sample1 :involves_as :As12345 .
+:EvtBgp_update_sample1 :involves_as :As64600 .
+:EvtBgp_update_sample1 :involves_as :As66666 .
+:EvtBgp_update_sample1 :involves_prefix :Prefix203.0.113.0/24 .
+:EvtBgp_update_sample1 :mentioned_in :DocBgp_update_sample .
+:EvtBgp_update_sample2 :involves_as :As12345 .
+:EvtBgp_update_sample2 :involves_as :As64600 .
+:EvtBgp_update_sample2 :involves_as :As66666 .
+:EvtBgp_update_sample2 :involves_prefix :Prefix203.0.113.0/24 .
+:EvtBgp_update_sample2 :mentioned_in :DocBgp_update_sample .
+:PathBgp_update_sample1 :mentioned_in :DocBgp_update_sample .
+:PathBgp_update_sample2 :mentioned_in :DocBgp_update_sample .
+:Prefix203.0.113.0/24 :mentioned_in :DocBgp_update_sample .
+
+# 边数/节点数摘要（便于快速核对导入结果）
+<kg:t4-bgp-routing> a owl:Ontology ;
+    rdfs:label "t4-bgp-routing KG (ensemble)" ;
+    rdfs:comment "nodes=13 edges=31" .

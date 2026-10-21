@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d2" for="edge" attr.name="relation" attr.type="string" />
+  <key id="d1" for="node" attr.name="type" attr.type="string" />
+  <key id="d0" for="node" attr.name="label" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="dev:CORE-SW-01">
+      <data key="d0">CORE-SW-01</data>
+      <data key="d1">Device</data>
+    </node>
+    <node id="dev:ACC-SW-12">
+      <data key="d0">ACC-SW-12</data>
+      <data key="d1">Device</data>
+    </node>
+    <node id="if:campus_network:Gi0/1">
+      <data key="d0">Gi0/1</data>
+      <data key="d1">Interface</data>
+    </node>
+    <node id="if:campus_network:Gi0/24">
+      <data key="d0">Gi0/24</data>
+      <data key="d1">Interface</data>
+    </node>
+    <node id="if:campus_network:Gi0/2">
+      <data key="d0">Gi0/2</data>
+      <data key="d1">Interface</data>
+    </node>
+    <node id="net:10.10.20.1/24">
+      <data key="d0">10.10.20.1/24</data>
+      <data key="d1">IPSubnet</data>
+    </node>
+    <node id="net:10.10.20.0/24">
+      <data key="d0">10.10.20.0/24</data>
+      <data key="d1">IPSubnet</data>
+    </node>
+    <node id="ip:10.10.20.254">
+      <data key="d0">10.10.20.254</data>
+      <data key="d1">IPAddress</data>
+    </node>
+    <node id="vlan:10">
+      <data key="d0">VLAN 10</data>
+      <data key="d1">VLAN</data>
+    </node>
+    <node id="vlan:20">
+      <data key="d0">VLAN 20</data>
+      <data key="d1">VLAN</data>
+    </node>
+    <node id="inc:INC-20260714">
+      <data key="d0">INC-20260714</data>
+      <data key="d1">Incident</data>
+    </node>
+    <node id="DeviceRole:核心交换机">
+      <data key="d0">核心交换机</data>
+      <data key="d1">DeviceRole</data>
+    </node>
+    <node id="DeviceRole:接入交换机">
+      <data key="d0">接入交换机</data>
+      <data key="d1">DeviceRole</data>
+    </node>
+    <node id="Vendor:cisco">
+      <data key="d0">Cisco</data>
+      <data key="d1">Vendor</data>
+    </node>
+    <node id="Vendor:huawei">
+      <data key="d0">Huawei</data>
+      <data key="d1">Vendor</data>
+    </node>
+    <node id="Service:dhcp">
+      <data key="d0">DHCP</data>
+      <data key="d1">Service</data>
+    </node>
+    <node id="Service:ntp">
+      <data key="d0">NTP</data>
+      <data key="d1">Service</data>
+    </node>
+    <node id="Service:snmp">
+      <data key="d0">SNMP</data>
+      <data key="d1">Service</data>
+    </node>
+    <node id="Site:主数据中心">
+      <data key="d0">主数据中心</data>
+      <data key="d1">Site</data>
+    </node>
+    <node id="Site:教学楼">
+      <data key="d0">教学楼</data>
+      <data key="d1">Site</data>
+    </node>
+    <node id="doc:campus_network">
+      <data key="d0">campus_network</data>
+      <data key="d1">Document</data>
+    </node>
+    <edge source="dev:CORE-SW-01" target="doc:campus_network">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="dev:CORE-SW-01" target="Service:dhcp">
+      <data key="d2">runs</data>
+    </edge>
+    <edge source="dev:CORE-SW-01" target="Service:ntp">
+      <data key="d2">runs</data>
+    </edge>
+    <edge source="dev:CORE-SW-01" target="Service:snmp">
+      <data key="d2">runs</data>
+    </edge>
+    <edge source="dev:ACC-SW-12" target="doc:campus_network">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="dev:ACC-SW-12" target="Service:dhcp">
+      <data key="d2">runs</data>
+    </edge>
+    <edge source="dev:ACC-SW-12" target="Service:ntp">
+      <data key="d2">runs</data>
+    </edge>
+    <edge source="dev:ACC-SW-12" target="Service:snmp">
+      <data key="d2">runs</data>
+    </edge>
+    <edge source="if:campus_network:Gi0/1" target="if:campus_network:Gi0/2">
+      <data key="d2">connects_to</data>
+    </edge>
+    <edge source="if:campus_network:Gi0/1" target="if:campus_network:Gi0/24">
+      <data key="d2">connects_to</data>
+    </edge>
+    <edge source="if:campus_network:Gi0/1" target="net:10.10.20.0/24">
+      <data key="d2">has_subnet</data>
+    </edge>
+    <edge source="if:campus_network:Gi0/1" target="net:10.10.20.1/24">
+      <data key="d2">has_subnet</data>
+    </edge>
+    <edge source="if:campus_network:Gi0/1" target="doc:campus_network">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="if:campus_network:Gi0/24" target="if:campus_network:Gi0/1">
+      <data key="d2">connects_to</data>
+    </edge>
+    <edge source="if:campus_network:Gi0/24" target="if:campus_network:Gi0/2">
+      <data key="d2">connects_to</data>
+    </edge>
+    <edge source="if:campus_network:Gi0/24" target="net:10.10.20.0/24">
+      <data key="d2">has_subnet</data>
+    </edge>
+    <edge source="if:campus_network:Gi0/24" target="net:10.10.20.1/24">
+      <data key="d2">has_subnet</data>
+    </edge>
+    <edge source="if:campus_network:Gi0/24" target="doc:campus_network">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="if:campus_network:Gi0/2" target="if:campus_network:Gi0/1">
+      <data key="d2">connects_to</data>
+    </edge>
+    <edge source="if:campus_network:Gi0/2" target="if:campus_network:Gi0/24">
+      <data key="d2">connects_to</data>
+    </edge>
+    <edge source="if:campus_network:Gi0/2" target="net:10.10.20.0/24">
+      <data key="d2">has_subnet</data>
+    </edge>
+    <edge source="if:campus_network:Gi0/2" target="net:10.10.20.1/24">
+      <data key="d2">has_subnet</data>
+    </edge>
+    <edge source="if:campus_network:Gi0/2" target="doc:campus_network">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="net:10.10.20.1/24" target="doc:campus_network">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="net:10.10.20.0/24" target="doc:campus_network">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="ip:10.10.20.254" target="doc:campus_network">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="vlan:10" target="doc:campus_network">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="vlan:20" target="doc:campus_network">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="inc:INC-20260714" target="doc:campus_network">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="DeviceRole:核心交换机" target="doc:campus_network">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="DeviceRole:接入交换机" target="doc:campus_network">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="Vendor:cisco" target="doc:campus_network">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="Vendor:huawei" target="doc:campus_network">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="Service:dhcp" target="doc:campus_network">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="Service:ntp" target="doc:campus_network">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="Service:snmp" target="doc:campus_network">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="Site:主数据中心" target="doc:campus_network">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="Site:教学楼" target="doc:campus_network">
+      <data key="d2">mentioned_in</data>
+    </edge>
+  </graph>
+</graphml>

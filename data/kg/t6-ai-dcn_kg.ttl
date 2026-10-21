@@ -1,0 +1,149 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://kgcourse.org/ontology/ai-dcn#> .
+
+:ProtoMRC a :Protocol ;
+    rdfs:label "MRC" ;
+    rdfs:isDefinedBy <kg:t6-ai-dcn#proto:MRC> .
+
+:ProtoRoCEv2 a :Protocol ;
+    rdfs:label "RoCEv2" ;
+    rdfs:isDefinedBy <kg:t6-ai-dcn#proto:RoCEv2> .
+
+:ProtoSRv6 a :Protocol ;
+    rdfs:label "SRv6" ;
+    rdfs:isDefinedBy <kg:t6-ai-dcn#proto:SRv6> .
+
+:TechPacketSpraying a :Technique ;
+    rdfs:label "packet spraying" ;
+    rdfs:isDefinedBy <kg:t6-ai-dcn#tech:packet spraying> .
+
+:TechSourceRouting a :Technique ;
+    rdfs:label "source routing" ;
+    rdfs:isDefinedBy <kg:t6-ai-dcn#tech:source routing> .
+
+:TechMulti-plane a :Technique ;
+    rdfs:label "multi-plane" ;
+    rdfs:isDefinedBy <kg:t6-ai-dcn#tech:multi-plane> .
+
+:TechPacketTrimming a :Technique ;
+    rdfs:label "packet trimming" ;
+    rdfs:isDefinedBy <kg:t6-ai-dcn#tech:packet trimming> .
+
+:FmCongestion a :FailureMode ;
+    rdfs:label "congestion" ;
+    rdfs:isDefinedBy <kg:t6-ai-dcn#fm:congestion> .
+
+:FmLinkFlap a :FailureMode ;
+    rdfs:label "link flap" ;
+    rdfs:isDefinedBy <kg:t6-ai-dcn#fm:link flap> .
+
+:FmSwitchReboot a :FailureMode ;
+    rdfs:label "switch reboot" ;
+    rdfs:isDefinedBy <kg:t6-ai-dcn#fm:switch reboot> .
+
+:FmPacketLoss a :FailureMode ;
+    rdfs:label "packet loss" ;
+    rdfs:isDefinedBy <kg:t6-ai-dcn#fm:packet loss> .
+
+:FmIncast a :FailureMode ;
+    rdfs:label "incast" ;
+    rdfs:isDefinedBy <kg:t6-ai-dcn#fm:incast> .
+
+:FmPathFailure a :FailureMode ;
+    rdfs:label "path failure" ;
+    rdfs:isDefinedBy <kg:t6-ai-dcn#fm:path failure> .
+
+:Comp800G a :Component ;
+    rdfs:label "800G" ;
+    rdfs:isDefinedBy <kg:t6-ai-dcn#comp:800G> .
+
+:Comp100G a :Component ;
+    rdfs:label "100G" ;
+    rdfs:isDefinedBy <kg:t6-ai-dcn#comp:100G> .
+
+:StdOCP a :Standard ;
+    rdfs:label "OCP" ;
+    rdfs:isDefinedBy <kg:t6-ai-dcn#std:OCP> .
+
+:StdUEC a :Standard ;
+    rdfs:label "UEC" ;
+    rdfs:isDefinedBy <kg:t6-ai-dcn#std:UEC> .
+
+:StdUltraEthernetConsortium a :Standard ;
+    rdfs:label "Ultra Ethernet Consortium" ;
+    rdfs:isDefinedBy <kg:t6-ai-dcn#std:Ultra Ethernet Consortium> .
+
+:BenefitLower-power a :Benefit ;
+    rdfs:label "lower power" ;
+    rdfs:isDefinedBy <kg:t6-ai-dcn#Benefit:lower-power> .
+
+:BenefitFewer-components a :Benefit ;
+    rdfs:label "fewer components" ;
+    rdfs:isDefinedBy <kg:t6-ai-dcn#Benefit:fewer-components> .
+
+:BenefitPath-diversity a :Benefit ;
+    rdfs:label "path diversity" ;
+    rdfs:isDefinedBy <kg:t6-ai-dcn#Benefit:path-diversity> .
+
+:BenefitFailure-resilience a :Benefit ;
+    rdfs:label "failure resilience" ;
+    rdfs:isDefinedBy <kg:t6-ai-dcn#Benefit:failure-resilience> .
+
+:WorkloadSynchronous-training a :Workload ;
+    rdfs:label "synchronous training" ;
+    rdfs:isDefinedBy <kg:t6-ai-dcn#Workload:synchronous-training> .
+
+:WorkloadCheckpoint a :Workload ;
+    rdfs:label "checkpoint" ;
+    rdfs:isDefinedBy <kg:t6-ai-dcn#Workload:checkpoint> .
+
+:ComponentSwitch a :Component ;
+    rdfs:label "switch" ;
+    rdfs:isDefinedBy <kg:t6-ai-dcn#Component:switch> .
+
+:Component交换机 a :Component ;
+    rdfs:label "交换机" ;
+    rdfs:isDefinedBy <kg:t6-ai-dcn#Component:交换机> .
+
+:DocAi_dcn_notes a :Document ;
+    rdfs:label "ai_dcn_notes" ;
+    rdfs:isDefinedBy <kg:t6-ai-dcn#doc:ai_dcn_notes> .
+
+:BenefitFailure-resilience :mentioned_in :DocAi_dcn_notes .
+:BenefitFewer-components :mentioned_in :DocAi_dcn_notes .
+:BenefitLower-power :mentioned_in :DocAi_dcn_notes .
+:BenefitPath-diversity :mentioned_in :DocAi_dcn_notes .
+:ComponentSwitch :mentioned_in :DocAi_dcn_notes .
+:Component交换机 :mentioned_in :DocAi_dcn_notes .
+:WorkloadCheckpoint :mentioned_in :DocAi_dcn_notes .
+:WorkloadSynchronous-training :mentioned_in :DocAi_dcn_notes .
+:Comp100G :mentioned_in :DocAi_dcn_notes .
+:Comp800G :mentioned_in :DocAi_dcn_notes .
+:FmCongestion :mentioned_in :DocAi_dcn_notes .
+:FmIncast :mentioned_in :DocAi_dcn_notes .
+:FmLinkFlap :mentioned_in :DocAi_dcn_notes .
+:FmPacketLoss :mentioned_in :DocAi_dcn_notes .
+:FmPathFailure :mentioned_in :DocAi_dcn_notes .
+:FmSwitchReboot :mentioned_in :DocAi_dcn_notes .
+:ProtoMRC :mentioned_in :DocAi_dcn_notes .
+:ProtoMRC :uses :TechPacketSpraying .
+:ProtoMRC :uses :TechSourceRouting .
+:ProtoRoCEv2 :mentioned_in :DocAi_dcn_notes .
+:ProtoSRv6 :mentioned_in :DocAi_dcn_notes .
+:ProtoSRv6 :uses :TechSourceRouting .
+:StdOCP :mentioned_in :DocAi_dcn_notes .
+:StdUEC :mentioned_in :DocAi_dcn_notes .
+:StdUltraEthernetConsortium :mentioned_in :DocAi_dcn_notes .
+:TechMulti-plane :mentioned_in :DocAi_dcn_notes .
+:TechPacketSpraying :mentioned_in :DocAi_dcn_notes .
+:TechPacketSpraying :mitigates :FmCongestion .
+:TechPacketTrimming :mentioned_in :DocAi_dcn_notes .
+:TechSourceRouting :mentioned_in :DocAi_dcn_notes .
+
+# 边数/节点数摘要（便于快速核对导入结果）
+<kg:t6-ai-dcn> a owl:Ontology ;
+    rdfs:label "t6-ai-dcn KG (ensemble)" ;
+    rdfs:comment "nodes=27 edges=30" .

@@ -1,0 +1,226 @@
+{
+  "namespace": "http://kgcourse.org/ontology/protocol#",
+  "title": "TCP/IP 协议栈与 RFC 规范知识图谱",
+  "version": "v1.0",
+  "topic": "t5-protocol-rfc",
+  "class_count": 11,
+  "relation_count": 13,
+  "classes": [
+    {
+      "id": "SpecObject",
+      "label": "规范对象",
+      "definition": "规范域顶层概念",
+      "parent": null,
+      "source": ""
+    },
+    {
+      "id": "Document",
+      "label": "规范文档",
+      "definition": "RFC/BCP/STD 等文档",
+      "parent": "SpecObject",
+      "source": ""
+    },
+    {
+      "id": "RFC",
+      "label": "RFC 文档",
+      "definition": "征求意见稿",
+      "parent": "Document",
+      "source": ""
+    },
+    {
+      "id": "Section",
+      "label": "章节",
+      "definition": "RFC 内的章节",
+      "parent": "SpecObject",
+      "source": ""
+    },
+    {
+      "id": "Protocol",
+      "label": "协议",
+      "definition": "TCP/UDP/IP 等",
+      "parent": "SpecObject",
+      "source": ""
+    },
+    {
+      "id": "Layer",
+      "label": "协议分层",
+      "definition": "应用层/传输层/网络层/链路层",
+      "parent": "SpecObject",
+      "source": ""
+    },
+    {
+      "id": "MessageField",
+      "label": "报文域",
+      "definition": "首部字段",
+      "parent": "SpecObject",
+      "source": ""
+    },
+    {
+      "id": "NormativeKeyword",
+      "label": "规范性关键字",
+      "definition": "RFC 2119 定义的关键字",
+      "parent": "SpecObject",
+      "source": ""
+    },
+    {
+      "id": "Obligation",
+      "label": "规范性要求",
+      "definition": "一条带关键字的规范要求",
+      "parent": "SpecObject",
+      "source": ""
+    },
+    {
+      "id": "Port",
+      "label": "端口号",
+      "definition": "传输层端口",
+      "parent": "SpecObject",
+      "source": ""
+    },
+    {
+      "id": "Extension",
+      "label": "扩展项",
+      "definition": "首部选项/扩展首部",
+      "parent": "SpecObject",
+      "source": ""
+    }
+  ],
+  "relations": [
+    {
+      "id": "defined_in",
+      "label": "定义于",
+      "definition": "协议/概念被哪个文档定义",
+      "domain": "Protocol",
+      "range": "Document",
+      "parent": null
+    },
+    {
+      "id": "specifies",
+      "label": "规范",
+      "definition": "文档规范了某协议",
+      "domain": "RFC",
+      "range": "Protocol",
+      "parent": null
+    },
+    {
+      "id": "contains",
+      "label": "包含章节",
+      "definition": "文档包含章节",
+      "domain": "Document",
+      "range": "Section",
+      "parent": null
+    },
+    {
+      "id": "cites",
+      "label": "引用了",
+      "definition": "文档引用其他文档",
+      "domain": "Document",
+      "range": "Document",
+      "parent": null
+    },
+    {
+      "id": "obsoletes",
+      "label": "废弃",
+      "definition": "新版废弃旧版",
+      "domain": "Document",
+      "range": "Document",
+      "parent": null,
+      "transitive": true
+    },
+    {
+      "id": "updates",
+      "label": "更新",
+      "definition": "文档更新其他文档",
+      "domain": "Document",
+      "range": "Document",
+      "parent": null
+    },
+    {
+      "id": "has_field",
+      "label": "含字段",
+      "definition": "协议首部包含某字段",
+      "domain": "Protocol",
+      "range": "MessageField",
+      "parent": null
+    },
+    {
+      "id": "operates_at",
+      "label": "工作于",
+      "definition": "协议所属分层",
+      "domain": "Protocol",
+      "range": "Layer",
+      "parent": null
+    },
+    {
+      "id": "keyword_of",
+      "label": "关键字属于",
+      "definition": "规范要求使用的关键字",
+      "domain": "Obligation",
+      "range": "NormativeKeyword",
+      "parent": null
+    },
+    {
+      "id": "requires",
+      "label": "要求",
+      "definition": "规范要求约束某协议行为",
+      "domain": "Document",
+      "range": "Obligation",
+      "parent": null
+    },
+    {
+      "id": "depends_on",
+      "label": "依赖",
+      "definition": "协议依赖另一协议",
+      "domain": "Protocol",
+      "range": "Protocol",
+      "parent": null
+    },
+    {
+      "id": "has_extension",
+      "label": "含扩展",
+      "definition": "协议的扩展项",
+      "domain": "Protocol",
+      "range": "Extension",
+      "parent": null
+    },
+    {
+      "id": "mentioned_in",
+      "label": "出现在",
+      "definition": "实体出现在来源文档中（结构关系）",
+      "domain": null,
+      "range": null,
+      "parent": null
+    }
+  ],
+  "attributes": [
+    {
+      "id": "rfc_number",
+      "label": "RFC 编号",
+      "domain": "RFC",
+      "range": "xsd:integer"
+    },
+    {
+      "id": "status",
+      "label": "标准状态",
+      "domain": "RFC",
+      "range": "xsd:string"
+    },
+    {
+      "id": "section_number",
+      "label": "章节号",
+      "domain": "Section",
+      "range": "xsd:string"
+    },
+    {
+      "id": "keyword_level",
+      "label": "规范性强度",
+      "domain": "NormativeKeyword",
+      "range": "xsd:string"
+    },
+    {
+      "id": "port_number",
+      "label": "端口号",
+      "domain": "Port",
+      "range": "xsd:integer"
+    }
+  ]
+}

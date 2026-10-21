@@ -1,0 +1,648 @@
+{
+  "topic": "t4-bgp-routing",
+  "method": "rule",
+  "doc_count": 1,
+  "entity_count": 16,
+  "relation_count": 39,
+  "entities": [
+    {
+      "id": "as:12345",
+      "label": "AS12345",
+      "type": "AS",
+      "doc": "bgp_update_sample",
+      "evidence": "r prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owned_by ExampleNet, prefix 203.0.113.0/24 autho",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "match": "AS12345"
+      }
+    },
+    {
+      "id": "as:66666",
+      "label": "AS66666",
+      "type": "AS",
+      "doc": "bgp_update_sample",
+      "evidence": "13.0/24 authorized_by ROA (RPKI valid) BGP hijack detected: AS66666 announced 203.0.113.0/24 with AS_PATH 64600 66666 Route lea",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "match": "AS66666"
+      }
+    },
+    {
+      "id": "as:64600",
+      "label": "AS64600",
+      "type": "AS",
+      "doc": "bgp_update_sample",
+      "evidence": "0/24 with AS_PATH 64600 66666 Route leak detected involving AS64600 and AS12345 collector rrc00 also observed the same prefix w",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "match": "AS64600"
+      }
+    },
+    {
+      "id": "prefix:203.0.113.0/24",
+      "label": "203.0.113.0/24",
+      "type": "Prefix",
+      "doc": "bgp_update_sample",
+      "evidence": "例） BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owne",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "match": "203.0.113.0/24"
+      }
+    },
+    {
+      "id": "path:bgp_update_sample:1",
+      "label": "64500 64510 12345",
+      "type": "ASPath",
+      "doc": "bgp_update_sample",
+      "evidence": "t collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owned_by ExampleNet, prefix 203",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "match": "64500 64510 12345"
+      }
+    },
+    {
+      "id": "path:bgp_update_sample:2",
+      "label": "64600 66666",
+      "type": "ASPath",
+      "doc": "bgp_update_sample",
+      "evidence": "ack detected: AS66666 announced 203.0.113.0/24 with AS_PATH 64600 66666 Route leak detected involving AS64600 and AS12345 collector",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "match": "64600 66666"
+      }
+    },
+    {
+      "id": "path:bgp_update_sample:3",
+      "label": "64500 64510 12345",
+      "type": "ASPath",
+      "doc": "bgp_update_sample",
+      "evidence": "collector rrc00 also observed the same prefix with AS_PATH 64500 64510 12345 MOAS conflict for 203.0.113.0/24 between AS12345 and AS6666",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "match": "64500 64510 12345"
+      }
+    },
+    {
+      "id": "evt:bgp_update_sample:1",
+      "label": "hijack",
+      "type": "HijackEvent",
+      "doc": "bgp_update_sample",
+      "evidence": "t, prefix 203.0.113.0/24 authorized_by ROA (RPKI valid) BGP hijack detected: AS66666 announced 203.0.113.0/24 with AS_PATH 646",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "match": "hijack"
+      }
+    },
+    {
+      "id": "evt:bgp_update_sample:2",
+      "label": "Route leak",
+      "type": "HijackEvent",
+      "doc": "bgp_update_sample",
+      "evidence": ": AS66666 announced 203.0.113.0/24 with AS_PATH 64600 66666 Route leak detected involving AS64600 and AS12345 collector rrc00 also",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "match": "Route leak"
+      }
+    },
+    {
+      "id": "collector:route-views2",
+      "label": "route-views2",
+      "type": "Collector",
+      "doc": "bgp_update_sample",
+      "evidence": "采集点命名遵循 RouteViews/RIS 惯例） BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "match": "route-views2"
+      }
+    },
+    {
+      "id": "collector:rrc00",
+      "label": "rrc00",
+      "type": "Collector",
+      "doc": "bgp_update_sample",
+      "evidence": "Route leak detected involving AS64600 and AS12345 collector rrc00 also observed the same prefix with AS_PATH 64500 64510 1234",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "match": "rrc00"
+      }
+    },
+    {
+      "id": "HijackEvent:bgp-hijack",
+      "label": "BGP hijack",
+      "type": "HijackEvent",
+      "doc": "bgp_update_sample",
+      "evidence": "leNet, prefix 203.0.113.0/24 authorized_by ROA (RPKI valid) BGP hijack detected: AS66666 announced 203.0.113.0/24 with AS_PATH 646",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "surface": "BGP hijack"
+      }
+    },
+    {
+      "id": "HijackEvent:route-leak",
+      "label": "route leak",
+      "type": "HijackEvent",
+      "doc": "bgp_update_sample",
+      "evidence": ": AS66666 announced 203.0.113.0/24 with AS_PATH 64600 66666 Route leak detected involving AS64600 and AS12345 collector rrc00 also",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "surface": "route leak"
+      }
+    },
+    {
+      "id": "HijackEvent:moas-conflict",
+      "label": "MOAS conflict",
+      "type": "HijackEvent",
+      "doc": "bgp_update_sample",
+      "evidence": "lso observed the same prefix with AS_PATH 64500 64510 12345 MOAS conflict for 203.0.113.0/24 between AS12345 and AS66666",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "surface": "MOAS conflict"
+      }
+    },
+    {
+      "id": "Collector:route-views2",
+      "label": "route-views2",
+      "type": "Collector",
+      "doc": "bgp_update_sample",
+      "evidence": "采集点命名遵循 RouteViews/RIS 惯例） BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "surface": "route-views2"
+      }
+    },
+    {
+      "id": "Collector:rrc00",
+      "label": "rrc00",
+      "type": "Collector",
+      "doc": "bgp_update_sample",
+      "evidence": "Route leak detected involving AS64600 and AS12345 collector rrc00 also observed the same prefix with AS_PATH 64500 64510 1234",
+      "method": "rule",
+      "aliases": [],
+      "properties": {
+        "surface": "rrc00"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "source": "as:12345",
+      "relation": "mentioned_in",
+      "target": "doc:bgp_update_sample",
+      "doc": "bgp_update_sample",
+      "evidence": "r prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owned_by ExampleNet, prefix 203.0.113.0/24 autho",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "as:66666",
+      "relation": "mentioned_in",
+      "target": "doc:bgp_update_sample",
+      "doc": "bgp_update_sample",
+      "evidence": "13.0/24 authorized_by ROA (RPKI valid) BGP hijack detected: AS66666 announced 203.0.113.0/24 with AS_PATH 64600 66666 Route lea",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "as:64600",
+      "relation": "mentioned_in",
+      "target": "doc:bgp_update_sample",
+      "doc": "bgp_update_sample",
+      "evidence": "0/24 with AS_PATH 64600 66666 Route leak detected involving AS64600 and AS12345 collector rrc00 also observed the same prefix w",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "prefix:203.0.113.0/24",
+      "relation": "mentioned_in",
+      "target": "doc:bgp_update_sample",
+      "doc": "bgp_update_sample",
+      "evidence": "例） BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owne",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "path:bgp_update_sample:1",
+      "relation": "mentioned_in",
+      "target": "doc:bgp_update_sample",
+      "doc": "bgp_update_sample",
+      "evidence": "t collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owned_by ExampleNet, prefix 203",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "path:bgp_update_sample:2",
+      "relation": "mentioned_in",
+      "target": "doc:bgp_update_sample",
+      "doc": "bgp_update_sample",
+      "evidence": "ack detected: AS66666 announced 203.0.113.0/24 with AS_PATH 64600 66666 Route leak detected involving AS64600 and AS12345 collector",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "path:bgp_update_sample:3",
+      "relation": "mentioned_in",
+      "target": "doc:bgp_update_sample",
+      "doc": "bgp_update_sample",
+      "evidence": "collector rrc00 also observed the same prefix with AS_PATH 64500 64510 12345 MOAS conflict for 203.0.113.0/24 between AS12345 and AS6666",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "evt:bgp_update_sample:1",
+      "relation": "mentioned_in",
+      "target": "doc:bgp_update_sample",
+      "doc": "bgp_update_sample",
+      "evidence": "t, prefix 203.0.113.0/24 authorized_by ROA (RPKI valid) BGP hijack detected: AS66666 announced 203.0.113.0/24 with AS_PATH 646",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "evt:bgp_update_sample:2",
+      "relation": "mentioned_in",
+      "target": "doc:bgp_update_sample",
+      "doc": "bgp_update_sample",
+      "evidence": ": AS66666 announced 203.0.113.0/24 with AS_PATH 64600 66666 Route leak detected involving AS64600 and AS12345 collector rrc00 also",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "collector:route-views2",
+      "relation": "mentioned_in",
+      "target": "doc:bgp_update_sample",
+      "doc": "bgp_update_sample",
+      "evidence": "采集点命名遵循 RouteViews/RIS 惯例） BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "collector:rrc00",
+      "relation": "mentioned_in",
+      "target": "doc:bgp_update_sample",
+      "doc": "bgp_update_sample",
+      "evidence": "Route leak detected involving AS64600 and AS12345 collector rrc00 also observed the same prefix with AS_PATH 64500 64510 1234",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "HijackEvent:bgp-hijack",
+      "relation": "mentioned_in",
+      "target": "doc:bgp_update_sample",
+      "doc": "bgp_update_sample",
+      "evidence": "leNet, prefix 203.0.113.0/24 authorized_by ROA (RPKI valid) BGP hijack detected: AS66666 announced 203.0.113.0/24 with AS_PATH 646",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "HijackEvent:route-leak",
+      "relation": "mentioned_in",
+      "target": "doc:bgp_update_sample",
+      "doc": "bgp_update_sample",
+      "evidence": ": AS66666 announced 203.0.113.0/24 with AS_PATH 64600 66666 Route leak detected involving AS64600 and AS12345 collector rrc00 also",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "HijackEvent:moas-conflict",
+      "relation": "mentioned_in",
+      "target": "doc:bgp_update_sample",
+      "doc": "bgp_update_sample",
+      "evidence": "lso observed the same prefix with AS_PATH 64500 64510 12345 MOAS conflict for 203.0.113.0/24 between AS12345 and AS66666",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "Collector:route-views2",
+      "relation": "mentioned_in",
+      "target": "doc:bgp_update_sample",
+      "doc": "bgp_update_sample",
+      "evidence": "采集点命名遵循 RouteViews/RIS 惯例） BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "Collector:rrc00",
+      "relation": "mentioned_in",
+      "target": "doc:bgp_update_sample",
+      "doc": "bgp_update_sample",
+      "evidence": "Route leak detected involving AS64600 and AS12345 collector rrc00 also observed the same prefix with AS_PATH 64500 64510 1234",
+      "method": "rule",
+      "properties": {}
+    },
+    {
+      "source": "as:12345",
+      "relation": "originates",
+      "target": "prefix:203.0.113.0/24",
+      "doc": "bgp_update_sample",
+      "evidence": "# BGP 路由事件摘录(示意语料,AS_PATH 与采集点命名遵循 RouteViews/RIS 惯例) BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owned_by ExampleNet, ",
+      "method": "rule",
+      "properties": {
+        "trigger": "(?i)\\b(originat|originate|始发|宣告)\\b",
+        "gap": 0,
+        "rule": "originates"
+      }
+    },
+    {
+      "source": "as:66666",
+      "relation": "originates",
+      "target": "prefix:203.0.113.0/24",
+      "doc": "bgp_update_sample",
+      "evidence": "# BGP 路由事件摘录(示意语料,AS_PATH 与采集点命名遵循 RouteViews/RIS 惯例) BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owned_by ExampleNet, ",
+      "method": "rule",
+      "properties": {
+        "trigger": "(?i)\\b(originat|originate|始发|宣告)\\b",
+        "gap": 0,
+        "rule": "originates"
+      }
+    },
+    {
+      "source": "as:64600",
+      "relation": "originates",
+      "target": "prefix:203.0.113.0/24",
+      "doc": "bgp_update_sample",
+      "evidence": "# BGP 路由事件摘录(示意语料,AS_PATH 与采集点命名遵循 RouteViews/RIS 惯例) BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owned_by ExampleNet, ",
+      "method": "rule",
+      "properties": {
+        "trigger": "(?i)\\b(originat|originate|始发|宣告)\\b",
+        "gap": 0,
+        "rule": "originates"
+      }
+    },
+    {
+      "source": "evt:bgp_update_sample:1",
+      "relation": "involves_as",
+      "target": "as:12345",
+      "doc": "bgp_update_sample",
+      "evidence": "# BGP 路由事件摘录(示意语料,AS_PATH 与采集点命名遵循 RouteViews/RIS 惯例) BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owned_by ExampleNet, ",
+      "method": "rule",
+      "properties": {
+        "trigger": "(?i)\\b(hijack|leak|劫持|泄露)\\b",
+        "gap": 0,
+        "rule": "involves_as"
+      }
+    },
+    {
+      "source": "evt:bgp_update_sample:1",
+      "relation": "involves_as",
+      "target": "as:66666",
+      "doc": "bgp_update_sample",
+      "evidence": "# BGP 路由事件摘录(示意语料,AS_PATH 与采集点命名遵循 RouteViews/RIS 惯例) BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owned_by ExampleNet, ",
+      "method": "rule",
+      "properties": {
+        "trigger": "(?i)\\b(hijack|leak|劫持|泄露)\\b",
+        "gap": 0,
+        "rule": "involves_as"
+      }
+    },
+    {
+      "source": "evt:bgp_update_sample:1",
+      "relation": "involves_as",
+      "target": "as:64600",
+      "doc": "bgp_update_sample",
+      "evidence": "# BGP 路由事件摘录(示意语料,AS_PATH 与采集点命名遵循 RouteViews/RIS 惯例) BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owned_by ExampleNet, ",
+      "method": "rule",
+      "properties": {
+        "trigger": "(?i)\\b(hijack|leak|劫持|泄露)\\b",
+        "gap": 0,
+        "rule": "involves_as"
+      }
+    },
+    {
+      "source": "evt:bgp_update_sample:2",
+      "relation": "involves_as",
+      "target": "as:12345",
+      "doc": "bgp_update_sample",
+      "evidence": "# BGP 路由事件摘录(示意语料,AS_PATH 与采集点命名遵循 RouteViews/RIS 惯例) BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owned_by ExampleNet, ",
+      "method": "rule",
+      "properties": {
+        "trigger": "(?i)\\b(hijack|leak|劫持|泄露)\\b",
+        "gap": 0,
+        "rule": "involves_as"
+      }
+    },
+    {
+      "source": "evt:bgp_update_sample:2",
+      "relation": "involves_as",
+      "target": "as:66666",
+      "doc": "bgp_update_sample",
+      "evidence": "# BGP 路由事件摘录(示意语料,AS_PATH 与采集点命名遵循 RouteViews/RIS 惯例) BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owned_by ExampleNet, ",
+      "method": "rule",
+      "properties": {
+        "trigger": "(?i)\\b(hijack|leak|劫持|泄露)\\b",
+        "gap": 0,
+        "rule": "involves_as"
+      }
+    },
+    {
+      "source": "evt:bgp_update_sample:2",
+      "relation": "involves_as",
+      "target": "as:64600",
+      "doc": "bgp_update_sample",
+      "evidence": "# BGP 路由事件摘录(示意语料,AS_PATH 与采集点命名遵循 RouteViews/RIS 惯例) BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owned_by ExampleNet, ",
+      "method": "rule",
+      "properties": {
+        "trigger": "(?i)\\b(hijack|leak|劫持|泄露)\\b",
+        "gap": 0,
+        "rule": "involves_as"
+      }
+    },
+    {
+      "source": "HijackEvent:bgp-hijack",
+      "relation": "involves_as",
+      "target": "as:12345",
+      "doc": "bgp_update_sample",
+      "evidence": "# BGP 路由事件摘录(示意语料,AS_PATH 与采集点命名遵循 RouteViews/RIS 惯例) BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owned_by ExampleNet, ",
+      "method": "rule",
+      "properties": {
+        "trigger": "(?i)\\b(hijack|leak|劫持|泄露)\\b",
+        "gap": 0,
+        "rule": "involves_as"
+      }
+    },
+    {
+      "source": "HijackEvent:bgp-hijack",
+      "relation": "involves_as",
+      "target": "as:66666",
+      "doc": "bgp_update_sample",
+      "evidence": "# BGP 路由事件摘录(示意语料,AS_PATH 与采集点命名遵循 RouteViews/RIS 惯例) BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owned_by ExampleNet, ",
+      "method": "rule",
+      "properties": {
+        "trigger": "(?i)\\b(hijack|leak|劫持|泄露)\\b",
+        "gap": 0,
+        "rule": "involves_as"
+      }
+    },
+    {
+      "source": "HijackEvent:bgp-hijack",
+      "relation": "involves_as",
+      "target": "as:64600",
+      "doc": "bgp_update_sample",
+      "evidence": "# BGP 路由事件摘录(示意语料,AS_PATH 与采集点命名遵循 RouteViews/RIS 惯例) BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owned_by ExampleNet, ",
+      "method": "rule",
+      "properties": {
+        "trigger": "(?i)\\b(hijack|leak|劫持|泄露)\\b",
+        "gap": 0,
+        "rule": "involves_as"
+      }
+    },
+    {
+      "source": "HijackEvent:route-leak",
+      "relation": "involves_as",
+      "target": "as:12345",
+      "doc": "bgp_update_sample",
+      "evidence": "# BGP 路由事件摘录(示意语料,AS_PATH 与采集点命名遵循 RouteViews/RIS 惯例) BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owned_by ExampleNet, ",
+      "method": "rule",
+      "properties": {
+        "trigger": "(?i)\\b(hijack|leak|劫持|泄露)\\b",
+        "gap": 0,
+        "rule": "involves_as"
+      }
+    },
+    {
+      "source": "HijackEvent:route-leak",
+      "relation": "involves_as",
+      "target": "as:66666",
+      "doc": "bgp_update_sample",
+      "evidence": "# BGP 路由事件摘录(示意语料,AS_PATH 与采集点命名遵循 RouteViews/RIS 惯例) BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owned_by ExampleNet, ",
+      "method": "rule",
+      "properties": {
+        "trigger": "(?i)\\b(hijack|leak|劫持|泄露)\\b",
+        "gap": 0,
+        "rule": "involves_as"
+      }
+    },
+    {
+      "source": "HijackEvent:route-leak",
+      "relation": "involves_as",
+      "target": "as:64600",
+      "doc": "bgp_update_sample",
+      "evidence": "# BGP 路由事件摘录(示意语料,AS_PATH 与采集点命名遵循 RouteViews/RIS 惯例) BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owned_by ExampleNet, ",
+      "method": "rule",
+      "properties": {
+        "trigger": "(?i)\\b(hijack|leak|劫持|泄露)\\b",
+        "gap": 0,
+        "rule": "involves_as"
+      }
+    },
+    {
+      "source": "HijackEvent:moas-conflict",
+      "relation": "involves_as",
+      "target": "as:12345",
+      "doc": "bgp_update_sample",
+      "evidence": "# BGP 路由事件摘录(示意语料,AS_PATH 与采集点命名遵循 RouteViews/RIS 惯例) BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owned_by ExampleNet, ",
+      "method": "rule",
+      "properties": {
+        "trigger": "(?i)\\b(hijack|leak|劫持|泄露)\\b",
+        "gap": 0,
+        "rule": "involves_as"
+      }
+    },
+    {
+      "source": "HijackEvent:moas-conflict",
+      "relation": "involves_as",
+      "target": "as:66666",
+      "doc": "bgp_update_sample",
+      "evidence": "# BGP 路由事件摘录(示意语料,AS_PATH 与采集点命名遵循 RouteViews/RIS 惯例) BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owned_by ExampleNet, ",
+      "method": "rule",
+      "properties": {
+        "trigger": "(?i)\\b(hijack|leak|劫持|泄露)\\b",
+        "gap": 0,
+        "rule": "involves_as"
+      }
+    },
+    {
+      "source": "HijackEvent:moas-conflict",
+      "relation": "involves_as",
+      "target": "as:64600",
+      "doc": "bgp_update_sample",
+      "evidence": "# BGP 路由事件摘录(示意语料,AS_PATH 与采集点命名遵循 RouteViews/RIS 惯例) BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owned_by ExampleNet, ",
+      "method": "rule",
+      "properties": {
+        "trigger": "(?i)\\b(hijack|leak|劫持|泄露)\\b",
+        "gap": 0,
+        "rule": "involves_as"
+      }
+    },
+    {
+      "source": "evt:bgp_update_sample:1",
+      "relation": "involves_prefix",
+      "target": "prefix:203.0.113.0/24",
+      "doc": "bgp_update_sample",
+      "evidence": "# BGP 路由事件摘录(示意语料,AS_PATH 与采集点命名遵循 RouteViews/RIS 惯例) BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owned_by ExampleNet, ",
+      "method": "rule",
+      "properties": {
+        "trigger": "(?i)\\b(hijack|leak|劫持|泄露)\\b",
+        "gap": 0,
+        "rule": "involves_prefix"
+      }
+    },
+    {
+      "source": "evt:bgp_update_sample:2",
+      "relation": "involves_prefix",
+      "target": "prefix:203.0.113.0/24",
+      "doc": "bgp_update_sample",
+      "evidence": "# BGP 路由事件摘录(示意语料,AS_PATH 与采集点命名遵循 RouteViews/RIS 惯例) BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owned_by ExampleNet, ",
+      "method": "rule",
+      "properties": {
+        "trigger": "(?i)\\b(hijack|leak|劫持|泄露)\\b",
+        "gap": 0,
+        "rule": "involves_prefix"
+      }
+    },
+    {
+      "source": "HijackEvent:bgp-hijack",
+      "relation": "involves_prefix",
+      "target": "prefix:203.0.113.0/24",
+      "doc": "bgp_update_sample",
+      "evidence": "# BGP 路由事件摘录(示意语料,AS_PATH 与采集点命名遵循 RouteViews/RIS 惯例) BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owned_by ExampleNet, ",
+      "method": "rule",
+      "properties": {
+        "trigger": "(?i)\\b(hijack|leak|劫持|泄露)\\b",
+        "gap": 0,
+        "rule": "involves_prefix"
+      }
+    },
+    {
+      "source": "HijackEvent:route-leak",
+      "relation": "involves_prefix",
+      "target": "prefix:203.0.113.0/24",
+      "doc": "bgp_update_sample",
+      "evidence": "# BGP 路由事件摘录(示意语料,AS_PATH 与采集点命名遵循 RouteViews/RIS 惯例) BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owned_by ExampleNet, ",
+      "method": "rule",
+      "properties": {
+        "trigger": "(?i)\\b(hijack|leak|劫持|泄露)\\b",
+        "gap": 0,
+        "rule": "involves_prefix"
+      }
+    },
+    {
+      "source": "HijackEvent:moas-conflict",
+      "relation": "involves_prefix",
+      "target": "prefix:203.0.113.0/24",
+      "doc": "bgp_update_sample",
+      "evidence": "# BGP 路由事件摘录(示意语料,AS_PATH 与采集点命名遵循 RouteViews/RIS 惯例) BGP update observed at collector route-views2 for prefix 203.0.113.0/24 AS_PATH: 64500 64510 12345 -> 前缀由 AS12345 始发 AS12345 owned_by ExampleNet, ",
+      "method": "rule",
+      "properties": {
+        "trigger": "(?i)\\b(hijack|leak|劫持|泄露)\\b",
+        "gap": 0,
+        "rule": "involves_prefix"
+      }
+    }
+  ],
+  "unknown_types": [],
+  "unknown_relations": []
+}

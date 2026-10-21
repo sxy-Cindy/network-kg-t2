@@ -1,0 +1,17 @@
+# 虚拟环境与缓存
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# 原始数据：体积大、可由 scripts/fetch_t2_data.py 重新下载，禁止入库
+data/raw/
+
+# LLM 调用缓存：含模型原始响应，可由 kgc.llm_t2 重新生成
+data/llm_cache/
+
+# 本地临时文件与构建产物
+*.log
+*.tmp
+.DS_Store
+build/

@@ -1,0 +1,30 @@
+{
+  "_README": "方法C（LLM 抽取）离线导入格式模板。复制本文件为 <topic>_agent_llm.json 后填写。字段说明见 kgc/llm.py 与 scripts/make_llm_prompt.py。",
+  "_提交要求": [
+    "model: 模型名与版本（例如 qwen2.5:7b-instruct / deepseek-v3 / gpt-4o）",
+    "note: 使用日期 + prompt 出处 + 人工复核条数",
+    "docs[].doc_id: 必须与 data/corpus/<topic>/<doc_id>.txt 的文件名（不含扩展名）一致",
+    "entities[].type 必须是本体中定义的类 id；relations[].relation 必须是本体中定义的关系 id",
+    "relations[].source/target 必须是本文件 entities 里出现过的 id",
+    "relations[].evidence 必须是原文连续片段（不得改写、不得翻译），否则计入 missing_evidence"
+  ],
+  "model": "<模型名与版本>",
+  "note": "生成日期 <YYYY-MM-DD>；prompt 见 data/llm_output/<topic>_prompt.md；人工复核 <N> 条（另附记录）",
+  "docs": [
+    {
+      "doc_id": "<语料文件名，如 rfc8200>",
+      "entities": [
+        {"id": "proto:IPv6", "label": "IPv6", "type": "Protocol"},
+        {"id": "field:Hop Limit", "label": "Hop Limit", "type": "MessageField"}
+      ],
+      "relations": [
+        {
+          "source": "proto:IPv6",
+          "relation": "has_field",
+          "target": "field:Hop Limit",
+          "evidence": "Hop Limit   8-bit unsigned integer. Decremented by 1 by each node that forwards the packet."
+        }
+      ]
+    }
+  ]
+}

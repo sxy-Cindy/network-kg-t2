@@ -1,0 +1,526 @@
+{
+  "elements": {
+    "nodes": [
+      {
+        "data": {
+          "id": "host:core-sw-01",
+          "label": "core-sw-01",
+          "type": "Host"
+        }
+      },
+      {
+        "data": {
+          "id": "host:agg-sw-03",
+          "label": "agg-sw-03",
+          "type": "Host"
+        }
+      },
+      {
+        "data": {
+          "id": "host:node-17",
+          "label": "node-17",
+          "type": "Host"
+        }
+      },
+      {
+        "data": {
+          "id": "host:edge-rt-02",
+          "label": "edge-rt-02",
+          "type": "Host"
+        }
+      },
+      {
+        "data": {
+          "id": "anom:BGP peer down",
+          "label": "BGP peer down",
+          "type": "Anomaly"
+        }
+      },
+      {
+        "data": {
+          "id": "anom:interface down",
+          "label": "interface down",
+          "type": "Anomaly"
+        }
+      },
+      {
+        "data": {
+          "id": "anom:link flapped",
+          "label": "link flapped",
+          "type": "Anomaly"
+        }
+      },
+      {
+        "data": {
+          "id": "anom:packet loss",
+          "label": "packet loss",
+          "type": "Anomaly"
+        }
+      },
+      {
+        "data": {
+          "id": "fault:traffic drop",
+          "label": "traffic drop",
+          "type": "Fault"
+        }
+      },
+      {
+        "data": {
+          "id": "fault:blackhole",
+          "label": "blackhole",
+          "type": "Fault"
+        }
+      },
+      {
+        "data": {
+          "id": "act:failover",
+          "label": "failover",
+          "type": "Action"
+        }
+      },
+      {
+        "data": {
+          "id": "act:switchover",
+          "label": "switchover",
+          "type": "Action"
+        }
+      },
+      {
+        "data": {
+          "id": "act:restart",
+          "label": "restart",
+          "type": "Action"
+        }
+      },
+      {
+        "data": {
+          "id": "act:rollback",
+          "label": "rollback",
+          "type": "Action"
+        }
+      },
+      {
+        "data": {
+          "id": "Metric:packet-loss",
+          "label": "packet loss",
+          "type": "Metric"
+        }
+      },
+      {
+        "data": {
+          "id": "Metric:jitter",
+          "label": "jitter",
+          "type": "Metric"
+        }
+      },
+      {
+        "data": {
+          "id": "RootCause:fiber-cut",
+          "label": "fiber cut",
+          "type": "RootCause"
+        }
+      },
+      {
+        "data": {
+          "id": "Service:bgpd",
+          "label": "bgpd",
+          "type": "Service"
+        }
+      },
+      {
+        "data": {
+          "id": "Service:ospfd",
+          "label": "ospfd",
+          "type": "Service"
+        }
+      },
+      {
+        "data": {
+          "id": "Service:syslog-ng",
+          "label": "syslog-ng",
+          "type": "Service"
+        }
+      },
+      {
+        "data": {
+          "id": "Service:kubelet",
+          "label": "kubelet",
+          "type": "Service"
+        }
+      },
+      {
+        "data": {
+          "id": "doc:network_device_log_sample",
+          "label": "network_device_log_sample",
+          "type": "Document"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "data": {
+          "id": "e0",
+          "source": "Metric:jitter",
+          "target": "doc:network_device_log_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e1",
+          "source": "Metric:packet-loss",
+          "target": "doc:network_device_log_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e2",
+          "source": "RootCause:fiber-cut",
+          "target": "doc:network_device_log_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e3",
+          "source": "Service:bgpd",
+          "target": "doc:network_device_log_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e4",
+          "source": "Service:kubelet",
+          "target": "doc:network_device_log_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e5",
+          "source": "Service:ospfd",
+          "target": "doc:network_device_log_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e6",
+          "source": "Service:syslog-ng",
+          "target": "doc:network_device_log_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e7",
+          "source": "act:failover",
+          "target": "doc:network_device_log_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e8",
+          "source": "act:restart",
+          "target": "doc:network_device_log_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e9",
+          "source": "act:rollback",
+          "target": "doc:network_device_log_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e10",
+          "source": "act:switchover",
+          "target": "doc:network_device_log_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e11",
+          "source": "anom:BGP peer down",
+          "target": "act:failover",
+          "label": "correlates_with"
+        }
+      },
+      {
+        "data": {
+          "id": "e12",
+          "source": "anom:BGP peer down",
+          "target": "act:restart",
+          "label": "correlates_with"
+        }
+      },
+      {
+        "data": {
+          "id": "e13",
+          "source": "anom:BGP peer down",
+          "target": "act:rollback",
+          "label": "correlates_with"
+        }
+      },
+      {
+        "data": {
+          "id": "e14",
+          "source": "anom:BGP peer down",
+          "target": "act:switchover",
+          "label": "correlates_with"
+        }
+      },
+      {
+        "data": {
+          "id": "e15",
+          "source": "anom:BGP peer down",
+          "target": "fault:blackhole",
+          "label": "indicates"
+        }
+      },
+      {
+        "data": {
+          "id": "e16",
+          "source": "anom:BGP peer down",
+          "target": "fault:traffic drop",
+          "label": "indicates"
+        }
+      },
+      {
+        "data": {
+          "id": "e17",
+          "source": "anom:BGP peer down",
+          "target": "doc:network_device_log_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e18",
+          "source": "anom:interface down",
+          "target": "act:failover",
+          "label": "correlates_with"
+        }
+      },
+      {
+        "data": {
+          "id": "e19",
+          "source": "anom:interface down",
+          "target": "act:restart",
+          "label": "correlates_with"
+        }
+      },
+      {
+        "data": {
+          "id": "e20",
+          "source": "anom:interface down",
+          "target": "act:rollback",
+          "label": "correlates_with"
+        }
+      },
+      {
+        "data": {
+          "id": "e21",
+          "source": "anom:interface down",
+          "target": "act:switchover",
+          "label": "correlates_with"
+        }
+      },
+      {
+        "data": {
+          "id": "e22",
+          "source": "anom:interface down",
+          "target": "fault:blackhole",
+          "label": "indicates"
+        }
+      },
+      {
+        "data": {
+          "id": "e23",
+          "source": "anom:interface down",
+          "target": "fault:traffic drop",
+          "label": "indicates"
+        }
+      },
+      {
+        "data": {
+          "id": "e24",
+          "source": "anom:interface down",
+          "target": "doc:network_device_log_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e25",
+          "source": "anom:link flapped",
+          "target": "act:failover",
+          "label": "correlates_with"
+        }
+      },
+      {
+        "data": {
+          "id": "e26",
+          "source": "anom:link flapped",
+          "target": "act:restart",
+          "label": "correlates_with"
+        }
+      },
+      {
+        "data": {
+          "id": "e27",
+          "source": "anom:link flapped",
+          "target": "act:rollback",
+          "label": "correlates_with"
+        }
+      },
+      {
+        "data": {
+          "id": "e28",
+          "source": "anom:link flapped",
+          "target": "act:switchover",
+          "label": "correlates_with"
+        }
+      },
+      {
+        "data": {
+          "id": "e29",
+          "source": "anom:link flapped",
+          "target": "fault:blackhole",
+          "label": "indicates"
+        }
+      },
+      {
+        "data": {
+          "id": "e30",
+          "source": "anom:link flapped",
+          "target": "fault:traffic drop",
+          "label": "indicates"
+        }
+      },
+      {
+        "data": {
+          "id": "e31",
+          "source": "anom:link flapped",
+          "target": "doc:network_device_log_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e32",
+          "source": "anom:packet loss",
+          "target": "act:failover",
+          "label": "correlates_with"
+        }
+      },
+      {
+        "data": {
+          "id": "e33",
+          "source": "anom:packet loss",
+          "target": "act:restart",
+          "label": "correlates_with"
+        }
+      },
+      {
+        "data": {
+          "id": "e34",
+          "source": "anom:packet loss",
+          "target": "act:rollback",
+          "label": "correlates_with"
+        }
+      },
+      {
+        "data": {
+          "id": "e35",
+          "source": "anom:packet loss",
+          "target": "act:switchover",
+          "label": "correlates_with"
+        }
+      },
+      {
+        "data": {
+          "id": "e36",
+          "source": "anom:packet loss",
+          "target": "fault:blackhole",
+          "label": "indicates"
+        }
+      },
+      {
+        "data": {
+          "id": "e37",
+          "source": "anom:packet loss",
+          "target": "fault:traffic drop",
+          "label": "indicates"
+        }
+      },
+      {
+        "data": {
+          "id": "e38",
+          "source": "anom:packet loss",
+          "target": "doc:network_device_log_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e39",
+          "source": "fault:blackhole",
+          "target": "doc:network_device_log_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e40",
+          "source": "fault:traffic drop",
+          "target": "doc:network_device_log_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e41",
+          "source": "host:agg-sw-03",
+          "target": "doc:network_device_log_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e42",
+          "source": "host:core-sw-01",
+          "target": "doc:network_device_log_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e43",
+          "source": "host:edge-rt-02",
+          "target": "doc:network_device_log_sample",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e44",
+          "source": "host:node-17",
+          "target": "doc:network_device_log_sample",
+          "label": "mentioned_in"
+        }
+      }
+    ]
+  },
+  "stats": {
+    "nodes": 22,
+    "edges": 45
+  }
+}

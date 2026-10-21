@@ -1,0 +1,3 @@
+{"type": "ControlFamily", "label": "安全区域边界", "doc": "mlps_clause_sample"}
+{"type": "Asset", "label": "网络设备", "doc": "mlps_clause_sample"}
+{"head": "GB/T 22239-2019", "head_type": "Standard", "relation": "contains_clause", "tail": "8.1.3 安全区域边界", "tail_type": "Clause", "doc": "mlps_clause_sample"}

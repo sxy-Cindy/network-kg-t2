@@ -1,0 +1,105 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://kgcourse.org/ontology/mlps#> .
+
+:StdGB/T22239-2019 a :Standard ;
+    rdfs:label "GB/T 22239-2019" ;
+    rdfs:isDefinedBy <kg:t7-mlps-compliance#std:GB/T 22239-2019> .
+
+:Clause8.1.3 a :Clause ;
+    rdfs:label "8.1.3 安全区域边界" ;
+    rdfs:isDefinedBy <kg:t7-mlps-compliance#clause:8.1.3> .
+
+:Clause8.1.3.1 a :Clause ;
+    rdfs:label "8.1.3.1 边界防护" ;
+    rdfs:isDefinedBy <kg:t7-mlps-compliance#clause:8.1.3.1> .
+
+:Clause8.1.4 a :Clause ;
+    rdfs:label "8.1.4 安全计算环境" ;
+    rdfs:isDefinedBy <kg:t7-mlps-compliance#clause:8.1.4> .
+
+:Lvl三 a :Level ;
+    rdfs:label "第三级" ;
+    rdfs:isDefinedBy <kg:t7-mlps-compliance#lvl:三> .
+
+:ControlFamily安全区域边界 a :ControlFamily ;
+    rdfs:label "安全区域边界" ;
+    rdfs:isDefinedBy <kg:t7-mlps-compliance#ControlFamily:安全区域边界> .
+
+:ControlFamily安全计算环境 a :ControlFamily ;
+    rdfs:label "安全计算环境" ;
+    rdfs:isDefinedBy <kg:t7-mlps-compliance#ControlFamily:安全计算环境> .
+
+:Asset网络设备 a :Asset ;
+    rdfs:label "网络设备" ;
+    rdfs:isDefinedBy <kg:t7-mlps-compliance#Asset:网络设备> .
+
+:Asset安全设备 a :Asset ;
+    rdfs:label "安全设备" ;
+    rdfs:isDefinedBy <kg:t7-mlps-compliance#Asset:安全设备> .
+
+:Asset业务系统 a :Asset ;
+    rdfs:label "业务系统" ;
+    rdfs:isDefinedBy <kg:t7-mlps-compliance#Asset:业务系统> .
+
+:Evidence配置截图 a :Evidence ;
+    rdfs:label "配置截图" ;
+    rdfs:isDefinedBy <kg:t7-mlps-compliance#Evidence:配置截图> .
+
+:Evidence审计日志 a :Evidence ;
+    rdfs:label "审计日志" ;
+    rdfs:isDefinedBy <kg:t7-mlps-compliance#Evidence:审计日志> .
+
+:Evidence测评报告 a :Evidence ;
+    rdfs:label "测评报告" ;
+    rdfs:isDefinedBy <kg:t7-mlps-compliance#Evidence:测评报告> .
+
+:Risk未授权访问 a :Risk ;
+    rdfs:label "未授权访问" ;
+    rdfs:isDefinedBy <kg:t7-mlps-compliance#Risk:未授权访问> .
+
+:Risk数据泄露 a :Risk ;
+    rdfs:label "数据泄露" ;
+    rdfs:isDefinedBy <kg:t7-mlps-compliance#Risk:数据泄露> .
+
+:Role网络管理员 a :Role ;
+    rdfs:label "网络管理员" ;
+    rdfs:isDefinedBy <kg:t7-mlps-compliance#Role:网络管理员> .
+
+:Role安全管理员 a :Role ;
+    rdfs:label "安全管理员" ;
+    rdfs:isDefinedBy <kg:t7-mlps-compliance#Role:安全管理员> .
+
+:DocMlps_clause_sample a :Document ;
+    rdfs:label "mlps_clause_sample" ;
+    rdfs:isDefinedBy <kg:t7-mlps-compliance#doc:mlps_clause_sample> .
+
+:Asset业务系统 :mentioned_in :DocMlps_clause_sample .
+:Asset安全设备 :mentioned_in :DocMlps_clause_sample .
+:Asset网络设备 :mentioned_in :DocMlps_clause_sample .
+:ControlFamily安全区域边界 :mentioned_in :DocMlps_clause_sample .
+:ControlFamily安全计算环境 :mentioned_in :DocMlps_clause_sample .
+:Evidence审计日志 :mentioned_in :DocMlps_clause_sample .
+:Evidence测评报告 :mentioned_in :DocMlps_clause_sample .
+:Evidence配置截图 :mentioned_in :DocMlps_clause_sample .
+:Risk数据泄露 :mentioned_in :DocMlps_clause_sample .
+:Risk未授权访问 :mentioned_in :DocMlps_clause_sample .
+:Role安全管理员 :mentioned_in :DocMlps_clause_sample .
+:Role网络管理员 :mentioned_in :DocMlps_clause_sample .
+:Clause8.1.3 :belongs_to_family :ControlFamily安全区域边界 .
+:Clause8.1.3 :mentioned_in :DocMlps_clause_sample .
+:Clause8.1.3 :quoted_from :StdGB/T22239-2019 .
+:Clause8.1.3.1 :belongs_to_family :ControlFamily安全区域边界 .
+:Clause8.1.3.1 :mentioned_in :DocMlps_clause_sample .
+:Clause8.1.3.1 :quoted_from :StdGB/T22239-2019 .
+:Clause8.1.4 :belongs_to_family :ControlFamily安全计算环境 .
+:Clause8.1.4 :mentioned_in :DocMlps_clause_sample .
+:Lvl三 :mentioned_in :DocMlps_clause_sample .
+:StdGB/T22239-2019 :mentioned_in :DocMlps_clause_sample .
+
+# 边数/节点数摘要（便于快速核对导入结果）
+<kg:t7-mlps-compliance> a owl:Ontology ;
+    rdfs:label "t7-mlps-compliance KG (ensemble)" ;
+    rdfs:comment "nodes=18 edges=22" .

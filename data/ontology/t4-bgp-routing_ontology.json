@@ -1,0 +1,196 @@
+{
+  "namespace": "http://kgcourse.org/ontology/bgp#",
+  "title": "BGP 路由事件与 AS 关系知识图谱",
+  "version": "v1.0",
+  "topic": "t4-bgp-routing",
+  "class_count": 10,
+  "relation_count": 11,
+  "classes": [
+    {
+      "id": "RouteObject",
+      "label": "路由对象",
+      "definition": "路由域顶层概念",
+      "parent": null,
+      "source": ""
+    },
+    {
+      "id": "AS",
+      "label": "自治系统",
+      "definition": "AS 号",
+      "parent": "RouteObject",
+      "source": ""
+    },
+    {
+      "id": "Organization",
+      "label": "机构",
+      "definition": "AS 的注册所有者",
+      "parent": "RouteObject",
+      "source": ""
+    },
+    {
+      "id": "Prefix",
+      "label": "IP 前缀",
+      "definition": "被通告的地址段",
+      "parent": "RouteObject",
+      "source": ""
+    },
+    {
+      "id": "ASPath",
+      "label": "AS 路径",
+      "definition": "路由通告中的路径序列",
+      "parent": "RouteObject",
+      "source": ""
+    },
+    {
+      "id": "Announcement",
+      "label": "路由通告",
+      "definition": "一次 update 消息中的宣告",
+      "parent": "RouteObject",
+      "source": ""
+    },
+    {
+      "id": "Withdrawal",
+      "label": "路由撤销",
+      "definition": "一次 update 消息中的撤销",
+      "parent": "RouteObject",
+      "source": ""
+    },
+    {
+      "id": "ROA",
+      "label": "ROA 授权",
+      "definition": "RPKI 中的签发对象",
+      "parent": "RouteObject",
+      "source": ""
+    },
+    {
+      "id": "HijackEvent",
+      "label": "劫持/泄露事件",
+      "definition": "被检测出的异常路由事件",
+      "parent": "RouteObject",
+      "source": ""
+    },
+    {
+      "id": "Collector",
+      "label": "采集点",
+      "definition": "RouteViews/RIS 采集器",
+      "parent": "RouteObject",
+      "source": ""
+    }
+  ],
+  "relations": [
+    {
+      "id": "originates",
+      "label": "始发",
+      "definition": "AS 始发某前缀",
+      "domain": "AS",
+      "range": "Prefix",
+      "parent": null
+    },
+    {
+      "id": "announced_by",
+      "label": "通告方",
+      "definition": "通告由某采集点/AS 观测到",
+      "domain": "Announcement",
+      "range": "Collector",
+      "parent": null
+    },
+    {
+      "id": "has_path",
+      "label": "路径为",
+      "definition": "通告的 AS_PATH",
+      "domain": "Announcement",
+      "range": "ASPath",
+      "parent": null
+    },
+    {
+      "id": "path_contains",
+      "label": "路径包含",
+      "definition": "AS_PATH 中的 AS 序列",
+      "domain": "ASPath",
+      "range": "AS",
+      "parent": null
+    },
+    {
+      "id": "had_prefix",
+      "label": "涉及前缀",
+      "definition": "通告涉及的前缀",
+      "domain": "Announcement",
+      "range": "Prefix",
+      "parent": null
+    },
+    {
+      "id": "owned_by",
+      "label": "归属机构",
+      "definition": "AS 的注册机构",
+      "domain": "AS",
+      "range": "Organization",
+      "parent": null
+    },
+    {
+      "id": "authorized_by",
+      "label": "被授权",
+      "definition": "前缀被 ROA 授权给 AS",
+      "domain": "Prefix",
+      "range": "ROA",
+      "parent": null
+    },
+    {
+      "id": "involves_as",
+      "label": "涉及 AS",
+      "definition": "事件涉及的 AS",
+      "domain": "HijackEvent",
+      "range": "AS",
+      "parent": null
+    },
+    {
+      "id": "involves_prefix",
+      "label": "涉及前缀",
+      "definition": "事件涉及的前缀",
+      "domain": "HijackEvent",
+      "range": "Prefix",
+      "parent": null
+    },
+    {
+      "id": "detected_at",
+      "label": "检测时间",
+      "definition": "事件的采集时间（属性形式亦可）",
+      "domain": "HijackEvent",
+      "range": "Collector",
+      "parent": null
+    },
+    {
+      "id": "mentioned_in",
+      "label": "出现在",
+      "definition": "实体出现在来源文档中（结构关系）",
+      "domain": null,
+      "range": null,
+      "parent": null
+    }
+  ],
+  "attributes": [
+    {
+      "id": "asn",
+      "label": "AS 号",
+      "domain": "AS",
+      "range": "xsd:string"
+    },
+    {
+      "id": "prefix_cidr",
+      "label": "前缀",
+      "domain": "Prefix",
+      "range": "xsd:string"
+    },
+    {
+      "id": "path_string",
+      "label": "AS_PATH 字符串",
+      "domain": "ASPath",
+      "range": "xsd:string"
+    },
+    {
+      "id": "as_rel",
+      "label": "商业关系",
+      "domain": "AS",
+      "range": "xsd:string"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+id: t6-ai-dcn
+title: AI 数据中心高性能网络架构知识图谱（RoCE / MRC / SRv6 / 多平面）
+description: 把协议、架构技术、组件、失效模式与收益/代价连成技术图谱，支撑选型对比与故障模式分析。
+namespace: http://kgcourse.org/ontology/ai-dcn#
+version: v1.0
+source_url: https://www.opencompute.org/
+corpus_glob: data/corpus/t6-ai-dcn/*.txt
+fusion:
+  weights:
+    rule: 0.9
+    model: 0.8
+    llm: 1.3

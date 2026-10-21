@@ -1,0 +1,714 @@
+{
+  "topic": "t5-protocol-rfc",
+  "method": "llm",
+  "backend": "from-file",
+  "sources": {
+    "rfc2119": "from-file",
+    "rfc768": "from-file",
+    "rfc791": "from-file",
+    "rfc8200": "from-file",
+    "rfc9293": "from-file"
+  },
+  "entity_count": 41,
+  "relation_count": 31,
+  "entities": [
+    {
+      "id": "rfc:2119",
+      "label": "RFC 2119",
+      "type": "RFC",
+      "doc": "rfc2119",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "kw:MUST",
+      "label": "MUST",
+      "type": "NormativeKeyword",
+      "doc": "rfc2119",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "kw:MUST NOT",
+      "label": "MUST NOT",
+      "type": "NormativeKeyword",
+      "doc": "rfc2119",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "kw:SHOULD",
+      "label": "SHOULD",
+      "type": "NormativeKeyword",
+      "doc": "rfc2119",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "kw:SHOULD NOT",
+      "label": "SHOULD NOT",
+      "type": "NormativeKeyword",
+      "doc": "rfc2119",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "kw:MAY",
+      "label": "MAY",
+      "type": "NormativeKeyword",
+      "doc": "rfc2119",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "kw:OPTIONAL",
+      "label": "OPTIONAL",
+      "type": "NormativeKeyword",
+      "doc": "rfc2119",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "obl:MUST",
+      "label": "absolute requirement of the specification",
+      "type": "Obligation",
+      "doc": "rfc2119",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "obl:MUST NOT",
+      "label": "absolute prohibition of the specification",
+      "type": "Obligation",
+      "doc": "rfc2119",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "obl:MAY",
+      "label": "truly optional",
+      "type": "Obligation",
+      "doc": "rfc2119",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "rfc:768",
+      "label": "RFC 768",
+      "type": "RFC",
+      "doc": "rfc768",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "proto:UDP",
+      "label": "UDP",
+      "type": "Protocol",
+      "doc": "rfc768",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "field:Source Port",
+      "label": "Source Port",
+      "type": "MessageField",
+      "doc": "rfc768",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "field:Checksum",
+      "label": "Checksum",
+      "type": "MessageField",
+      "doc": "rfc768",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "rfc:791",
+      "label": "RFC 791",
+      "type": "RFC",
+      "doc": "rfc791",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "proto:Internet Protocol",
+      "label": "Internet Protocol",
+      "type": "Protocol",
+      "doc": "rfc791",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "field:Checksum",
+      "label": "Checksum",
+      "type": "MessageField",
+      "doc": "rfc791",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "rfc:8200",
+      "label": "RFC 8200",
+      "type": "RFC",
+      "doc": "rfc8200",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "rfc:2460",
+      "label": "RFC 2460",
+      "type": "RFC",
+      "doc": "rfc8200",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "proto:IPv6",
+      "label": "IPv6",
+      "type": "Protocol",
+      "doc": "rfc8200",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "proto:Internet Protocol",
+      "label": "Internet Protocol",
+      "type": "Protocol",
+      "doc": "rfc8200",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "proto:IPv4",
+      "label": "IPv4",
+      "type": "Protocol",
+      "doc": "rfc8200",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "proto:ICMPv6",
+      "label": "ICMPv6",
+      "type": "Protocol",
+      "doc": "rfc8200",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "field:Hop Limit",
+      "label": "Hop Limit",
+      "type": "MessageField",
+      "doc": "rfc8200",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "field:Flow Label",
+      "label": "Flow Label",
+      "type": "MessageField",
+      "doc": "rfc8200",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "field:Payload Length",
+      "label": "Payload Length",
+      "type": "MessageField",
+      "doc": "rfc8200",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "field:Next Header",
+      "label": "Next Header",
+      "type": "MessageField",
+      "doc": "rfc8200",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "ext:Extension Header",
+      "label": "Extension Header",
+      "type": "Extension",
+      "doc": "rfc8200",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "ext:Hop-by-Hop Options Header",
+      "label": "Hop-by-Hop Options Header",
+      "type": "Extension",
+      "doc": "rfc8200",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "sec:rfc8200:3",
+      "label": "3",
+      "type": "Section",
+      "doc": "rfc8200",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "rfc:9293",
+      "label": "RFC 9293",
+      "type": "RFC",
+      "doc": "rfc9293",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "rfc:793",
+      "label": "RFC 793",
+      "type": "RFC",
+      "doc": "rfc9293",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "rfc:2119",
+      "label": "RFC 2119",
+      "type": "RFC",
+      "doc": "rfc9293",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "rfc:8200",
+      "label": "RFC 8200",
+      "type": "RFC",
+      "doc": "rfc9293",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "proto:TCP",
+      "label": "TCP",
+      "type": "Protocol",
+      "doc": "rfc9293",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "proto:Internet Protocol",
+      "label": "Internet Protocol",
+      "type": "Protocol",
+      "doc": "rfc9293",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "layer:Transport Layer",
+      "label": "Transport Layer",
+      "type": "Layer",
+      "doc": "rfc9293",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "field:Checksum",
+      "label": "Checksum",
+      "type": "MessageField",
+      "doc": "rfc9293",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "field:Sequence Number",
+      "label": "Sequence Number",
+      "type": "MessageField",
+      "doc": "rfc9293",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "field:Window",
+      "label": "Window",
+      "type": "MessageField",
+      "doc": "rfc9293",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "field:Initial Sequence Number",
+      "label": "Initial Sequence Number",
+      "type": "MessageField",
+      "doc": "rfc9293",
+      "evidence": "",
+      "method": "llm",
+      "aliases": [],
+      "properties": {}
+    }
+  ],
+  "relations": [
+    {
+      "source": "rfc:2119",
+      "relation": "requires",
+      "target": "obl:MUST",
+      "doc": "rfc2119",
+      "evidence": "MUST This word, or the terms \"REQUIRED\" or \"SHALL\", mean that the definition is an absolute requirement of the specification.",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "rfc:2119",
+      "relation": "requires",
+      "target": "obl:MUST NOT",
+      "doc": "rfc2119",
+      "evidence": "MUST NOT This phrase, or the phrase \"SHALL NOT\", mean that the definition is an absolute prohibition of the specification.",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "rfc:2119",
+      "relation": "requires",
+      "target": "obl:MAY",
+      "doc": "rfc2119",
+      "evidence": "MAY This word, or the adjective \"OPTIONAL\", mean that an item is truly optional.",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "obl:MUST",
+      "relation": "keyword_of",
+      "target": "kw:MUST",
+      "doc": "rfc2119",
+      "evidence": "MUST This word, or the terms \"REQUIRED\" or \"SHALL\", mean that the definition is an absolute requirement of the specification.",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "obl:MUST NOT",
+      "relation": "keyword_of",
+      "target": "kw:MUST NOT",
+      "doc": "rfc2119",
+      "evidence": "MUST NOT This phrase, or the phrase \"SHALL NOT\", mean that the definition is an absolute prohibition of the specification.",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "obl:MAY",
+      "relation": "keyword_of",
+      "target": "kw:MAY",
+      "doc": "rfc2119",
+      "evidence": "MAY This word, or the adjective \"OPTIONAL\", mean that an item is truly optional.",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "proto:UDP",
+      "relation": "defined_in",
+      "target": "rfc:768",
+      "doc": "rfc768",
+      "evidence": "RFC 768 User Datagram Protocol",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "proto:UDP",
+      "relation": "has_field",
+      "target": "field:Source Port",
+      "doc": "rfc768",
+      "evidence": "Source Port is an optional field",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "proto:UDP",
+      "relation": "has_field",
+      "target": "field:Checksum",
+      "doc": "rfc768",
+      "evidence": "Checksum is the 16-bit one's complement of the one's complement sum",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "rfc:791",
+      "relation": "specifies",
+      "target": "proto:Internet Protocol",
+      "doc": "rfc791",
+      "evidence": "INTERNET PROTOCOL DARPA INTERNET PROGRAM PROTOCOL SPECIFICATION",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "proto:Internet Protocol",
+      "relation": "has_field",
+      "target": "field:Checksum",
+      "doc": "rfc791",
+      "evidence": "Checksum: 16 bits",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "rfc:8200",
+      "relation": "obsoletes",
+      "target": "rfc:2460",
+      "doc": "rfc8200",
+      "evidence": "This document specifies version 6 of the Internet Protocol (IPv6). It obsoletes RFC 2460.",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "rfc:8200",
+      "relation": "specifies",
+      "target": "proto:IPv6",
+      "doc": "rfc8200",
+      "evidence": "This document specifies version 6 of the Internet Protocol (IPv6).",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "rfc:8200",
+      "relation": "contains",
+      "target": "sec:rfc8200:3",
+      "doc": "rfc8200",
+      "evidence": "3. IPv6 Header Format",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "proto:IPv6",
+      "relation": "has_field",
+      "target": "field:Hop Limit",
+      "doc": "rfc8200",
+      "evidence": "Hop Limit 8-bit unsigned integer. Decremented by 1 by each node that forwards the packet.",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "proto:IPv6",
+      "relation": "has_field",
+      "target": "field:Flow Label",
+      "doc": "rfc8200",
+      "evidence": "6. Flow Labels",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "proto:IPv6",
+      "relation": "has_field",
+      "target": "field:Payload Length",
+      "doc": "rfc8200",
+      "evidence": "| Payload Length | Next Header | Hop Limit |",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "proto:IPv6",
+      "relation": "has_field",
+      "target": "field:Next Header",
+      "doc": "rfc8200",
+      "evidence": "| Payload Length | Next Header | Hop Limit |",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "proto:IPv6",
+      "relation": "has_extension",
+      "target": "ext:Extension Header",
+      "doc": "rfc8200",
+      "evidence": "4. IPv6 Extension Headers",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "proto:IPv6",
+      "relation": "has_extension",
+      "target": "ext:Hop-by-Hop Options Header",
+      "doc": "rfc8200",
+      "evidence": "4.3. Hop-by-Hop Options Header",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "proto:IPv6",
+      "relation": "depends_on",
+      "target": "proto:ICMPv6",
+      "doc": "rfc8200",
+      "evidence": "ICMPv6 ... is used by IPv6 nodes to report errors encountered in processing packets.",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "proto:IPv6",
+      "relation": "operates_at",
+      "target": "proto:Internet Protocol",
+      "doc": "rfc8200",
+      "evidence": "This document specifies version 6 of the Internet Protocol (IPv6).",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "rfc:9293",
+      "relation": "obsoletes",
+      "target": "rfc:793",
+      "doc": "rfc9293",
+      "evidence": "This document obsoletes RFC 793.",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "rfc:9293",
+      "relation": "cites",
+      "target": "rfc:2119",
+      "doc": "rfc9293",
+      "evidence": "The key words \"MUST\", \"MUST NOT\", \"REQUIRED\", \"SHALL\" ... are to be interpreted as described in RFC 2119.",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "rfc:9293",
+      "relation": "cites",
+      "target": "rfc:8200",
+      "doc": "rfc9293",
+      "evidence": "IPv6 is described in RFC 8200.",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "proto:TCP",
+      "relation": "operates_at",
+      "target": "layer:Transport Layer",
+      "doc": "rfc9293",
+      "evidence": "TCP is a transport layer protocol.",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "proto:TCP",
+      "relation": "has_field",
+      "target": "field:Checksum",
+      "doc": "rfc9293",
+      "evidence": "Checksum: 16 bits",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "proto:TCP",
+      "relation": "has_field",
+      "target": "field:Sequence Number",
+      "doc": "rfc9293",
+      "evidence": "Sequence Number: 32 bits",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "proto:TCP",
+      "relation": "has_field",
+      "target": "field:Window",
+      "doc": "rfc9293",
+      "evidence": "Window: 16 bits",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "proto:TCP",
+      "relation": "has_field",
+      "target": "field:Initial Sequence Number",
+      "doc": "rfc9293",
+      "evidence": "Initial Sequence Number (ISN): 32 bits",
+      "method": "llm",
+      "properties": {}
+    },
+    {
+      "source": "proto:TCP",
+      "relation": "depends_on",
+      "target": "proto:Internet Protocol",
+      "doc": "rfc9293",
+      "evidence": "TCP ... is used by the Internet Protocol.",
+      "method": "llm",
+      "properties": {}
+    }
+  ],
+  "rejected": {
+    "parse_error": 0,
+    "out_of_schema": 0,
+    "missing_evidence": 0
+  },
+  "unknown_types": [],
+  "unknown_relations": []
+}

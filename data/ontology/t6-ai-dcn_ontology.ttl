@@ -1,0 +1,156 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://kgcourse.org/ontology/ai-dcn#> .
+
+<> a owl:Ontology ;
+    owl:versionInfo "v1.0" ;
+    rdfs:seeAlso <https://www.opencompute.org/> ;
+    rdfs:label "AI 数据中心高性能网络架构知识图谱（RoCE / MRC / SRv6 / 多平面）"@zh ;
+    rdfs:comment "把协议、架构技术、组件、失效模式与收益/代价连成技术图谱，支撑选型对比与故障模式分析。"@zh .
+
+:TechObject a owl:Class ;
+    rdfs:label "技术对象"@zh ;
+    rdfs:comment "AI 网络域顶层概念"@zh ;
+    .
+
+:Protocol a owl:Class ;
+    rdfs:subClassOf :TechObject ;
+    rdfs:label "网络协议"@zh ;
+    rdfs:comment "RoCE/IB/UEC/MRC 等"@zh ;
+    .
+
+:Architecture a owl:Class ;
+    rdfs:subClassOf :TechObject ;
+    rdfs:label "架构范式"@zh ;
+    rdfs:comment "多平面/无阻塞/Spine-Leaf 等"@zh ;
+    .
+
+:Technique a owl:Class ;
+    rdfs:subClassOf :TechObject ;
+    rdfs:label "关键技术"@zh ;
+    rdfs:comment "packet spraying/源路由/拥塞控制"@zh ;
+    .
+
+:Component a owl:Class ;
+    rdfs:subClassOf :TechObject ;
+    rdfs:label "组件"@zh ;
+    rdfs:comment "GPU/NIC/交换机/光模块"@zh ;
+    .
+
+:Standard a owl:Class ;
+    rdfs:subClassOf :TechObject ;
+    rdfs:label "标准组织与规范"@zh ;
+    rdfs:comment "OCP/UEC/IETF IBTA"@zh ;
+    .
+
+:Document a owl:Class ;
+    rdfs:subClassOf :TechObject ;
+    rdfs:label "文献"@zh ;
+    rdfs:comment "规范文档、论文、白皮书"@zh ;
+    .
+
+:Benefit a owl:Class ;
+    rdfs:subClassOf :TechObject ;
+    rdfs:label "收益"@zh ;
+    rdfs:comment "吞吐/成本/功耗/弹性等"@zh ;
+    .
+
+:FailureMode a owl:Class ;
+    rdfs:subClassOf :TechObject ;
+    rdfs:label "失效模式"@zh ;
+    rdfs:comment "链路抖动/交换机重启/拥塞"@zh ;
+    .
+
+:Workload a owl:Class ;
+    rdfs:subClassOf :TechObject ;
+    rdfs:label "负载类型"@zh ;
+    rdfs:comment "同步训练/推理/checkpoint"@zh ;
+    .
+
+:extends a owl:ObjectProperty ;
+    rdfs:domain :TechObject ;
+    rdfs:range :TechObject ;
+    rdfs:label "扩展自"@zh ;
+    rdfs:comment "协议/技术扩展自另一技术"@zh ;
+    .
+
+:uses a owl:ObjectProperty ;
+    rdfs:domain :TechObject ;
+    rdfs:range :TechObject ;
+    rdfs:label "使用"@zh ;
+    rdfs:comment "架构/协议使用某技术"@zh ;
+    .
+
+:enables a owl:ObjectProperty ;
+    rdfs:domain :Technique ;
+    rdfs:range :Benefit ;
+    rdfs:label "使能"@zh ;
+    rdfs:comment "技术使能某能力"@zh ;
+    .
+
+:replaces a owl:ObjectProperty ;
+    rdfs:domain :TechObject ;
+    rdfs:range :TechObject ;
+    rdfs:label "替代"@zh ;
+    rdfs:comment "新技术替代旧机制"@zh ;
+    .
+
+:mitigates a owl:ObjectProperty ;
+    rdfs:domain :TechObject ;
+    rdfs:range :FailureMode ;
+    rdfs:label "缓解"@zh ;
+    rdfs:comment "机制缓解某失效模式"@zh ;
+    .
+
+:specified_in a owl:ObjectProperty ;
+    rdfs:domain :TechObject ;
+    rdfs:range :Document ;
+    rdfs:label "规范于"@zh ;
+    rdfs:comment "技术在哪个文档/标准中定义"@zh ;
+    .
+
+:implemented_in a owl:ObjectProperty ;
+    rdfs:domain :TechObject ;
+    rdfs:range :Component ;
+    rdfs:label "实现于"@zh ;
+    rdfs:comment "技术在哪些组件中实现"@zh ;
+    .
+
+:optimized_for a owl:ObjectProperty ;
+    rdfs:domain :Architecture ;
+    rdfs:range :Workload ;
+    rdfs:label "面向负载"@zh ;
+    rdfs:comment "架构面向某类负载优化"@zh ;
+    .
+
+:has_constraint a owl:ObjectProperty ;
+    rdfs:domain :TechObject ;
+    rdfs:range :FailureMode ;
+    rdfs:label "受限于"@zh ;
+    rdfs:comment "技术的约束条件"@zh ;
+    .
+
+:mentioned_in a owl:ObjectProperty ;
+    rdfs:label "出现在"@zh ;
+    rdfs:comment "实体出现在来源文档中（结构关系）"@zh ;
+    .
+
+:bandwidth_gbps a owl:DatatypeProperty ;
+    rdfs:domain :TechObject ;
+    rdfs:range :xsd:decimal ;
+    rdfs:label "带宽"@zh ;
+    .
+
+:tier_count a owl:DatatypeProperty ;
+    rdfs:domain :Architecture ;
+    rdfs:range :xsd:integer ;
+    rdfs:label "交换层级"@zh ;
+    .
+
+:source_url a owl:DatatypeProperty ;
+    rdfs:domain :Document ;
+    rdfs:range :xsd:string ;
+    rdfs:label "来源链接"@zh ;
+    .

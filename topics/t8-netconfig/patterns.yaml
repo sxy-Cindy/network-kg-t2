@@ -1,0 +1,21 @@
+entity_patterns:
+- type: ConfigBlock
+  regex: (?m)^interface\s+(\S+)
+  id_template: block:if:{1}
+  label_template: interface {1}
+- type: ConfigBlock
+  regex: (?m)^router\s+(ospf|bgp)\s+(\S+)
+  id_template: block:{1}:{2}
+  label_template: router {1} {2}
+- type: Command
+  regex: (?m)^\s{1,4}(ip address|switchport|description|neighbor|network|redistribute|shutdown)\b
+  id_template: cmd:{1}
+  label_template: '{1}'
+relations:
+- name: in_block
+  relation: in_block
+  source_type: Command
+  target_type: ConfigBlock
+  trigger: null
+structural:
+  mentioned_in: true

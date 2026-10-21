@@ -1,0 +1,9 @@
+# 网络设备与主机日志摘录（示意语料，格式贴近 Loghub 的 Linux/OpenSSH 与 BGL 日志）
+Jul 14 03:12:07 core-sw-01 bgpd[812]: BGP peer down to 10.0.0.2 due to hold timer expired
+Jul 14 03:12:11 core-sw-01 bgpd[812]: interface down: Te0/1 line protocol down
+Jul 14 03:12:12 agg-sw-03 syslog-ng[2201]: link flapped on Te0/1
+Jul 14 03:12:15 node-17 kubelet[991]: packet loss detected on overlay tunnel, jitter increased
+Jul 14 03:12:40 edge-rt-02 ospfd[745]: BGP peer down caused by fiber cut on uplink
+Jul 14 03:13:02 core-sw-01 bgpd[812]: traffic drop observed on vlan 20 due to blackhole route
+Jul 14 03:15:20 core-sw-01 root: failover triggered, switchover to backup path after restart
+# 处置：回滚配置 rollback，随后 packet loss 恢复

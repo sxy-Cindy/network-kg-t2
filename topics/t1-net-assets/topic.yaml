@@ -1,0 +1,12 @@
+id: t1-net-assets
+title: 网络设备、接口与链路资产知识图谱
+description: 把设备/接口/链路/IP 段/厂商/角色串成资产拓扑图，支撑影响面分析与故障定位问答。
+namespace: http://kgcourse.org/ontology/net-assets#
+version: v1.0
+source_url: https://github.com/netbox-community/netbox
+corpus_glob: data/corpus/t1-net-assets/*.txt
+fusion:
+  weights:
+    rule: 1.0
+    model: 0.8
+    llm: 1.2

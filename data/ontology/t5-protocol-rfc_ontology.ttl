@@ -1,0 +1,197 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix : <http://kgcourse.org/ontology/protocol#> .
+
+<> a owl:Ontology ;
+    owl:versionInfo "v1.0" ;
+    rdfs:seeAlso <https://www.rfc-editor.org/> ;
+    rdfs:label "TCP/IP 协议栈与 RFC 规范知识图谱"@zh ;
+    rdfs:comment "把 RFC 文档结构（章节/引用/废弃关系）、协议、协议分层、规范关键字（RFC 2119）与报文域连成规范图谱，支撑「协议行为可溯源」的问答与配置核查。"@zh .
+
+:SpecObject a owl:Class ;
+    rdfs:label "规范对象"@zh ;
+    rdfs:comment "规范域顶层概念"@zh ;
+    .
+
+:Document a owl:Class ;
+    rdfs:subClassOf :SpecObject ;
+    rdfs:label "规范文档"@zh ;
+    rdfs:comment "RFC/BCP/STD 等文档"@zh ;
+    .
+
+:RFC a owl:Class ;
+    rdfs:subClassOf :Document ;
+    rdfs:label "RFC 文档"@zh ;
+    rdfs:comment "征求意见稿"@zh ;
+    .
+
+:Section a owl:Class ;
+    rdfs:subClassOf :SpecObject ;
+    rdfs:label "章节"@zh ;
+    rdfs:comment "RFC 内的章节"@zh ;
+    .
+
+:Protocol a owl:Class ;
+    rdfs:subClassOf :SpecObject ;
+    rdfs:label "协议"@zh ;
+    rdfs:comment "TCP/UDP/IP 等"@zh ;
+    .
+
+:Layer a owl:Class ;
+    rdfs:subClassOf :SpecObject ;
+    rdfs:label "协议分层"@zh ;
+    rdfs:comment "应用层/传输层/网络层/链路层"@zh ;
+    .
+
+:MessageField a owl:Class ;
+    rdfs:subClassOf :SpecObject ;
+    rdfs:label "报文域"@zh ;
+    rdfs:comment "首部字段"@zh ;
+    .
+
+:NormativeKeyword a owl:Class ;
+    rdfs:subClassOf :SpecObject ;
+    rdfs:label "规范性关键字"@zh ;
+    rdfs:comment "RFC 2119 定义的关键字"@zh ;
+    .
+
+:Obligation a owl:Class ;
+    rdfs:subClassOf :SpecObject ;
+    rdfs:label "规范性要求"@zh ;
+    rdfs:comment "一条带关键字的规范要求"@zh ;
+    .
+
+:Port a owl:Class ;
+    rdfs:subClassOf :SpecObject ;
+    rdfs:label "端口号"@zh ;
+    rdfs:comment "传输层端口"@zh ;
+    .
+
+:Extension a owl:Class ;
+    rdfs:subClassOf :SpecObject ;
+    rdfs:label "扩展项"@zh ;
+    rdfs:comment "首部选项/扩展首部"@zh ;
+    .
+
+:defined_in a owl:ObjectProperty ;
+    rdfs:domain :Protocol ;
+    rdfs:range :Document ;
+    rdfs:label "定义于"@zh ;
+    rdfs:comment "协议/概念被哪个文档定义"@zh ;
+    .
+
+:specifies a owl:ObjectProperty ;
+    rdfs:domain :RFC ;
+    rdfs:range :Protocol ;
+    rdfs:label "规范"@zh ;
+    rdfs:comment "文档规范了某协议"@zh ;
+    .
+
+:contains a owl:ObjectProperty ;
+    rdfs:domain :Document ;
+    rdfs:range :Section ;
+    rdfs:label "包含章节"@zh ;
+    rdfs:comment "文档包含章节"@zh ;
+    .
+
+:cites a owl:ObjectProperty ;
+    rdfs:domain :Document ;
+    rdfs:range :Document ;
+    rdfs:label "引用了"@zh ;
+    rdfs:comment "文档引用其他文档"@zh ;
+    .
+
+:obsoletes a owl:ObjectProperty ;
+    rdfs:domain :Document ;
+    rdfs:range :Document ;
+    rdfs:label "废弃"@zh ;
+    rdfs:comment "新版废弃旧版"@zh ;
+    a owl:TransitiveProperty ;
+    .
+
+:updates a owl:ObjectProperty ;
+    rdfs:domain :Document ;
+    rdfs:range :Document ;
+    rdfs:label "更新"@zh ;
+    rdfs:comment "文档更新其他文档"@zh ;
+    .
+
+:has_field a owl:ObjectProperty ;
+    rdfs:domain :Protocol ;
+    rdfs:range :MessageField ;
+    rdfs:label "含字段"@zh ;
+    rdfs:comment "协议首部包含某字段"@zh ;
+    .
+
+:operates_at a owl:ObjectProperty ;
+    rdfs:domain :Protocol ;
+    rdfs:range :Layer ;
+    rdfs:label "工作于"@zh ;
+    rdfs:comment "协议所属分层"@zh ;
+    .
+
+:keyword_of a owl:ObjectProperty ;
+    rdfs:domain :Obligation ;
+    rdfs:range :NormativeKeyword ;
+    rdfs:label "关键字属于"@zh ;
+    rdfs:comment "规范要求使用的关键字"@zh ;
+    .
+
+:requires a owl:ObjectProperty ;
+    rdfs:domain :Document ;
+    rdfs:range :Obligation ;
+    rdfs:label "要求"@zh ;
+    rdfs:comment "规范要求约束某协议行为"@zh ;
+    .
+
+:depends_on a owl:ObjectProperty ;
+    rdfs:domain :Protocol ;
+    rdfs:range :Protocol ;
+    rdfs:label "依赖"@zh ;
+    rdfs:comment "协议依赖另一协议"@zh ;
+    .
+
+:has_extension a owl:ObjectProperty ;
+    rdfs:domain :Protocol ;
+    rdfs:range :Extension ;
+    rdfs:label "含扩展"@zh ;
+    rdfs:comment "协议的扩展项"@zh ;
+    .
+
+:mentioned_in a owl:ObjectProperty ;
+    rdfs:label "出现在"@zh ;
+    rdfs:comment "实体出现在来源文档中（结构关系）"@zh ;
+    .
+
+:rfc_number a owl:DatatypeProperty ;
+    rdfs:domain :RFC ;
+    rdfs:range :xsd:integer ;
+    rdfs:label "RFC 编号"@zh ;
+    .
+
+:status a owl:DatatypeProperty ;
+    rdfs:domain :RFC ;
+    rdfs:range :xsd:string ;
+    rdfs:label "标准状态"@zh ;
+    .
+
+:section_number a owl:DatatypeProperty ;
+    rdfs:domain :Section ;
+    rdfs:range :xsd:string ;
+    rdfs:label "章节号"@zh ;
+    .
+
+:keyword_level a owl:DatatypeProperty ;
+    rdfs:domain :NormativeKeyword ;
+    rdfs:range :xsd:string ;
+    rdfs:label "规范性强度"@zh ;
+    .
+
+:port_number a owl:DatatypeProperty ;
+    rdfs:domain :Port ;
+    rdfs:range :xsd:integer ;
+    rdfs:label "端口号"@zh ;
+    .

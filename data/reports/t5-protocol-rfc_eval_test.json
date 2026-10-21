@@ -1,0 +1,912 @@
+{
+  "topic": "t5-protocol-rfc",
+  "gold_size": {
+    "entities": 23,
+    "triples": 18
+  },
+  "methods": {
+    "rule": {
+      "method": "rule",
+      "entity": {
+        "tp": 22,
+        "pred": 286,
+        "gold": 23,
+        "precision": 0.0769,
+        "recall": 0.9565,
+        "f1": 0.1424,
+        "missing_examples": [
+          [
+            "Protocol",
+            "internet protocol"
+          ]
+        ],
+        "spurious_examples": [
+          [
+            "Extension",
+            "extension header"
+          ],
+          [
+            "Extension",
+            "hop-by-hop options"
+          ],
+          [
+            "Extension",
+            "path mtu discovery"
+          ],
+          [
+            "Extension",
+            "selective acknowledgment"
+          ],
+          [
+            "Extension",
+            "timestamp option"
+          ]
+        ]
+      },
+      "triple": {
+        "tp": 6,
+        "pred": 48,
+        "gold": 18,
+        "precision": 0.125,
+        "recall": 0.3333,
+        "f1": 0.1818,
+        "missing_examples": [
+          [
+            "internet protocol",
+            "has_field",
+            "checksum"
+          ],
+          [
+            "ipv6",
+            "depends_on",
+            "icmpv6"
+          ],
+          [
+            "rfc 8200",
+            "obsoletes",
+            "rfc 2460"
+          ],
+          [
+            "rfc 9293",
+            "cites",
+            "rfc 2119"
+          ],
+          [
+            "rfc 9293",
+            "cites",
+            "rfc 8200"
+          ]
+        ],
+        "spurious_examples": [
+          [
+            "icmp",
+            "has_field",
+            "checksum"
+          ],
+          [
+            "icmp",
+            "has_field",
+            "next header"
+          ],
+          [
+            "icmp",
+            "has_field",
+            "payload length"
+          ],
+          [
+            "ipv4",
+            "has_field",
+            "checksum"
+          ],
+          [
+            "ipv4",
+            "has_field",
+            "hop limit"
+          ]
+        ]
+      },
+      "by_votes": {
+        "1": {
+          "tp": 6,
+          "pred": 48,
+          "gold": 18,
+          "precision": 0.125,
+          "recall": 0.3333,
+          "f1": 0.1818,
+          "missing_examples": [
+            [
+              "internet protocol",
+              "has_field",
+              "checksum"
+            ],
+            [
+              "ipv6",
+              "depends_on",
+              "icmpv6"
+            ],
+            [
+              "rfc 8200",
+              "obsoletes",
+              "rfc 2460"
+            ],
+            [
+              "rfc 9293",
+              "cites",
+              "rfc 2119"
+            ],
+            [
+              "rfc 9293",
+              "cites",
+              "rfc 8200"
+            ]
+          ],
+          "spurious_examples": [
+            [
+              "icmp",
+              "has_field",
+              "checksum"
+            ],
+            [
+              "icmp",
+              "has_field",
+              "next header"
+            ],
+            [
+              "icmp",
+              "has_field",
+              "payload length"
+            ],
+            [
+              "ipv4",
+              "has_field",
+              "checksum"
+            ],
+            [
+              "ipv4",
+              "has_field",
+              "hop limit"
+            ]
+          ]
+        }
+      },
+      "entity_by_type": {
+        "Extension": {
+          "tp": 0,
+          "pred": 6,
+          "gold": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missing_examples": [],
+          "spurious_examples": [
+            [
+              "Extension",
+              "extension header"
+            ],
+            [
+              "Extension",
+              "hop-by-hop options"
+            ],
+            [
+              "Extension",
+              "path mtu discovery"
+            ],
+            [
+              "Extension",
+              "selective acknowledgment"
+            ],
+            [
+              "Extension",
+              "timestamp option"
+            ]
+          ]
+        },
+        "Layer": {
+          "tp": 2,
+          "pred": 4,
+          "gold": 2,
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6667,
+          "missing_examples": [],
+          "spurious_examples": [
+            [
+              "Layer",
+              "application layer"
+            ],
+            [
+              "Layer",
+              "link layer"
+            ]
+          ]
+        },
+        "MessageField": {
+          "tp": 8,
+          "pred": 26,
+          "gold": 8,
+          "precision": 0.3077,
+          "recall": 1.0,
+          "f1": 0.4706,
+          "missing_examples": [],
+          "spurious_examples": [
+            [
+              "MessageField",
+              "acknowledgment number"
+            ],
+            [
+              "MessageField",
+              "data offset"
+            ],
+            [
+              "MessageField",
+              "destination port"
+            ],
+            [
+              "MessageField",
+              "flags"
+            ],
+            [
+              "MessageField",
+              "fragment offset"
+            ]
+          ]
+        },
+        "NormativeKeyword": {
+          "tp": 3,
+          "pred": 10,
+          "gold": 3,
+          "precision": 0.3,
+          "recall": 1.0,
+          "f1": 0.4615,
+          "missing_examples": [],
+          "spurious_examples": [
+            [
+              "NormativeKeyword",
+              "must not"
+            ],
+            [
+              "NormativeKeyword",
+              "not recommended"
+            ],
+            [
+              "NormativeKeyword",
+              "optional"
+            ],
+            [
+              "NormativeKeyword",
+              "recommended"
+            ],
+            [
+              "NormativeKeyword",
+              "required"
+            ]
+          ]
+        },
+        "Port": {
+          "tp": 0,
+          "pred": 1,
+          "gold": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missing_examples": [],
+          "spurious_examples": [
+            [
+              "Port",
+              "port 16"
+            ]
+          ]
+        },
+        "Protocol": {
+          "tp": 4,
+          "pred": 14,
+          "gold": 5,
+          "precision": 0.2857,
+          "recall": 0.8,
+          "f1": 0.4211,
+          "missing_examples": [
+            [
+              "Protocol",
+              "internet protocol"
+            ]
+          ],
+          "spurious_examples": [
+            [
+              "Protocol",
+              "http"
+            ],
+            [
+              "Protocol",
+              "https"
+            ],
+            [
+              "Protocol",
+              "icmp"
+            ],
+            [
+              "Protocol",
+              "ipsec"
+            ],
+            [
+              "Protocol",
+              "ipv4"
+            ]
+          ]
+        },
+        "RFC": {
+          "tp": 5,
+          "pred": 104,
+          "gold": 5,
+          "precision": 0.0481,
+          "recall": 1.0,
+          "f1": 0.0917,
+          "missing_examples": [],
+          "spurious_examples": [
+            [
+              "RFC",
+              "rfc 0791"
+            ],
+            [
+              "RFC",
+              "rfc 0793"
+            ],
+            [
+              "RFC",
+              "rfc 0896"
+            ],
+            [
+              "RFC",
+              "rfc 1011"
+            ],
+            [
+              "RFC",
+              "rfc 1038"
+            ]
+          ]
+        },
+        "Section": {
+          "tp": 0,
+          "pred": 121,
+          "gold": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missing_examples": [],
+          "spurious_examples": [
+            [
+              "Section",
+              "1 introduction . . . . . . . . . . . . . . . . . . . . . . . . 4"
+            ],
+            [
+              "Section",
+              "1 introduction ..................................................... 1"
+            ],
+            [
+              "Section",
+              "1 must this word, or the terms \"required\" or \"shall\", mean that the"
+            ],
+            [
+              "Section",
+              "1 purpose and scope"
+            ],
+            [
+              "Section",
+              "1.1 motivation"
+            ]
+          ]
+        }
+      },
+      "counts": {
+        "entities": 384,
+        "relations": 432
+      },
+      "evidence_coverage": 1.0,
+      "ontology_compliance": 1.0,
+      "unknown_types": [],
+      "unknown_relations": [],
+      "votes": null
+    },
+    "ensemble": {
+      "method": "ensemble",
+      "entity": {
+        "tp": 23,
+        "pred": 416,
+        "gold": 23,
+        "precision": 0.0553,
+        "recall": 1.0,
+        "f1": 0.1048,
+        "missing_examples": [],
+        "spurious_examples": [
+          [
+            "Extension",
+            "-by-"
+          ],
+          [
+            "Extension",
+            "-hop"
+          ],
+          [
+            "Extension",
+            "-hop mtu"
+          ],
+          [
+            "Extension",
+            "extension"
+          ],
+          [
+            "Extension",
+            "extension header"
+          ]
+        ]
+      },
+      "triple": {
+        "tp": 17,
+        "pred": 215,
+        "gold": 18,
+        "precision": 0.0791,
+        "recall": 0.9444,
+        "f1": 0.1459,
+        "missing_examples": [
+          [
+            "udp",
+            "operates_at",
+            "transport layer"
+          ]
+        ],
+        "spurious_examples": [
+          [
+            "absolute prohibition of the specification",
+            "keyword_of",
+            "must not"
+          ],
+          [
+            "absolute requirement of the specification",
+            "keyword_of",
+            "must"
+          ],
+          [
+            "http",
+            "has_field",
+            "size"
+          ],
+          [
+            "http",
+            "has_field",
+            "type"
+          ],
+          [
+            "https",
+            "has_field",
+            "service"
+          ]
+        ]
+      },
+      "by_votes": {
+        "1": {
+          "tp": 11,
+          "pred": 172,
+          "gold": 18,
+          "precision": 0.064,
+          "recall": 0.6111,
+          "f1": 0.1158,
+          "missing_examples": [
+            [
+              "ipv6",
+              "has_field",
+              "flow label"
+            ],
+            [
+              "ipv6",
+              "has_field",
+              "hop limit"
+            ],
+            [
+              "ipv6",
+              "has_field",
+              "payload length"
+            ],
+            [
+              "ipv6",
+              "operates_at",
+              "internet layer"
+            ],
+            [
+              "tcp",
+              "has_field",
+              "checksum"
+            ]
+          ],
+          "spurious_examples": [
+            [
+              "absolute prohibition of the specification",
+              "keyword_of",
+              "must not"
+            ],
+            [
+              "absolute requirement of the specification",
+              "keyword_of",
+              "must"
+            ],
+            [
+              "http",
+              "has_field",
+              "size"
+            ],
+            [
+              "http",
+              "has_field",
+              "type"
+            ],
+            [
+              "https",
+              "has_field",
+              "service"
+            ]
+          ]
+        },
+        "2": {
+          "tp": 2,
+          "pred": 38,
+          "gold": 18,
+          "precision": 0.0526,
+          "recall": 0.1111,
+          "f1": 0.0714,
+          "missing_examples": [
+            [
+              "internet protocol",
+              "has_field",
+              "checksum"
+            ],
+            [
+              "ipv6",
+              "depends_on",
+              "icmpv6"
+            ],
+            [
+              "ipv6",
+              "has_field",
+              "flow label"
+            ],
+            [
+              "ipv6",
+              "has_field",
+              "hop limit"
+            ],
+            [
+              "ipv6",
+              "has_field",
+              "payload length"
+            ]
+          ],
+          "spurious_examples": [
+            [
+              "icmp",
+              "has_field",
+              "checksum"
+            ],
+            [
+              "icmp",
+              "has_field",
+              "next header"
+            ],
+            [
+              "icmp",
+              "has_field",
+              "payload length"
+            ],
+            [
+              "ipv4",
+              "has_field",
+              "checksum"
+            ],
+            [
+              "ipv4",
+              "has_field",
+              "hop limit"
+            ]
+          ]
+        },
+        "3": {
+          "tp": 4,
+          "pred": 5,
+          "gold": 18,
+          "precision": 0.8,
+          "recall": 0.2222,
+          "f1": 0.3478,
+          "missing_examples": [
+            [
+              "internet protocol",
+              "has_field",
+              "checksum"
+            ],
+            [
+              "ipv6",
+              "depends_on",
+              "icmpv6"
+            ],
+            [
+              "ipv6",
+              "operates_at",
+              "internet layer"
+            ],
+            [
+              "rfc 8200",
+              "obsoletes",
+              "rfc 2460"
+            ],
+            [
+              "rfc 9293",
+              "cites",
+              "rfc 2119"
+            ]
+          ],
+          "spurious_examples": [
+            [
+              "ipv6",
+              "has_field",
+              "next header"
+            ]
+          ]
+        }
+      },
+      "entity_by_type": {
+        "Extension": {
+          "tp": 0,
+          "pred": 16,
+          "gold": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missing_examples": [],
+          "spurious_examples": [
+            [
+              "Extension",
+              "-by-"
+            ],
+            [
+              "Extension",
+              "-hop"
+            ],
+            [
+              "Extension",
+              "-hop mtu"
+            ],
+            [
+              "Extension",
+              "extension"
+            ],
+            [
+              "Extension",
+              "extension header"
+            ]
+          ]
+        },
+        "Layer": {
+          "tp": 2,
+          "pred": 4,
+          "gold": 2,
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6667,
+          "missing_examples": [],
+          "spurious_examples": [
+            [
+              "Layer",
+              "application layer"
+            ],
+            [
+              "Layer",
+              "link layer"
+            ]
+          ]
+        },
+        "MessageField": {
+          "tp": 8,
+          "pred": 52,
+          "gold": 8,
+          "precision": 0.1538,
+          "recall": 1.0,
+          "f1": 0.2667,
+          "missing_examples": [],
+          "spurious_examples": [
+            [
+              "MessageField",
+              "acknowledgment number"
+            ],
+            [
+              "MessageField",
+              "class"
+            ],
+            [
+              "MessageField",
+              "data offset"
+            ],
+            [
+              "MessageField",
+              "destination port"
+            ],
+            [
+              "MessageField",
+              "flags"
+            ]
+          ]
+        },
+        "NormativeKeyword": {
+          "tp": 3,
+          "pred": 12,
+          "gold": 3,
+          "precision": 0.25,
+          "recall": 1.0,
+          "f1": 0.4,
+          "missing_examples": [],
+          "spurious_examples": [
+            [
+              "NormativeKeyword",
+              "must not"
+            ],
+            [
+              "NormativeKeyword",
+              "not"
+            ],
+            [
+              "NormativeKeyword",
+              "not recommended"
+            ],
+            [
+              "NormativeKeyword",
+              "optional"
+            ],
+            [
+              "NormativeKeyword",
+              "recommended"
+            ]
+          ]
+        },
+        "Obligation": {
+          "tp": 0,
+          "pred": 3,
+          "gold": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missing_examples": [],
+          "spurious_examples": [
+            [
+              "Obligation",
+              "absolute prohibition of the specification"
+            ],
+            [
+              "Obligation",
+              "absolute requirement of the specification"
+            ],
+            [
+              "Obligation",
+              "truly optional"
+            ]
+          ]
+        },
+        "Port": {
+          "tp": 0,
+          "pred": 1,
+          "gold": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missing_examples": [],
+          "spurious_examples": [
+            [
+              "Port",
+              "port 16"
+            ]
+          ]
+        },
+        "Protocol": {
+          "tp": 5,
+          "pred": 16,
+          "gold": 5,
+          "precision": 0.3125,
+          "recall": 1.0,
+          "f1": 0.4762,
+          "missing_examples": [],
+          "spurious_examples": [
+            [
+              "Protocol",
+              "http"
+            ],
+            [
+              "Protocol",
+              "https"
+            ],
+            [
+              "Protocol",
+              "icmp"
+            ],
+            [
+              "Protocol",
+              "icmpv4"
+            ],
+            [
+              "Protocol",
+              "ipsec"
+            ]
+          ]
+        },
+        "RFC": {
+          "tp": 5,
+          "pred": 191,
+          "gold": 5,
+          "precision": 0.0262,
+          "recall": 1.0,
+          "f1": 0.051,
+          "missing_examples": [],
+          "spurious_examples": [
+            [
+              "RFC",
+              "rfc"
+            ],
+            [
+              "RFC",
+              "rfc 0791"
+            ],
+            [
+              "RFC",
+              "rfc 0793"
+            ],
+            [
+              "RFC",
+              "rfc 0896"
+            ],
+            [
+              "RFC",
+              "rfc 1011"
+            ]
+          ]
+        },
+        "Section": {
+          "tp": 0,
+          "pred": 121,
+          "gold": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missing_examples": [],
+          "spurious_examples": [
+            [
+              "Section",
+              "1 introduction . . . . . . . . . . . . . . . . . . . . . . . . 4"
+            ],
+            [
+              "Section",
+              "1 introduction ..................................................... 1"
+            ],
+            [
+              "Section",
+              "1 must this word, or the terms \"required\" or \"shall\", mean that the"
+            ],
+            [
+              "Section",
+              "1 purpose and scope"
+            ],
+            [
+              "Section",
+              "1.1 motivation"
+            ]
+          ]
+        }
+      },
+      "counts": {
+        "entities": 416,
+        "relations": 739
+      },
+      "evidence_coverage": 1.0,
+      "ontology_compliance": 1.0,
+      "unknown_types": [],
+      "unknown_relations": [],
+      "votes": {
+        "1": 477,
+        "2": 257,
+        "3": 5
+      }
+    }
+  }
+}

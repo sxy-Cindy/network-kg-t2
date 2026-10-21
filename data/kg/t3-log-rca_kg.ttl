@@ -1,0 +1,144 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://kgcourse.org/ontology/log-rca#> .
+
+:HostCore-sw-01 a :Host ;
+    rdfs:label "core-sw-01" ;
+    rdfs:isDefinedBy <kg:t3-log-rca#host:core-sw-01> .
+
+:HostAgg-sw-03 a :Host ;
+    rdfs:label "agg-sw-03" ;
+    rdfs:isDefinedBy <kg:t3-log-rca#host:agg-sw-03> .
+
+:HostNode-17 a :Host ;
+    rdfs:label "node-17" ;
+    rdfs:isDefinedBy <kg:t3-log-rca#host:node-17> .
+
+:HostEdge-rt-02 a :Host ;
+    rdfs:label "edge-rt-02" ;
+    rdfs:isDefinedBy <kg:t3-log-rca#host:edge-rt-02> .
+
+:AnomBGPPeerDown a :Anomaly ;
+    rdfs:label "BGP peer down" ;
+    rdfs:isDefinedBy <kg:t3-log-rca#anom:BGP peer down> .
+
+:AnomInterfaceDown a :Anomaly ;
+    rdfs:label "interface down" ;
+    rdfs:isDefinedBy <kg:t3-log-rca#anom:interface down> .
+
+:AnomLinkFlapped a :Anomaly ;
+    rdfs:label "link flapped" ;
+    rdfs:isDefinedBy <kg:t3-log-rca#anom:link flapped> .
+
+:AnomPacketLoss a :Anomaly ;
+    rdfs:label "packet loss" ;
+    rdfs:isDefinedBy <kg:t3-log-rca#anom:packet loss> .
+
+:FaultTrafficDrop a :Fault ;
+    rdfs:label "traffic drop" ;
+    rdfs:isDefinedBy <kg:t3-log-rca#fault:traffic drop> .
+
+:FaultBlackhole a :Fault ;
+    rdfs:label "blackhole" ;
+    rdfs:isDefinedBy <kg:t3-log-rca#fault:blackhole> .
+
+:ActFailover a :Action ;
+    rdfs:label "failover" ;
+    rdfs:isDefinedBy <kg:t3-log-rca#act:failover> .
+
+:ActSwitchover a :Action ;
+    rdfs:label "switchover" ;
+    rdfs:isDefinedBy <kg:t3-log-rca#act:switchover> .
+
+:ActRestart a :Action ;
+    rdfs:label "restart" ;
+    rdfs:isDefinedBy <kg:t3-log-rca#act:restart> .
+
+:ActRollback a :Action ;
+    rdfs:label "rollback" ;
+    rdfs:isDefinedBy <kg:t3-log-rca#act:rollback> .
+
+:MetricPacket-loss a :Metric ;
+    rdfs:label "packet loss" ;
+    rdfs:isDefinedBy <kg:t3-log-rca#Metric:packet-loss> .
+
+:MetricJitter a :Metric ;
+    rdfs:label "jitter" ;
+    rdfs:isDefinedBy <kg:t3-log-rca#Metric:jitter> .
+
+:RootCauseFiber-cut a :RootCause ;
+    rdfs:label "fiber cut" ;
+    rdfs:isDefinedBy <kg:t3-log-rca#RootCause:fiber-cut> .
+
+:ServiceBgpd a :Service ;
+    rdfs:label "bgpd" ;
+    rdfs:isDefinedBy <kg:t3-log-rca#Service:bgpd> .
+
+:ServiceOspfd a :Service ;
+    rdfs:label "ospfd" ;
+    rdfs:isDefinedBy <kg:t3-log-rca#Service:ospfd> .
+
+:ServiceSyslog-ng a :Service ;
+    rdfs:label "syslog-ng" ;
+    rdfs:isDefinedBy <kg:t3-log-rca#Service:syslog-ng> .
+
+:ServiceKubelet a :Service ;
+    rdfs:label "kubelet" ;
+    rdfs:isDefinedBy <kg:t3-log-rca#Service:kubelet> .
+
+:DocNetwork_device_log_sample a :Document ;
+    rdfs:label "network_device_log_sample" ;
+    rdfs:isDefinedBy <kg:t3-log-rca#doc:network_device_log_sample> .
+
+:MetricJitter :mentioned_in :DocNetwork_device_log_sample .
+:MetricPacket-loss :mentioned_in :DocNetwork_device_log_sample .
+:RootCauseFiber-cut :mentioned_in :DocNetwork_device_log_sample .
+:ServiceBgpd :mentioned_in :DocNetwork_device_log_sample .
+:ServiceKubelet :mentioned_in :DocNetwork_device_log_sample .
+:ServiceOspfd :mentioned_in :DocNetwork_device_log_sample .
+:ServiceSyslog-ng :mentioned_in :DocNetwork_device_log_sample .
+:ActFailover :mentioned_in :DocNetwork_device_log_sample .
+:ActRestart :mentioned_in :DocNetwork_device_log_sample .
+:ActRollback :mentioned_in :DocNetwork_device_log_sample .
+:ActSwitchover :mentioned_in :DocNetwork_device_log_sample .
+:AnomBGPPeerDown :correlates_with :ActFailover .
+:AnomBGPPeerDown :correlates_with :ActRestart .
+:AnomBGPPeerDown :correlates_with :ActRollback .
+:AnomBGPPeerDown :correlates_with :ActSwitchover .
+:AnomBGPPeerDown :indicates :FaultBlackhole .
+:AnomBGPPeerDown :indicates :FaultTrafficDrop .
+:AnomBGPPeerDown :mentioned_in :DocNetwork_device_log_sample .
+:AnomInterfaceDown :correlates_with :ActFailover .
+:AnomInterfaceDown :correlates_with :ActRestart .
+:AnomInterfaceDown :correlates_with :ActRollback .
+:AnomInterfaceDown :correlates_with :ActSwitchover .
+:AnomInterfaceDown :indicates :FaultBlackhole .
+:AnomInterfaceDown :indicates :FaultTrafficDrop .
+:AnomInterfaceDown :mentioned_in :DocNetwork_device_log_sample .
+:AnomLinkFlapped :correlates_with :ActFailover .
+:AnomLinkFlapped :correlates_with :ActRestart .
+:AnomLinkFlapped :correlates_with :ActRollback .
+:AnomLinkFlapped :correlates_with :ActSwitchover .
+:AnomLinkFlapped :indicates :FaultBlackhole .
+:AnomLinkFlapped :indicates :FaultTrafficDrop .
+:AnomLinkFlapped :mentioned_in :DocNetwork_device_log_sample .
+:AnomPacketLoss :correlates_with :ActFailover .
+:AnomPacketLoss :correlates_with :ActRestart .
+:AnomPacketLoss :correlates_with :ActRollback .
+:AnomPacketLoss :correlates_with :ActSwitchover .
+:AnomPacketLoss :indicates :FaultBlackhole .
+:AnomPacketLoss :indicates :FaultTrafficDrop .
+:AnomPacketLoss :mentioned_in :DocNetwork_device_log_sample .
+:FaultBlackhole :mentioned_in :DocNetwork_device_log_sample .
+:FaultTrafficDrop :mentioned_in :DocNetwork_device_log_sample .
+:HostAgg-sw-03 :mentioned_in :DocNetwork_device_log_sample .
+:HostCore-sw-01 :mentioned_in :DocNetwork_device_log_sample .
+:HostEdge-rt-02 :mentioned_in :DocNetwork_device_log_sample .
+:HostNode-17 :mentioned_in :DocNetwork_device_log_sample .
+
+# 边数/节点数摘要（便于快速核对导入结果）
+<kg:t3-log-rca> a owl:Ontology ;
+    rdfs:label "t3-log-rca KG (ensemble)" ;
+    rdfs:comment "nodes=22 edges=45" .

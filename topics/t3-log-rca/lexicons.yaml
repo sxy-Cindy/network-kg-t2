@@ -1,0 +1,40 @@
+Metric:
+- CPU utilization
+- memory usage
+- packet loss
+- latency
+- jitter
+- bandwidth
+- CRC errors
+- CPU 利用率
+- 内存占用
+- 丢包率
+- 时延
+- 抖动
+RootCause:
+- hardware failure
+- software bug
+- configuration error
+- power outage
+- fiber cut
+- 硬件故障
+- 软件缺陷
+- 配置错误
+- 断电
+- 光纤中断
+Service:
+- bgpd
+- ospfd
+- snmpd
+- syslog-ng
+- kubelet
+- dockerd
+- nginx
+- idms
+Host:
+- core-sw-01
+- agg-sw-03
+- edge-rt-02
+- acc-sw-12
+- node-17
+- node-42

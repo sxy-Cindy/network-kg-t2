@@ -1,0 +1,182 @@
+{
+  "namespace": "http://kgcourse.org/ontology/mlps#",
+  "title": "网络安全等级保护（等保 2.0）合规知识图谱",
+  "version": "v1.0",
+  "topic": "t7-mlps-compliance",
+  "class_count": 10,
+  "relation_count": 10,
+  "classes": [
+    {
+      "id": "ComplianceObject",
+      "label": "合规对象",
+      "definition": "合规域顶层概念",
+      "parent": null,
+      "source": ""
+    },
+    {
+      "id": "Standard",
+      "label": "标准/法规",
+      "definition": "GB/T 22239、网络安全法等",
+      "parent": "ComplianceObject",
+      "source": ""
+    },
+    {
+      "id": "Clause",
+      "label": "条款",
+      "definition": "标准中的编号条款",
+      "parent": "ComplianceObject",
+      "source": ""
+    },
+    {
+      "id": "ControlItem",
+      "label": "控制项",
+      "definition": "可测评的控制要求",
+      "parent": "ComplianceObject",
+      "source": ""
+    },
+    {
+      "id": "ControlFamily",
+      "label": "控制类",
+      "definition": "安全物理环境/通信网络/区域边界等",
+      "parent": "ComplianceObject",
+      "source": ""
+    },
+    {
+      "id": "Level",
+      "label": "安全保护等级",
+      "definition": "第一级至第五级",
+      "parent": "ComplianceObject",
+      "source": ""
+    },
+    {
+      "id": "Asset",
+      "label": "被保护对象",
+      "definition": "系统/网络/主机/数据",
+      "parent": "ComplianceObject",
+      "source": ""
+    },
+    {
+      "id": "Evidence",
+      "label": "合规证据",
+      "definition": "配置截图/日志/制度文档",
+      "parent": "ComplianceObject",
+      "source": ""
+    },
+    {
+      "id": "Risk",
+      "label": "风险项",
+      "definition": "未满足要求的风险",
+      "parent": "ComplianceObject",
+      "source": ""
+    },
+    {
+      "id": "Role",
+      "label": "责任角色",
+      "definition": "责任部门/岗位",
+      "parent": "ComplianceObject",
+      "source": ""
+    }
+  ],
+  "relations": [
+    {
+      "id": "contains_clause",
+      "label": "包含条款",
+      "definition": "标准包含条款",
+      "domain": "Standard",
+      "range": "Clause",
+      "parent": null
+    },
+    {
+      "id": "has_control",
+      "label": "包含控制项",
+      "definition": "条款对应的控制项",
+      "domain": "Clause",
+      "range": "ControlItem",
+      "parent": null
+    },
+    {
+      "id": "belongs_to_family",
+      "label": "归属控制类",
+      "definition": "控制项所属安全类",
+      "domain": "ControlItem",
+      "range": "ControlFamily",
+      "parent": null
+    },
+    {
+      "id": "requires_level",
+      "label": "适用于等级",
+      "definition": "控制项适用于哪一等级",
+      "domain": "ControlItem",
+      "range": "Level",
+      "parent": null
+    },
+    {
+      "id": "applies_to",
+      "label": "适用于",
+      "definition": "控制项适用对象",
+      "domain": "ControlItem",
+      "range": "Asset",
+      "parent": null
+    },
+    {
+      "id": "satisfied_by",
+      "label": "由证据满足",
+      "definition": "控制项由合规证据支撑",
+      "domain": "ControlItem",
+      "range": "Evidence",
+      "parent": null
+    },
+    {
+      "id": "catches_risk",
+      "label": "识别风险",
+      "definition": "未满足则产生风险",
+      "domain": "ControlItem",
+      "range": "Risk",
+      "parent": null
+    },
+    {
+      "id": "owned_by_role",
+      "label": "责任角色",
+      "definition": "控制项责任角色",
+      "domain": "ControlItem",
+      "range": "Role",
+      "parent": null
+    },
+    {
+      "id": "quoted_from",
+      "label": "引用自",
+      "definition": "条款引用上位法规",
+      "domain": "Clause",
+      "range": "Standard",
+      "parent": null
+    },
+    {
+      "id": "mentioned_in",
+      "label": "出现在",
+      "definition": "实体出现在来源文档中（结构关系）",
+      "domain": null,
+      "range": null,
+      "parent": null
+    }
+  ],
+  "attributes": [
+    {
+      "id": "clause_id",
+      "label": "条款号",
+      "domain": "Clause",
+      "range": "xsd:string"
+    },
+    {
+      "id": "level_no",
+      "label": "等级",
+      "domain": "Level",
+      "range": "xsd:integer"
+    },
+    {
+      "id": "evidence_type",
+      "label": "证据类型",
+      "domain": "Evidence",
+      "range": "xsd:string"
+    }
+  ]
+}

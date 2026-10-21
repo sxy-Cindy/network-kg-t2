@@ -1,0 +1,14 @@
+# kgcourse-starter 依赖（Python >= 3.10）
+rdflib>=7.0        # 本体/RDF 导出与校验
+networkx>=3.0      # GraphML 导出
+scikit-learn>=1.3  # 方法B：模型抽取（离线最小实现）
+pyyaml>=6.0        # 题目配置
+requests>=2.31     # 方法C：OpenAI 兼容 LLM 接口
+neo4j>=5.0         # 可选：导入 Neo4j
+mcp>=1.0           # 阶段三：把 KG 暴露为 MCP 工具给 Intellect Agent
+pytest>=7.0        # 测试
+# —— 仅材料构建/评审用（学生跑流水线不需要）——
+pypdf>=4.0         # tools/build_pdf.py：核对导出页数
+pypdfium2>=4.0     # tools/audit_pdf_layout.py：渲染每页量填充率
+pillow>=10.0       # 同上
+pymupdf>=1.24      # tools/build_pdf.py：导出后叠印页码页眉

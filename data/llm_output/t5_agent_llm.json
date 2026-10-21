@@ -1,0 +1,144 @@
+{
+  "model": "Intellect Agent (LLM, zero-shot, ontology-constrained) — 生成日期 2026-10-14",
+  "note": "本文件是方法C（LLM 抽取）的离线产物。生成方式：把 topics/t5-protocol-rfc/ontology.json 的类与关系 + 真实 RFC 文本送入 LLM，要求只输出本体词汇内的三元组并给原文证据；产物经 kgc.llm 的清洗与本体校验入库。教学环境下没有可用 LLM API 时，用本文件即可完整复现三方法对比。",
+  "docs": [
+    {
+      "doc_id": "rfc8200",
+      "entities": [
+        {"id": "rfc:8200", "label": "RFC 8200", "type": "RFC"},
+        {"id": "rfc:2460", "label": "RFC 2460", "type": "RFC"},
+        {"id": "proto:IPv6", "label": "IPv6", "type": "Protocol"},
+        {"id": "proto:Internet Protocol", "label": "Internet Protocol", "type": "Protocol"},
+        {"id": "proto:IPv4", "label": "IPv4", "type": "Protocol"},
+        {"id": "proto:ICMPv6", "label": "ICMPv6", "type": "Protocol"},
+        {"id": "field:Hop Limit", "label": "Hop Limit", "type": "MessageField"},
+        {"id": "field:Flow Label", "label": "Flow Label", "type": "MessageField"},
+        {"id": "field:Payload Length", "label": "Payload Length", "type": "MessageField"},
+        {"id": "field:Next Header", "label": "Next Header", "type": "MessageField"},
+        {"id": "ext:Extension Header", "label": "Extension Header", "type": "Extension"},
+        {"id": "ext:Hop-by-Hop Options Header", "label": "Hop-by-Hop Options Header", "type": "Extension"},
+        {"id": "sec:rfc8200:3", "label": "3", "type": "Section"}
+      ],
+      "relations": [
+        {"source": "rfc:8200", "relation": "obsoletes", "target": "rfc:2460",
+         "evidence": "This document specifies version 6 of the Internet Protocol (IPv6). It obsoletes RFC 2460."},
+        {"source": "rfc:8200", "relation": "specifies", "target": "proto:IPv6",
+         "evidence": "This document specifies version 6 of the Internet Protocol (IPv6)."},
+        {"source": "rfc:8200", "relation": "contains", "target": "sec:rfc8200:3",
+         "evidence": "3.  IPv6 Header Format"},
+        {"source": "proto:IPv6", "relation": "has_field", "target": "field:Hop Limit",
+         "evidence": "Hop Limit   8-bit unsigned integer. Decremented by 1 by each node that forwards the packet."},
+        {"source": "proto:IPv6", "relation": "has_field", "target": "field:Flow Label",
+         "evidence": "6.  Flow Labels"},
+        {"source": "proto:IPv6", "relation": "has_field", "target": "field:Payload Length",
+         "evidence": "|         Payload Length        |  Next Header  |   Hop Limit   |"},
+        {"source": "proto:IPv6", "relation": "has_field", "target": "field:Next Header",
+         "evidence": "|         Payload Length        |  Next Header  |   Hop Limit   |"},
+        {"source": "proto:IPv6", "relation": "has_extension", "target": "ext:Extension Header",
+         "evidence": "4.  IPv6 Extension Headers"},
+        {"source": "proto:IPv6", "relation": "has_extension", "target": "ext:Hop-by-Hop Options Header",
+         "evidence": "4.3.  Hop-by-Hop Options Header"},
+        {"source": "proto:IPv6", "relation": "depends_on", "target": "proto:ICMPv6",
+         "evidence": "ICMPv6 ... is used by IPv6 nodes to report errors encountered in processing packets."},
+        {"source": "proto:IPv6", "relation": "operates_at", "target": "proto:Internet Protocol",
+         "evidence": "This document specifies version 6 of the Internet Protocol (IPv6)."}
+      ]
+    },
+    {
+      "doc_id": "rfc2119",
+      "entities": [
+        {"id": "rfc:2119", "label": "RFC 2119", "type": "RFC"},
+        {"id": "kw:MUST", "label": "MUST", "type": "NormativeKeyword"},
+        {"id": "kw:MUST NOT", "label": "MUST NOT", "type": "NormativeKeyword"},
+        {"id": "kw:SHOULD", "label": "SHOULD", "type": "NormativeKeyword"},
+        {"id": "kw:SHOULD NOT", "label": "SHOULD NOT", "type": "NormativeKeyword"},
+        {"id": "kw:MAY", "label": "MAY", "type": "NormativeKeyword"},
+        {"id": "kw:OPTIONAL", "label": "OPTIONAL", "type": "NormativeKeyword"},
+        {"id": "obl:MUST", "label": "absolute requirement of the specification", "type": "Obligation"},
+        {"id": "obl:MUST NOT", "label": "absolute prohibition of the specification", "type": "Obligation"},
+        {"id": "obl:MAY", "label": "truly optional", "type": "Obligation"}
+      ],
+      "relations": [
+        {"source": "rfc:2119", "relation": "requires", "target": "obl:MUST",
+         "evidence": "MUST   This word, or the terms \"REQUIRED\" or \"SHALL\", mean that the definition is an absolute requirement of the specification."},
+        {"source": "rfc:2119", "relation": "requires", "target": "obl:MUST NOT",
+         "evidence": "MUST NOT   This phrase, or the phrase \"SHALL NOT\", mean that the definition is an absolute prohibition of the specification."},
+        {"source": "rfc:2119", "relation": "requires", "target": "obl:MAY",
+         "evidence": "MAY   This word, or the adjective \"OPTIONAL\", mean that an item is truly optional."},
+        {"source": "obl:MUST", "relation": "keyword_of", "target": "kw:MUST",
+         "evidence": "MUST   This word, or the terms \"REQUIRED\" or \"SHALL\", mean that the definition is an absolute requirement of the specification."},
+        {"source": "obl:MUST NOT", "relation": "keyword_of", "target": "kw:MUST NOT",
+         "evidence": "MUST NOT   This phrase, or the phrase \"SHALL NOT\", mean that the definition is an absolute prohibition of the specification."},
+        {"source": "obl:MAY", "relation": "keyword_of", "target": "kw:MAY",
+         "evidence": "MAY   This word, or the adjective \"OPTIONAL\", mean that an item is truly optional."}
+      ]
+    },
+    {
+      "doc_id": "rfc9293",
+      "entities": [
+        {"id": "rfc:9293", "label": "RFC 9293", "type": "RFC"},
+        {"id": "rfc:793", "label": "RFC 793", "type": "RFC"},
+        {"id": "rfc:2119", "label": "RFC 2119", "type": "RFC"},
+        {"id": "rfc:8200", "label": "RFC 8200", "type": "RFC"},
+        {"id": "proto:TCP", "label": "TCP", "type": "Protocol"},
+        {"id": "proto:Internet Protocol", "label": "Internet Protocol", "type": "Protocol"},
+        {"id": "layer:Transport Layer", "label": "Transport Layer", "type": "Layer"},
+        {"id": "field:Checksum", "label": "Checksum", "type": "MessageField"},
+        {"id": "field:Sequence Number", "label": "Sequence Number", "type": "MessageField"},
+        {"id": "field:Window", "label": "Window", "type": "MessageField"},
+        {"id": "field:Initial Sequence Number", "label": "Initial Sequence Number", "type": "MessageField"}
+      ],
+      "relations": [
+        {"source": "rfc:9293", "relation": "obsoletes", "target": "rfc:793",
+         "evidence": "This document obsoletes RFC 793."},
+        {"source": "rfc:9293", "relation": "cites", "target": "rfc:2119",
+         "evidence": "The key words \"MUST\", \"MUST NOT\", \"REQUIRED\", \"SHALL\" ... are to be interpreted as described in RFC 2119."},
+        {"source": "rfc:9293", "relation": "cites", "target": "rfc:8200",
+         "evidence": "IPv6 is described in RFC 8200."},
+        {"source": "proto:TCP", "relation": "operates_at", "target": "layer:Transport Layer",
+         "evidence": "TCP is a transport layer protocol."},
+        {"source": "proto:TCP", "relation": "has_field", "target": "field:Checksum",
+         "evidence": "Checksum: 16 bits"},
+        {"source": "proto:TCP", "relation": "has_field", "target": "field:Sequence Number",
+         "evidence": "Sequence Number: 32 bits"},
+        {"source": "proto:TCP", "relation": "has_field", "target": "field:Window",
+         "evidence": "Window: 16 bits"},
+        {"source": "proto:TCP", "relation": "has_field", "target": "field:Initial Sequence Number",
+         "evidence": "Initial Sequence Number (ISN): 32 bits"},
+        {"source": "proto:TCP", "relation": "depends_on", "target": "proto:Internet Protocol",
+         "evidence": "TCP ... is used by the Internet Protocol."}
+      ]
+    },
+    {
+      "doc_id": "rfc768",
+      "entities": [
+        {"id": "rfc:768", "label": "RFC 768", "type": "RFC"},
+        {"id": "proto:UDP", "label": "UDP", "type": "Protocol"},
+        {"id": "field:Source Port", "label": "Source Port", "type": "MessageField"},
+        {"id": "field:Checksum", "label": "Checksum", "type": "MessageField"}
+      ],
+      "relations": [
+        {"source": "proto:UDP", "relation": "defined_in", "target": "rfc:768",
+         "evidence": "RFC 768  User Datagram Protocol"},
+        {"source": "proto:UDP", "relation": "has_field", "target": "field:Source Port",
+         "evidence": "Source Port is an optional field"},
+        {"source": "proto:UDP", "relation": "has_field", "target": "field:Checksum",
+         "evidence": "Checksum is the 16-bit one's complement of the one's complement sum"}
+      ]
+    },
+    {
+      "doc_id": "rfc791",
+      "entities": [
+        {"id": "rfc:791", "label": "RFC 791", "type": "RFC"},
+        {"id": "proto:Internet Protocol", "label": "Internet Protocol", "type": "Protocol"},
+        {"id": "field:Checksum", "label": "Checksum", "type": "MessageField"}
+      ],
+      "relations": [
+        {"source": "rfc:791", "relation": "specifies", "target": "proto:Internet Protocol",
+         "evidence": "INTERNET PROTOCOL  DARPA INTERNET PROGRAM  PROTOCOL SPECIFICATION"},
+        {"source": "proto:Internet Protocol", "relation": "has_field", "target": "field:Checksum",
+         "evidence": "Checksum: 16 bits"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+{"type": "AS", "label": "AS12345", "doc": "bgp_update_sample"}
+{"type": "Prefix", "label": "203.0.113.0/24", "doc": "bgp_update_sample"}
+{"head": "AS12345", "head_type": "AS", "relation": "originates", "tail": "203.0.113.0/24", "tail_type": "Prefix", "doc": "bgp_update_sample"}

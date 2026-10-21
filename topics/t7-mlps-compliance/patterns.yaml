@@ -1,0 +1,26 @@
+entity_patterns:
+- type: Standard
+  regex: (?i)\b(GB/T\s?22239[-—]\d{4}|GB/T\s?28448[-—]\d{4}|中华人民共和国网络安全法)\b
+  id_template: std:{1}
+  label_template: '{1}'
+- type: Clause
+  regex: (?m)^\s*(\d{1,2}(?:\.\d{1,2}){1,3})\s+([^\n]{2,60})$
+  id_template: clause:{1}
+  label_template: '{1} {2}'
+- type: Level
+  regex: 第([一二三四五])级
+  id_template: lvl:{1}
+  label_template: 第{1}级
+relations:
+- name: belongs_to_family
+  relation: belongs_to_family
+  source_type: Clause
+  target_type: ControlFamily
+  trigger: (?i)\b(要求|应|需)\b
+- name: quoted_from
+  relation: quoted_from
+  source_type: Clause
+  target_type: Standard
+  trigger: (?i)\b(依据|引用|按照)\b
+structural:
+  mentioned_in: true

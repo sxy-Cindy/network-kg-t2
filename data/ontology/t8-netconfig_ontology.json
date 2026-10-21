@@ -1,0 +1,138 @@
+{
+  "namespace": "http://kgcourse.org/ontology/netconfig#",
+  "title": "网络设备配置知识图谱与配置生成校验（进阶选题）",
+  "version": "v1.0",
+  "topic": "t8-netconfig",
+  "class_count": 8,
+  "relation_count": 7,
+  "classes": [
+    {
+      "id": "ConfigObject",
+      "label": "配置对象",
+      "definition": "配置域顶层概念",
+      "parent": null,
+      "source": ""
+    },
+    {
+      "id": "Command",
+      "label": "命令",
+      "definition": "厂商 CLI 命令",
+      "parent": "ConfigObject",
+      "source": ""
+    },
+    {
+      "id": "ConfigBlock",
+      "label": "配置块",
+      "definition": "接口/VLAN/路由进程等配置段",
+      "parent": "ConfigObject",
+      "source": ""
+    },
+    {
+      "id": "Parameter",
+      "label": "参数",
+      "definition": "命令参数及取值范围",
+      "parent": "ConfigObject",
+      "source": ""
+    },
+    {
+      "id": "Intent",
+      "label": "配置意图",
+      "definition": "业务意图（如「提供 DHCP 服务」）",
+      "parent": "ConfigObject",
+      "source": ""
+    },
+    {
+      "id": "CheckRule",
+      "label": "校验规则",
+      "definition": "Batfish/自定义合规检查",
+      "parent": "ConfigObject",
+      "source": ""
+    },
+    {
+      "id": "Platform",
+      "label": "平台型号",
+      "definition": "厂商与型号",
+      "parent": "ConfigObject",
+      "source": ""
+    },
+    {
+      "id": "Risk",
+      "label": "配置风险",
+      "definition": "错误配置导致的后果",
+      "parent": "ConfigObject",
+      "source": ""
+    }
+  ],
+  "relations": [
+    {
+      "id": "has_param",
+      "label": "含参数",
+      "definition": "命令参数",
+      "domain": "Command",
+      "range": "Parameter",
+      "parent": null
+    },
+    {
+      "id": "in_block",
+      "label": "属于配置块",
+      "definition": "命令出现在配置块中",
+      "domain": "Command",
+      "range": "ConfigBlock",
+      "parent": null
+    },
+    {
+      "id": "implements",
+      "label": "实现意图",
+      "definition": "配置块实现业务意图",
+      "domain": "ConfigBlock",
+      "range": "Intent",
+      "parent": null
+    },
+    {
+      "id": "violates",
+      "label": "违反",
+      "definition": "配置违反校验规则",
+      "domain": "ConfigBlock",
+      "range": "CheckRule",
+      "parent": null
+    },
+    {
+      "id": "causes",
+      "label": "导致",
+      "definition": "错误配置导致风险",
+      "domain": "ConfigBlock",
+      "range": "Risk",
+      "parent": null
+    },
+    {
+      "id": "available_on",
+      "label": "可用平台",
+      "definition": "命令支持的平台",
+      "domain": "Command",
+      "range": "Platform",
+      "parent": null
+    },
+    {
+      "id": "mentioned_in",
+      "label": "出现在",
+      "definition": "实体出现在来源文档中（结构关系）",
+      "domain": null,
+      "range": null,
+      "parent": null
+    }
+  ],
+  "attributes": [
+    {
+      "id": "syntax",
+      "label": "语法",
+      "domain": "Command",
+      "range": "xsd:string"
+    },
+    {
+      "id": "vendor",
+      "label": "厂商",
+      "domain": "Platform",
+      "range": "xsd:string"
+    }
+  ]
+}

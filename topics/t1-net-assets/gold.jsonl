@@ -1,0 +1,6 @@
+{"type": "Device", "label": "CORE-SW-01", "doc": "campus_network"}
+{"type": "Device", "label": "ACC-SW-12", "doc": "campus_network"}
+{"type": "Interface", "label": "Gi0/1", "doc": "campus_network"}
+{"type": "IPSubnet", "label": "10.10.20.0/24", "doc": "campus_network"}
+{"head": "CORE-SW-01", "head_type": "Device", "relation": "connects_to", "tail": "ACC-SW-12", "tail_type": "Device", "doc": "campus_network"}
+{"head": "ACC-SW-12", "head_type": "Device", "relation": "has_subnet", "tail": "10.10.20.0/24", "tail_type": "IPSubnet", "doc": "campus_network"}

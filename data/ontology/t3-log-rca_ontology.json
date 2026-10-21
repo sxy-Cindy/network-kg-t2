@@ -1,0 +1,188 @@
+{
+  "namespace": "http://kgcourse.org/ontology/log-rca#",
+  "title": "网络与系统日志驱动的故障根因知识图谱",
+  "version": "v1.0",
+  "topic": "t3-log-rca",
+  "class_count": 10,
+  "relation_count": 10,
+  "classes": [
+    {
+      "id": "LogEntity",
+      "label": "日志域对象",
+      "definition": "日志域顶层概念",
+      "parent": null,
+      "source": ""
+    },
+    {
+      "id": "LogTemplate",
+      "label": "日志模板",
+      "definition": "日志解析后的事件模板（含通配符）",
+      "parent": "LogEntity",
+      "source": ""
+    },
+    {
+      "id": "LogEvent",
+      "label": "日志事件",
+      "definition": "一条具体日志",
+      "parent": "LogEntity",
+      "source": ""
+    },
+    {
+      "id": "Host",
+      "label": "主机/设备",
+      "definition": "产生日志的节点",
+      "parent": "LogEntity",
+      "source": ""
+    },
+    {
+      "id": "Service",
+      "label": "服务/进程",
+      "definition": "日志所属组件",
+      "parent": "LogEntity",
+      "source": ""
+    },
+    {
+      "id": "Anomaly",
+      "label": "异常",
+      "definition": "检测到的异常序列/指标偏移",
+      "parent": "LogEntity",
+      "source": ""
+    },
+    {
+      "id": "Fault",
+      "label": "故障",
+      "definition": "一次故障事件",
+      "parent": "LogEntity",
+      "source": ""
+    },
+    {
+      "id": "RootCause",
+      "label": "根因",
+      "definition": "故障根因类别",
+      "parent": "LogEntity",
+      "source": ""
+    },
+    {
+      "id": "Metric",
+      "label": "指标",
+      "definition": "CPU/内存/丢包率/时延等",
+      "parent": "LogEntity",
+      "source": ""
+    },
+    {
+      "id": "Action",
+      "label": "处置动作",
+      "definition": "回滚/重启/扩容/切流等",
+      "parent": "LogEntity",
+      "source": ""
+    }
+  ],
+  "relations": [
+    {
+      "id": "has_template",
+      "label": "模板为",
+      "definition": "日志事件对应的模板",
+      "domain": "LogEvent",
+      "range": "LogTemplate",
+      "parent": null
+    },
+    {
+      "id": "produced_by",
+      "label": "产生于",
+      "definition": "日志来自哪个组件",
+      "domain": "LogEvent",
+      "range": "Service",
+      "parent": null
+    },
+    {
+      "id": "runs_on",
+      "label": "运行于",
+      "definition": "服务所在主机",
+      "domain": "Service",
+      "range": "Host",
+      "parent": null
+    },
+    {
+      "id": "precedes",
+      "label": "先于",
+      "definition": "事件序列先后关系",
+      "domain": "LogEvent",
+      "range": "LogEvent",
+      "parent": null
+    },
+    {
+      "id": "indicates",
+      "label": "指示",
+      "definition": "日志模板指示异常",
+      "domain": "LogTemplate",
+      "range": "Anomaly",
+      "parent": null
+    },
+    {
+      "id": "causes",
+      "label": "导致",
+      "definition": "根因/异常导致故障",
+      "domain": "Anomaly",
+      "range": "Fault",
+      "parent": null
+    },
+    {
+      "id": "root_cause_of",
+      "label": "根因为",
+      "definition": "根因类别 → 故障",
+      "domain": "RootCause",
+      "range": "Fault",
+      "parent": null
+    },
+    {
+      "id": "mitigated_by",
+      "label": "处置方式",
+      "definition": "故障的处置动作",
+      "domain": "Fault",
+      "range": "Action",
+      "parent": null
+    },
+    {
+      "id": "correlates_with",
+      "label": "相关",
+      "definition": "指标与异常相关",
+      "domain": "Metric",
+      "range": "Anomaly",
+      "parent": null
+    },
+    {
+      "id": "mentioned_in",
+      "label": "出现在",
+      "definition": "实体出现在来源文档中（结构关系）",
+      "domain": null,
+      "range": null,
+      "parent": null
+    }
+  ],
+  "attributes": [
+    {
+      "id": "template_id",
+      "label": "模板 ID",
+      "domain": "LogTemplate",
+      "range": "xsd:string"
+    },
+    {
+      "id": "raw_line",
+      "label": "原始行",
+      "domain": "LogEvent",
+      "range": "xsd:string"
+    },
+    {
+      "id": "timestamp",
+      "label": "时间戳",
+      "domain": "LogEvent",
+      "range": "xsd:string"
+    },
+    {
+      "id": "severity",
+      "label": "级别",
+      "domain": "LogEvent",
+      "range": "xsd:string"
+    }
+  ]
+}

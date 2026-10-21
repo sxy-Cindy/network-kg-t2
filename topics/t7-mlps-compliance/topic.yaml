@@ -1,0 +1,12 @@
+id: t7-mlps-compliance
+title: 网络安全等级保护（等保 2.0）合规知识图谱
+description: 把标准条款、控制项、等级、资产与合规证据连成合规图谱，支撑差距分析与整改清单生成。
+namespace: http://kgcourse.org/ontology/mlps#
+version: v1.0
+source_url: https://openstd.samr.gov.cn/
+corpus_glob: data/corpus/t7-mlps-compliance/*.txt
+fusion:
+  weights:
+    rule: 1.0
+    model: 0.8
+    llm: 1.2

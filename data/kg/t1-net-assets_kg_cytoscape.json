@@ -1,0 +1,463 @@
+{
+  "elements": {
+    "nodes": [
+      {
+        "data": {
+          "id": "dev:CORE-SW-01",
+          "label": "CORE-SW-01",
+          "type": "Device"
+        }
+      },
+      {
+        "data": {
+          "id": "dev:ACC-SW-12",
+          "label": "ACC-SW-12",
+          "type": "Device"
+        }
+      },
+      {
+        "data": {
+          "id": "if:campus_network:Gi0/1",
+          "label": "Gi0/1",
+          "type": "Interface"
+        }
+      },
+      {
+        "data": {
+          "id": "if:campus_network:Gi0/24",
+          "label": "Gi0/24",
+          "type": "Interface"
+        }
+      },
+      {
+        "data": {
+          "id": "if:campus_network:Gi0/2",
+          "label": "Gi0/2",
+          "type": "Interface"
+        }
+      },
+      {
+        "data": {
+          "id": "net:10.10.20.1/24",
+          "label": "10.10.20.1/24",
+          "type": "IPSubnet"
+        }
+      },
+      {
+        "data": {
+          "id": "net:10.10.20.0/24",
+          "label": "10.10.20.0/24",
+          "type": "IPSubnet"
+        }
+      },
+      {
+        "data": {
+          "id": "ip:10.10.20.254",
+          "label": "10.10.20.254",
+          "type": "IPAddress"
+        }
+      },
+      {
+        "data": {
+          "id": "vlan:10",
+          "label": "VLAN 10",
+          "type": "VLAN"
+        }
+      },
+      {
+        "data": {
+          "id": "vlan:20",
+          "label": "VLAN 20",
+          "type": "VLAN"
+        }
+      },
+      {
+        "data": {
+          "id": "inc:INC-20260714",
+          "label": "INC-20260714",
+          "type": "Incident"
+        }
+      },
+      {
+        "data": {
+          "id": "DeviceRole:核心交换机",
+          "label": "核心交换机",
+          "type": "DeviceRole"
+        }
+      },
+      {
+        "data": {
+          "id": "DeviceRole:接入交换机",
+          "label": "接入交换机",
+          "type": "DeviceRole"
+        }
+      },
+      {
+        "data": {
+          "id": "Vendor:cisco",
+          "label": "Cisco",
+          "type": "Vendor"
+        }
+      },
+      {
+        "data": {
+          "id": "Vendor:huawei",
+          "label": "Huawei",
+          "type": "Vendor"
+        }
+      },
+      {
+        "data": {
+          "id": "Service:dhcp",
+          "label": "DHCP",
+          "type": "Service"
+        }
+      },
+      {
+        "data": {
+          "id": "Service:ntp",
+          "label": "NTP",
+          "type": "Service"
+        }
+      },
+      {
+        "data": {
+          "id": "Service:snmp",
+          "label": "SNMP",
+          "type": "Service"
+        }
+      },
+      {
+        "data": {
+          "id": "Site:主数据中心",
+          "label": "主数据中心",
+          "type": "Site"
+        }
+      },
+      {
+        "data": {
+          "id": "Site:教学楼",
+          "label": "教学楼",
+          "type": "Site"
+        }
+      },
+      {
+        "data": {
+          "id": "doc:campus_network",
+          "label": "campus_network",
+          "type": "Document"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "data": {
+          "id": "e0",
+          "source": "DeviceRole:接入交换机",
+          "target": "doc:campus_network",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e1",
+          "source": "DeviceRole:核心交换机",
+          "target": "doc:campus_network",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e2",
+          "source": "Service:dhcp",
+          "target": "doc:campus_network",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e3",
+          "source": "Service:ntp",
+          "target": "doc:campus_network",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e4",
+          "source": "Service:snmp",
+          "target": "doc:campus_network",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e5",
+          "source": "Site:主数据中心",
+          "target": "doc:campus_network",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e6",
+          "source": "Site:教学楼",
+          "target": "doc:campus_network",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e7",
+          "source": "Vendor:cisco",
+          "target": "doc:campus_network",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e8",
+          "source": "Vendor:huawei",
+          "target": "doc:campus_network",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e9",
+          "source": "dev:ACC-SW-12",
+          "target": "doc:campus_network",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e10",
+          "source": "dev:ACC-SW-12",
+          "target": "Service:dhcp",
+          "label": "runs"
+        }
+      },
+      {
+        "data": {
+          "id": "e11",
+          "source": "dev:ACC-SW-12",
+          "target": "Service:ntp",
+          "label": "runs"
+        }
+      },
+      {
+        "data": {
+          "id": "e12",
+          "source": "dev:ACC-SW-12",
+          "target": "Service:snmp",
+          "label": "runs"
+        }
+      },
+      {
+        "data": {
+          "id": "e13",
+          "source": "dev:CORE-SW-01",
+          "target": "doc:campus_network",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e14",
+          "source": "dev:CORE-SW-01",
+          "target": "Service:dhcp",
+          "label": "runs"
+        }
+      },
+      {
+        "data": {
+          "id": "e15",
+          "source": "dev:CORE-SW-01",
+          "target": "Service:ntp",
+          "label": "runs"
+        }
+      },
+      {
+        "data": {
+          "id": "e16",
+          "source": "dev:CORE-SW-01",
+          "target": "Service:snmp",
+          "label": "runs"
+        }
+      },
+      {
+        "data": {
+          "id": "e17",
+          "source": "if:campus_network:Gi0/1",
+          "target": "if:campus_network:Gi0/2",
+          "label": "connects_to"
+        }
+      },
+      {
+        "data": {
+          "id": "e18",
+          "source": "if:campus_network:Gi0/1",
+          "target": "if:campus_network:Gi0/24",
+          "label": "connects_to"
+        }
+      },
+      {
+        "data": {
+          "id": "e19",
+          "source": "if:campus_network:Gi0/1",
+          "target": "net:10.10.20.0/24",
+          "label": "has_subnet"
+        }
+      },
+      {
+        "data": {
+          "id": "e20",
+          "source": "if:campus_network:Gi0/1",
+          "target": "net:10.10.20.1/24",
+          "label": "has_subnet"
+        }
+      },
+      {
+        "data": {
+          "id": "e21",
+          "source": "if:campus_network:Gi0/1",
+          "target": "doc:campus_network",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e22",
+          "source": "if:campus_network:Gi0/2",
+          "target": "if:campus_network:Gi0/1",
+          "label": "connects_to"
+        }
+      },
+      {
+        "data": {
+          "id": "e23",
+          "source": "if:campus_network:Gi0/2",
+          "target": "if:campus_network:Gi0/24",
+          "label": "connects_to"
+        }
+      },
+      {
+        "data": {
+          "id": "e24",
+          "source": "if:campus_network:Gi0/2",
+          "target": "net:10.10.20.0/24",
+          "label": "has_subnet"
+        }
+      },
+      {
+        "data": {
+          "id": "e25",
+          "source": "if:campus_network:Gi0/2",
+          "target": "net:10.10.20.1/24",
+          "label": "has_subnet"
+        }
+      },
+      {
+        "data": {
+          "id": "e26",
+          "source": "if:campus_network:Gi0/2",
+          "target": "doc:campus_network",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e27",
+          "source": "if:campus_network:Gi0/24",
+          "target": "if:campus_network:Gi0/1",
+          "label": "connects_to"
+        }
+      },
+      {
+        "data": {
+          "id": "e28",
+          "source": "if:campus_network:Gi0/24",
+          "target": "if:campus_network:Gi0/2",
+          "label": "connects_to"
+        }
+      },
+      {
+        "data": {
+          "id": "e29",
+          "source": "if:campus_network:Gi0/24",
+          "target": "net:10.10.20.0/24",
+          "label": "has_subnet"
+        }
+      },
+      {
+        "data": {
+          "id": "e30",
+          "source": "if:campus_network:Gi0/24",
+          "target": "net:10.10.20.1/24",
+          "label": "has_subnet"
+        }
+      },
+      {
+        "data": {
+          "id": "e31",
+          "source": "if:campus_network:Gi0/24",
+          "target": "doc:campus_network",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e32",
+          "source": "inc:INC-20260714",
+          "target": "doc:campus_network",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e33",
+          "source": "ip:10.10.20.254",
+          "target": "doc:campus_network",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e34",
+          "source": "net:10.10.20.0/24",
+          "target": "doc:campus_network",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e35",
+          "source": "net:10.10.20.1/24",
+          "target": "doc:campus_network",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e36",
+          "source": "vlan:10",
+          "target": "doc:campus_network",
+          "label": "mentioned_in"
+        }
+      },
+      {
+        "data": {
+          "id": "e37",
+          "source": "vlan:20",
+          "target": "doc:campus_network",
+          "label": "mentioned_in"
+        }
+      }
+    ]
+  },
+  "stats": {
+    "nodes": 21,
+    "edges": 38
+  }
+}

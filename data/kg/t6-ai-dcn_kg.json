@@ -1,0 +1,625 @@
+{
+  "topic": "t6-ai-dcn",
+  "source_method": "ensemble",
+  "ontology": {
+    "namespace": "http://kgcourse.org/ontology/ai-dcn#",
+    "title": "AI 数据中心高性能网络架构知识图谱（RoCE / MRC / SRv6 / 多平面）"
+  },
+  "node_count": 27,
+  "edge_count": 30,
+  "node_type_counts": {
+    "FailureMode": 6,
+    "Technique": 4,
+    "Component": 4,
+    "Benefit": 4,
+    "Protocol": 3,
+    "Standard": 3,
+    "Workload": 2,
+    "Document": 1
+  },
+  "edge_relation_counts": {
+    "mentioned_in": 26,
+    "uses": 3,
+    "mitigates": 1
+  },
+  "nodes": [
+    {
+      "id": "proto:MRC",
+      "label": "MRC",
+      "type": "Protocol",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "proto:RoCEv2",
+      "label": "RoCEv2",
+      "type": "Protocol",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "proto:SRv6",
+      "label": "SRv6",
+      "type": "Protocol",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "tech:packet spraying",
+      "label": "packet spraying",
+      "type": "Technique",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "tech:source routing",
+      "label": "source routing",
+      "type": "Technique",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "tech:multi-plane",
+      "label": "multi-plane",
+      "type": "Technique",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "tech:packet trimming",
+      "label": "packet trimming",
+      "type": "Technique",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "fm:congestion",
+      "label": "congestion",
+      "type": "FailureMode",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "fm:link flap",
+      "label": "link flap",
+      "type": "FailureMode",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "fm:switch reboot",
+      "label": "switch reboot",
+      "type": "FailureMode",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "fm:packet loss",
+      "label": "packet loss",
+      "type": "FailureMode",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "fm:incast",
+      "label": "incast",
+      "type": "FailureMode",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "fm:path failure",
+      "label": "path failure",
+      "type": "FailureMode",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "comp:800G",
+      "label": "800G",
+      "type": "Component",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "comp:100G",
+      "label": "100G",
+      "type": "Component",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "std:OCP",
+      "label": "OCP",
+      "type": "Standard",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "std:UEC",
+      "label": "UEC",
+      "type": "Standard",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "std:Ultra Ethernet Consortium",
+      "label": "Ultra Ethernet Consortium",
+      "type": "Standard",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Benefit:lower-power",
+      "label": "lower power",
+      "type": "Benefit",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Benefit:fewer-components",
+      "label": "fewer components",
+      "type": "Benefit",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Benefit:path-diversity",
+      "label": "path diversity",
+      "type": "Benefit",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Benefit:failure-resilience",
+      "label": "failure resilience",
+      "type": "Benefit",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Workload:synchronous-training",
+      "label": "synchronous training",
+      "type": "Workload",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Workload:checkpoint",
+      "label": "checkpoint",
+      "type": "Workload",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Component:switch",
+      "label": "switch",
+      "type": "Component",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Component:交换机",
+      "label": "交换机",
+      "type": "Component",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "doc:ai_dcn_notes",
+      "label": "ai_dcn_notes",
+      "type": "Document",
+      "properties": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "Benefit:failure-resilience",
+      "target": "doc:ai_dcn_notes",
+      "relation": "mentioned_in",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] -plane：单个 800G 接口拆成 8 条 100G 链路接入不同交换机， 带来 path diversity 与 failure resilience，同时降低 lower power 与 fewer components。 该方案由 OCP 主导开源，规范文档属于 S",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "Benefit:fewer-components",
+      "target": "doc:ai_dcn_notes",
+      "relation": "mentioned_in",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] ， 带来 path diversity 与 failure resilience，同时降低 lower power 与 fewer components。 该方案由 OCP 主导开源，规范文档属于 Standard OCP；Ultra Ethernet Consortiu",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "Benefit:lower-power",
+      "target": "doc:ai_dcn_notes",
+      "relation": "mentioned_in",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] 100G 链路接入不同交换机， 带来 path diversity 与 failure resilience，同时降低 lower power 与 fewer components。 该方案由 OCP 主导开源，规范文档属于 Standard OCP；Ultra",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "Benefit:path-diversity",
+      "target": "doc:ai_dcn_notes",
+      "relation": "mentioned_in",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] t 影响。 架构上采用 multi-plane：单个 800G 接口拆成 8 条 100G 链路接入不同交换机， 带来 path diversity 与 failure resilience，同时降低 lower power 与 fewer components。 该",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "Component:switch",
+      "target": "doc:ai_dcn_notes",
+      "relation": "mentioned_in",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] 交换路径编码进 IPv6 目的地址， 交换机使用静态转发表，消除了动态路由（如 BGP）带来的 link flap 与 switch reboot 影响。 架构上采用 multi-plane：单个 800G 接口拆成 8 条 100G 链路接入不同交换",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "Component:交换机",
+      "target": "doc:ai_dcn_notes",
+      "relation": "mentioned_in",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] 。 MRC uses SRv6 source routing，sender 将完整交换路径编码进 IPv6 目的地址， 交换机使用静态转发表，消除了动态路由（如 BGP）带来的 link flap 与 switch reboot 影响。 架构上采",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "Workload:checkpoint",
+      "target": "doc:ai_dcn_notes",
+      "relation": "mentioned_in",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] 制上通过 packet trimming 与路径快速退役缓解。 负载类型：synchronous training 与 checkpoint 对 AllReduce 的时延最敏感。",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "Workload:synchronous-training",
+      "target": "doc:ai_dcn_notes",
+      "relation": "mentioned_in",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] s、incast、path failure。机制上通过 packet trimming 与路径快速退役缓解。 负载类型：synchronous training 与 checkpoint 对 AllReduce 的时延最敏感。",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "comp:100G",
+      "target": "doc:ai_dcn_notes",
+      "relation": "mentioned_in",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] flap 与 switch reboot 影响。 架构上采用 multi-plane：单个 800G 接口拆成 8 条 100G 链路接入不同交换机， 带来 path diversity 与 failure resilience，同时降低 lowe",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "comp:800G",
+      "target": "doc:ai_dcn_notes",
+      "relation": "mentioned_in",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] BGP）带来的 link flap 与 switch reboot 影响。 架构上采用 multi-plane：单个 800G 接口拆成 8 条 100G 链路接入不同交换机， 带来 path diversity 与 failure resili",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "fm:congestion",
+      "target": "doc:ai_dcn_notes",
+      "relation": "mentioned_in",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] RoCEv2。 MRC uses packet spraying：把一次传输的报文分散到数百条路径上，从而 avoid congestion。 MRC uses SRv6 source routing，sender 将完整交换路径编码进 IPv6 目的地址，",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "fm:incast",
+      "target": "doc:ai_dcn_notes",
+      "relation": "mentioned_in",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] ard OCP；Ultra Ethernet Consortium 也推进类似能力。 失效模式：packet loss、incast、path failure。机制上通过 packet trimming 与路径快速退役缓解。 负载类型：synchron",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "fm:link flap",
+      "target": "doc:ai_dcn_notes",
+      "relation": "mentioned_in",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] g，sender 将完整交换路径编码进 IPv6 目的地址， 交换机使用静态转发表，消除了动态路由（如 BGP）带来的 link flap 与 switch reboot 影响。 架构上采用 multi-plane：单个 800G 接口拆成 8 条 100G",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "fm:packet loss",
+      "target": "doc:ai_dcn_notes",
+      "relation": "mentioned_in",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] 规范文档属于 Standard OCP；Ultra Ethernet Consortium 也推进类似能力。 失效模式：packet loss、incast、path failure。机制上通过 packet trimming 与路径快速退役缓解。 负载类型：s",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "fm:path failure",
+      "target": "doc:ai_dcn_notes",
+      "relation": "mentioned_in",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] ；Ultra Ethernet Consortium 也推进类似能力。 失效模式：packet loss、incast、path failure。机制上通过 packet trimming 与路径快速退役缓解。 负载类型：synchronous training",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "fm:switch reboot",
+      "target": "doc:ai_dcn_notes",
+      "relation": "mentioned_in",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] 交换路径编码进 IPv6 目的地址， 交换机使用静态转发表，消除了动态路由（如 BGP）带来的 link flap 与 switch reboot 影响。 架构上采用 multi-plane：单个 800G 接口拆成 8 条 100G 链路接入不同交换机， 带来 p",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "proto:MRC",
+      "target": "doc:ai_dcn_notes",
+      "relation": "mentioned_in",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] # AI 数据中心网络技术笔记（示意语料，事实点来自 OCP MRC 公开资料与 UEC 规范口径） MRC (Multipath Reliable Connection) 是面向 AI",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "proto:MRC",
+      "target": "tech:packet spraying",
+      "relation": "uses",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] MRC uses packet spraying:把一次传输的报文分散到数百条路径上,从而 avoid congestion。",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "proto:MRC",
+      "target": "tech:source routing",
+      "relation": "uses",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] MRC uses SRv6 source routing,sender 将完整交换路径编码进 IPv6 目的地址, 交换机使用静态转发表,消除了动态路由(如 BGP)带来的 link flap 与 switch reboot 影响。",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "proto:RoCEv2",
+      "target": "doc:ai_dcn_notes",
+      "relation": "mentioned_in",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] 范口径） MRC (Multipath Reliable Connection) 是面向 AI 超算互连的协议，扩展自 RoCEv2。 MRC uses packet spraying：把一次传输的报文分散到数百条路径上，从而 avoid conges",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "proto:SRv6",
+      "target": "doc:ai_dcn_notes",
+      "relation": "mentioned_in",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] et spraying：把一次传输的报文分散到数百条路径上，从而 avoid congestion。 MRC uses SRv6 source routing，sender 将完整交换路径编码进 IPv6 目的地址， 交换机使用静态转发表，消除了动",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "proto:SRv6",
+      "target": "tech:source routing",
+      "relation": "uses",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] MRC uses SRv6 source routing,sender 将完整交换路径编码进 IPv6 目的地址, 交换机使用静态转发表,消除了动态路由(如 BGP)带来的 link flap 与 switch reboot 影响。",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "std:OCP",
+      "target": "doc:ai_dcn_notes",
+      "relation": "mentioned_in",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] # AI 数据中心网络技术笔记（示意语料，事实点来自 OCP MRC 公开资料与 UEC 规范口径） MRC (Multipath Reliable Connection) 是面向",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "std:UEC",
+      "target": "doc:ai_dcn_notes",
+      "relation": "mentioned_in",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] # AI 数据中心网络技术笔记（示意语料，事实点来自 OCP MRC 公开资料与 UEC 规范口径） MRC (Multipath Reliable Connection) 是面向 AI 超算互连的协议，扩展",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "std:Ultra Ethernet Consortium",
+      "target": "doc:ai_dcn_notes",
+      "relation": "mentioned_in",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] power 与 fewer components。 该方案由 OCP 主导开源，规范文档属于 Standard OCP；Ultra Ethernet Consortium 也推进类似能力。 失效模式：packet loss、incast、path failure。机制上通过 packet",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "tech:multi-plane",
+      "target": "doc:ai_dcn_notes",
+      "relation": "mentioned_in",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] 静态转发表，消除了动态路由（如 BGP）带来的 link flap 与 switch reboot 影响。 架构上采用 multi-plane：单个 800G 接口拆成 8 条 100G 链路接入不同交换机， 带来 path diversity 与 failur",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "tech:packet spraying",
+      "target": "doc:ai_dcn_notes",
+      "relation": "mentioned_in",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] th Reliable Connection) 是面向 AI 超算互连的协议，扩展自 RoCEv2。 MRC uses packet spraying：把一次传输的报文分散到数百条路径上，从而 avoid congestion。 MRC uses SRv6 source",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "tech:packet spraying",
+      "target": "fm:congestion",
+      "relation": "mitigates",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] MRC uses packet spraying:把一次传输的报文分散到数百条路径上,从而 avoid congestion。",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "tech:packet trimming",
+      "target": "doc:ai_dcn_notes",
+      "relation": "mentioned_in",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] sortium 也推进类似能力。 失效模式：packet loss、incast、path failure。机制上通过 packet trimming 与路径快速退役缓解。 负载类型：synchronous training 与 checkpoint 对 AllRedu",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "tech:source routing",
+      "target": "doc:ai_dcn_notes",
+      "relation": "mentioned_in",
+      "doc": "ai_dcn_notes",
+      "evidence": "[rule] raying：把一次传输的报文分散到数百条路径上，从而 avoid congestion。 MRC uses SRv6 source routing，sender 将完整交换路径编码进 IPv6 目的地址， 交换机使用静态转发表，消除了动态路由（如 BGP）带来的 l",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    }
+  ]
+}

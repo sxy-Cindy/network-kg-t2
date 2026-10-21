@@ -1,0 +1,589 @@
+{
+  "topic": "t7-mlps-compliance",
+  "method": "ensemble",
+  "methods_available": [
+    "rule"
+  ],
+  "weights": {
+    "rule": 1.0,
+    "model": 0.8,
+    "llm": 1.2
+  },
+  "entity_count": 17,
+  "relation_count": 22,
+  "triple_vote_distribution": {
+    "1": 22
+  },
+  "entities": [
+    {
+      "id": "std:GB/T 22239-2019",
+      "label": "GB/T 22239-2019",
+      "type": "Standard",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "clause:8.1.3",
+      "label": "8.1.3 安全区域边界",
+      "type": "Clause",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "clause:8.1.3.1",
+      "label": "8.1.3.1 边界防护",
+      "type": "Clause",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "clause:8.1.4",
+      "label": "8.1.4 安全计算环境",
+      "type": "Clause",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "lvl:三",
+      "label": "第三级",
+      "type": "Level",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "ControlFamily:安全区域边界",
+      "label": "安全区域边界",
+      "type": "ControlFamily",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "ControlFamily:安全计算环境",
+      "label": "安全计算环境",
+      "type": "ControlFamily",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Asset:网络设备",
+      "label": "网络设备",
+      "type": "Asset",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Asset:安全设备",
+      "label": "安全设备",
+      "type": "Asset",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Asset:业务系统",
+      "label": "业务系统",
+      "type": "Asset",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Evidence:配置截图",
+      "label": "配置截图",
+      "type": "Evidence",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Evidence:审计日志",
+      "label": "审计日志",
+      "type": "Evidence",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Evidence:测评报告",
+      "label": "测评报告",
+      "type": "Evidence",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Risk:未授权访问",
+      "label": "未授权访问",
+      "type": "Risk",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Risk:数据泄露",
+      "label": "数据泄露",
+      "type": "Risk",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Role:网络管理员",
+      "label": "网络管理员",
+      "type": "Role",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Role:安全管理员",
+      "label": "安全管理员",
+      "type": "Role",
+      "doc": "",
+      "evidence": "",
+      "method": "ensemble",
+      "aliases": [],
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    }
+  ],
+  "relations": [
+    {
+      "source": "Asset:业务系统",
+      "relation": "mentioned_in",
+      "target": "doc:mlps_clause_sample",
+      "doc": "mlps_clause_sample",
+      "evidence": "[rule] 信。 要求：应能够对非授权设备私自联到内部网络的行为进行检查或限制。 适用于第三级系统；适用对象包括网络设备、安全设备、业务系统。 证据：配置截图、审计日志、测评报告。 未满足则识别风险：未授权访问、数据泄露。 责任角色：网络管理员、安全管理员。",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "Asset:安全设备",
+      "relation": "mentioned_in",
+      "target": "doc:mlps_clause_sample",
+      "doc": "mlps_clause_sample",
+      "evidence": "[rule] 接口进行通信。 要求：应能够对非授权设备私自联到内部网络的行为进行检查或限制。 适用于第三级系统；适用对象包括网络设备、安全设备、业务系统。 证据：配置截图、审计日志、测评报告。 未满足则识别风险：未授权访问、数据泄露。 责任角色：网络管理员、安全",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "Asset:网络设备",
+      "relation": "mentioned_in",
+      "target": "doc:mlps_clause_sample",
+      "doc": "mlps_clause_sample",
+      "evidence": "[rule] 提供的受控接口进行通信。 要求：应能够对非授权设备私自联到内部网络的行为进行检查或限制。 适用于第三级系统；适用对象包括网络设备、安全设备、业务系统。 证据：配置截图、审计日志、测评报告。 未满足则识别风险：未授权访问、数据泄露。 责任角色：网络管",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "ControlFamily:安全区域边界",
+      "relation": "mentioned_in",
+      "target": "doc:mlps_clause_sample",
+      "doc": "mlps_clause_sample",
+      "evidence": "[rule] T 22239-2019） 依据 GB/T 22239-2019《信息安全技术 网络安全等级保护基本要求》 8.1.3 安全区域边界 8.1.3.1 边界防护 要求：应保证跨越边界的访问和数据流通过边界设备提供的受控接口进行通信。 要求：应能够对非授权",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "ControlFamily:安全计算环境",
+      "relation": "mentioned_in",
+      "target": "doc:mlps_clause_sample",
+      "doc": "mlps_clause_sample",
+      "evidence": "[rule] 置截图、审计日志、测评报告。 未满足则识别风险：未授权访问、数据泄露。 责任角色：网络管理员、安全管理员。 8.1.4 安全计算环境 要求：应对登录的用户进行身份标识和鉴别，身份标识具有唯一性。",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "Evidence:审计日志",
+      "relation": "mentioned_in",
+      "target": "doc:mlps_clause_sample",
+      "doc": "mlps_clause_sample",
+      "evidence": "[rule] 备私自联到内部网络的行为进行检查或限制。 适用于第三级系统；适用对象包括网络设备、安全设备、业务系统。 证据：配置截图、审计日志、测评报告。 未满足则识别风险：未授权访问、数据泄露。 责任角色：网络管理员、安全管理员。 8.1.4 安全计算环境 要",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "Evidence:测评报告",
+      "relation": "mentioned_in",
+      "target": "doc:mlps_clause_sample",
+      "doc": "mlps_clause_sample",
+      "evidence": "[rule] 内部网络的行为进行检查或限制。 适用于第三级系统；适用对象包括网络设备、安全设备、业务系统。 证据：配置截图、审计日志、测评报告。 未满足则识别风险：未授权访问、数据泄露。 责任角色：网络管理员、安全管理员。 8.1.4 安全计算环境 要求：应对登",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "Evidence:配置截图",
+      "relation": "mentioned_in",
+      "target": "doc:mlps_clause_sample",
+      "doc": "mlps_clause_sample",
+      "evidence": "[rule] 对非授权设备私自联到内部网络的行为进行检查或限制。 适用于第三级系统；适用对象包括网络设备、安全设备、业务系统。 证据：配置截图、审计日志、测评报告。 未满足则识别风险：未授权访问、数据泄露。 责任角色：网络管理员、安全管理员。 8.1.4 安全计",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "Risk:数据泄露",
+      "relation": "mentioned_in",
+      "target": "doc:mlps_clause_sample",
+      "doc": "mlps_clause_sample",
+      "evidence": "[rule] 级系统；适用对象包括网络设备、安全设备、业务系统。 证据：配置截图、审计日志、测评报告。 未满足则识别风险：未授权访问、数据泄露。 责任角色：网络管理员、安全管理员。 8.1.4 安全计算环境 要求：应对登录的用户进行身份标识和鉴别，身份标识具有唯",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "Risk:未授权访问",
+      "relation": "mentioned_in",
+      "target": "doc:mlps_clause_sample",
+      "doc": "mlps_clause_sample",
+      "evidence": "[rule] 适用于第三级系统；适用对象包括网络设备、安全设备、业务系统。 证据：配置截图、审计日志、测评报告。 未满足则识别风险：未授权访问、数据泄露。 责任角色：网络管理员、安全管理员。 8.1.4 安全计算环境 要求：应对登录的用户进行身份标识和鉴别，身份",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "Role:安全管理员",
+      "relation": "mentioned_in",
+      "target": "doc:mlps_clause_sample",
+      "doc": "mlps_clause_sample",
+      "evidence": "[rule] 设备、业务系统。 证据：配置截图、审计日志、测评报告。 未满足则识别风险：未授权访问、数据泄露。 责任角色：网络管理员、安全管理员。 8.1.4 安全计算环境 要求：应对登录的用户进行身份标识和鉴别，身份标识具有唯一性。",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "Role:网络管理员",
+      "relation": "mentioned_in",
+      "target": "doc:mlps_clause_sample",
+      "doc": "mlps_clause_sample",
+      "evidence": "[rule] 络设备、安全设备、业务系统。 证据：配置截图、审计日志、测评报告。 未满足则识别风险：未授权访问、数据泄露。 责任角色：网络管理员、安全管理员。 8.1.4 安全计算环境 要求：应对登录的用户进行身份标识和鉴别，身份标识具有唯一性。",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "clause:8.1.3",
+      "relation": "belongs_to_family",
+      "target": "ControlFamily:安全区域边界",
+      "doc": "mlps_clause_sample",
+      "evidence": "[rule] # 网络安全等级保护基本要求摘录(示意语料,编号与标题结构依据 GB/T 22239-2019) 依据 GB/T 22239-2019《信息安全技术 网络安全等级保护基本要求》 8.1.3 安全区域边界 8.1.3.1 边界防护 要求:应保证跨越边界的访问和数据流通过边界设备提供的受控接口进行通信。",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "clause:8.1.3",
+      "relation": "mentioned_in",
+      "target": "doc:mlps_clause_sample",
+      "doc": "mlps_clause_sample",
+      "evidence": "[rule] 依据 GB/T 22239-2019） 依据 GB/T 22239-2019《信息安全技术 网络安全等级保护基本要求》 8.1.3 安全区域边界 8.1.3.1 边界防护 要求：应保证跨越边界的访问和数据流通过边界设备提供的受控接口进行通信。 要求：应能够对非授权",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "clause:8.1.3",
+      "relation": "quoted_from",
+      "target": "std:GB/T 22239-2019",
+      "doc": "mlps_clause_sample",
+      "evidence": "[rule] # 网络安全等级保护基本要求摘录(示意语料,编号与标题结构依据 GB/T 22239-2019) 依据 GB/T 22239-2019《信息安全技术 网络安全等级保护基本要求》 8.1.3 安全区域边界 8.1.3.1 边界防护 要求:应保证跨越边界的访问和数据流通过边界设备提供的受控接口进行通信。",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "clause:8.1.3.1",
+      "relation": "belongs_to_family",
+      "target": "ControlFamily:安全区域边界",
+      "doc": "mlps_clause_sample",
+      "evidence": "[rule] # 网络安全等级保护基本要求摘录(示意语料,编号与标题结构依据 GB/T 22239-2019) 依据 GB/T 22239-2019《信息安全技术 网络安全等级保护基本要求》 8.1.3 安全区域边界 8.1.3.1 边界防护 要求:应保证跨越边界的访问和数据流通过边界设备提供的受控接口进行通信。",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "clause:8.1.3.1",
+      "relation": "mentioned_in",
+      "target": "doc:mlps_clause_sample",
+      "doc": "mlps_clause_sample",
+      "evidence": "[rule] -2019） 依据 GB/T 22239-2019《信息安全技术 网络安全等级保护基本要求》 8.1.3 安全区域边界 8.1.3.1 边界防护 要求：应保证跨越边界的访问和数据流通过边界设备提供的受控接口进行通信。 要求：应能够对非授权设备私自联到内部网络的行为",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "clause:8.1.3.1",
+      "relation": "quoted_from",
+      "target": "std:GB/T 22239-2019",
+      "doc": "mlps_clause_sample",
+      "evidence": "[rule] # 网络安全等级保护基本要求摘录(示意语料,编号与标题结构依据 GB/T 22239-2019) 依据 GB/T 22239-2019《信息安全技术 网络安全等级保护基本要求》 8.1.3 安全区域边界 8.1.3.1 边界防护 要求:应保证跨越边界的访问和数据流通过边界设备提供的受控接口进行通信。",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "clause:8.1.4",
+      "relation": "belongs_to_family",
+      "target": "ControlFamily:安全计算环境",
+      "doc": "mlps_clause_sample",
+      "evidence": "[rule] 8.1.4 安全计算环境 要求:应对登录的用户进行身份标识和鉴别,身份标识具有唯一性。",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "clause:8.1.4",
+      "relation": "mentioned_in",
+      "target": "doc:mlps_clause_sample",
+      "doc": "mlps_clause_sample",
+      "evidence": "[rule] 。 证据：配置截图、审计日志、测评报告。 未满足则识别风险：未授权访问、数据泄露。 责任角色：网络管理员、安全管理员。 8.1.4 安全计算环境 要求：应对登录的用户进行身份标识和鉴别，身份标识具有唯一性。",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "lvl:三",
+      "relation": "mentioned_in",
+      "target": "doc:mlps_clause_sample",
+      "doc": "mlps_clause_sample",
+      "evidence": "[rule] 访问和数据流通过边界设备提供的受控接口进行通信。 要求：应能够对非授权设备私自联到内部网络的行为进行检查或限制。 适用于第三级系统；适用对象包括网络设备、安全设备、业务系统。 证据：配置截图、审计日志、测评报告。 未满足则识别风险：未授权访问、数",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    },
+    {
+      "source": "std:GB/T 22239-2019",
+      "relation": "mentioned_in",
+      "target": "doc:mlps_clause_sample",
+      "doc": "mlps_clause_sample",
+      "evidence": "[rule] # 网络安全等级保护基本要求摘录（示意语料，编号与标题结构依据 GB/T 22239-2019） 依据 GB/T 22239-2019《信息安全技术 网络安全等级保护基本要求》 8.1.3 安全区域边界 8.1.3",
+      "method": "ensemble",
+      "properties": {
+        "methods": [
+          "rule"
+        ],
+        "confidence": 1.0,
+        "votes": 1
+      }
+    }
+  ]
+}

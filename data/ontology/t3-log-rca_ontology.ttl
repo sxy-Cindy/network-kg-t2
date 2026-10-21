@@ -1,0 +1,162 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://kgcourse.org/ontology/log-rca#> .
+
+<> a owl:Ontology ;
+    owl:versionInfo "v1.0" ;
+    rdfs:seeAlso <https://github.com/logpai/loghub> ;
+    rdfs:label "网络与系统日志驱动的故障根因知识图谱"@zh ;
+    rdfs:comment "把日志模板、事件、组件与故障根因连成因果图，支持「日志 → 异常 → 根因」链式推理。"@zh .
+
+:LogEntity a owl:Class ;
+    rdfs:label "日志域对象"@zh ;
+    rdfs:comment "日志域顶层概念"@zh ;
+    .
+
+:LogTemplate a owl:Class ;
+    rdfs:subClassOf :LogEntity ;
+    rdfs:label "日志模板"@zh ;
+    rdfs:comment "日志解析后的事件模板（含通配符）"@zh ;
+    .
+
+:LogEvent a owl:Class ;
+    rdfs:subClassOf :LogEntity ;
+    rdfs:label "日志事件"@zh ;
+    rdfs:comment "一条具体日志"@zh ;
+    .
+
+:Host a owl:Class ;
+    rdfs:subClassOf :LogEntity ;
+    rdfs:label "主机/设备"@zh ;
+    rdfs:comment "产生日志的节点"@zh ;
+    .
+
+:Service a owl:Class ;
+    rdfs:subClassOf :LogEntity ;
+    rdfs:label "服务/进程"@zh ;
+    rdfs:comment "日志所属组件"@zh ;
+    .
+
+:Anomaly a owl:Class ;
+    rdfs:subClassOf :LogEntity ;
+    rdfs:label "异常"@zh ;
+    rdfs:comment "检测到的异常序列/指标偏移"@zh ;
+    .
+
+:Fault a owl:Class ;
+    rdfs:subClassOf :LogEntity ;
+    rdfs:label "故障"@zh ;
+    rdfs:comment "一次故障事件"@zh ;
+    .
+
+:RootCause a owl:Class ;
+    rdfs:subClassOf :LogEntity ;
+    rdfs:label "根因"@zh ;
+    rdfs:comment "故障根因类别"@zh ;
+    .
+
+:Metric a owl:Class ;
+    rdfs:subClassOf :LogEntity ;
+    rdfs:label "指标"@zh ;
+    rdfs:comment "CPU/内存/丢包率/时延等"@zh ;
+    .
+
+:Action a owl:Class ;
+    rdfs:subClassOf :LogEntity ;
+    rdfs:label "处置动作"@zh ;
+    rdfs:comment "回滚/重启/扩容/切流等"@zh ;
+    .
+
+:has_template a owl:ObjectProperty ;
+    rdfs:domain :LogEvent ;
+    rdfs:range :LogTemplate ;
+    rdfs:label "模板为"@zh ;
+    rdfs:comment "日志事件对应的模板"@zh ;
+    .
+
+:produced_by a owl:ObjectProperty ;
+    rdfs:domain :LogEvent ;
+    rdfs:range :Service ;
+    rdfs:label "产生于"@zh ;
+    rdfs:comment "日志来自哪个组件"@zh ;
+    .
+
+:runs_on a owl:ObjectProperty ;
+    rdfs:domain :Service ;
+    rdfs:range :Host ;
+    rdfs:label "运行于"@zh ;
+    rdfs:comment "服务所在主机"@zh ;
+    .
+
+:precedes a owl:ObjectProperty ;
+    rdfs:domain :LogEvent ;
+    rdfs:range :LogEvent ;
+    rdfs:label "先于"@zh ;
+    rdfs:comment "事件序列先后关系"@zh ;
+    .
+
+:indicates a owl:ObjectProperty ;
+    rdfs:domain :LogTemplate ;
+    rdfs:range :Anomaly ;
+    rdfs:label "指示"@zh ;
+    rdfs:comment "日志模板指示异常"@zh ;
+    .
+
+:causes a owl:ObjectProperty ;
+    rdfs:domain :Anomaly ;
+    rdfs:range :Fault ;
+    rdfs:label "导致"@zh ;
+    rdfs:comment "根因/异常导致故障"@zh ;
+    .
+
+:root_cause_of a owl:ObjectProperty ;
+    rdfs:domain :RootCause ;
+    rdfs:range :Fault ;
+    rdfs:label "根因为"@zh ;
+    rdfs:comment "根因类别 → 故障"@zh ;
+    .
+
+:mitigated_by a owl:ObjectProperty ;
+    rdfs:domain :Fault ;
+    rdfs:range :Action ;
+    rdfs:label "处置方式"@zh ;
+    rdfs:comment "故障的处置动作"@zh ;
+    .
+
+:correlates_with a owl:ObjectProperty ;
+    rdfs:domain :Metric ;
+    rdfs:range :Anomaly ;
+    rdfs:label "相关"@zh ;
+    rdfs:comment "指标与异常相关"@zh ;
+    .
+
+:mentioned_in a owl:ObjectProperty ;
+    rdfs:label "出现在"@zh ;
+    rdfs:comment "实体出现在来源文档中（结构关系）"@zh ;
+    .
+
+:template_id a owl:DatatypeProperty ;
+    rdfs:domain :LogTemplate ;
+    rdfs:range :xsd:string ;
+    rdfs:label "模板 ID"@zh ;
+    .
+
+:raw_line a owl:DatatypeProperty ;
+    rdfs:domain :LogEvent ;
+    rdfs:range :xsd:string ;
+    rdfs:label "原始行"@zh ;
+    .
+
+:timestamp a owl:DatatypeProperty ;
+    rdfs:domain :LogEvent ;
+    rdfs:range :xsd:string ;
+    rdfs:label "时间戳"@zh ;
+    .
+
+:severity a owl:DatatypeProperty ;
+    rdfs:domain :LogEvent ;
+    rdfs:range :xsd:string ;
+    rdfs:label "级别"@zh ;
+    .

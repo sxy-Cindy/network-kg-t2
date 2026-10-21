@@ -1,0 +1,148 @@
+T5 public warm-up run log
+command : scripts\run_t5.cmd
+date    : 2026-10-21 19:38:33    
+note    : method C reads a saved LLM output; no API key or network
+============================================================
+[run] Python 3.14.4
+
+=== 1. Ontology (stage 1) ===
+[ontology] topic=t5-protocol-rfc  类 11 · 关系 13
+[ontology] TTL  -> D:\Study\kg-t2\data\ontology\t5-protocol-rfc_ontology.ttl
+[ontology] JSON -> D:\Study\kg-t2\data\ontology\t5-protocol-rfc_ontology.json
+D:\Study\kg-t2\data\reports\t5-protocol-rfc_ontology_check.json
+
+=== 2. Method A: rules + lexicon ===
+[rule] 文档 5 · 实体 384 · 关系 419 -> D:\Study\kg-t2\data\extraction\t5-protocol-rfc_rule.json
+
+=== 3. Method B: sequence labeling + relation classifier ===
+[model] backend=LogReg(BIO) 训练句=612 标签类型=['Extension', 'Layer', 'MessageField', 'NormativeKeyword', 'Protocol', 'RFC']
+[model] 训练文档=['rfc2119', 'rfc768', 'rfc791', 'rfc8200'] 留出评估文档=rfc9293
+[model] 解码阈值 min_prob=0.6（提高阈值 → 精度升、召回降，需在报告中给出取舍）
+[model] 实体 3473 · 关系 521 -> D:\Study\kg-t2\data\extraction\t5-protocol-rfc_model.json
+
+=== 4. Method C: LLM output (saved, no API key needed) ===
+[llm] 实体 41 · 关系 31 · 拒绝 {'parse_error': 0, 'out_of_schema': 0, 'missing_evidence': 0} -> D:\Study\kg-t2\data\extraction\t5-protocol-rfc_llm.json
+[llm] 证据缺失率 = 0/31  越界率 = 0
+
+=== 5. Fusion / disambiguation / quality gates ===
+[fuse] 方法=['llm', 'model', 'rule'] 权重={'rule': 1.0, 'model': 0.8, 'llm': 1.2}
+[fuse] 质量门槛丢弃：标签不合法 218 · 受控词表外 1 · 非官方编号 0
+[fuse] 域值域违规边 1（已降权 0.5×，未删除）
+[fuse] 对齐后实体 309 · 融合三元组 487
+[fuse] 投票分布（命中方法数 -> 三元组数）：{'1': 352, '2': 131, '3': 4}
+[fuse] -> D:\Study\kg-t2\data\extraction\t5-protocol-rfc_ensemble.json
+
+=== 6. Build graph ===
+[kg] method=ensemble 节点 314 · 边 487
+[kg] 节点类型：{'Section': 121, 'RFC': 86, 'MessageField': 52, 'Protocol': 16, 'Extension': 16, 'NormativeKeyword': 11, 'Document': 5, 'Layer': 4, 'Obligation': 3}
+[kg] 关系分布：{'mentioned_in': 405, 'has_field': 48, 'cites': 12, 'operates_at': 9, 'updates': 4, 'keyword_of': 3, 'depends_on': 2, 'has_extension': 2, 'obsoletes': 2}
+[kg] -> D:\Study\kg-t2\data\kg\t5-protocol-rfc_kg.json
+[kg] -> D:\Study\kg-t2\data\kg\t5-protocol-rfc_kg.ttl
+
+=== 7. Gold check + evaluation ===
+[gold] t5-protocol-rfc: 39 条 OK
+# t5-protocol-rfc 抽取质量评测
+
+金标准规模：实体 23 · 三元组 18
+
+> ⚠ 金标准是**抽样**（几十条量级），因此表中的 precision 是**下界**：
+> 方法抽出的正确但不在金标准里的知识会被记为误报。
+> 正式报告必须同时给出召回率，并说明 precision 的解读口径。
+
+| 方法 | 实体 P | 实体 R | 实体 F1 | 三元组 P | 三元组 R | 三元组 F1 | 越界类 | 证据覆盖率 |
+|---|---|---|---|---|---|---|---|---|
+| rule | 0.0769 | 0.9565 | 0.1424 | 0.1429 | 0.2778 | 0.1887 | 0 | 1.0 |
+| model | 0.0691 | 0.8261 | 0.1275 | 0.0296 | 0.2222 | 0.0523 | 0 | 1.0 |
+| llm | 0.6286 | 0.9565 | 0.7586 | 0.5161 | 0.8889 | 0.6531 | 0 | 1.0 |
+| ensemble | 0.0647 | 0.8696 | 0.1205 | 0.1585 | 0.7222 | 0.26 | 0 | 1.0 |
+
+## 融合置信度分档（回答「几种方法一致时精度有多高」）
+
+| 命中方法数 | 三元组数 | 精确率(下界) | 召回 | F1 |
+|---|---|---|---|---|
+| rule / 1 票 | 35 | 0.1429 | 0.2778 | 0.1887 |
+| model / 1 票 | 135 | 0.0296 | 0.2222 | 0.0523 |
+| llm / 1 票 | 31 | 0.5161 | 0.8889 | 0.6531 |
+| ensemble / 1 票 | 57 | 0.1404 | 0.4444 | 0.2133 |
+| ensemble / 2 票 | 21 | 0.0952 | 0.1111 | 0.1026 |
+| ensemble / 3 票 | 4 | 0.75 | 0.1667 | 0.2727 |
+
+## rule — 分类型实体指标
+| 类型 | P | R | F1 | 漏检示例 |
+|---|---|---|---|---|
+| Extension | 0.0 | 0.0 | 0.0 |  |
+| Layer | 0.5 | 1.0 | 0.6667 |  |
+| MessageField | 0.3077 | 1.0 | 0.4706 |  |
+| NormativeKeyword | 0.3 | 1.0 | 0.4615 |  |
+| Port | 0.0 | 0.0 | 0.0 |  |
+| Protocol | 0.2857 | 0.8 | 0.4211 | internet protocol |
+| RFC | 0.0481 | 1.0 | 0.0917 |  |
+| Section | 0.0 | 0.0 | 0.0 |  |
+
+## model — 分类型实体指标
+| 类型 | P | R | F1 | 漏检示例 |
+|---|---|---|---|---|
+| Extension | 0.0 | 0.0 | 0.0 |  |
+| Layer | 0.5 | 1.0 | 0.6667 |  |
+| MessageField | 0.1136 | 0.625 | 0.1923 | initial sequence number, sequence number, window |
+| NormativeKeyword | 0.2727 | 1.0 | 0.4286 |  |
+| Protocol | 0.2857 | 0.8 | 0.4211 | internet protocol |
+| RFC | 0.0263 | 1.0 | 0.0513 |  |
+
+## llm — 分类型实体指标
+| 类型 | P | R | F1 | 漏检示例 |
+|---|---|---|---|---|
+| Extension | 0.0 | 0.0 | 0.0 |  |
+| Layer | 1.0 | 0.5 | 0.6667 | internet layer |
+| MessageField | 0.8889 | 1.0 | 0.9412 |  |
+| NormativeKeyword | 0.5 | 1.0 | 0.6667 |  |
+| Obligation | 0.0 | 0.0 | 0.0 |  |
+| Protocol | 0.8333 | 1.0 | 0.9091 |  |
+| RFC | 0.7143 | 1.0 | 0.8333 |  |
+| Section | 0.0 | 0.0 | 0.0 |  |
+
+## ensemble — 分类型实体指标
+| 类型 | P | R | F1 | 漏检示例 |
+|---|---|---|---|---|
+| Extension | 0.0 | 0.0 | 0.0 |  |
+| Layer | 0.5 | 1.0 | 0.6667 |  |
+| MessageField | 0.1538 | 1.0 | 0.2667 |  |
+| NormativeKeyword | 0.2727 | 1.0 | 0.4286 |  |
+| Obligation | 0.0 | 0.0 | 0.0 |  |
+| Protocol | 0.3125 | 1.0 | 0.4762 |  |
+| RFC | 0.0233 | 0.4 | 0.044 | rfc 2119, rfc 2460, rfc 793 |
+| Section | 0.0 | 0.0 | 0.0 |  |
+
+
+=== 8. Stage 3: KG-enhanced QA bench ===
+[bench] 题目 8 · 可回答率 0.5 · 平均三元组覆盖率 0.3334
+  - TCP 首部包含哪些字段？                        覆盖 0.667 检索 12 · 幻觉率 0.5
+  - IPv6 首部包含哪些字段？                       覆盖 0.667 检索 12 · 幻觉率 0.5
+  - RFC 8200 取代了哪个文档？                    覆盖 0.0 检索 6 · 幻觉率 1.0
+  - TCP 工作在协议栈的哪一层？                      覆盖 0.0 检索 12 · 幻觉率 1.0
+  - RFC 9293 引用了哪些文档？                    覆盖 0.0 检索 6 · 幻觉率 1.0
+  - UDP 的作用是什么？                          覆盖 1.0 检索 9 · 幻觉率 0.5
+  - 等保三级系统对边界防护的要求是什么？                   覆盖 None 检索 0 · 幻觉率 0.0
+  - TCP 与 Transport Layer 之间的关系？         覆盖 0.0 检索 12 · 幻觉率 0.0
+
+=== 9. MCP smoke test ===
+① initialize  ok · server=kg-t5-protocol-rfc protocol=2025-11-25
+② tools/list  ok · 4 个工具：['kg_stats', 'kg_search', 'kg_neighbors', 'kg_path']
+③ kg_stats    ok · 节点 314 · 边 487
+   节点类型：{'Section': 121, 'RFC': 86, 'MessageField': 52, 'Protocol': 16, 'Extension': 16, 'NormativeKeyword': 11, 'Document': 5, 'Layer': 4, 'Obligation': 3}
+④ kg_search   ok · 关键词 RFC 9293 命中 1 个节点
+⑤ kg_neighbors ok · TCP 的 has_field 三元组 15 条
+    TCP --has_field--> Checksum  | 证据: [rule] The checksum also covers a pseudo-header (Figure 2) c
+    TCP --has_field--> Window  | 证据: [rule] It is the value of the window field specified in segm
+    TCP --has_field--> Flags  | 证据: [rule] Assignment is managed by IANA from the "TCP Header Fl
+⑥ kg_path     ok · 路径 ['TCP', 'Transport Layer'] 关系 ['operates_at']
+⑦ 不存在路径时返回 found=False → Agent 应答「图谱中无此知识」
+
+结果：全部通过 ✅
+
+All done.
+  ontology  data\ontology\t5-protocol-rfc_ontology.{ttl,json}
+  extract   data\extraction\t5-protocol-rfc_{rule,model,llm,ensemble}.json
+  graph     data\kg\t5-protocol-rfc_kg.{json,ttl,graphml}
+  reports   data\reports\t5-protocol-rfc_eval.md
+  qa bench  data\reports\t5-protocol-rfc_qa_bench.json

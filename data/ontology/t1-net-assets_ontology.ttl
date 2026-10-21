@@ -1,0 +1,194 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://kgcourse.org/ontology/net-assets#> .
+
+<> a owl:Ontology ;
+    owl:versionInfo "v1.0" ;
+    rdfs:seeAlso <https://github.com/netbox-community/netbox> ;
+    rdfs:label "网络设备、接口与链路资产知识图谱"@zh ;
+    rdfs:comment "把设备/接口/链路/IP 段/厂商/角色串成资产拓扑图，支撑影响面分析与故障定位问答。"@zh .
+
+:Asset a owl:Class ;
+    rdfs:label "网络资产"@zh ;
+    rdfs:comment "所有可管理网络对象的总类"@zh ;
+    .
+
+:Device a owl:Class ;
+    rdfs:subClassOf :Asset ;
+    rdfs:label "网络设备"@zh ;
+    rdfs:comment "交换机/路由器/防火墙/负载均衡等"@zh ;
+    .
+
+:Interface a owl:Class ;
+    rdfs:subClassOf :Asset ;
+    rdfs:label "接口"@zh ;
+    rdfs:comment "设备的物理或逻辑接口"@zh ;
+    .
+
+:Link a owl:Class ;
+    rdfs:subClassOf :Asset ;
+    rdfs:label "链路"@zh ;
+    rdfs:comment "两个接口之间的物理或逻辑连接"@zh ;
+    .
+
+:IPSubnet a owl:Class ;
+    rdfs:subClassOf :Asset ;
+    rdfs:label "IP 网段"@zh ;
+    rdfs:comment "CIDR 表示的地址段"@zh ;
+    .
+
+:IPAddress a owl:Class ;
+    rdfs:subClassOf :Asset ;
+    rdfs:label "IP 地址"@zh ;
+    rdfs:comment "单个地址及其掩码/VRF"@zh ;
+    .
+
+:VLAN a owl:Class ;
+    rdfs:subClassOf :Asset ;
+    rdfs:label "VLAN"@zh ;
+    rdfs:comment "二层广播域标识"@zh ;
+    .
+
+:DeviceRole a owl:Class ;
+    rdfs:subClassOf :Asset ;
+    rdfs:label "设备角色"@zh ;
+    rdfs:comment "核心/汇聚/接入/边界等"@zh ;
+    .
+
+:Site a owl:Class ;
+    rdfs:subClassOf :Asset ;
+    rdfs:label "站点/机房"@zh ;
+    rdfs:comment "物理位置"@zh ;
+    .
+
+:Vendor a owl:Class ;
+    rdfs:subClassOf :Asset ;
+    rdfs:label "厂商"@zh ;
+    rdfs:comment "设备或软件供应商"@zh ;
+    .
+
+:Service a owl:Class ;
+    rdfs:subClassOf :Asset ;
+    rdfs:label "承载服务"@zh ;
+    rdfs:comment "运行在设备上的网络服务"@zh ;
+    .
+
+:Incident a owl:Class ;
+    rdfs:subClassOf :Asset ;
+    rdfs:label "故障事件"@zh ;
+    rdfs:comment "一次可观测的故障工单/告警"@zh ;
+    .
+
+:has_interface a owl:ObjectProperty ;
+    rdfs:domain :Device ;
+    rdfs:range :Interface ;
+    rdfs:label "具有接口"@zh ;
+    rdfs:comment "设备物理包含接口"@zh ;
+    .
+
+:connects_to a owl:ObjectProperty ;
+    rdfs:domain :Interface ;
+    rdfs:range :Interface ;
+    rdfs:label "连接到"@zh ;
+    rdfs:comment "接口之间的链路关系（对称）"@zh ;
+    a owl:SymmetricProperty ;
+    .
+
+:has_subnet a owl:ObjectProperty ;
+    rdfs:domain :Interface ;
+    rdfs:range :IPSubnet ;
+    rdfs:label "配置网段"@zh ;
+    rdfs:comment "接口上配置的 IP 网段"@zh ;
+    .
+
+:has_role a owl:ObjectProperty ;
+    rdfs:domain :Device ;
+    rdfs:range :DeviceRole ;
+    rdfs:label "角色为"@zh ;
+    rdfs:comment "设备在拓扑中的角色"@zh ;
+    .
+
+:located_at a owl:ObjectProperty ;
+    rdfs:domain :Device ;
+    rdfs:range :Site ;
+    rdfs:label "位于"@zh ;
+    rdfs:comment "设备所在站点"@zh ;
+    .
+
+:made_by a owl:ObjectProperty ;
+    rdfs:domain :Device ;
+    rdfs:range :Vendor ;
+    rdfs:label "厂商为"@zh ;
+    rdfs:comment "设备制造/系统供应商"@zh ;
+    .
+
+:runs a owl:ObjectProperty ;
+    rdfs:domain :Device ;
+    rdfs:range :Service ;
+    rdfs:label "运行"@zh ;
+    rdfs:comment "设备上运行的网络服务"@zh ;
+    .
+
+:belongs_to a owl:ObjectProperty ;
+    rdfs:domain :Interface ;
+    rdfs:range :Device ;
+    rdfs:label "属于"@zh ;
+    rdfs:comment "接口/VLAN 归属设备或站点"@zh ;
+    .
+
+:serves a owl:ObjectProperty ;
+    rdfs:domain :Device ;
+    rdfs:range :IPSubnet ;
+    rdfs:label "服务于"@zh ;
+    rdfs:comment "设备服务的业务网段"@zh ;
+    .
+
+:affected_by a owl:ObjectProperty ;
+    rdfs:domain :Asset ;
+    rdfs:range :Incident ;
+    rdfs:label "受影响于"@zh ;
+    rdfs:comment "资产受故障事件影响"@zh ;
+    .
+
+:mentioned_in a owl:ObjectProperty ;
+    rdfs:label "出现在"@zh ;
+    rdfs:comment "实体出现在来源文档中（结构关系）"@zh ;
+    .
+
+:hostname a owl:DatatypeProperty ;
+    rdfs:domain :Device ;
+    rdfs:range :xsd:string ;
+    rdfs:label "主机名"@zh ;
+    .
+
+:mgmt_ip a owl:DatatypeProperty ;
+    rdfs:domain :Device ;
+    rdfs:range :xsd:string ;
+    rdfs:label "管理地址"@zh ;
+    .
+
+:if_name a owl:DatatypeProperty ;
+    rdfs:domain :Interface ;
+    rdfs:range :xsd:string ;
+    rdfs:label "接口名"@zh ;
+    .
+
+:speed_mbps a owl:DatatypeProperty ;
+    rdfs:domain :Interface ;
+    rdfs:range :xsd:string ;
+    rdfs:label "速率"@zh ;
+    .
+
+:cidr a owl:DatatypeProperty ;
+    rdfs:domain :IPSubnet ;
+    rdfs:range :xsd:string ;
+    rdfs:label "CIDR"@zh ;
+    .
+
+:role_name a owl:DatatypeProperty ;
+    rdfs:domain :DeviceRole ;
+    rdfs:range :xsd:string ;
+    rdfs:label "角色名"@zh ;
+    .

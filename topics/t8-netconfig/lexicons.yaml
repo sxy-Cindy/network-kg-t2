@@ -1,0 +1,19 @@
+Intent:
+- 提供 DHCP 服务
+- 实现双上行冗余
+- 隔离访客网络
+- 限制管理面访问
+- route summarization
+- access control
+Risk:
+- 单点故障
+- 路由环路
+- 广播风暴
+- 未授权访问
+- 配置漂移
+Platform:
+- Cisco IOS
+- Huawei VRP
+- Juniper JunOS
+- Arista EOS
+- H3C Comware

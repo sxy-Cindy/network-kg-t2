@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d2" for="edge" attr.name="relation" attr.type="string" />
+  <key id="d1" for="node" attr.name="type" attr.type="string" />
+  <key id="d0" for="node" attr.name="label" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="block:if:Gi0/1">
+      <data key="d0">interface Gi0/1</data>
+      <data key="d1">ConfigBlock</data>
+    </node>
+    <node id="block:if:Vlanif20">
+      <data key="d0">interface Vlanif20</data>
+      <data key="d1">ConfigBlock</data>
+    </node>
+    <node id="block:ospf:1">
+      <data key="d0">router ospf 1</data>
+      <data key="d1">ConfigBlock</data>
+    </node>
+    <node id="cmd:description">
+      <data key="d0">description</data>
+      <data key="d1">Command</data>
+    </node>
+    <node id="cmd:ip address">
+      <data key="d0">ip address</data>
+      <data key="d1">Command</data>
+    </node>
+    <node id="cmd:switchport">
+      <data key="d0">switchport</data>
+      <data key="d1">Command</data>
+    </node>
+    <node id="cmd:network">
+      <data key="d0">network</data>
+      <data key="d1">Command</data>
+    </node>
+    <node id="cmd:redistribute">
+      <data key="d0">redistribute</data>
+      <data key="d1">Command</data>
+    </node>
+    <node id="Intent:提供-dhcp-服务">
+      <data key="d0">提供 DHCP 服务</data>
+      <data key="d1">Intent</data>
+    </node>
+    <node id="Intent:实现双上行冗余">
+      <data key="d0">实现双上行冗余</data>
+      <data key="d1">Intent</data>
+    </node>
+    <node id="Risk:单点故障">
+      <data key="d0">单点故障</data>
+      <data key="d1">Risk</data>
+    </node>
+    <node id="Risk:广播风暴">
+      <data key="d0">广播风暴</data>
+      <data key="d1">Risk</data>
+    </node>
+    <node id="Platform:cisco-ios">
+      <data key="d0">Cisco IOS</data>
+      <data key="d1">Platform</data>
+    </node>
+    <node id="Platform:huawei-vrp">
+      <data key="d0">Huawei VRP</data>
+      <data key="d1">Platform</data>
+    </node>
+    <node id="doc:device_config_sample">
+      <data key="d0">device_config_sample</data>
+      <data key="d1">Document</data>
+    </node>
+    <edge source="block:if:Gi0/1" target="doc:device_config_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="block:if:Vlanif20" target="doc:device_config_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="block:ospf:1" target="doc:device_config_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="cmd:description" target="block:if:Gi0/1">
+      <data key="d2">in_block</data>
+    </edge>
+    <edge source="cmd:description" target="doc:device_config_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="cmd:ip address" target="block:if:Gi0/1">
+      <data key="d2">in_block</data>
+    </edge>
+    <edge source="cmd:ip address" target="block:if:Vlanif20">
+      <data key="d2">in_block</data>
+    </edge>
+    <edge source="cmd:ip address" target="doc:device_config_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="cmd:switchport" target="block:if:Gi0/1">
+      <data key="d2">in_block</data>
+    </edge>
+    <edge source="cmd:switchport" target="doc:device_config_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="cmd:network" target="block:ospf:1">
+      <data key="d2">in_block</data>
+    </edge>
+    <edge source="cmd:network" target="doc:device_config_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="cmd:redistribute" target="block:ospf:1">
+      <data key="d2">in_block</data>
+    </edge>
+    <edge source="cmd:redistribute" target="doc:device_config_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="Intent:提供-dhcp-服务" target="doc:device_config_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="Intent:实现双上行冗余" target="doc:device_config_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="Risk:单点故障" target="doc:device_config_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="Risk:广播风暴" target="doc:device_config_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="Platform:cisco-ios" target="doc:device_config_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+    <edge source="Platform:huawei-vrp" target="doc:device_config_sample">
+      <data key="d2">mentioned_in</data>
+    </edge>
+  </graph>
+</graphml>

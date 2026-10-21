@@ -1,0 +1,30 @@
+entity_patterns:
+- type: Host
+  regex: (?m)^\w{3}\s+\d{1,2}\s+\d{2}:\d{2}:\d{2}\s+(\S+)
+  id_template: host:{1}
+  label_template: '{1}'
+- type: Anomaly
+  regex: (?i)\b(BGP peer down|link flapped|packet loss|CRC error|interface down|端口震荡|丢包)\b
+  id_template: anom:{1}
+  label_template: '{1}'
+- type: Fault
+  regex: (?i)\b(outage|traffic drop|blackhole|业务中断|流中断)\b
+  id_template: fault:{1}
+  label_template: '{1}'
+- type: Action
+  regex: (?i)\b(restart|reload|failover|rollback|switchover|重启|切换|回滚)\b
+  id_template: act:{1}
+  label_template: '{1}'
+relations:
+- name: indicates
+  relation: indicates
+  source_type: Anomaly
+  target_type: Fault
+  trigger: (?i)\b(caused|due to|导致|引发|造成)\b
+- name: correlates_with
+  relation: correlates_with
+  source_type: Anomaly
+  target_type: Action
+  trigger: (?i)\b(after|following|随后|处置后)\b
+structural:
+  mentioned_in: true

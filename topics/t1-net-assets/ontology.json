@@ -1,0 +1,222 @@
+{
+  "namespace": "http://kgcourse.org/ontology/net-assets#",
+  "title": "网络设备、接口与链路资产知识图谱",
+  "description": "把设备/接口/链路/IP 段/厂商/角色串成资产拓扑图，支撑影响面分析与故障定位问答。",
+  "version": "v1.0",
+  "source_url": "https://github.com/netbox-community/netbox",
+  "classes": [
+    {
+      "id": "Asset",
+      "label": "网络资产",
+      "definition": "所有可管理网络对象的总类",
+      "parent": null,
+      "source": ""
+    },
+    {
+      "id": "Device",
+      "label": "网络设备",
+      "definition": "交换机/路由器/防火墙/负载均衡等",
+      "parent": "Asset",
+      "source": ""
+    },
+    {
+      "id": "Interface",
+      "label": "接口",
+      "definition": "设备的物理或逻辑接口",
+      "parent": "Asset",
+      "source": ""
+    },
+    {
+      "id": "Link",
+      "label": "链路",
+      "definition": "两个接口之间的物理或逻辑连接",
+      "parent": "Asset",
+      "source": ""
+    },
+    {
+      "id": "IPSubnet",
+      "label": "IP 网段",
+      "definition": "CIDR 表示的地址段",
+      "parent": "Asset",
+      "source": ""
+    },
+    {
+      "id": "IPAddress",
+      "label": "IP 地址",
+      "definition": "单个地址及其掩码/VRF",
+      "parent": "Asset",
+      "source": ""
+    },
+    {
+      "id": "VLAN",
+      "label": "VLAN",
+      "definition": "二层广播域标识",
+      "parent": "Asset",
+      "source": ""
+    },
+    {
+      "id": "DeviceRole",
+      "label": "设备角色",
+      "definition": "核心/汇聚/接入/边界等",
+      "parent": "Asset",
+      "source": ""
+    },
+    {
+      "id": "Site",
+      "label": "站点/机房",
+      "definition": "物理位置",
+      "parent": "Asset",
+      "source": ""
+    },
+    {
+      "id": "Vendor",
+      "label": "厂商",
+      "definition": "设备或软件供应商",
+      "parent": "Asset",
+      "source": ""
+    },
+    {
+      "id": "Service",
+      "label": "承载服务",
+      "definition": "运行在设备上的网络服务",
+      "parent": "Asset",
+      "source": ""
+    },
+    {
+      "id": "Incident",
+      "label": "故障事件",
+      "definition": "一次可观测的故障工单/告警",
+      "parent": "Asset",
+      "source": ""
+    }
+  ],
+  "relations": [
+    {
+      "id": "has_interface",
+      "label": "具有接口",
+      "definition": "设备物理包含接口",
+      "domain": "Device",
+      "range": "Interface",
+      "parent": null
+    },
+    {
+      "id": "connects_to",
+      "label": "连接到",
+      "definition": "接口之间的链路关系（对称）",
+      "domain": "Interface",
+      "range": "Interface",
+      "parent": null,
+      "symmetric": true
+    },
+    {
+      "id": "has_subnet",
+      "label": "配置网段",
+      "definition": "接口上配置的 IP 网段",
+      "domain": "Interface",
+      "range": "IPSubnet",
+      "parent": null
+    },
+    {
+      "id": "has_role",
+      "label": "角色为",
+      "definition": "设备在拓扑中的角色",
+      "domain": "Device",
+      "range": "DeviceRole",
+      "parent": null
+    },
+    {
+      "id": "located_at",
+      "label": "位于",
+      "definition": "设备所在站点",
+      "domain": "Device",
+      "range": "Site",
+      "parent": null
+    },
+    {
+      "id": "made_by",
+      "label": "厂商为",
+      "definition": "设备制造/系统供应商",
+      "domain": "Device",
+      "range": "Vendor",
+      "parent": null
+    },
+    {
+      "id": "runs",
+      "label": "运行",
+      "definition": "设备上运行的网络服务",
+      "domain": "Device",
+      "range": "Service",
+      "parent": null
+    },
+    {
+      "id": "belongs_to",
+      "label": "属于",
+      "definition": "接口/VLAN 归属设备或站点",
+      "domain": "Interface",
+      "range": "Device",
+      "parent": null
+    },
+    {
+      "id": "serves",
+      "label": "服务于",
+      "definition": "设备服务的业务网段",
+      "domain": "Device",
+      "range": "IPSubnet",
+      "parent": null
+    },
+    {
+      "id": "affected_by",
+      "label": "受影响于",
+      "definition": "资产受故障事件影响",
+      "domain": "Asset",
+      "range": "Incident",
+      "parent": null
+    },
+    {
+      "id": "mentioned_in",
+      "label": "出现在",
+      "definition": "实体出现在来源文档中（结构关系）",
+      "domain": null,
+      "range": null,
+      "parent": null
+    }
+  ],
+  "attributes": [
+    {
+      "id": "hostname",
+      "label": "主机名",
+      "domain": "Device",
+      "range": "xsd:string"
+    },
+    {
+      "id": "mgmt_ip",
+      "label": "管理地址",
+      "domain": "Device",
+      "range": "xsd:string"
+    },
+    {
+      "id": "if_name",
+      "label": "接口名",
+      "domain": "Interface",
+      "range": "xsd:string"
+    },
+    {
+      "id": "speed_mbps",
+      "label": "速率",
+      "domain": "Interface",
+      "range": "xsd:string"
+    },
+    {
+      "id": "cidr",
+      "label": "CIDR",
+      "domain": "IPSubnet",
+      "range": "xsd:string"
+    },
+    {
+      "id": "role_name",
+      "label": "角色名",
+      "domain": "DeviceRole",
+      "range": "xsd:string"
+    }
+  ]
+}

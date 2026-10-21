@@ -1,0 +1,91 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://kgcourse.org/ontology/netconfig#> .
+
+:BlockIfGi0/1 a :ConfigBlock ;
+    rdfs:label "interface Gi0/1" ;
+    rdfs:isDefinedBy <kg:t8-netconfig#block:if:Gi0/1> .
+
+:BlockIfVlanif20 a :ConfigBlock ;
+    rdfs:label "interface Vlanif20" ;
+    rdfs:isDefinedBy <kg:t8-netconfig#block:if:Vlanif20> .
+
+:BlockOspf1 a :ConfigBlock ;
+    rdfs:label "router ospf 1" ;
+    rdfs:isDefinedBy <kg:t8-netconfig#block:ospf:1> .
+
+:CmdDescription a :Command ;
+    rdfs:label "description" ;
+    rdfs:isDefinedBy <kg:t8-netconfig#cmd:description> .
+
+:CmdIpAddress a :Command ;
+    rdfs:label "ip address" ;
+    rdfs:isDefinedBy <kg:t8-netconfig#cmd:ip address> .
+
+:CmdSwitchport a :Command ;
+    rdfs:label "switchport" ;
+    rdfs:isDefinedBy <kg:t8-netconfig#cmd:switchport> .
+
+:CmdNetwork a :Command ;
+    rdfs:label "network" ;
+    rdfs:isDefinedBy <kg:t8-netconfig#cmd:network> .
+
+:CmdRedistribute a :Command ;
+    rdfs:label "redistribute" ;
+    rdfs:isDefinedBy <kg:t8-netconfig#cmd:redistribute> .
+
+:Intent提供-dhcp-服务 a :Intent ;
+    rdfs:label "提供 DHCP 服务" ;
+    rdfs:isDefinedBy <kg:t8-netconfig#Intent:提供-dhcp-服务> .
+
+:Intent实现双上行冗余 a :Intent ;
+    rdfs:label "实现双上行冗余" ;
+    rdfs:isDefinedBy <kg:t8-netconfig#Intent:实现双上行冗余> .
+
+:Risk单点故障 a :Risk ;
+    rdfs:label "单点故障" ;
+    rdfs:isDefinedBy <kg:t8-netconfig#Risk:单点故障> .
+
+:Risk广播风暴 a :Risk ;
+    rdfs:label "广播风暴" ;
+    rdfs:isDefinedBy <kg:t8-netconfig#Risk:广播风暴> .
+
+:PlatformCisco-ios a :Platform ;
+    rdfs:label "Cisco IOS" ;
+    rdfs:isDefinedBy <kg:t8-netconfig#Platform:cisco-ios> .
+
+:PlatformHuawei-vrp a :Platform ;
+    rdfs:label "Huawei VRP" ;
+    rdfs:isDefinedBy <kg:t8-netconfig#Platform:huawei-vrp> .
+
+:DocDevice_config_sample a :Document ;
+    rdfs:label "device_config_sample" ;
+    rdfs:isDefinedBy <kg:t8-netconfig#doc:device_config_sample> .
+
+:Intent实现双上行冗余 :mentioned_in :DocDevice_config_sample .
+:Intent提供-dhcp-服务 :mentioned_in :DocDevice_config_sample .
+:PlatformCisco-ios :mentioned_in :DocDevice_config_sample .
+:PlatformHuawei-vrp :mentioned_in :DocDevice_config_sample .
+:Risk单点故障 :mentioned_in :DocDevice_config_sample .
+:Risk广播风暴 :mentioned_in :DocDevice_config_sample .
+:BlockIfGi0/1 :mentioned_in :DocDevice_config_sample .
+:BlockIfVlanif20 :mentioned_in :DocDevice_config_sample .
+:BlockOspf1 :mentioned_in :DocDevice_config_sample .
+:CmdDescription :in_block :BlockIfGi0/1 .
+:CmdDescription :mentioned_in :DocDevice_config_sample .
+:CmdIpAddress :in_block :BlockIfGi0/1 .
+:CmdIpAddress :in_block :BlockIfVlanif20 .
+:CmdIpAddress :mentioned_in :DocDevice_config_sample .
+:CmdNetwork :in_block :BlockOspf1 .
+:CmdNetwork :mentioned_in :DocDevice_config_sample .
+:CmdRedistribute :in_block :BlockOspf1 .
+:CmdRedistribute :mentioned_in :DocDevice_config_sample .
+:CmdSwitchport :in_block :BlockIfGi0/1 .
+:CmdSwitchport :mentioned_in :DocDevice_config_sample .
+
+# 边数/节点数摘要（便于快速核对导入结果）
+<kg:t8-netconfig> a owl:Ontology ;
+    rdfs:label "t8-netconfig KG (ensemble)" ;
+    rdfs:comment "nodes=15 edges=20" .

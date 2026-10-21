@@ -1,0 +1,10 @@
+# AI 数据中心网络技术笔记（示意语料，事实点来自 OCP MRC 公开资料与 UEC 规范口径）
+MRC (Multipath Reliable Connection) 是面向 AI 超算互连的协议，扩展自 RoCEv2。
+MRC uses packet spraying：把一次传输的报文分散到数百条路径上，从而 avoid congestion。
+MRC uses SRv6 source routing，sender 将完整交换路径编码进 IPv6 目的地址，
+交换机使用静态转发表，消除了动态路由（如 BGP）带来的 link flap 与 switch reboot 影响。
+架构上采用 multi-plane：单个 800G 接口拆成 8 条 100G 链路接入不同交换机，
+带来 path diversity 与 failure resilience，同时降低 lower power 与 fewer components。
+该方案由 OCP 主导开源，规范文档属于 Standard OCP；Ultra Ethernet Consortium 也推进类似能力。
+失效模式：packet loss、incast、path failure。机制上通过 packet trimming 与路径快速退役缓解。
+负载类型：synchronous training 与 checkpoint 对 AllReduce 的时延最敏感。

@@ -1,0 +1,740 @@
+{
+  "topic": "t3-log-rca",
+  "source_method": "ensemble",
+  "ontology": {
+    "namespace": "http://kgcourse.org/ontology/log-rca#",
+    "title": "网络与系统日志驱动的故障根因知识图谱"
+  },
+  "node_count": 22,
+  "edge_count": 45,
+  "node_type_counts": {
+    "Host": 4,
+    "Anomaly": 4,
+    "Action": 4,
+    "Service": 4,
+    "Fault": 2,
+    "Metric": 2,
+    "RootCause": 1,
+    "Document": 1
+  },
+  "edge_relation_counts": {
+    "mentioned_in": 21,
+    "correlates_with": 16,
+    "indicates": 8
+  },
+  "nodes": [
+    {
+      "id": "host:core-sw-01",
+      "label": "core-sw-01",
+      "type": "Host",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "host:agg-sw-03",
+      "label": "agg-sw-03",
+      "type": "Host",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "host:node-17",
+      "label": "node-17",
+      "type": "Host",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "host:edge-rt-02",
+      "label": "edge-rt-02",
+      "type": "Host",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "anom:BGP peer down",
+      "label": "BGP peer down",
+      "type": "Anomaly",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "anom:interface down",
+      "label": "interface down",
+      "type": "Anomaly",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "anom:link flapped",
+      "label": "link flapped",
+      "type": "Anomaly",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "anom:packet loss",
+      "label": "packet loss",
+      "type": "Anomaly",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "fault:traffic drop",
+      "label": "traffic drop",
+      "type": "Fault",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "fault:blackhole",
+      "label": "blackhole",
+      "type": "Fault",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "act:failover",
+      "label": "failover",
+      "type": "Action",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "act:switchover",
+      "label": "switchover",
+      "type": "Action",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "act:restart",
+      "label": "restart",
+      "type": "Action",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "act:rollback",
+      "label": "rollback",
+      "type": "Action",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Metric:packet-loss",
+      "label": "packet loss",
+      "type": "Metric",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Metric:jitter",
+      "label": "jitter",
+      "type": "Metric",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "RootCause:fiber-cut",
+      "label": "fiber cut",
+      "type": "RootCause",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Service:bgpd",
+      "label": "bgpd",
+      "type": "Service",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Service:ospfd",
+      "label": "ospfd",
+      "type": "Service",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Service:syslog-ng",
+      "label": "syslog-ng",
+      "type": "Service",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "Service:kubelet",
+      "label": "kubelet",
+      "type": "Service",
+      "properties": {
+        "methods": [
+          "rule"
+        ]
+      }
+    },
+    {
+      "id": "doc:network_device_log_sample",
+      "label": "network_device_log_sample",
+      "type": "Document",
+      "properties": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "Metric:jitter",
+      "target": "doc:network_device_log_sample",
+      "relation": "mentioned_in",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] de-17 kubelet[991]: packet loss detected on overlay tunnel, jitter increased Jul 14 03:12:40 edge-rt-02 ospfd[745]: BGP peer d",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "Metric:packet-loss",
+      "target": "doc:network_device_log_sample",
+      "relation": "mentioned_in",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] link flapped on Te0/1 Jul 14 03:12:15 node-17 kubelet[991]: packet loss detected on overlay tunnel, jitter increased Jul 14 03:12:4",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "RootCause:fiber-cut",
+      "target": "doc:network_device_log_sample",
+      "relation": "mentioned_in",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] 14 03:12:40 edge-rt-02 ospfd[745]: BGP peer down caused by fiber cut on uplink Jul 14 03:13:02 core-sw-01 bgpd[812]: traffic dro",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "Service:bgpd",
+      "target": "doc:network_device_log_sample",
+      "relation": "mentioned_in",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] Loghub 的 Linux/OpenSSH 与 BGL 日志） Jul 14 03:12:07 core-sw-01 bgpd[812]: BGP peer down to 10.0.0.2 due to hold timer expired J",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "Service:kubelet",
+      "target": "doc:network_device_log_sample",
+      "relation": "mentioned_in",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] log-ng[2201]: link flapped on Te0/1 Jul 14 03:12:15 node-17 kubelet[991]: packet loss detected on overlay tunnel, jitter increa",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "Service:ospfd",
+      "target": "doc:network_device_log_sample",
+      "relation": "mentioned_in",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] overlay tunnel, jitter increased Jul 14 03:12:40 edge-rt-02 ospfd[745]: BGP peer down caused by fiber cut on uplink Jul 14 03",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "Service:syslog-ng",
+      "target": "doc:network_device_log_sample",
+      "relation": "mentioned_in",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] ce down: Te0/1 line protocol down Jul 14 03:12:12 agg-sw-03 syslog-ng[2201]: link flapped on Te0/1 Jul 14 03:12:15 node-17 kubele",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "act:failover",
+      "target": "doc:network_device_log_sample",
+      "relation": "mentioned_in",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] 20 due to blackhole route Jul 14 03:15:20 core-sw-01 root: failover triggered, switchover to backup path after restart # 处置：回滚配",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "act:restart",
+      "target": "doc:network_device_log_sample",
+      "relation": "mentioned_in",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] 1 root: failover triggered, switchover to backup path after restart # 处置：回滚配置 rollback，随后 packet loss 恢复",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "act:rollback",
+      "target": "doc:network_device_log_sample",
+      "relation": "mentioned_in",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] riggered, switchover to backup path after restart # 处置：回滚配置 rollback，随后 packet loss 恢复",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "act:switchover",
+      "target": "doc:network_device_log_sample",
+      "relation": "mentioned_in",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] route Jul 14 03:15:20 core-sw-01 root: failover triggered, switchover to backup path after restart # 处置：回滚配置 rollback，随后 packet l",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "anom:BGP peer down",
+      "target": "act:failover",
+      "relation": "correlates_with",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] # 网络设备与主机日志摘录(示意语料,格式贴近 Loghub 的 Linux/OpenSSH 与 BGL 日志) Jul 14 03:12:07 core-sw-01 bgpd[812]: BGP peer down to 10.0.0.2 due to hold timer expired Jul 14 03:12:11 core-sw-01 bgpd[812]: interfac",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "anom:BGP peer down",
+      "target": "act:restart",
+      "relation": "correlates_with",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] # 网络设备与主机日志摘录(示意语料,格式贴近 Loghub 的 Linux/OpenSSH 与 BGL 日志) Jul 14 03:12:07 core-sw-01 bgpd[812]: BGP peer down to 10.0.0.2 due to hold timer expired Jul 14 03:12:11 core-sw-01 bgpd[812]: interfac",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "anom:BGP peer down",
+      "target": "act:rollback",
+      "relation": "correlates_with",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] # 网络设备与主机日志摘录(示意语料,格式贴近 Loghub 的 Linux/OpenSSH 与 BGL 日志) Jul 14 03:12:07 core-sw-01 bgpd[812]: BGP peer down to 10.0.0.2 due to hold timer expired Jul 14 03:12:11 core-sw-01 bgpd[812]: interfac",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "anom:BGP peer down",
+      "target": "act:switchover",
+      "relation": "correlates_with",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] # 网络设备与主机日志摘录(示意语料,格式贴近 Loghub 的 Linux/OpenSSH 与 BGL 日志) Jul 14 03:12:07 core-sw-01 bgpd[812]: BGP peer down to 10.0.0.2 due to hold timer expired Jul 14 03:12:11 core-sw-01 bgpd[812]: interfac",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "anom:BGP peer down",
+      "target": "fault:blackhole",
+      "relation": "indicates",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] # 网络设备与主机日志摘录(示意语料,格式贴近 Loghub 的 Linux/OpenSSH 与 BGL 日志) Jul 14 03:12:07 core-sw-01 bgpd[812]: BGP peer down to 10.0.0.2 due to hold timer expired Jul 14 03:12:11 core-sw-01 bgpd[812]: interfac",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "anom:BGP peer down",
+      "target": "fault:traffic drop",
+      "relation": "indicates",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] # 网络设备与主机日志摘录(示意语料,格式贴近 Loghub 的 Linux/OpenSSH 与 BGL 日志) Jul 14 03:12:07 core-sw-01 bgpd[812]: BGP peer down to 10.0.0.2 due to hold timer expired Jul 14 03:12:11 core-sw-01 bgpd[812]: interfac",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "anom:BGP peer down",
+      "target": "doc:network_device_log_sample",
+      "relation": "mentioned_in",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] nux/OpenSSH 与 BGL 日志） Jul 14 03:12:07 core-sw-01 bgpd[812]: BGP peer down to 10.0.0.2 due to hold timer expired Jul 14 03:12:11 core-",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "anom:interface down",
+      "target": "act:failover",
+      "relation": "correlates_with",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] # 网络设备与主机日志摘录(示意语料,格式贴近 Loghub 的 Linux/OpenSSH 与 BGL 日志) Jul 14 03:12:07 core-sw-01 bgpd[812]: BGP peer down to 10.0.0.2 due to hold timer expired Jul 14 03:12:11 core-sw-01 bgpd[812]: interfac",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "anom:interface down",
+      "target": "act:restart",
+      "relation": "correlates_with",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] # 网络设备与主机日志摘录(示意语料,格式贴近 Loghub 的 Linux/OpenSSH 与 BGL 日志) Jul 14 03:12:07 core-sw-01 bgpd[812]: BGP peer down to 10.0.0.2 due to hold timer expired Jul 14 03:12:11 core-sw-01 bgpd[812]: interfac",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "anom:interface down",
+      "target": "act:rollback",
+      "relation": "correlates_with",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] # 网络设备与主机日志摘录(示意语料,格式贴近 Loghub 的 Linux/OpenSSH 与 BGL 日志) Jul 14 03:12:07 core-sw-01 bgpd[812]: BGP peer down to 10.0.0.2 due to hold timer expired Jul 14 03:12:11 core-sw-01 bgpd[812]: interfac",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "anom:interface down",
+      "target": "act:switchover",
+      "relation": "correlates_with",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] # 网络设备与主机日志摘录(示意语料,格式贴近 Loghub 的 Linux/OpenSSH 与 BGL 日志) Jul 14 03:12:07 core-sw-01 bgpd[812]: BGP peer down to 10.0.0.2 due to hold timer expired Jul 14 03:12:11 core-sw-01 bgpd[812]: interfac",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "anom:interface down",
+      "target": "fault:blackhole",
+      "relation": "indicates",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] # 网络设备与主机日志摘录(示意语料,格式贴近 Loghub 的 Linux/OpenSSH 与 BGL 日志) Jul 14 03:12:07 core-sw-01 bgpd[812]: BGP peer down to 10.0.0.2 due to hold timer expired Jul 14 03:12:11 core-sw-01 bgpd[812]: interfac",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "anom:interface down",
+      "target": "fault:traffic drop",
+      "relation": "indicates",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] # 网络设备与主机日志摘录(示意语料,格式贴近 Loghub 的 Linux/OpenSSH 与 BGL 日志) Jul 14 03:12:07 core-sw-01 bgpd[812]: BGP peer down to 10.0.0.2 due to hold timer expired Jul 14 03:12:11 core-sw-01 bgpd[812]: interfac",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "anom:interface down",
+      "target": "doc:network_device_log_sample",
+      "relation": "mentioned_in",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] to hold timer expired Jul 14 03:12:11 core-sw-01 bgpd[812]: interface down: Te0/1 line protocol down Jul 14 03:12:12 agg-sw-03 syslog-",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "anom:link flapped",
+      "target": "act:failover",
+      "relation": "correlates_with",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] # 网络设备与主机日志摘录(示意语料,格式贴近 Loghub 的 Linux/OpenSSH 与 BGL 日志) Jul 14 03:12:07 core-sw-01 bgpd[812]: BGP peer down to 10.0.0.2 due to hold timer expired Jul 14 03:12:11 core-sw-01 bgpd[812]: interfac",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "anom:link flapped",
+      "target": "act:restart",
+      "relation": "correlates_with",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] # 网络设备与主机日志摘录(示意语料,格式贴近 Loghub 的 Linux/OpenSSH 与 BGL 日志) Jul 14 03:12:07 core-sw-01 bgpd[812]: BGP peer down to 10.0.0.2 due to hold timer expired Jul 14 03:12:11 core-sw-01 bgpd[812]: interfac",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "anom:link flapped",
+      "target": "act:rollback",
+      "relation": "correlates_with",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] # 网络设备与主机日志摘录(示意语料,格式贴近 Loghub 的 Linux/OpenSSH 与 BGL 日志) Jul 14 03:12:07 core-sw-01 bgpd[812]: BGP peer down to 10.0.0.2 due to hold timer expired Jul 14 03:12:11 core-sw-01 bgpd[812]: interfac",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "anom:link flapped",
+      "target": "act:switchover",
+      "relation": "correlates_with",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] # 网络设备与主机日志摘录(示意语料,格式贴近 Loghub 的 Linux/OpenSSH 与 BGL 日志) Jul 14 03:12:07 core-sw-01 bgpd[812]: BGP peer down to 10.0.0.2 due to hold timer expired Jul 14 03:12:11 core-sw-01 bgpd[812]: interfac",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "anom:link flapped",
+      "target": "fault:blackhole",
+      "relation": "indicates",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] # 网络设备与主机日志摘录(示意语料,格式贴近 Loghub 的 Linux/OpenSSH 与 BGL 日志) Jul 14 03:12:07 core-sw-01 bgpd[812]: BGP peer down to 10.0.0.2 due to hold timer expired Jul 14 03:12:11 core-sw-01 bgpd[812]: interfac",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "anom:link flapped",
+      "target": "fault:traffic drop",
+      "relation": "indicates",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] # 网络设备与主机日志摘录(示意语料,格式贴近 Loghub 的 Linux/OpenSSH 与 BGL 日志) Jul 14 03:12:07 core-sw-01 bgpd[812]: BGP peer down to 10.0.0.2 due to hold timer expired Jul 14 03:12:11 core-sw-01 bgpd[812]: interfac",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "anom:link flapped",
+      "target": "doc:network_device_log_sample",
+      "relation": "mentioned_in",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] ne protocol down Jul 14 03:12:12 agg-sw-03 syslog-ng[2201]: link flapped on Te0/1 Jul 14 03:12:15 node-17 kubelet[991]: packet loss",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "anom:packet loss",
+      "target": "act:failover",
+      "relation": "correlates_with",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] # 网络设备与主机日志摘录(示意语料,格式贴近 Loghub 的 Linux/OpenSSH 与 BGL 日志) Jul 14 03:12:07 core-sw-01 bgpd[812]: BGP peer down to 10.0.0.2 due to hold timer expired Jul 14 03:12:11 core-sw-01 bgpd[812]: interfac",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "anom:packet loss",
+      "target": "act:restart",
+      "relation": "correlates_with",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] # 网络设备与主机日志摘录(示意语料,格式贴近 Loghub 的 Linux/OpenSSH 与 BGL 日志) Jul 14 03:12:07 core-sw-01 bgpd[812]: BGP peer down to 10.0.0.2 due to hold timer expired Jul 14 03:12:11 core-sw-01 bgpd[812]: interfac",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "anom:packet loss",
+      "target": "act:rollback",
+      "relation": "correlates_with",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] # 网络设备与主机日志摘录(示意语料,格式贴近 Loghub 的 Linux/OpenSSH 与 BGL 日志) Jul 14 03:12:07 core-sw-01 bgpd[812]: BGP peer down to 10.0.0.2 due to hold timer expired Jul 14 03:12:11 core-sw-01 bgpd[812]: interfac",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "anom:packet loss",
+      "target": "act:switchover",
+      "relation": "correlates_with",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] # 网络设备与主机日志摘录(示意语料,格式贴近 Loghub 的 Linux/OpenSSH 与 BGL 日志) Jul 14 03:12:07 core-sw-01 bgpd[812]: BGP peer down to 10.0.0.2 due to hold timer expired Jul 14 03:12:11 core-sw-01 bgpd[812]: interfac",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "anom:packet loss",
+      "target": "fault:blackhole",
+      "relation": "indicates",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] # 网络设备与主机日志摘录(示意语料,格式贴近 Loghub 的 Linux/OpenSSH 与 BGL 日志) Jul 14 03:12:07 core-sw-01 bgpd[812]: BGP peer down to 10.0.0.2 due to hold timer expired Jul 14 03:12:11 core-sw-01 bgpd[812]: interfac",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "anom:packet loss",
+      "target": "fault:traffic drop",
+      "relation": "indicates",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] # 网络设备与主机日志摘录(示意语料,格式贴近 Loghub 的 Linux/OpenSSH 与 BGL 日志) Jul 14 03:12:07 core-sw-01 bgpd[812]: BGP peer down to 10.0.0.2 due to hold timer expired Jul 14 03:12:11 core-sw-01 bgpd[812]: interfac",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "anom:packet loss",
+      "target": "doc:network_device_log_sample",
+      "relation": "mentioned_in",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] link flapped on Te0/1 Jul 14 03:12:15 node-17 kubelet[991]: packet loss detected on overlay tunnel, jitter increased Jul 14 03:12:4",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "fault:blackhole",
+      "target": "doc:network_device_log_sample",
+      "relation": "mentioned_in",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] re-sw-01 bgpd[812]: traffic drop observed on vlan 20 due to blackhole route Jul 14 03:15:20 core-sw-01 root: failover triggered,",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "fault:traffic drop",
+      "target": "doc:network_device_log_sample",
+      "relation": "mentioned_in",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] y fiber cut on uplink Jul 14 03:13:02 core-sw-01 bgpd[812]: traffic drop observed on vlan 20 due to blackhole route Jul 14 03:15:20",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "host:agg-sw-03",
+      "target": "doc:network_device_log_sample",
+      "relation": "mentioned_in",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] ]: interface down: Te0/1 line protocol down Jul 14 03:12:12 agg-sw-03 syslog-ng[2201]: link flapped on Te0/1 Jul 14 03:12:15 node",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "host:core-sw-01",
+      "target": "doc:network_device_log_sample",
+      "relation": "mentioned_in",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] （示意语料，格式贴近 Loghub 的 Linux/OpenSSH 与 BGL 日志） Jul 14 03:12:07 core-sw-01 bgpd[812]: BGP peer down to 10.0.0.2 due to hold timer expi",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "host:edge-rt-02",
+      "target": "doc:network_device_log_sample",
+      "relation": "mentioned_in",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] etected on overlay tunnel, jitter increased Jul 14 03:12:40 edge-rt-02 ospfd[745]: BGP peer down caused by fiber cut on uplink Jul",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    },
+    {
+      "source": "host:node-17",
+      "target": "doc:network_device_log_sample",
+      "relation": "mentioned_in",
+      "doc": "network_device_log_sample",
+      "evidence": "[rule] w-03 syslog-ng[2201]: link flapped on Te0/1 Jul 14 03:12:15 node-17 kubelet[991]: packet loss detected on overlay tunnel, jitte",
+      "confidence": 1.0,
+      "methods": [
+        "rule"
+      ]
+    }
+  ]
+}

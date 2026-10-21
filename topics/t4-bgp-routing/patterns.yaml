@@ -1,0 +1,39 @@
+entity_patterns:
+- type: AS
+  regex: (?i)\bAS(\d{1,10})\b
+  id_template: as:{1}
+  label_template: AS{1}
+- type: Prefix
+  regex: \b((?:\d{1,3}\.){3}\d{1,3}/\d{1,2})\b
+  id_template: prefix:{1}
+  label_template: '{1}'
+- type: ASPath
+  regex: \b(\d{2,10}(?:\s+\d{2,10}){1,12})\b
+  id_template: path:{doc}:{n}
+  label_template: '{1}'
+- type: HijackEvent
+  regex: (?i)\b(hijack|route leak|prefix leak|劫持|路由泄露)\b
+  id_template: evt:{doc}:{n}
+  label_template: '{1}'
+- type: Collector
+  regex: \b(route-views[\w.-]*|rrc\d{2})\b
+  id_template: collector:{1}
+  label_template: '{1}'
+relations:
+- name: originates
+  relation: originates
+  source_type: AS
+  target_type: Prefix
+  trigger: (?i)\b(originat|originate|始发|宣告)\b
+- name: involves_as
+  relation: involves_as
+  source_type: HijackEvent
+  target_type: AS
+  trigger: (?i)\b(hijack|leak|劫持|泄露)\b
+- name: involves_prefix
+  relation: involves_prefix
+  source_type: HijackEvent
+  target_type: Prefix
+  trigger: (?i)\b(hijack|leak|劫持|泄露)\b
+structural:
+  mentioned_in: true

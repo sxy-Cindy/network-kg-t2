@@ -1,0 +1,91 @@
+Protocol:
+- TCP
+- UDP
+- IPv4
+- IPv6
+- ICMP
+- ICMPv6
+- ARP
+- BGP
+- OSPF
+- IS-IS
+- DNS
+- HTTP
+- HTTPS
+- TLS
+- QUIC
+- SCTP
+- DCCP
+- DHCP
+- NAT
+- MPLS
+- RSVP
+- Ethernet
+- PPP
+- SMTP
+- SSH
+- SNMP
+- NTP
+- RTP
+- GRE
+- IPsec
+Layer:
+- Application Layer
+- Transport Layer
+- Internet Layer
+- Link Layer
+- Network Access Layer
+- Physical Layer
+- Session Layer
+- Presentation Layer
+- 应用层
+- 传输层
+- 网络层
+- 链路层
+- 物理层
+MessageField:
+- Checksum
+- Sequence Number
+- Acknowledgment Number
+- Window
+- Flags
+- Options
+- Source Port
+- Destination Port
+- Hop Limit
+- Traffic Class
+- Flow Label
+- Payload Length
+- Next Header
+- Header Length
+- Urgent Pointer
+- Data Offset
+- Reserved
+- Version
+- Type of Service
+- Total Length
+- Identification
+- Fragment Offset
+- Time to Live
+- Protocol Number
+- Initial Sequence Number
+- Maximum Segment Size
+Extension:
+- Extension Header
+- Hop-by-Hop Options
+- Router Alert
+- Timestamp Option
+- Window Scale
+- Selective Acknowledgment
+- Path MTU Discovery
+NormativeKeyword:
+- MUST
+- MUST NOT
+- SHOULD
+- SHOULD NOT
+- MAY
+- REQUIRED
+- RECOMMENDED
+- OPTIONAL
+- NOT RECOMMENDED
+- SHALL

@@ -1,0 +1,169 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://kgcourse.org/ontology/bgp#> .
+
+<> a owl:Ontology ;
+    owl:versionInfo "v1.0" ;
+    rdfs:seeAlso <https://bgpstream.caida.org/> ;
+    rdfs:label "BGP 路由事件与 AS 关系知识图谱"@zh ;
+    rdfs:comment "以 AS/前缀/AS_PATH 为主干，构建路由事件图，支撑劫持/泄露事件的路径一致性检查。"@zh .
+
+:RouteObject a owl:Class ;
+    rdfs:label "路由对象"@zh ;
+    rdfs:comment "路由域顶层概念"@zh ;
+    .
+
+:AS a owl:Class ;
+    rdfs:subClassOf :RouteObject ;
+    rdfs:label "自治系统"@zh ;
+    rdfs:comment "AS 号"@zh ;
+    .
+
+:Organization a owl:Class ;
+    rdfs:subClassOf :RouteObject ;
+    rdfs:label "机构"@zh ;
+    rdfs:comment "AS 的注册所有者"@zh ;
+    .
+
+:Prefix a owl:Class ;
+    rdfs:subClassOf :RouteObject ;
+    rdfs:label "IP 前缀"@zh ;
+    rdfs:comment "被通告的地址段"@zh ;
+    .
+
+:ASPath a owl:Class ;
+    rdfs:subClassOf :RouteObject ;
+    rdfs:label "AS 路径"@zh ;
+    rdfs:comment "路由通告中的路径序列"@zh ;
+    .
+
+:Announcement a owl:Class ;
+    rdfs:subClassOf :RouteObject ;
+    rdfs:label "路由通告"@zh ;
+    rdfs:comment "一次 update 消息中的宣告"@zh ;
+    .
+
+:Withdrawal a owl:Class ;
+    rdfs:subClassOf :RouteObject ;
+    rdfs:label "路由撤销"@zh ;
+    rdfs:comment "一次 update 消息中的撤销"@zh ;
+    .
+
+:ROA a owl:Class ;
+    rdfs:subClassOf :RouteObject ;
+    rdfs:label "ROA 授权"@zh ;
+    rdfs:comment "RPKI 中的签发对象"@zh ;
+    .
+
+:HijackEvent a owl:Class ;
+    rdfs:subClassOf :RouteObject ;
+    rdfs:label "劫持/泄露事件"@zh ;
+    rdfs:comment "被检测出的异常路由事件"@zh ;
+    .
+
+:Collector a owl:Class ;
+    rdfs:subClassOf :RouteObject ;
+    rdfs:label "采集点"@zh ;
+    rdfs:comment "RouteViews/RIS 采集器"@zh ;
+    .
+
+:originates a owl:ObjectProperty ;
+    rdfs:domain :AS ;
+    rdfs:range :Prefix ;
+    rdfs:label "始发"@zh ;
+    rdfs:comment "AS 始发某前缀"@zh ;
+    .
+
+:announced_by a owl:ObjectProperty ;
+    rdfs:domain :Announcement ;
+    rdfs:range :Collector ;
+    rdfs:label "通告方"@zh ;
+    rdfs:comment "通告由某采集点/AS 观测到"@zh ;
+    .
+
+:has_path a owl:ObjectProperty ;
+    rdfs:domain :Announcement ;
+    rdfs:range :ASPath ;
+    rdfs:label "路径为"@zh ;
+    rdfs:comment "通告的 AS_PATH"@zh ;
+    .
+
+:path_contains a owl:ObjectProperty ;
+    rdfs:domain :ASPath ;
+    rdfs:range :AS ;
+    rdfs:label "路径包含"@zh ;
+    rdfs:comment "AS_PATH 中的 AS 序列"@zh ;
+    .
+
+:had_prefix a owl:ObjectProperty ;
+    rdfs:domain :Announcement ;
+    rdfs:range :Prefix ;
+    rdfs:label "涉及前缀"@zh ;
+    rdfs:comment "通告涉及的前缀"@zh ;
+    .
+
+:owned_by a owl:ObjectProperty ;
+    rdfs:domain :AS ;
+    rdfs:range :Organization ;
+    rdfs:label "归属机构"@zh ;
+    rdfs:comment "AS 的注册机构"@zh ;
+    .
+
+:authorized_by a owl:ObjectProperty ;
+    rdfs:domain :Prefix ;
+    rdfs:range :ROA ;
+    rdfs:label "被授权"@zh ;
+    rdfs:comment "前缀被 ROA 授权给 AS"@zh ;
+    .
+
+:involves_as a owl:ObjectProperty ;
+    rdfs:domain :HijackEvent ;
+    rdfs:range :AS ;
+    rdfs:label "涉及 AS"@zh ;
+    rdfs:comment "事件涉及的 AS"@zh ;
+    .
+
+:involves_prefix a owl:ObjectProperty ;
+    rdfs:domain :HijackEvent ;
+    rdfs:range :Prefix ;
+    rdfs:label "涉及前缀"@zh ;
+    rdfs:comment "事件涉及的前缀"@zh ;
+    .
+
+:detected_at a owl:ObjectProperty ;
+    rdfs:domain :HijackEvent ;
+    rdfs:range :Collector ;
+    rdfs:label "检测时间"@zh ;
+    rdfs:comment "事件的采集时间（属性形式亦可）"@zh ;
+    .
+
+:mentioned_in a owl:ObjectProperty ;
+    rdfs:label "出现在"@zh ;
+    rdfs:comment "实体出现在来源文档中（结构关系）"@zh ;
+    .
+
+:asn a owl:DatatypeProperty ;
+    rdfs:domain :AS ;
+    rdfs:range :xsd:string ;
+    rdfs:label "AS 号"@zh ;
+    .
+
+:prefix_cidr a owl:DatatypeProperty ;
+    rdfs:domain :Prefix ;
+    rdfs:range :xsd:string ;
+    rdfs:label "前缀"@zh ;
+    .
+
+:path_string a owl:DatatypeProperty ;
+    rdfs:domain :ASPath ;
+    rdfs:range :xsd:string ;
+    rdfs:label "AS_PATH 字符串"@zh ;
+    .
+
+:as_rel a owl:DatatypeProperty ;
+    rdfs:domain :AS ;
+    rdfs:range :xsd:string ;
+    rdfs:label "商业关系"@zh ;
+    .

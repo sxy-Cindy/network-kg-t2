@@ -1,0 +1,12 @@
+id: t8-netconfig
+title: 网络设备配置知识图谱与配置生成校验（进阶选题）
+description: 把厂商命令、配置块、意图与合规检查规则连成图，支撑「自然语言意图 → 配置片段 → 校验」的闭环。
+namespace: http://kgcourse.org/ontology/netconfig#
+version: v1.0
+source_url: https://github.com/batfish/batfish
+corpus_glob: data/corpus/t8-netconfig/*.txt
+fusion:
+  weights:
+    rule: 1.0
+    model: 0.8
+    llm: 1.2

@@ -1,0 +1,34 @@
+entity_patterns:
+- type: Protocol
+  regex: (?i)\b(MRC|RoCEv2|RoCE|InfiniBand|UEC 1\.\d|SRv6)\b
+  id_template: proto:{1}
+  label_template: '{1}'
+- type: Technique
+  regex: (?i)\b(packet spraying|packet trimming|source routing|multi-plane|multi-path|load balancing)\b
+  id_template: tech:{1}
+  label_template: '{1}'
+- type: FailureMode
+  regex: (?i)\b(link flap|path failure|congestion|packet loss|incast|switch reboot)\b
+  id_template: fm:{1}
+  label_template: '{1}'
+- type: Component
+  regex: (?i)\b(400G|800G|100G)\b
+  id_template: comp:{1}
+  label_template: '{1}'
+- type: Standard
+  regex: (?i)\b(OCP|UEC|IETF|IBTA|Ultra Ethernet Consortium)\b
+  id_template: std:{1}
+  label_template: '{1}'
+relations:
+- name: uses
+  relation: uses
+  source_type: Protocol
+  target_type: Technique
+  trigger: (?i)\b(uses|采用|使用|基于)\b
+- name: mitigates
+  relation: mitigates
+  source_type: Technique
+  target_type: FailureMode
+  trigger: (?i)\b(avoid|eliminate|mitigat|规避|消除|缓解)\b
+structural:
+  mentioned_in: true

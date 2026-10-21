@@ -1,0 +1,39 @@
+{"type": "Protocol", "label": "TCP", "doc": "rfc9293"}
+{"type": "Protocol", "label": "UDP", "doc": "rfc768"}
+{"type": "Protocol", "label": "IPv6", "doc": "rfc8200"}
+{"type": "Protocol", "label": "Internet Protocol", "doc": "rfc791"}
+{"type": "Protocol", "label": "ICMPv6", "doc": "rfc8200"}
+{"type": "Layer", "label": "Transport Layer", "doc": "rfc9293"}
+{"type": "Layer", "label": "Internet Layer", "doc": "rfc8200"}
+{"type": "MessageField", "label": "Checksum", "doc": "rfc9293"}
+{"type": "MessageField", "label": "Sequence Number", "doc": "rfc9293"}
+{"type": "MessageField", "label": "Window", "doc": "rfc9293"}
+{"type": "MessageField", "label": "Initial Sequence Number", "doc": "rfc9293"}
+{"type": "MessageField", "label": "Hop Limit", "doc": "rfc8200"}
+{"type": "MessageField", "label": "Flow Label", "doc": "rfc8200"}
+{"type": "MessageField", "label": "Payload Length", "doc": "rfc8200"}
+{"type": "MessageField", "label": "Source Port", "doc": "rfc768"}
+{"type": "RFC", "label": "RFC 793", "doc": "rfc9293"}
+{"type": "RFC", "label": "RFC 2460", "doc": "rfc8200"}
+{"type": "RFC", "label": "RFC 2119", "doc": "rfc9293"}
+{"type": "NormativeKeyword", "label": "MUST", "doc": "rfc2119"}
+{"type": "NormativeKeyword", "label": "SHOULD", "doc": "rfc2119"}
+{"type": "NormativeKeyword", "label": "MAY", "doc": "rfc2119"}
+{"head": "RFC 9293", "head_type": "RFC", "relation": "obsoletes", "tail": "RFC 793", "tail_type": "RFC", "doc": "rfc9293"}
+{"head": "RFC 8200", "head_type": "RFC", "relation": "obsoletes", "tail": "RFC 2460", "tail_type": "RFC", "doc": "rfc8200"}
+{"head": "RFC 9293", "head_type": "RFC", "relation": "cites", "tail": "RFC 2119", "tail_type": "RFC", "doc": "rfc9293"}
+{"head": "RFC 9293", "head_type": "RFC", "relation": "cites", "tail": "RFC 8200", "tail_type": "RFC", "doc": "rfc9293"}
+{"head": "TCP", "head_type": "Protocol", "relation": "operates_at", "tail": "Transport Layer", "tail_type": "Layer", "doc": "rfc9293"}
+{"head": "UDP", "head_type": "Protocol", "relation": "operates_at", "tail": "Transport Layer", "tail_type": "Layer", "doc": "rfc8200"}
+{"head": "IPv6", "head_type": "Protocol", "relation": "operates_at", "tail": "Internet Layer", "tail_type": "Layer", "doc": "rfc8200"}
+{"head": "TCP", "head_type": "Protocol", "relation": "has_field", "tail": "Checksum", "tail_type": "MessageField", "doc": "rfc9293"}
+{"head": "TCP", "head_type": "Protocol", "relation": "has_field", "tail": "Sequence Number", "tail_type": "MessageField", "doc": "rfc9293"}
+{"head": "TCP", "head_type": "Protocol", "relation": "has_field", "tail": "Window", "tail_type": "MessageField", "doc": "rfc9293"}
+{"head": "TCP", "head_type": "Protocol", "relation": "has_field", "tail": "Initial Sequence Number", "tail_type": "MessageField", "doc": "rfc9293"}
+{"head": "IPv6", "head_type": "Protocol", "relation": "has_field", "tail": "Hop Limit", "tail_type": "MessageField", "doc": "rfc8200"}
+{"head": "IPv6", "head_type": "Protocol", "relation": "has_field", "tail": "Flow Label", "tail_type": "MessageField", "doc": "rfc8200"}
+{"head": "IPv6", "head_type": "Protocol", "relation": "has_field", "tail": "Payload Length", "tail_type": "MessageField", "doc": "rfc8200"}
+{"head": "UDP", "head_type": "Protocol", "relation": "has_field", "tail": "Source Port", "tail_type": "MessageField", "doc": "rfc768"}
+{"head": "Internet Protocol", "head_type": "Protocol", "relation": "has_field", "tail": "Checksum", "tail_type": "MessageField", "doc": "rfc791"}
+{"head": "IPv6", "head_type": "Protocol", "relation": "depends_on", "tail": "ICMPv6", "tail_type": "Protocol", "doc": "rfc8200"}
+{"head": "TCP", "head_type": "Protocol", "relation": "depends_on", "tail": "Internet Protocol", "tail_type": "Protocol", "doc": "rfc9293"}

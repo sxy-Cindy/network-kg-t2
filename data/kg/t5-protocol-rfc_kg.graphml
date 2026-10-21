@@ -1,0 +1,2716 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d2" for="edge" attr.name="relation" attr.type="string"/>
+<key id="d1" for="node" attr.name="type" attr.type="string"/>
+<key id="d0" for="node" attr.name="label" attr.type="string"/>
+<graph edgedefault="directed"><node id="sec:rfc2119:1">
+  <data key="d0">1 MUST This word, or the terms "REQUIRED" or "SHALL", mean that the</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc2119:2">
+  <data key="d0">2 MUST NOT This phrase, or the phrase "SHALL NOT", mean that the</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc2119:3">
+  <data key="d0">3 SHOULD This word, or the adjective "RECOMMENDED", mean that there</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc2119:4">
+  <data key="d0">4 SHOULD NOT This phrase, or the phrase "NOT RECOMMENDED" mean that</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc2119:5">
+  <data key="d0">5 MAY This word, or the adjective "OPTIONAL", mean that an item is</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc2119:6">
+  <data key="d0">6 Guidance in the use of these Imperatives</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc2119:7">
+  <data key="d0">7 Security Considerations</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc2119:8">
+  <data key="d0">8 Acknowledgments</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc2119:9">
+  <data key="d0">9 Author's Address</data>
+  <data key="d1">Section</data>
+</node>
+<node id="kw:MUST">
+  <data key="d0">MUST</data>
+  <data key="d1">NormativeKeyword</data>
+</node>
+<node id="kw:MUST NOT">
+  <data key="d0">MUST NOT</data>
+  <data key="d1">NormativeKeyword</data>
+</node>
+<node id="kw:REQUIRED">
+  <data key="d0">REQUIRED</data>
+  <data key="d1">NormativeKeyword</data>
+</node>
+<node id="kw:SHALL">
+  <data key="d0">SHALL</data>
+  <data key="d1">NormativeKeyword</data>
+</node>
+<node id="kw:SHOULD">
+  <data key="d0">SHOULD</data>
+  <data key="d1">NormativeKeyword</data>
+</node>
+<node id="kw:SHOULD NOT">
+  <data key="d0">SHOULD NOT</data>
+  <data key="d1">NormativeKeyword</data>
+</node>
+<node id="kw:RECOMMENDED">
+  <data key="d0">RECOMMENDED</data>
+  <data key="d1">NormativeKeyword</data>
+</node>
+<node id="kw:MAY">
+  <data key="d0">MAY</data>
+  <data key="d1">NormativeKeyword</data>
+</node>
+<node id="kw:OPTIONAL">
+  <data key="d0">OPTIONAL</data>
+  <data key="d1">NormativeKeyword</data>
+</node>
+<node id="kw:NOT RECOMMENDED">
+  <data key="d0">NOT RECOMMENDED</data>
+  <data key="d1">NormativeKeyword</data>
+</node>
+<node id="Protocol:https">
+  <data key="d0">HTTPS</data>
+  <data key="d1">Protocol</data>
+</node>
+<node id="proto:TCP">
+  <data key="d0">TCP</data>
+  <data key="d1">Protocol</data>
+</node>
+<node id="proto:UDP">
+  <data key="d0">UDP</data>
+  <data key="d1">Protocol</data>
+</node>
+<node id="field:Checksum">
+  <data key="d0">Checksum</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="field:Source Port">
+  <data key="d0">Source Port</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:protocol-number">
+  <data key="d0">Protocol Number</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="sec:rfc791:1">
+  <data key="d0">1 INTRODUCTION ..................................................... 1</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc791:2">
+  <data key="d0">2 OVERVIEW ......................................................... 5</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc791:3">
+  <data key="d0">3 SPECIFICATION ................................................... 11</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc791:1.1">
+  <data key="d0">1.1 Motivation</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc791:1.2">
+  <data key="d0">1.2 Scope</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc791:1.3">
+  <data key="d0">1.3 Interfaces</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc791:1.4">
+  <data key="d0">1.4 Operation</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc791:2.1">
+  <data key="d0">2.1 Relation to Other Protocols</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc791:2.2">
+  <data key="d0">2.2 Model of Operation</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc791:2.3">
+  <data key="d0">2.3 Function Description</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc791:2.4">
+  <data key="d0">2.4 Gateways</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc791:3.1">
+  <data key="d0">3.1 Internet Header Format</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc791:3.2">
+  <data key="d0">3.2 Discussion</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc791:3.3">
+  <data key="d0">3.3 Interfaces</data>
+  <data key="d1">Section</data>
+</node>
+<node id="Protocol:icmp">
+  <data key="d0">ICMP</data>
+  <data key="d1">Protocol</data>
+</node>
+<node id="MessageField:flags">
+  <data key="d0">Flags</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:options">
+  <data key="d0">Options</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:header-length">
+  <data key="d0">Header Length</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:reserved">
+  <data key="d0">Reserved</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:version">
+  <data key="d0">Version</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:type-of-service">
+  <data key="d0">Type of Service</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:total-length">
+  <data key="d0">Total Length</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:identification">
+  <data key="d0">Identification</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:fragment-offset">
+  <data key="d0">Fragment Offset</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:time-to-live">
+  <data key="d0">Time to Live</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="Extension:timestamp-option">
+  <data key="d0">Timestamp Option</data>
+  <data key="d1">Extension</data>
+</node>
+<node id="sec:rfc8200:1">
+  <data key="d0">1 Introduction . . . . . . . . . . . . . . . . . . . . . . . . 4</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc8200:2">
+  <data key="d0">2 Terminology . . . . . . . . . . . . . . . . . . . . . . . . . 5</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc8200:3">
+  <data key="d0">3 IPv6 Header Format . . . . . . . . . . . . . . . . . . . . . 6</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc8200:4">
+  <data key="d0">4 IPv6 Extension Headers . . . . . . . . . . . . . . . . . . . 7</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc8200:5">
+  <data key="d0">5 Packet Size Issues . . . . . . . . . . . . . . . . . . . . . 25</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc8200:6">
+  <data key="d0">6 Flow Labels . . . . . . . . . . . . . . . . . . . . . . . . . 26</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc8200:7">
+  <data key="d0">7 Traffic Classes . . . . . . . . . . . . . . . . . . . . . . . 26</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc8200:8">
+  <data key="d0">8 Upper-Layer Protocol Issues . . . . . . . . . . . . . . . . . 27</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc8200:9">
+  <data key="d0">9 IANA Considerations . . . . . . . . . . . . . . . . . . . . . 29</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc8200:10">
+  <data key="d0">10 Security Considerations . . . . . . . . . . . . . . . . . . . 30</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc8200:11">
+  <data key="d0">11 References . . . . . . . . . . . . . . . . . . . . . . . . . 32</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc8200:4.1">
+  <data key="d0">4.1 Extension Header Order</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc8200:4.2">
+  <data key="d0">4.2 Options</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc8200:4.3">
+  <data key="d0">4.3 Hop-by-Hop Options Header</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc8200:4.4">
+  <data key="d0">4.4 Routing Header</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc8200:4.5">
+  <data key="d0">4.5 Fragment Header</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc8200:4.6">
+  <data key="d0">4.6 Destination Options Header</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc8200:4.7">
+  <data key="d0">4.7 No Next Header</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc8200:4.8">
+  <data key="d0">4.8 Defining New Extension Headers and Options</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc8200:8.1">
+  <data key="d0">8.1 Upper-Layer Checksums</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc8200:8.2">
+  <data key="d0">8.2 Maximum Packet Lifetime</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc8200:8.3">
+  <data key="d0">8.3 Maximum Upper-Layer Payload Size</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc8200:8.4">
+  <data key="d0">8.4 Responding to Packets Carrying Routing Headers</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc8200:11.1">
+  <data key="d0">11.1 Normative References</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc8200:11.2">
+  <data key="d0">11.2 Informative References</data>
+  <data key="d1">Section</data>
+</node>
+<node id="proto:IPv4">
+  <data key="d0">IPv4</data>
+  <data key="d1">Protocol</data>
+</node>
+<node id="proto:IPv6">
+  <data key="d0">IPv6</data>
+  <data key="d1">Protocol</data>
+</node>
+<node id="proto:ICMPv6">
+  <data key="d0">ICMPv6</data>
+  <data key="d1">Protocol</data>
+</node>
+<node id="Protocol:ospf">
+  <data key="d0">OSPF</data>
+  <data key="d1">Protocol</data>
+</node>
+<node id="Protocol:http">
+  <data key="d0">HTTP</data>
+  <data key="d1">Protocol</data>
+</node>
+<node id="Protocol:tls">
+  <data key="d0">TLS</data>
+  <data key="d1">Protocol</data>
+</node>
+<node id="Protocol:ppp">
+  <data key="d0">PPP</data>
+  <data key="d1">Protocol</data>
+</node>
+<node id="Protocol:ssh">
+  <data key="d0">SSH</data>
+  <data key="d1">Protocol</data>
+</node>
+<node id="layer:Transport Layer">
+  <data key="d0">Transport Layer</data>
+  <data key="d1">Layer</data>
+</node>
+<node id="Layer:internet-layer">
+  <data key="d0">Internet Layer</data>
+  <data key="d1">Layer</data>
+</node>
+<node id="Layer:link-layer">
+  <data key="d0">Link Layer</data>
+  <data key="d1">Layer</data>
+</node>
+<node id="field:Hop Limit">
+  <data key="d0">Hop Limit</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:traffic-class">
+  <data key="d0">Traffic Class</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="field:Flow Label">
+  <data key="d0">Flow Label</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="field:Payload Length">
+  <data key="d0">Payload Length</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="field:Next Header">
+  <data key="d0">Next Header</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:maximum-segment-size">
+  <data key="d0">Maximum Segment Size</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="ext:Extension Header">
+  <data key="d0">Extension Header</data>
+  <data key="d1">Extension</data>
+</node>
+<node id="Extension:hop-by-hop-options">
+  <data key="d0">Hop-by-Hop Options</data>
+  <data key="d1">Extension</data>
+</node>
+<node id="Extension:path-mtu-discovery">
+  <data key="d0">Path MTU Discovery</data>
+  <data key="d1">Extension</data>
+</node>
+<node id="sec:rfc9293:1">
+  <data key="d0">1 Purpose and Scope</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:2">
+  <data key="d0">2 Introduction</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3">
+  <data key="d0">3 Functional Specification</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:4">
+  <data key="d0">4 Glossary</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:5">
+  <data key="d0">5 Changes from RFC 793</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:6">
+  <data key="d0">6 IANA Considerations</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:7">
+  <data key="d0">7 Security and Privacy Considerations</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:8">
+  <data key="d0">8 References</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:2.1">
+  <data key="d0">2.1 Requirements Language</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:2.2">
+  <data key="d0">2.2 Key TCP Concepts</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.1">
+  <data key="d0">3.1 Header Format</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.2">
+  <data key="d0">3.2 Specific Option Definitions</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.2.1">
+  <data key="d0">3.2.1 Other Common Options</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.2.2">
+  <data key="d0">3.2.2 Experimental TCP Options</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.3">
+  <data key="d0">3.3 TCP Terminology Overview</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.3.1">
+  <data key="d0">3.3.1 Key Connection State Variables</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.3.2">
+  <data key="d0">3.3.2 State Machine Overview</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.4">
+  <data key="d0">3.4 Sequence Numbers</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.4.1">
+  <data key="d0">3.4.1 Initial Sequence Number Selection</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.4.2">
+  <data key="d0">3.4.2 Knowing When to Keep Quiet</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.4.3">
+  <data key="d0">3.4.3 The TCP Quiet Time Concept</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.5">
+  <data key="d0">3.5 Establishing a Connection</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.5.1">
+  <data key="d0">3.5.1 Half-Open Connections and Other Anomalies</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.5.2">
+  <data key="d0">3.5.2 Reset Generation</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.5.3">
+  <data key="d0">3.5.3 Reset Processing</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.6">
+  <data key="d0">3.6 Closing a Connection</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.6.1">
+  <data key="d0">3.6.1 Half-Closed Connections</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.7">
+  <data key="d0">3.7 Segmentation</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.7.1">
+  <data key="d0">3.7.1 Maximum Segment Size Option</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.7.2">
+  <data key="d0">3.7.2 Path MTU Discovery</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.7.3">
+  <data key="d0">3.7.3 Interfaces with Variable MTU Values</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.7.4">
+  <data key="d0">3.7.4 Nagle Algorithm</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.7.5">
+  <data key="d0">3.7.5 IPv6 Jumbograms</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.8">
+  <data key="d0">3.8 Data Communication</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.8.1">
+  <data key="d0">3.8.1 Retransmission Timeout</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.8.2">
+  <data key="d0">3.8.2 TCP Congestion Control</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.8.3">
+  <data key="d0">3.8.3 TCP Connection Failures</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.8.4">
+  <data key="d0">3.8.4 TCP Keep-Alives</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.8.5">
+  <data key="d0">3.8.5 The Communication of Urgent Information</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.8.6">
+  <data key="d0">3.8.6 Managing the Window</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.8.6.1">
+  <data key="d0">3.8.6.1 Zero-Window Probing</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.8.6.2">
+  <data key="d0">3.8.6.2 Silly Window Syndrome Avoidance</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.8.6.3">
+  <data key="d0">3.8.6.3 Delayed Acknowledgments -- When to Send an ACK Segment</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.9">
+  <data key="d0">3.9 Interfaces</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.9.1">
+  <data key="d0">3.9.1 User/TCP Interface</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.9.1.1">
+  <data key="d0">3.9.1.1 Open</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.9.1.2">
+  <data key="d0">3.9.1.2 Send</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.9.1.3">
+  <data key="d0">3.9.1.3 Receive</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.9.1.4">
+  <data key="d0">3.9.1.4 Close</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.9.1.5">
+  <data key="d0">3.9.1.5 Status</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.9.1.6">
+  <data key="d0">3.9.1.6 Abort</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.9.1.7">
+  <data key="d0">3.9.1.7 Flush</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.9.1.8">
+  <data key="d0">3.9.1.8 Asynchronous Reports</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.9.1.9">
+  <data key="d0">3.9.1.9 Set Differentiated Services Field (IPv4 TOS or IPv6 Traffic</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.9.2">
+  <data key="d0">3.9.2 TCP/Lower-Level Interface</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.9.2.1">
+  <data key="d0">3.9.2.1 Source Routing</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.9.2.2">
+  <data key="d0">3.9.2.2 ICMP Messages</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.9.2.3">
+  <data key="d0">3.9.2.3 Source Address Validation</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.10">
+  <data key="d0">3.10 Event Processing</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.10.1">
+  <data key="d0">3.10.1 OPEN Call</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.10.2">
+  <data key="d0">3.10.2 SEND Call</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.10.3">
+  <data key="d0">3.10.3 RECEIVE Call</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.10.4">
+  <data key="d0">3.10.4 CLOSE Call</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.10.5">
+  <data key="d0">3.10.5 ABORT Call</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.10.6">
+  <data key="d0">3.10.6 STATUS Call</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.10.7">
+  <data key="d0">3.10.7 SEGMENT ARRIVES</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.10.7.1">
+  <data key="d0">3.10.7.1 CLOSED STATE</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.10.7.2">
+  <data key="d0">3.10.7.2 LISTEN STATE</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.10.7.3">
+  <data key="d0">3.10.7.3 SYN-SENT STATE</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.10.7.4">
+  <data key="d0">3.10.7.4 Other States</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:3.10.8">
+  <data key="d0">3.10.8 Timeouts</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:8.1">
+  <data key="d0">8.1 Normative References</data>
+  <data key="d1">Section</data>
+</node>
+<node id="sec:rfc9293:8.2">
+  <data key="d0">8.2 Informative References</data>
+  <data key="d1">Section</data>
+</node>
+<node id="Protocol:quic">
+  <data key="d0">QUIC</data>
+  <data key="d1">Protocol</data>
+</node>
+<node id="Protocol:ipsec">
+  <data key="d0">IPsec</data>
+  <data key="d1">Protocol</data>
+</node>
+<node id="Layer:application-layer">
+  <data key="d0">Application Layer</data>
+  <data key="d1">Layer</data>
+</node>
+<node id="field:Sequence Number">
+  <data key="d0">Sequence Number</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:acknowledgment-number">
+  <data key="d0">Acknowledgment Number</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="field:Window">
+  <data key="d0">Window</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:destination-port">
+  <data key="d0">Destination Port</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:urgent-pointer">
+  <data key="d0">Urgent Pointer</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:data-offset">
+  <data key="d0">Data Offset</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="field:Initial Sequence Number">
+  <data key="d0">Initial Sequence Number</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="Extension:window-scale">
+  <data key="d0">Window Scale</data>
+  <data key="d1">Extension</data>
+</node>
+<node id="Extension:selective-acknowledgment">
+  <data key="d0">Selective Acknowledgment</data>
+  <data key="d1">Extension</data>
+</node>
+<node id="RFC:rfc">
+  <data key="d0">rfc</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc2119">
+  <data key="d0">rfc2119</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="NormativeKeyword:not">
+  <data key="d0">NOT</data>
+  <data key="d1">NormativeKeyword</data>
+</node>
+<node id="MessageField:time-to">
+  <data key="d0">time to</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="RFC:rfc768">
+  <data key="d0">rfc768</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="MessageField:length">
+  <data key="d0">Length</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:number">
+  <data key="d0">Number</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="RFC:rfc791">
+  <data key="d0">rfc791</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="MessageField:of-service">
+  <data key="d0">of service</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:service">
+  <data key="d0">service</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:next">
+  <data key="d0">next</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:time-limit">
+  <data key="d0">time limit</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="Extension:hop-by-hop">
+  <data key="d0">hop-by-hop</data>
+  <data key="d1">Extension</data>
+</node>
+<node id="MessageField:offset">
+  <data key="d0">offset</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:restrictions">
+  <data key="d0">Restrictions</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:option">
+  <data key="d0">option</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:option-length">
+  <data key="d0">Option Length</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:maximum-length">
+  <data key="d0">maximum length</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="Extension:timestamp">
+  <data key="d0">timestamp</data>
+  <data key="d1">Extension</data>
+</node>
+<node id="MessageField:type">
+  <data key="d0">type</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:class">
+  <data key="d0">Class</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="RFC:rfc8200">
+  <data key="d0">RFC 8200</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="MessageField:size">
+  <data key="d0">Size</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="Extension:path">
+  <data key="d0">path</data>
+  <data key="d1">Extension</data>
+</node>
+<node id="MessageField:type-of">
+  <data key="d0">type of</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="Extension:hop-by-hop-option">
+  <data key="d0">hop-by-hop option</data>
+  <data key="d1">Extension</data>
+</node>
+<node id="Extension:path-mtu">
+  <data key="d0">path MTU</data>
+  <data key="d1">Extension</data>
+</node>
+<node id="MessageField:label">
+  <data key="d0">label</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:live">
+  <data key="d0">Live</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="Extension:hop-mtu">
+  <data key="d0">-Hop MTU</data>
+  <data key="d1">Extension</data>
+</node>
+<node id="RFC:rfc2474">
+  <data key="d0">rfc2474</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc3168">
+  <data key="d0">rfc3168</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc4291">
+  <data key="d0">rfc4291</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc4443">
+  <data key="d0">rfc4443</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc6437">
+  <data key="d0">rfc6437</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc1661">
+  <data key="d0">rfc1661</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc2460">
+  <data key="d0">rfc2460</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc4301">
+  <data key="d0">rfc4301</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc4302">
+  <data key="d0">rfc4302</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc4303">
+  <data key="d0">rfc4303</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc5095">
+  <data key="d0">rfc5095</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc5722">
+  <data key="d0">rfc5722</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc5871">
+  <data key="d0">rfc5871</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc6564">
+  <data key="d0">rfc6564</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc6936">
+  <data key="d0">rfc6936</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc6946">
+  <data key="d0">rfc6946</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc7045">
+  <data key="d0">rfc7045</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc7112">
+  <data key="d0">rfc7112</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc7707">
+  <data key="d0">rfc7707</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc7721">
+  <data key="d0">rfc7721</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc7739">
+  <data key="d0">rfc7739</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc8021">
+  <data key="d0">rfc8021</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc8201">
+  <data key="d0">rfc8201</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="Extension:hop">
+  <data key="d0">-Hop</data>
+  <data key="d1">Extension</data>
+</node>
+<node id="MessageField:versions">
+  <data key="d0">versions</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="RFC:rfc9293">
+  <data key="d0">RFC 9293</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="MessageField:time">
+  <data key="d0">Time</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:segment-size">
+  <data key="d0">Segment Size</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:segment">
+  <data key="d0">Segment</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="Extension:by">
+  <data key="d0">-by-</data>
+  <data key="d1">Extension</data>
+</node>
+<node id="MessageField:maximum-segment">
+  <data key="d0">Maximum Segment</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:optimizations">
+  <data key="d0">optimizations</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="MessageField:total">
+  <data key="d0">total</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="RFC:rfc1191">
+  <data key="d0">rfc1191</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc2914">
+  <data key="d0">rfc2914</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc5033">
+  <data key="d0">rfc5033</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc5681">
+  <data key="d0">rfc5681</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc5961">
+  <data key="d0">rfc5961</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc6298">
+  <data key="d0">rfc6298</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc6633">
+  <data key="d0">rfc6633</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc8174">
+  <data key="d0">rfc8174</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc8961">
+  <data key="d0">rfc8961</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc793">
+  <data key="d0">rfc793</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc896">
+  <data key="d0">rfc896</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc1011">
+  <data key="d0">rfc1011</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc1122">
+  <data key="d0">rfc1122</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc1349">
+  <data key="d0">rfc1349</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc1644">
+  <data key="d0">rfc1644</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc2018">
+  <data key="d0">rfc2018</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc2525">
+  <data key="d0">rfc2525</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc2675">
+  <data key="d0">rfc2675</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc2873">
+  <data key="d0">rfc2873</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="Extension:extension">
+  <data key="d0">Extension</data>
+  <data key="d1">Extension</data>
+</node>
+<node id="RFC:rfc2883">
+  <data key="d0">rfc2883</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc2923">
+  <data key="d0">rfc2923</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc3449">
+  <data key="d0">rfc3449</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc3465">
+  <data key="d0">rfc3465</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="Protocol:icmpv4">
+  <data key="d0">ICMPv4</data>
+  <data key="d1">Protocol</data>
+</node>
+<node id="RFC:rfc4727">
+  <data key="d0">rfc4727</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc4821">
+  <data key="d0">rfc4821</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc4987">
+  <data key="d0">rfc4987</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc4953">
+  <data key="d0">rfc4953</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc5044">
+  <data key="d0">rfc5044</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc5461">
+  <data key="d0">rfc5461</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc5570">
+  <data key="d0">rfc5570</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc5795">
+  <data key="d0">rfc5795</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc5925">
+  <data key="d0">rfc5925</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc6093">
+  <data key="d0">rfc6093</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc6191">
+  <data key="d0">rfc6191</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc6429">
+  <data key="d0">rfc6429</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc6528">
+  <data key="d0">rfc6528</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc6691">
+  <data key="d0">rfc6691</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc6864">
+  <data key="d0">rfc6864</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc6994">
+  <data key="d0">rfc6994</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc7094">
+  <data key="d0">rfc7094</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc7323">
+  <data key="d0">rfc7323</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc7413">
+  <data key="d0">rfc7413</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc7414">
+  <data key="d0">rfc7414</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc7657">
+  <data key="d0">rfc7657</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc8087">
+  <data key="d0">rfc8087</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc8095">
+  <data key="d0">rfc8095</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc8303">
+  <data key="d0">rfc8303</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc8311">
+  <data key="d0">rfc8311</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc8504">
+  <data key="d0">rfc8504</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc8546">
+  <data key="d0">rfc8546</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc8548">
+  <data key="d0">rfc8548</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc8558">
+  <data key="d0">rfc8558</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc8684">
+  <data key="d0">rfc8684</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc9000">
+  <data key="d0">rfc9000</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc9065">
+  <data key="d0">rfc9065</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc9170">
+  <data key="d0">rfc9170</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="RFC:rfc5927">
+  <data key="d0">rfc5927</data>
+  <data key="d1">RFC</data>
+</node>
+<node id="MessageField:include">
+  <data key="d0">Include</data>
+  <data key="d1">MessageField</data>
+</node>
+<node id="obl:MUST">
+  <data key="d0">absolute requirement of the specification</data>
+  <data key="d1">Obligation</data>
+</node>
+<node id="obl:MUST NOT">
+  <data key="d0">absolute prohibition of the specification</data>
+  <data key="d1">Obligation</data>
+</node>
+<node id="obl:MAY">
+  <data key="d0">truly optional</data>
+  <data key="d1">Obligation</data>
+</node>
+<node id="proto:Internet Protocol">
+  <data key="d0">Internet Protocol</data>
+  <data key="d1">Protocol</data>
+</node>
+<node id="ext:Hop-by-Hop Options Header">
+  <data key="d0">Hop-by-Hop Options Header</data>
+  <data key="d1">Extension</data>
+</node>
+<node id="doc:rfc8200">
+  <data key="d0">rfc8200</data>
+  <data key="d1">Document</data>
+</node>
+<node id="doc:rfc9293">
+  <data key="d0">rfc9293</data>
+  <data key="d1">Document</data>
+</node>
+<node id="doc:rfc791">
+  <data key="d0">rfc791</data>
+  <data key="d1">Document</data>
+</node>
+<node id="doc:rfc2119">
+  <data key="d0">rfc2119</data>
+  <data key="d1">Document</data>
+</node>
+<node id="doc:rfc768">
+  <data key="d0">rfc768</data>
+  <data key="d1">Document</data>
+</node>
+<edge source="sec:rfc2119:1" target="doc:rfc2119">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc2119:2" target="doc:rfc2119">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc2119:3" target="doc:rfc2119">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc2119:4" target="doc:rfc2119">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc2119:5" target="doc:rfc2119">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc2119:6" target="doc:rfc2119">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc2119:7" target="doc:rfc2119">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc2119:8" target="doc:rfc2119">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc2119:9" target="doc:rfc2119">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:MUST" target="doc:rfc2119">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:MUST" target="doc:rfc768">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:MUST" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:MUST" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:MUST" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:MUST NOT" target="doc:rfc2119">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:MUST NOT" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:MUST NOT" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:REQUIRED" target="doc:rfc2119">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:REQUIRED" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:REQUIRED" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:REQUIRED" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:SHALL" target="doc:rfc2119">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:SHALL" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:SHOULD" target="doc:rfc2119">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:SHOULD" target="doc:rfc768">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:SHOULD" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:SHOULD" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:SHOULD" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:SHOULD NOT" target="doc:rfc2119">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:SHOULD NOT" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:SHOULD NOT" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:RECOMMENDED" target="doc:rfc2119">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:RECOMMENDED" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:RECOMMENDED" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:RECOMMENDED" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:MAY" target="doc:rfc2119">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:MAY" target="doc:rfc768">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:MAY" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:MAY" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:MAY" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:OPTIONAL" target="doc:rfc2119">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:OPTIONAL" target="doc:rfc768">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:OPTIONAL" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:OPTIONAL" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:OPTIONAL" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:NOT RECOMMENDED" target="doc:rfc2119">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:NOT RECOMMENDED" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="kw:NOT RECOMMENDED" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Protocol:https" target="doc:rfc2119">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Protocol:https" target="doc:rfc768">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Protocol:https" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Protocol:https" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Protocol:https" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="proto:TCP" target="field:Checksum">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:TCP" target="field:Window">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:TCP" target="MessageField:flags">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:TCP" target="MessageField:options">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:TCP" target="field:Next Header">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:TCP" target="field:Payload Length">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:TCP" target="field:Source Port">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:TCP" target="doc:rfc768">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="proto:TCP" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="proto:TCP" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="proto:TCP" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="proto:TCP" target="proto:Internet Protocol">
+  <data key="d2">depends_on</data>
+</edge>
+<edge source="proto:TCP" target="field:Initial Sequence Number">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:TCP" target="field:Sequence Number">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:TCP" target="layer:Transport Layer">
+  <data key="d2">operates_at</data>
+</edge>
+<edge source="proto:TCP" target="MessageField:data-offset">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:TCP" target="MessageField:urgent-pointer">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:TCP" target="Layer:application-layer">
+  <data key="d2">operates_at</data>
+</edge>
+<edge source="proto:TCP" target="MessageField:length">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:TCP" target="MessageField:next">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:TCP" target="MessageField:offset">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:TCP" target="MessageField:segment">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:UDP" target="field:Next Header">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:UDP" target="doc:rfc768">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="proto:UDP" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="proto:UDP" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="proto:UDP" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="proto:UDP" target="field:Checksum">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:UDP" target="field:Source Port">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:UDP" target="MessageField:length">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:UDP" target="MessageField:next">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="field:Checksum" target="doc:rfc768">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="field:Checksum" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="field:Checksum" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="field:Checksum" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="field:Source Port" target="doc:rfc768">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="field:Source Port" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:protocol-number" target="doc:rfc768">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:protocol-number" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc791:1" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc791:2" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc791:3" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc791:1.1" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc791:1.2" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc791:1.3" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc791:1.4" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc791:2.1" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc791:2.2" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc791:2.3" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc791:2.4" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc791:3.1" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc791:3.2" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc791:3.3" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Protocol:icmp" target="field:Checksum">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="Protocol:icmp" target="field:Next Header">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="Protocol:icmp" target="field:Payload Length">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="Protocol:icmp" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Protocol:icmp" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Protocol:icmp" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Protocol:icmp" target="MessageField:next">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="MessageField:flags" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:flags" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:options" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:options" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:options" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:header-length" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:header-length" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:reserved" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:reserved" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:reserved" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:version" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:version" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:version" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:type-of-service" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:type-of-service" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:total-length" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:identification" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:identification" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:identification" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:fragment-offset" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:fragment-offset" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:time-to-live" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:time-to-live" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Extension:timestamp-option" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Extension:timestamp-option" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc8200:1" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc8200:2" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc8200:3" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc8200:4" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc8200:5" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc8200:6" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc8200:7" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc8200:8" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc8200:9" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc8200:10" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc8200:11" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc8200:4.1" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc8200:4.2" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc8200:4.3" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc8200:4.4" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc8200:4.5" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc8200:4.6" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc8200:4.7" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc8200:4.8" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc8200:8.1" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc8200:8.2" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc8200:8.3" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc8200:8.4" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc8200:11.1" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc8200:11.2" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="proto:IPv4" target="MessageField:identification">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:IPv4" target="MessageField:type-of-service">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:IPv4" target="field:Hop Limit">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:IPv4" target="field:Next Header">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:IPv4" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="proto:IPv4" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="proto:IPv4" target="Layer:internet-layer">
+  <data key="d2">operates_at</data>
+</edge>
+<edge source="proto:IPv4" target="Layer:application-layer">
+  <data key="d2">operates_at</data>
+</edge>
+<edge source="proto:IPv4" target="MessageField:class">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:IPv4" target="MessageField:next">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:IPv4" target="MessageField:service">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:IPv4" target="MessageField:time">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:IPv4" target="MessageField:time-to">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:IPv4" target="MessageField:type-of">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:IPv6" target="field:Flow Label">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:IPv6" target="field:Next Header">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:IPv6" target="field:Payload Length">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:IPv6" target="MessageField:options">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:IPv6" target="MessageField:traffic-class">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:IPv6" target="field:Checksum">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:IPv6" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="proto:IPv6" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="proto:IPv6" target="Layer:internet-layer">
+  <data key="d2">operates_at</data>
+</edge>
+<edge source="proto:IPv6" target="proto:ICMPv6">
+  <data key="d2">depends_on</data>
+</edge>
+<edge source="proto:IPv6" target="ext:Extension Header">
+  <data key="d2">has_extension</data>
+</edge>
+<edge source="proto:IPv6" target="ext:Hop-by-Hop Options Header">
+  <data key="d2">has_extension</data>
+</edge>
+<edge source="proto:IPv6" target="field:Hop Limit">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:IPv6" target="proto:Internet Protocol">
+  <data key="d2">operates_at</data>
+</edge>
+<edge source="proto:IPv6" target="Layer:application-layer">
+  <data key="d2">operates_at</data>
+</edge>
+<edge source="proto:IPv6" target="MessageField:class">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:IPv6" target="MessageField:label">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:IPv6" target="MessageField:length">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:IPv6" target="MessageField:next">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:IPv6" target="MessageField:type">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:IPv6" target="MessageField:type-of">
+  <data key="d2">has_field</data>
+</edge>
+<edge source="proto:ICMPv6" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="proto:ICMPv6" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Protocol:ospf" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Protocol:http" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Protocol:tls" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Protocol:tls" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Protocol:tls" target="layer:Transport Layer">
+  <data key="d2">operates_at</data>
+</edge>
+<edge source="Protocol:ppp" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Protocol:ssh" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Protocol:ssh" target="layer:Transport Layer">
+  <data key="d2">operates_at</data>
+</edge>
+<edge source="layer:Transport Layer" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="layer:Transport Layer" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Layer:internet-layer" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Layer:link-layer" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="field:Hop Limit" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:traffic-class" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:traffic-class" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="field:Flow Label" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="field:Payload Length" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="field:Next Header" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="field:Next Header" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:maximum-segment-size" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:maximum-segment-size" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="ext:Extension Header" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Extension:hop-by-hop-options" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Extension:path-mtu-discovery" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Extension:path-mtu-discovery" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:1" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:2" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:4" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:5" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:6" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:7" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:8" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:2.1" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:2.2" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.1" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.2" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.2.1" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.2.2" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.3" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.3.1" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.3.2" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.4" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.4.1" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.4.2" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.4.3" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.5" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.5.1" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.5.2" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.5.3" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.6" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.6.1" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.7" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.7.1" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.7.2" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.7.3" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.7.4" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.7.5" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.8" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.8.1" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.8.2" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.8.3" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.8.4" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.8.5" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.8.6" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.8.6.1" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.8.6.2" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.8.6.3" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.9" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.9.1" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.9.1.1" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.9.1.2" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.9.1.3" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.9.1.4" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.9.1.5" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.9.1.6" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.9.1.7" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.9.1.8" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.9.1.9" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.9.2" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.9.2.1" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.9.2.2" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.9.2.3" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.10" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.10.1" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.10.2" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.10.3" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.10.4" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.10.5" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.10.6" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.10.7" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.10.7.1" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.10.7.2" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.10.7.3" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.10.7.4" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:3.10.8" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:8.1" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="sec:rfc9293:8.2" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Protocol:quic" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Protocol:ipsec" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Layer:application-layer" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="field:Sequence Number" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:acknowledgment-number" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="field:Window" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:destination-port" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:urgent-pointer" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:data-offset" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="field:Initial Sequence Number" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Extension:window-scale" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Extension:selective-acknowledgment" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc" target="RFC:rfc2460">
+  <data key="d2">obsoletes</data>
+</edge>
+<edge source="RFC:rfc" target="RFC:rfc791">
+  <data key="d2">cites</data>
+</edge>
+<edge source="RFC:rfc" target="doc:rfc2119">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc" target="doc:rfc768">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc" target="RFC:rfc5095">
+  <data key="d2">updates</data>
+</edge>
+<edge source="RFC:rfc" target="RFC:rfc5871">
+  <data key="d2">updates</data>
+</edge>
+<edge source="RFC:rfc2119" target="doc:rfc2119">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc2119" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="NormativeKeyword:not" target="doc:rfc2119">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="NormativeKeyword:not" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="NormativeKeyword:not" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="NormativeKeyword:not" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:time-to" target="doc:rfc2119">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:time-to" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc768" target="doc:rfc768">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:length" target="doc:rfc768">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:length" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:length" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:length" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:number" target="doc:rfc768">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc791" target="RFC:rfc">
+  <data key="d2">cites</data>
+</edge>
+<edge source="RFC:rfc791" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc791" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc791" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:of-service" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:service" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:service" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:next" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:next" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:next" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:time-limit" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Extension:hop-by-hop" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Extension:hop-by-hop" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:offset" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:offset" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:offset" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:restrictions" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:restrictions" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:option" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:option" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:option-length" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:maximum-length" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Extension:timestamp" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Extension:timestamp" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:type" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:type" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:class" target="doc:rfc791">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:class" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc8200" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc8200" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:size" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Extension:path" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:type-of" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:type-of" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Extension:hop-by-hop-option" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Extension:path-mtu" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Extension:path-mtu" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:label" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:label" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:live" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Extension:hop-mtu" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc2474" target="RFC:rfc3168">
+  <data key="d2">cites</data>
+</edge>
+<edge source="RFC:rfc2474" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc2474" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc3168" target="RFC:rfc2474">
+  <data key="d2">cites</data>
+</edge>
+<edge source="RFC:rfc3168" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc3168" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc4291" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc4443" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc1661" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc2460" target="RFC:rfc">
+  <data key="d2">obsoletes</data>
+</edge>
+<edge source="RFC:rfc2460" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc4301" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc4302" target="RFC:rfc4303">
+  <data key="d2">cites</data>
+</edge>
+<edge source="RFC:rfc4302" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc4303" target="RFC:rfc4302">
+  <data key="d2">cites</data>
+</edge>
+<edge source="RFC:rfc4303" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc5095" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc5095" target="RFC:rfc5871">
+  <data key="d2">updates</data>
+</edge>
+<edge source="RFC:rfc5722" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc5871" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc5871" target="RFC:rfc5095">
+  <data key="d2">updates</data>
+</edge>
+<edge source="RFC:rfc6564" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc6936" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc6946" target="RFC:rfc8021">
+  <data key="d2">cites</data>
+</edge>
+<edge source="RFC:rfc6946" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc7045" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc7112" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc7707" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc7721" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc7739" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc8021" target="RFC:rfc">
+  <data key="d2">cites</data>
+</edge>
+<edge source="RFC:rfc8021" target="RFC:rfc6946">
+  <data key="d2">cites</data>
+</edge>
+<edge source="RFC:rfc8021" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc8201" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc8201" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Extension:hop" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:versions" target="doc:rfc8200">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:versions" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc9293" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:time" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:segment-size" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:segment" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Extension:by" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:maximum-segment" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:optimizations" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:total" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc1191" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc2914" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc5033" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc5681" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc5961" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc6298" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc6633" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc8174" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc8961" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc793" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc896" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc1011" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc1122" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc1349" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc1644" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc2018" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc2525" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc2675" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc2873" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Extension:extension" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc2883" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc2923" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc3449" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc3465" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="Protocol:icmpv4" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc4727" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc4821" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc4987" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc4953" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc5044" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc5461" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc5570" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc5795" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc5925" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc6093" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc6191" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc6429" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc6528" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc6691" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc6864" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc6994" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc7094" target="RFC:rfc">
+  <data key="d2">cites</data>
+</edge>
+<edge source="RFC:rfc7094" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc7323" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc7413" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc7414" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc7657" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc8087" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc8095" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc8303" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc8311" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc8504" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc8546" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc8548" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc8558" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc8684" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc9000" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc9065" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc9170" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="RFC:rfc5927" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="MessageField:include" target="doc:rfc9293">
+  <data key="d2">mentioned_in</data>
+</edge>
+<edge source="obl:MUST" target="kw:MUST">
+  <data key="d2">keyword_of</data>
+</edge>
+<edge source="obl:MUST NOT" target="kw:MUST NOT">
+  <data key="d2">keyword_of</data>
+</edge>
+<edge source="obl:MAY" target="kw:MAY">
+  <data key="d2">keyword_of</data>
+</edge>
+<edge source="proto:Internet Protocol" target="field:Checksum">
+  <data key="d2">has_field</data>
+</edge>
+</graph></graphml>

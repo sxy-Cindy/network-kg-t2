@@ -1,0 +1,3 @@
+{"type": "Anomaly", "label": "BGP peer down", "doc": "network_device_log_sample"}
+{"type": "RootCause", "label": "fiber cut", "doc": "network_device_log_sample"}
+{"head": "BGP peer down", "head_type": "Anomaly", "relation": "indicates", "tail": "packet loss", "tail_type": "Metric", "doc": "network_device_log_sample"}

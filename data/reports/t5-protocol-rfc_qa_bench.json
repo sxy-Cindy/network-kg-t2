@@ -1,0 +1,121 @@
+{
+  "topic": "t5-protocol-rfc",
+  "questions": 8,
+  "answerable_rate": 0.5,
+  "mean_coverage": 0.3334,
+  "results": [
+    {
+      "question": "TCP 首部包含哪些字段？",
+      "expect": 3,
+      "covered": 2,
+      "coverage": 0.667,
+      "retrieved": 12,
+      "answerable": true,
+      "verification": {
+        "sentences": 4,
+        "supported": 2,
+        "unsupported": 2,
+        "hallucination_rate": 0.5
+      }
+    },
+    {
+      "question": "IPv6 首部包含哪些字段？",
+      "expect": 3,
+      "covered": 2,
+      "coverage": 0.667,
+      "retrieved": 12,
+      "answerable": true,
+      "verification": {
+        "sentences": 4,
+        "supported": 2,
+        "unsupported": 2,
+        "hallucination_rate": 0.5
+      }
+    },
+    {
+      "question": "RFC 8200 取代了哪个文档？",
+      "expect": 1,
+      "covered": 0,
+      "coverage": 0.0,
+      "retrieved": 6,
+      "answerable": false,
+      "verification": {
+        "sentences": 1,
+        "supported": 0,
+        "unsupported": 1,
+        "hallucination_rate": 1.0
+      }
+    },
+    {
+      "question": "TCP 工作在协议栈的哪一层？",
+      "expect": 1,
+      "covered": 0,
+      "coverage": 0.0,
+      "retrieved": 12,
+      "answerable": false,
+      "verification": {
+        "sentences": 2,
+        "supported": 0,
+        "unsupported": 2,
+        "hallucination_rate": 1.0
+      }
+    },
+    {
+      "question": "RFC 9293 引用了哪些文档？",
+      "expect": 2,
+      "covered": 0,
+      "coverage": 0.0,
+      "retrieved": 6,
+      "answerable": false,
+      "verification": {
+        "sentences": 2,
+        "supported": 0,
+        "unsupported": 2,
+        "hallucination_rate": 1.0
+      }
+    },
+    {
+      "question": "UDP 的作用是什么？",
+      "expect": 2,
+      "covered": 2,
+      "coverage": 1.0,
+      "retrieved": 9,
+      "answerable": true,
+      "verification": {
+        "sentences": 2,
+        "supported": 1,
+        "unsupported": 1,
+        "hallucination_rate": 0.5
+      }
+    },
+    {
+      "question": "等保三级系统对边界防护的要求是什么？",
+      "expect": 0,
+      "covered": 0,
+      "coverage": null,
+      "retrieved": 0,
+      "answerable": true,
+      "verification": {
+        "sentences": 0,
+        "supported": 0,
+        "unsupported": 0,
+        "hallucination_rate": 0.0,
+        "refusal": true
+      }
+    },
+    {
+      "question": "TCP 与 Transport Layer 之间的关系？",
+      "expect": 1,
+      "covered": 0,
+      "coverage": 0.0,
+      "retrieved": 12,
+      "answerable": false,
+      "verification": {
+        "sentences": 1,
+        "supported": 1,
+        "unsupported": 0,
+        "hallucination_rate": 0.0
+      }
+    }
+  ]
+}

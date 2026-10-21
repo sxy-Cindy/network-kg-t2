@@ -1,0 +1,28 @@
+Benefit:
+- lower power
+- fewer components
+- path diversity
+- failure resilience
+- higher utilization
+- 低功耗
+- 组件更少
+- 路径多样性
+- 故障弹性
+- 利用率
+Workload:
+- synchronous training
+- checkpoint
+- inference
+- all-reduce
+- 同步训练
+- 检查点
+- 推理
+Component:
+- GPU
+- NIC
+- switch
+- transceiver
+- optics
+- 交换机
+- 光模块
+- 网卡
