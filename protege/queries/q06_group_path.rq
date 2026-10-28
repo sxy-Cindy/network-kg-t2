@@ -1,0 +1,12 @@
+# 多跳：APT41（G0096）使用 T1059.001，后者属于 TA0002
+PREFIX : <http://kgcourse.org/ontology/threat-intel#>
+SELECT ?group_id ?technique ?tactic
+WHERE {
+  ?g :group_id ?group_id ;
+     :group_uses ?t .
+  FILTER(STR(?group_id) = "G0096")
+  ?t :tech_id ?technique ;
+     :belongs_to_tactic ?ta .
+  ?ta :tactic_id ?tactic .
+  FILTER(STR(?technique) = "T1059.001")
+}

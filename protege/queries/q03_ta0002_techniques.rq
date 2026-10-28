@@ -1,0 +1,12 @@
+# 战术汇总：TA0002（Execution）下有哪些技术？
+PREFIX : <http://kgcourse.org/ontology/threat-intel#>
+SELECT ?technique ?name
+WHERE {
+  ?t a :Technique ;
+     :tech_id ?technique ;
+     :belongs_to_tactic ?ta .
+  ?ta :tactic_id ?tactic .
+  FILTER(STR(?tactic) = "TA0002")
+  OPTIONAL { ?t :tech_name ?name }
+}
+ORDER BY ?technique

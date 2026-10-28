@@ -1,0 +1,8 @@
+# KEV 覆盖：切片内漏洞数与 KEV 记录数
+PREFIX : <http://kgcourse.org/ontology/threat-intel#>
+SELECT (COUNT(DISTINCT ?v) AS ?vulnerabilities)
+       (COUNT(DISTINCT ?k) AS ?kev_records)
+WHERE {
+  ?v a :Vulnerability ; :cve_id ?cve .
+  OPTIONAL { ?v :known_exploited ?k }
+}

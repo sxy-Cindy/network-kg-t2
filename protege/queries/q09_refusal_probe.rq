@@ -1,0 +1,7 @@
+# 拒答探针：图谱中不存在的 CVE 应返回 0 行
+PREFIX : <http://kgcourse.org/ontology/threat-intel#>
+SELECT ?cve
+WHERE {
+  ?v :cve_id ?cve .
+  FILTER(STR(?cve) = "CVE-2099-0000")
+}

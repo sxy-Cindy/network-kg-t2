@@ -1,0 +1,15 @@
+# 暴露面：哪些漏洞影响 PAN-OS 10.2？是否进入 KEV？
+PREFIX : <http://kgcourse.org/ontology/threat-intel#>
+SELECT ?cve ?product ?kev_date
+WHERE {
+  ?v a :Vulnerability ;
+     :affects_product ?p ;
+     :cve_id ?cve .
+  ?p :cpe_uri ?product .
+  FILTER(CONTAINS(LCASE(STR(?product)), "paloaltonetworks:pan-os:10.2"))
+  OPTIONAL {
+    ?v :known_exploited ?k .
+    ?k :kev_date_added ?kev_date .
+  }
+}
+ORDER BY ?cve

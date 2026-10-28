@@ -1,0 +1,497 @@
+@prefix : <http://kgcourse.org/ontology/threat-intel#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://kgcourse.org/ontology/threat-intel> a owl:Ontology ;
+    rdfs:label "网络安全威胁情报知识图谱（CVE × CWE × CPE × ATT&CK）"@zh ;
+    :dataSnapshot "2026-10-28"^^xsd:string ;
+    :modelingNote "实例层（CVE/KEV/EPSS）日更，本体层（CWE/CAPEC/ATT&CK）季度更新；本文件把两层时间戳分别记录在 dcterms:modified 与 dataSnapshot。"@zh ;
+    :ontologyVersion "v1.1" ;
+    dcterms:created "2026-10-21"^^xsd:string ;
+    dcterms:modified "2026-10-28"^^xsd:string ;
+    rdfs:comment "跨源打通漏洞、弱点、产品、攻击技术与检测覆盖；命名空间与 MITRE 官方 ID 对齐（CVE/CWE/CAPEC/CPE/T/TA/G/S/M）。"@zh ;
+    rdfs:seeAlso <https://attack.mitre.org/> ;
+    owl:versionIRI <http://kgcourse.org/ontology/threat-intel/v1.1> ;
+    owl:versionInfo "v1.1" .
+
+:Exploit a owl:Class ;
+    rdfs:label "利用代码"@zh ;
+    dcterms:source "ExploitDB（GPLv2+，本切片未使用）" ;
+    rdfs:comment "公开 PoC / ExploitDB 条目；本切片未实例化（源未提供稳定外部 ID）。"@zh ;
+    rdfs:isDefinedBy "ExploitDB（GPLv2+，本切片未使用）" ;
+    rdfs:subClassOf :SecurityConcept ;
+    skos:scopeNote "预留扩展类（ExploitDB 未纳入本切片），保留是为了说明本体可扩展而不改主键策略。"@zh .
+
+:Malware a owl:Class ;
+    rdfs:label "恶意软件"@zh ;
+    dcterms:source "MITRE ATT&CK Enterprise STIX" ;
+    rdfs:comment "ATT&CK type=malware 的软件。"@zh ;
+    rdfs:isDefinedBy "MITRE ATT&CK Enterprise STIX" ;
+    rdfs:subClassOf :Software ;
+    skos:scopeNote "ATT&CK 的 malware 子类；具体 kind 保存在实体属性中。"@zh .
+
+:Tool a owl:Class ;
+    rdfs:label "攻击工具"@zh ;
+    dcterms:source "MITRE ATT&CK Enterprise STIX" ;
+    rdfs:comment "ATT&CK type=tool 的软件。"@zh ;
+    rdfs:isDefinedBy "MITRE ATT&CK Enterprise STIX" ;
+    rdfs:subClassOf :Software ;
+    skos:scopeNote "ATT&CK 的 tool 子类；具体 kind 保存在实体属性中。"@zh .
+
+:affects_product a owl:ObjectProperty ;
+    rdfs:label "影响产品"@zh ;
+    dcterms:source "NVD 2.0 configurations[].cpeMatch[].criteria" ;
+    rdfs:comment "漏洞影响的 CPE 产品（含版本）。"@zh ;
+    rdfs:domain :Vulnerability ;
+    rdfs:isDefinedBy "NVD 2.0 configurations[].cpeMatch[].criteria" ;
+    rdfs:range :Product ;
+    skos:scopeNote "受影响的平台由 NVD 以 CPE 枚举，是结构化的官方事实。"@zh .
+
+:alias a owl:AnnotationProperty ;
+    rdfs:label "别名"@zh .
+
+:announced_in a owl:ObjectProperty ;
+    rdfs:label "公告于"@zh ;
+    dcterms:source "CVE reference tags: vendor-advisory / GHSA" ;
+    rdfs:comment "漏洞的官方/厂商公告（本切片未实例化）。"@zh ;
+    rdfs:domain :Vulnerability ;
+    rdfs:isDefinedBy "CVE reference tags: vendor-advisory / GHSA" ;
+    rdfs:range :Advisory ;
+    skos:scopeNote "公告关系来自官方参考链接的 advisory 标签；本切片未实例化公告节点。"@zh .
+
+:belongs_to_tactic a owl:ObjectProperty ;
+    rdfs:label "归属战术"@zh ;
+    dcterms:source "ATT&CK STIX attack-pattern.kill_chain_phases" ;
+    rdfs:comment "技术归属的 ATT&CK 战术（kill_chain_phases）。"@zh ;
+    rdfs:domain :Technique ;
+    rdfs:isDefinedBy "ATT&CK STIX attack-pattern.kill_chain_phases" ;
+    rdfs:range :Tactic ;
+    skos:scopeNote "每个技术的 kill_chain_phases 直接给出所属战术。"@zh .
+
+:campaign_uses a owl:ObjectProperty ;
+    rdfs:label "活动使用"@zh ;
+    dcterms:source "ATT&CK STIX campaign --uses--> attack-pattern" ;
+    rdfs:comment "攻击活动使用某 ATT&CK 技术。"@zh ;
+    rdfs:domain :Campaign ;
+    rdfs:isDefinedBy "ATT&CK STIX campaign --uses--> attack-pattern" ;
+    rdfs:range :Technique ;
+    rdfs:subPropertyOf :uses ;
+    skos:scopeNote "活动级 uses 关系；本切片无 Campaign 节点，未实例化。"@zh .
+
+:capec_id a owl:DatatypeProperty ;
+    rdfs:label "CAPEC 编号"@zh ;
+    rdfs:domain :AttackPattern ;
+    rdfs:range xsd:string .
+
+:compatibilityNote a owl:AnnotationProperty ;
+    rdfs:label "兼容性说明"@zh .
+
+:confidence a owl:AnnotationProperty ;
+    rdfs:label "抽取置信度"@zh .
+
+:cpe_part a owl:DatatypeProperty ;
+    rdfs:label "CPE 部件类型"@zh ;
+    rdfs:domain :Product ;
+    rdfs:range xsd:string .
+
+:cpe_uri a owl:DatatypeProperty ;
+    rdfs:label "CPE URI"@zh ;
+    rdfs:domain :Product ;
+    rdfs:range xsd:string .
+
+:cve_id a owl:DatatypeProperty ;
+    rdfs:label "CVE 编号"@zh ;
+    rdfs:domain :Vulnerability ;
+    rdfs:range xsd:string .
+
+:cvss_score a owl:DatatypeProperty ;
+    rdfs:label "CVSS 分值"@zh ;
+    rdfs:domain :Vulnerability ;
+    rdfs:range xsd:decimal .
+
+:cvss_severity a owl:DatatypeProperty ;
+    rdfs:label "CVSS 等级"@zh ;
+    rdfs:domain :Vulnerability ;
+    rdfs:range xsd:string .
+
+:cvss_vector a owl:DatatypeProperty ;
+    rdfs:label "CVSS 向量"@zh ;
+    rdfs:domain :Vulnerability ;
+    rdfs:range xsd:string .
+
+:cwe_id a owl:DatatypeProperty ;
+    rdfs:label "CWE 编号"@zh ;
+    rdfs:domain :Weakness ;
+    rdfs:range xsd:string .
+
+:dataSnapshot a owl:AnnotationProperty ;
+    rdfs:label "实例快照日期"@zh .
+
+:detects a owl:ObjectProperty ;
+    rdfs:label "检测"@zh ;
+    dcterms:source "Sigma rule tags attack.tXXXX" ;
+    rdfs:comment "检测规则覆盖某技术（Sigma tags: attack.t####）。"@zh ;
+    rdfs:domain :DetectionRule ;
+    rdfs:isDefinedBy "Sigma rule tags attack.tXXXX" ;
+    rdfs:range :Technique ;
+    skos:scopeNote "Sigma 规则用元数据标签声明检测的技术，本作业只取标签不复制规则正文。"@zh .
+
+:epss a owl:DatatypeProperty ;
+    rdfs:label "EPSS 概率"@zh ;
+    rdfs:domain :Vulnerability ;
+    rdfs:range xsd:decimal .
+
+:epss_percentile a owl:DatatypeProperty ;
+    rdfs:label "EPSS 百分位"@zh ;
+    rdfs:domain :Vulnerability ;
+    rdfs:range xsd:decimal .
+
+:evidence a owl:AnnotationProperty ;
+    rdfs:label "原文证据"@zh .
+
+:extractionMethod a owl:AnnotationProperty ;
+    rdfs:label "抽取方法"@zh .
+
+:group_id a owl:DatatypeProperty ;
+    rdfs:label "组织编号"@zh ;
+    rdfs:domain :Group ;
+    rdfs:range xsd:string .
+
+:has_weakness a owl:ObjectProperty ;
+    rdfs:label "根因是"@zh ;
+    dcterms:source "NVD 2.0 weaknesses[] / CVE 5.0 problemTypes" ;
+    rdfs:comment "漏洞的 CWE 弱点分类。"@zh ;
+    rdfs:domain :Vulnerability ;
+    rdfs:isDefinedBy "NVD 2.0 weaknesses[] / CVE 5.0 problemTypes" ;
+    rdfs:range :Weakness ;
+    skos:scopeNote "CVE 记录与 NVD 都直接给出 CWE 分类，是根因的官方字段，不需要从正文推断。"@zh .
+
+:implemented_by a owl:ObjectProperty ;
+    rdfs:label "技术上实现为"@zh ;
+    dcterms:source "分析师 crosswalk（24 条，CC BY 4.0）" ;
+    rdfs:comment "CAPEC 攻击模式在 ATT&CK 中的技术实现（分析师 crosswalk，见 capec_attck_crosswalk.csv）。"@zh ;
+    rdfs:domain :AttackPattern ;
+    rdfs:isDefinedBy "分析师 crosswalk（24 条，CC BY 4.0）" ;
+    rdfs:range :Technique ;
+    skos:scopeNote "MITRE 没有官方 CAPEC→ATT&CK 映射，只能显式人工映射并标注 confidence，不能伪装成官方标准。"@zh .
+
+:kev_date_added a owl:DatatypeProperty ;
+    rdfs:label "KEV 收录日期"@zh ;
+    :compatibilityNote "原始声明 xsd:date；为满足 OWL 2 DL / HermiT，导出为 xsd:string，词法值保持 ISO 8601 日期。"@zh ;
+    rdfs:domain :ExploitationRecord ;
+    rdfs:range xsd:string .
+
+:kev_due_date a owl:DatatypeProperty ;
+    rdfs:label "整改截止日期"@zh ;
+    :compatibilityNote "原始声明 xsd:date；为满足 OWL 2 DL / HermiT，导出为 xsd:string，词法值保持 ISO 8601 日期。"@zh ;
+    rdfs:domain :ExploitationRecord ;
+    rdfs:range xsd:string .
+
+:kev_ransomware a owl:DatatypeProperty ;
+    rdfs:label "勒索软件利用情况"@zh ;
+    rdfs:domain :ExploitationRecord ;
+    rdfs:range xsd:string .
+
+:known_exploited a owl:ObjectProperty ;
+    rdfs:label "已被在野利用"@zh ;
+    dcterms:source "CISA KEV cveID" ;
+    rdfs:comment "漏洞对应的 KEV 在野利用记录。"@zh ;
+    rdfs:domain :Vulnerability ;
+    rdfs:isDefinedBy "CISA KEV cveID" ;
+    rdfs:range :ExploitationRecord ;
+    skos:scopeNote "KEV 目录以 cveID 关联漏洞，语义就是「已被在野利用」。"@zh .
+
+:license a owl:AnnotationProperty ;
+    rdfs:label "许可证"@zh .
+
+:licenseCode a owl:AnnotationProperty ;
+    rdfs:label "许可证代码"@zh .
+
+:mentioned_in a owl:ObjectProperty ;
+    rdfs:label "出现于"@zh ;
+    dcterms:source "本作业的三级溯源结构（非领域事实）" ;
+    rdfs:comment "实体出现在来源文档中（结构关系，用于三级溯源）。"@zh ;
+    rdfs:domain :SecurityConcept ;
+    rdfs:isDefinedBy "本作业的三级溯源结构（非领域事实）" ;
+    rdfs:range :Document ;
+    skos:scopeNote "连接实体与来源文档；不参与知识推理，路径查询默认排除文档节点。"@zh .
+
+:mitigates a owl:ObjectProperty ;
+    rdfs:label "缓解"@zh ;
+    dcterms:source "ATT&CK STIX course-of-action --mitigates--> attack-pattern" ;
+    rdfs:comment "缓解措施作用于某技术（ATT&CK mitigates）。"@zh ;
+    rdfs:domain :Mitigation ;
+    rdfs:isDefinedBy "ATT&CK STIX course-of-action --mitigates--> attack-pattern" ;
+    rdfs:range :Technique ;
+    skos:scopeNote "缓解措施对技术的官方缓解关系。"@zh .
+
+:mitigation_id a owl:DatatypeProperty ;
+    rdfs:label "缓解编号"@zh ;
+    rdfs:domain :Mitigation ;
+    rdfs:range xsd:string .
+
+:modelingNote a owl:AnnotationProperty ;
+    rdfs:label "建模备注"@zh .
+
+:officialId a owl:AnnotationProperty ;
+    rdfs:label "官方编号"@zh .
+
+:ontologyVersion a owl:AnnotationProperty ;
+    rdfs:label "本体版本"@zh .
+
+:produced_by a owl:ObjectProperty ;
+    rdfs:label "由厂商生产"@zh ;
+    dcterms:source "CPE 2.3 第 3 段 vendor（NIST IR 7695）" ;
+    rdfs:comment "产品所属厂商。"@zh ;
+    rdfs:domain :Product ;
+    rdfs:isDefinedBy "CPE 2.3 第 3 段 vendor（NIST IR 7695）" ;
+    rdfs:range :Vendor ;
+    skos:scopeNote "厂商是 CPE 串的规范字段，产品到厂商是标识符自带的层级。"@zh .
+
+:product_version a owl:DatatypeProperty ;
+    rdfs:label "产品版本"@zh ;
+    rdfs:domain :Product ;
+    rdfs:range xsd:string .
+
+:published a owl:DatatypeProperty ;
+    rdfs:label "发布日期"@zh ;
+    :compatibilityNote "原始声明 xsd:date；为满足 OWL 2 DL / HermiT，导出为 xsd:string，词法值保持 ISO 8601 日期。"@zh ;
+    rdfs:domain :Vulnerability ;
+    rdfs:range xsd:string .
+
+:relates_to_pattern a owl:ObjectProperty ;
+    rdfs:label "对应攻击模式"@zh ;
+    dcterms:source "CWE XML Related_Attack_Patterns/CAPEC_ID" ;
+    rdfs:comment "CWE 弱点对应的 CAPEC 攻击模式（CWE Related_Attack_Patterns）。"@zh ;
+    rdfs:domain :Weakness ;
+    rdfs:isDefinedBy "CWE XML Related_Attack_Patterns/CAPEC_ID" ;
+    rdfs:range :AttackPattern ;
+    skos:scopeNote "MITRE 在 CWE 条目里官方维护到 CAPEC 的映射。"@zh .
+
+:retrieved a owl:AnnotationProperty ;
+    rdfs:label "取数时间"@zh .
+
+:sigma_id a owl:DatatypeProperty ;
+    rdfs:label "Sigma 规则 UUID"@zh ;
+    rdfs:domain :DetectionRule ;
+    rdfs:range xsd:string .
+
+:software_id a owl:DatatypeProperty ;
+    rdfs:label "软件编号"@zh ;
+    rdfs:domain :Software ;
+    rdfs:range xsd:string .
+
+:software_uses a owl:ObjectProperty ;
+    rdfs:label "软件使用"@zh ;
+    dcterms:source "ATT&CK STIX malware/tool --uses--> attack-pattern" ;
+    rdfs:comment "恶意软件/工具使用某 ATT&CK 技术。"@zh ;
+    rdfs:domain :Software ;
+    rdfs:isDefinedBy "ATT&CK STIX malware/tool --uses--> attack-pattern" ;
+    rdfs:range :Technique ;
+    rdfs:subPropertyOf :uses ;
+    skos:scopeNote "恶意软件或工具使用某技术，来自官方 uses 关系。"@zh .
+
+:sourceDoc a owl:AnnotationProperty ;
+    rdfs:label "来源文档"@zh .
+
+:sourceId a owl:AnnotationProperty ;
+    rdfs:label "原始 ID"@zh .
+
+:sourceName a owl:AnnotationProperty ;
+    rdfs:label "数据源名称"@zh .
+
+:sourceUrl a owl:AnnotationProperty ;
+    rdfs:label "数据源 URL"@zh .
+
+:subtechnique_of a owl:ObjectProperty ;
+    rdfs:label "子技术属于"@zh ;
+    dcterms:source "ATT&CK STIX relationship: subtechnique-of" ;
+    rdfs:comment "子技术与其父技术的关系（ATT&CK subtechnique-of）。"@zh ;
+    rdfs:domain :Technique ;
+    rdfs:isDefinedBy "ATT&CK STIX relationship: subtechnique-of" ;
+    rdfs:range :Technique ;
+    skos:scopeNote "官方关系对象，方向固定为子技术→父技术。"@zh .
+
+:tactic_id a owl:DatatypeProperty ;
+    rdfs:label "战术编号"@zh ;
+    rdfs:domain :Tactic ;
+    rdfs:range xsd:string .
+
+:tech_id a owl:DatatypeProperty ;
+    rdfs:label "技术编号"@zh ;
+    rdfs:domain :Technique ;
+    rdfs:range xsd:string .
+
+:tech_name a owl:DatatypeProperty ;
+    rdfs:label "技术名称"@zh ;
+    rdfs:domain :Technique ;
+    rdfs:range xsd:string .
+
+:used_by a owl:ObjectProperty ;
+    rdfs:label "被使用"@zh ;
+    dcterms:source "ATT&CK STIX uses 的逆向视图" ;
+    rdfs:comment "group_uses 的逆关系，便于从技术反查组织。"@zh ;
+    rdfs:domain :Technique ;
+    rdfs:isDefinedBy "ATT&CK STIX uses 的逆向视图" ;
+    rdfs:range :Group ;
+    owl:inverseOf :group_uses ;
+    skos:scopeNote "为查询方便保留的逆向关系，抽取阶段不单独产出。"@zh .
+
+dcterms:created a owl:AnnotationProperty ;
+    rdfs:label "创建时间"@zh .
+
+dcterms:modified a owl:AnnotationProperty ;
+    rdfs:label "修改时间"@zh .
+
+dcterms:source a owl:AnnotationProperty ;
+    rdfs:label "来源"@zh .
+
+skos:scopeNote a owl:AnnotationProperty ;
+    rdfs:label "建模理由"@zh .
+
+:Advisory a owl:Class ;
+    rdfs:label "安全公告"@zh ;
+    dcterms:source "GitHub Advisory Database / OSV（本切片未使用）" ;
+    rdfs:comment "厂商公告 / GHSA / OSV 公告；本切片未实例化（源未提供稳定外部 ID）。"@zh ;
+    rdfs:isDefinedBy "GitHub Advisory Database / OSV（本切片未使用）" ;
+    rdfs:subClassOf :SecurityConcept ;
+    skos:scopeNote "预留扩展类（GHSA/OSV 未纳入本切片），用于承载厂商公告与修复版本。"@zh .
+
+:Campaign a owl:Class ;
+    rdfs:label "攻击活动"@zh ;
+    dcterms:source "MITRE ATT&CK Enterprise STIX" ;
+    rdfs:comment "MITRE ATT&CK campaign（C####）。"@zh ;
+    rdfs:isDefinedBy "MITRE ATT&CK Enterprise STIX" ;
+    rdfs:subClassOf :SecurityConcept ;
+    skos:scopeNote "与官方 ATT&CK 本体对齐的预留层；本切片没有活动级数据，未实例化。"@zh .
+
+:Document a owl:Class ;
+    rdfs:label "来源文档"@zh ;
+    dcterms:source "Dublin Core Metadata Element Set (ISO 15836)" ;
+    rdfs:comment "语料文档节点（CVE 记录、KEV 条目、ATT&CK 条目等），用于 mentioned_in 溯源。"@zh ;
+    rdfs:isDefinedBy "Dublin Core Metadata Element Set (ISO 15836)" ;
+    skos:scopeNote "三级溯源要求每个事实能回到来源文档与许可证，必须有文档节点承载这两项元数据。"@zh .
+
+:Vendor a owl:Class ;
+    rdfs:label "厂商"@zh ;
+    dcterms:source "NIST IR 7695 CPE 2.3 / CISA KEV" ;
+    rdfs:comment "CPE vendor 字段或 KEV vendorProject 标识的产品厂商。"@zh ;
+    rdfs:isDefinedBy "NIST IR 7695 CPE 2.3 / CISA KEV" ;
+    rdfs:subClassOf :SecurityConcept ;
+    skos:scopeNote "CPE 的 vendor 段可独立成节点，便于按厂商聚合暴露面；KEV 也提供 vendorProject。"@zh .
+
+:group_uses a owl:ObjectProperty ;
+    rdfs:label "组织使用"@zh ;
+    dcterms:source "ATT&CK STIX intrusion-set --uses--> attack-pattern" ;
+    rdfs:comment "攻击组织使用某 ATT&CK 技术。"@zh ;
+    rdfs:domain :Group ;
+    rdfs:isDefinedBy "ATT&CK STIX intrusion-set --uses--> attack-pattern" ;
+    rdfs:range :Technique ;
+    rdfs:subPropertyOf :uses ;
+    skos:scopeNote "攻击组织使用某技术，来自官方 uses 关系。"@zh .
+
+:DetectionRule a owl:Class ;
+    rdfs:label "检测规则"@zh ;
+    dcterms:source "SigmaHQ/sigma（DRL 1.1，仅元数据）" ;
+    rdfs:comment "Sigma 检测规则（以 sigma:<UUID> 为主键）；本切片只保留元数据，不复制规则正文。"@zh ;
+    rdfs:isDefinedBy "SigmaHQ/sigma（DRL 1.1，仅元数据）" ;
+    rdfs:subClassOf :SecurityConcept ;
+    skos:scopeNote "Sigma 规则的 attack.tXXXX 标签提供检测覆盖证据（仅元数据，符合 DRL 1.1）。"@zh .
+
+:Mitigation a owl:Class ;
+    rdfs:label "缓解措施"@zh ;
+    dcterms:source "MITRE ATT&CK Enterprise STIX" ;
+    rdfs:comment "MITRE ATT&CK course-of-action（M####），按 mitigates 关系作用于技术。"@zh ;
+    rdfs:isDefinedBy "MITRE ATT&CK Enterprise STIX" ;
+    rdfs:subClassOf :SecurityConcept ;
+    skos:scopeNote "ATT&CK course-of-action 与技术的 mitigates 关系支撑防护建议。"@zh .
+
+:Tactic a owl:Class ;
+    rdfs:label "战术"@zh ;
+    dcterms:source "MITRE ATT&CK Enterprise STIX" ;
+    rdfs:comment "MITRE ATT&CK Tactic（TA####），技术按 kill_chain_phases 归属。"@zh ;
+    rdfs:isDefinedBy "MITRE ATT&CK Enterprise STIX" ;
+    rdfs:subClassOf :SecurityConcept ;
+    skos:scopeNote "kill_chain_phases 给出技术所属攻击阶段，支撑按战术汇总。"@zh .
+
+:AttackPattern a owl:Class ;
+    rdfs:label "攻击模式"@zh ;
+    dcterms:source "MITRE CAPEC 3.9" ;
+    rdfs:comment "CAPEC 攻击模式，描述攻击者如何利用某类弱点。"@zh ;
+    rdfs:isDefinedBy "MITRE CAPEC 3.9" ;
+    rdfs:subClassOf :SecurityConcept ;
+    skos:scopeNote "CAPEC 描述攻击者如何利用某类弱点，是弱点与具体 ATT&CK 技术之间的中间层。"@zh .
+
+:Group a owl:Class ;
+    rdfs:label "攻击组织"@zh ;
+    dcterms:source "MITRE ATT&CK Enterprise STIX" ;
+    rdfs:comment "MITRE ATT&CK intrusion-set（G####）。"@zh ;
+    rdfs:isDefinedBy "MITRE ATT&CK Enterprise STIX" ;
+    rdfs:subClassOf :SecurityConcept ;
+    skos:scopeNote "组织—技术关系用于威胁行为体画像；数据来自 ATT&CK intrusion-set。"@zh .
+
+:Weakness a owl:Class ;
+    rdfs:label "弱点类型"@zh ;
+    dcterms:source "MITRE CWE 4.20" ;
+    rdfs:comment "CWE 弱点分类，描述漏洞的根因类型。"@zh ;
+    rdfs:isDefinedBy "MITRE CWE 4.20" ;
+    rdfs:subClassOf :SecurityConcept ;
+    skos:scopeNote "CWE 给出漏洞根因分类，并官方维护到 CAPEC 的映射，是漏洞到攻击模式的桥梁。"@zh .
+
+:uses a owl:ObjectProperty ;
+    rdfs:label "使用"@zh ;
+    dcterms:source "ATT&CK STIX relationship: uses" ;
+    rdfs:comment "攻击组织/软件/活动使用某技术的抽象父属性；具体来源类用下列子属性。"@zh ;
+    rdfs:isDefinedBy "ATT&CK STIX relationship: uses" ;
+    skos:scopeNote "STIX 的通用 uses 边；为避免域/值域含混，图中只实例化下列细分关系。"@zh .
+
+:ExploitationRecord a owl:Class ;
+    rdfs:label "在野利用记录"@zh ;
+    dcterms:source "CISA Known Exploited Vulnerabilities Catalog" ;
+    rdfs:comment "CISA KEV 目录中的一条记录，携带 dateAdded / dueDate / knownRansomwareCampaignUse。"@zh ;
+    rdfs:isDefinedBy "CISA Known Exploited Vulnerabilities Catalog" ;
+    rdfs:subClassOf :SecurityConcept ;
+    skos:scopeNote "KEV 条目是「已被在野利用」的权威记录；正文无独立编号，主键由所属 CVE 派生。"@zh .
+
+:Software a owl:Class ;
+    rdfs:label "攻击软件"@zh ;
+    dcterms:source "MITRE ATT&CK Enterprise STIX" ;
+    rdfs:comment "MITRE ATT&CK software（S####），下分恶意软件与工具。"@zh ;
+    rdfs:isDefinedBy "MITRE ATT&CK Enterprise STIX" ;
+    rdfs:subClassOf :SecurityConcept ;
+    skos:scopeNote "S 编号不区分恶意软件与工具，统一父类可让三种方法按同一类型对齐。"@zh .
+
+:Product a owl:Class ;
+    rdfs:label "产品/平台"@zh ;
+    dcterms:source "NIST IR 7695 CPE 2.3 / NVD configurations" ;
+    rdfs:comment "CPE 2.3 标识的软件、操作系统或硬件产品（含版本）。"@zh ;
+    rdfs:isDefinedBy "NIST IR 7695 CPE 2.3 / NVD configurations" ;
+    rdfs:subClassOf :SecurityConcept ;
+    skos:scopeNote "CPE 2.3 是 NVD 对受影响平台的结构化标识，支撑「某型号设备暴露面」查询。"@zh .
+
+:Vulnerability a owl:Class ;
+    rdfs:label "漏洞"@zh ;
+    dcterms:source "CVE Program (cveawg.mitre.org) / NVD 2.0" ;
+    rdfs:comment "CVE 编号标识的具体漏洞实例。"@zh ;
+    rdfs:isDefinedBy "CVE Program (cveawg.mitre.org) / NVD 2.0" ;
+    rdfs:subClassOf :SecurityConcept ;
+    skos:scopeNote "CVE 是跨 CWE/CPE/KEV/ATT&CK 关联的锚点，官方编号可直接作为主键。"@zh .
+
+:Technique a owl:Class ;
+    rdfs:label "攻击技术"@zh ;
+    dcterms:source "MITRE ATT&CK Enterprise STIX" ;
+    rdfs:comment "MITRE ATT&CK Technique（T#### / T####.###）。"@zh ;
+    rdfs:isDefinedBy "MITRE ATT&CK Enterprise STIX" ;
+    rdfs:subClassOf :SecurityConcept ;
+    skos:scopeNote "ATT&CK 技术是检测覆盖分析与攻击链还原的基本单位。"@zh .
+
+:SecurityConcept a owl:Class ;
+    rdfs:label "安全概念"@zh ;
+    dcterms:source "Noy & McGuinness, Ontology Development 101 (七步法)" ;
+    rdfs:comment "威胁情报域顶层概念；所有领域类都是它的子类。"@zh ;
+    rdfs:isDefinedBy "Noy & McGuinness, Ontology Development 101 (七步法)" ;
+    skos:scopeNote "先立顶层概念作为继承根，统一命名空间，避免各类各自为政（七步法第 3 步）。"@zh .
+

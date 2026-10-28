@@ -1,0 +1,184 @@
+{
+  "topic": "t2-cve-attack",
+  "generated_at": "2026-10-28T06:12:14+00:00",
+  "ontology": {
+    "title": "网络安全威胁情报知识图谱（CVE × CWE × CPE × ATT&CK）",
+    "namespace": "http://kgcourse.org/ontology/threat-intel#",
+    "instance_namespace": "http://kgcourse.org/instance/threat-intel#",
+    "version": "v1.1",
+    "classes": 19,
+    "relations": 17,
+    "attributes": 22
+  },
+  "kg": {
+    "nodes": 421,
+    "edges": 1572,
+    "node_types": {
+      "Technique": 31,
+      "Group": 14,
+      "Tactic": 9,
+      "Mitigation": 21,
+      "Software": 14,
+      "Vendor": 24,
+      "Vulnerability": 45,
+      "AttackPattern": 24,
+      "Weakness": 26,
+      "Product": 106,
+      "DetectionRule": 52,
+      "ExploitationRecord": 40,
+      "Document": 15
+    },
+    "relations": {
+      "group_uses": 113,
+      "mitigates": 100,
+      "software_uses": 84,
+      "belongs_to_tactic": 40,
+      "subtechnique_of": 8,
+      "implemented_by": 23,
+      "affects_product": 141,
+      "has_weakness": 45,
+      "relates_to_pattern": 50,
+      "detects": 67,
+      "produced_by": 106,
+      "known_exploited": 40,
+      "mentioned_in": 755
+    }
+  },
+  "counts": {
+    "individuals": 421,
+    "asserted_object_edges": 1572,
+    "data_property_assertions": 945,
+    "axiom_annotations": 1572,
+    "tbox_triples": 411,
+    "full_triples": 17966
+  },
+  "data_properties": {
+    "capec_id": 24,
+    "cpe_part": 106,
+    "cpe_uri": 106,
+    "cve_id": 45,
+    "cvss_score": 40,
+    "cvss_severity": 40,
+    "cvss_vector": 40,
+    "cwe_id": 26,
+    "epss": 40,
+    "epss_percentile": 40,
+    "group_id": 14,
+    "kev_date_added": 40,
+    "kev_due_date": 40,
+    "kev_ransomware": 40,
+    "mitigation_id": 21,
+    "product_version": 106,
+    "published": 40,
+    "sigma_id": 52,
+    "software_id": 14,
+    "tactic_id": 9,
+    "tech_id": 31,
+    "tech_name": 31
+  },
+  "official_id_check": {
+    "AttackPattern": {
+      "count": 24,
+      "valid": 24,
+      "invalid_count": 0,
+      "coverage": 1.0,
+      "invalid_examples": []
+    },
+    "DetectionRule": {
+      "count": 52,
+      "valid": 52,
+      "invalid_count": 0,
+      "coverage": 1.0,
+      "invalid_examples": []
+    },
+    "Document": {
+      "count": 15,
+      "valid": 15,
+      "invalid_count": 0,
+      "coverage": 1.0,
+      "invalid_examples": []
+    },
+    "ExploitationRecord": {
+      "count": 40,
+      "valid": 40,
+      "invalid_count": 0,
+      "coverage": 1.0,
+      "invalid_examples": []
+    },
+    "Group": {
+      "count": 14,
+      "valid": 14,
+      "invalid_count": 0,
+      "coverage": 1.0,
+      "invalid_examples": []
+    },
+    "Mitigation": {
+      "count": 21,
+      "valid": 21,
+      "invalid_count": 0,
+      "coverage": 1.0,
+      "invalid_examples": []
+    },
+    "Product": {
+      "count": 106,
+      "valid": 106,
+      "invalid_count": 0,
+      "coverage": 1.0,
+      "invalid_examples": []
+    },
+    "Software": {
+      "count": 14,
+      "valid": 14,
+      "invalid_count": 0,
+      "coverage": 1.0,
+      "invalid_examples": []
+    },
+    "Tactic": {
+      "count": 9,
+      "valid": 9,
+      "invalid_count": 0,
+      "coverage": 1.0,
+      "invalid_examples": []
+    },
+    "Technique": {
+      "count": 31,
+      "valid": 31,
+      "invalid_count": 0,
+      "coverage": 1.0,
+      "invalid_examples": []
+    },
+    "Vulnerability": {
+      "count": 45,
+      "valid": 45,
+      "invalid_count": 0,
+      "coverage": 1.0,
+      "invalid_examples": []
+    },
+    "Weakness": {
+      "count": 26,
+      "valid": 26,
+      "invalid_count": 0,
+      "coverage": 1.0,
+      "invalid_examples": []
+    }
+  },
+  "auto_classes": [],
+  "auto_relations": [],
+  "skipped_edges": [],
+  "skipped_edge_count": 0,
+  "domain_range_violations": [],
+  "domain_range_violation_count": 0,
+  "files": {
+    "tbox": {
+      "turtle": "D:\\Study\\kg-t2\\protege\\owl\\t2-threat-intel-tbox.owl.ttl",
+      "rdfxml": "D:\\Study\\kg-t2\\protege\\owl\\t2-threat-intel-tbox.owl",
+      "triples": 411
+    },
+    "full": {
+      "turtle": "D:\\Study\\kg-t2\\protege\\owl\\t2-threat-intel.owl.ttl",
+      "rdfxml": "D:\\Study\\kg-t2\\protege\\owl\\t2-threat-intel.owl",
+      "triples": 17966
+    },
+    "catalog": "D:\\Study\\kg-t2\\protege\\catalog-v001.xml"
+  }
+}

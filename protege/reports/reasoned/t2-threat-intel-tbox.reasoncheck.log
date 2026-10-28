@@ -1,0 +1,5 @@
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+{"file": "D:\\Study\\kg-t2\\protege\\tools\\..\\owl\\t2-threat-intel-tbox.owl.ttl", "consistent": true, "unsatisfiable_classes": 0, "classes": 19, "object_properties": 17, "data_properties": 22, "individuals": 0, "axioms": 400, "logical_axioms": 97, "owl2_dl_profile": true, "profile_violations": 0, "inferred_class_assertions": 0, "inferred_object_assertions": 0, "reasoner_ms": 734}
+inferred_ontology=D:\Study\kg-t2\protege\tools\..\reports\reasoned\t2-threat-intel-tbox.inferred.owl

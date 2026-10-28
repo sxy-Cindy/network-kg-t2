@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns="http://kgcourse.org/ontology/threat-intel#"
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#epss">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">EPSS 概率</rdfs:label>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Vulnerability"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#AttackPattern">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="zh">攻击模式</rdfs:label>
+    <rdfs:comment xml:lang="zh">CAPEC 攻击模式，描述攻击者如何利用某类弱点。</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://kgcourse.org/ontology/threat-intel#SecurityConcept"/>
+    <rdfs:isDefinedBy>MITRE CAPEC 3.9</rdfs:isDefinedBy>
+    <dcterms:source>MITRE CAPEC 3.9</dcterms:source>
+    <skos:scopeNote xml:lang="zh">CAPEC 描述攻击者如何利用某类弱点，是弱点与具体 ATT&amp;CK 技术之间的中间层。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#cve_id">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">CVE 编号</rdfs:label>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Vulnerability"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#sourceUrl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="zh">数据源 URL</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#mitigates">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="zh">缓解</rdfs:label>
+    <rdfs:comment xml:lang="zh">缓解措施作用于某技术（ATT&amp;CK mitigates）。</rdfs:comment>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Mitigation"/>
+    <rdfs:range rdf:resource="http://kgcourse.org/ontology/threat-intel#Technique"/>
+    <rdfs:isDefinedBy>ATT&amp;CK STIX course-of-action --mitigates--&gt; attack-pattern</rdfs:isDefinedBy>
+    <dcterms:source>ATT&amp;CK STIX course-of-action --mitigates--&gt; attack-pattern</dcterms:source>
+    <skos:scopeNote xml:lang="zh">缓解措施对技术的官方缓解关系。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#epss_percentile">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">EPSS 百分位</rdfs:label>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Vulnerability"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#sigma_id">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">Sigma 规则 UUID</rdfs:label>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#DetectionRule"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#produced_by">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="zh">由厂商生产</rdfs:label>
+    <rdfs:comment xml:lang="zh">产品所属厂商。</rdfs:comment>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Product"/>
+    <rdfs:range rdf:resource="http://kgcourse.org/ontology/threat-intel#Vendor"/>
+    <rdfs:isDefinedBy>CPE 2.3 第 3 段 vendor（NIST IR 7695）</rdfs:isDefinedBy>
+    <dcterms:source>CPE 2.3 第 3 段 vendor（NIST IR 7695）</dcterms:source>
+    <skos:scopeNote xml:lang="zh">厂商是 CPE 串的规范字段，产品到厂商是标识符自带的层级。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#Software">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="zh">攻击软件</rdfs:label>
+    <rdfs:comment xml:lang="zh">MITRE ATT&amp;CK software（S####），下分恶意软件与工具。</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://kgcourse.org/ontology/threat-intel#SecurityConcept"/>
+    <rdfs:isDefinedBy>MITRE ATT&amp;CK Enterprise STIX</rdfs:isDefinedBy>
+    <dcterms:source>MITRE ATT&amp;CK Enterprise STIX</dcterms:source>
+    <skos:scopeNote xml:lang="zh">S 编号不区分恶意软件与工具，统一父类可让三种方法按同一类型对齐。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#compatibilityNote">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="zh">兼容性说明</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#Malware">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="zh">恶意软件</rdfs:label>
+    <rdfs:comment xml:lang="zh">ATT&amp;CK type=malware 的软件。</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://kgcourse.org/ontology/threat-intel#Software"/>
+    <rdfs:isDefinedBy>MITRE ATT&amp;CK Enterprise STIX</rdfs:isDefinedBy>
+    <dcterms:source>MITRE ATT&amp;CK Enterprise STIX</dcterms:source>
+    <skos:scopeNote xml:lang="zh">ATT&amp;CK 的 malware 子类；具体 kind 保存在实体属性中。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#kev_due_date">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">整改截止日期</rdfs:label>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#ExploitationRecord"/>
+    <compatibilityNote xml:lang="zh">原始声明 xsd:date；为满足 OWL 2 DL / HermiT，导出为 xsd:string，词法值保持 ISO 8601 日期。</compatibilityNote>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#group_id">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">组织编号</rdfs:label>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Group"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label xml:lang="zh">网络安全威胁情报知识图谱（CVE × CWE × CPE × ATT&amp;CK）</rdfs:label>
+    <rdfs:comment xml:lang="zh">跨源打通漏洞、弱点、产品、攻击技术与检测覆盖；命名空间与 MITRE 官方 ID 对齐（CVE/CWE/CAPEC/CPE/T/TA/G/S/M）。</rdfs:comment>
+    <owl:versionInfo>v1.1</owl:versionInfo>
+    <owl:versionIRI rdf:resource="http://kgcourse.org/ontology/threat-intel/v1.1"/>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2026-10-21</dcterms:created>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2026-10-28</dcterms:modified>
+    <ontologyVersion>v1.1</ontologyVersion>
+    <dataSnapshot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2026-10-28</dataSnapshot>
+    <modelingNote xml:lang="zh">实例层（CVE/KEV/EPSS）日更，本体层（CWE/CAPEC/ATT&amp;CK）季度更新；本文件把两层时间戳分别记录在 dcterms:modified 与 dataSnapshot。</modelingNote>
+    <rdfs:seeAlso rdf:resource="https://attack.mitre.org/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#software_uses">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="zh">软件使用</rdfs:label>
+    <rdfs:comment xml:lang="zh">恶意软件/工具使用某 ATT&amp;CK 技术。</rdfs:comment>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Software"/>
+    <rdfs:range rdf:resource="http://kgcourse.org/ontology/threat-intel#Technique"/>
+    <rdfs:subPropertyOf rdf:resource="http://kgcourse.org/ontology/threat-intel#uses"/>
+    <rdfs:isDefinedBy>ATT&amp;CK STIX malware/tool --uses--&gt; attack-pattern</rdfs:isDefinedBy>
+    <dcterms:source>ATT&amp;CK STIX malware/tool --uses--&gt; attack-pattern</dcterms:source>
+    <skos:scopeNote xml:lang="zh">恶意软件或工具使用某技术，来自官方 uses 关系。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#SecurityConcept">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="zh">安全概念</rdfs:label>
+    <rdfs:comment xml:lang="zh">威胁情报域顶层概念；所有领域类都是它的子类。</rdfs:comment>
+    <rdfs:isDefinedBy>Noy &amp; McGuinness, Ontology Development 101 (七步法)</rdfs:isDefinedBy>
+    <dcterms:source>Noy &amp; McGuinness, Ontology Development 101 (七步法)</dcterms:source>
+    <skos:scopeNote xml:lang="zh">先立顶层概念作为继承根，统一命名空间，避免各类各自为政（七步法第 3 步）。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#kev_date_added">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">KEV 收录日期</rdfs:label>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#ExploitationRecord"/>
+    <compatibilityNote xml:lang="zh">原始声明 xsd:date；为满足 OWL 2 DL / HermiT，导出为 xsd:string，词法值保持 ISO 8601 日期。</compatibilityNote>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#Document">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="zh">来源文档</rdfs:label>
+    <rdfs:comment xml:lang="zh">语料文档节点（CVE 记录、KEV 条目、ATT&amp;CK 条目等），用于 mentioned_in 溯源。</rdfs:comment>
+    <rdfs:isDefinedBy>Dublin Core Metadata Element Set (ISO 15836)</rdfs:isDefinedBy>
+    <dcterms:source>Dublin Core Metadata Element Set (ISO 15836)</dcterms:source>
+    <skos:scopeNote xml:lang="zh">三级溯源要求每个事实能回到来源文档与许可证，必须有文档节点承载这两项元数据。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#Weakness">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="zh">弱点类型</rdfs:label>
+    <rdfs:comment xml:lang="zh">CWE 弱点分类，描述漏洞的根因类型。</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://kgcourse.org/ontology/threat-intel#SecurityConcept"/>
+    <rdfs:isDefinedBy>MITRE CWE 4.20</rdfs:isDefinedBy>
+    <dcterms:source>MITRE CWE 4.20</dcterms:source>
+    <skos:scopeNote xml:lang="zh">CWE 给出漏洞根因分类，并官方维护到 CAPEC 的映射，是漏洞到攻击模式的桥梁。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#relates_to_pattern">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="zh">对应攻击模式</rdfs:label>
+    <rdfs:comment xml:lang="zh">CWE 弱点对应的 CAPEC 攻击模式（CWE Related_Attack_Patterns）。</rdfs:comment>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Weakness"/>
+    <rdfs:range rdf:resource="http://kgcourse.org/ontology/threat-intel#AttackPattern"/>
+    <rdfs:isDefinedBy>CWE XML Related_Attack_Patterns/CAPEC_ID</rdfs:isDefinedBy>
+    <dcterms:source>CWE XML Related_Attack_Patterns/CAPEC_ID</dcterms:source>
+    <skos:scopeNote xml:lang="zh">MITRE 在 CWE 条目里官方维护到 CAPEC 的映射。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#campaign_uses">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="zh">活动使用</rdfs:label>
+    <rdfs:comment xml:lang="zh">攻击活动使用某 ATT&amp;CK 技术。</rdfs:comment>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Campaign"/>
+    <rdfs:range rdf:resource="http://kgcourse.org/ontology/threat-intel#Technique"/>
+    <rdfs:subPropertyOf rdf:resource="http://kgcourse.org/ontology/threat-intel#uses"/>
+    <rdfs:isDefinedBy>ATT&amp;CK STIX campaign --uses--&gt; attack-pattern</rdfs:isDefinedBy>
+    <dcterms:source>ATT&amp;CK STIX campaign --uses--&gt; attack-pattern</dcterms:source>
+    <skos:scopeNote xml:lang="zh">活动级 uses 关系；本切片无 Campaign 节点，未实例化。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#Mitigation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="zh">缓解措施</rdfs:label>
+    <rdfs:comment xml:lang="zh">MITRE ATT&amp;CK course-of-action（M####），按 mitigates 关系作用于技术。</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://kgcourse.org/ontology/threat-intel#SecurityConcept"/>
+    <rdfs:isDefinedBy>MITRE ATT&amp;CK Enterprise STIX</rdfs:isDefinedBy>
+    <dcterms:source>MITRE ATT&amp;CK Enterprise STIX</dcterms:source>
+    <skos:scopeNote xml:lang="zh">ATT&amp;CK course-of-action 与技术的 mitigates 关系支撑防护建议。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#Exploit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="zh">利用代码</rdfs:label>
+    <rdfs:comment xml:lang="zh">公开 PoC / ExploitDB 条目；本切片未实例化（源未提供稳定外部 ID）。</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://kgcourse.org/ontology/threat-intel#SecurityConcept"/>
+    <rdfs:isDefinedBy>ExploitDB（GPLv2+，本切片未使用）</rdfs:isDefinedBy>
+    <dcterms:source>ExploitDB（GPLv2+，本切片未使用）</dcterms:source>
+    <skos:scopeNote xml:lang="zh">预留扩展类（ExploitDB 未纳入本切片），保留是为了说明本体可扩展而不改主键策略。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#mitigation_id">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">缓解编号</rdfs:label>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Mitigation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#tech_name">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">技术名称</rdfs:label>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Technique"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#sourceId">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="zh">原始 ID</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#group_uses">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="zh">组织使用</rdfs:label>
+    <rdfs:comment xml:lang="zh">攻击组织使用某 ATT&amp;CK 技术。</rdfs:comment>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Group"/>
+    <rdfs:range rdf:resource="http://kgcourse.org/ontology/threat-intel#Technique"/>
+    <rdfs:subPropertyOf rdf:resource="http://kgcourse.org/ontology/threat-intel#uses"/>
+    <rdfs:isDefinedBy>ATT&amp;CK STIX intrusion-set --uses--&gt; attack-pattern</rdfs:isDefinedBy>
+    <dcterms:source>ATT&amp;CK STIX intrusion-set --uses--&gt; attack-pattern</dcterms:source>
+    <skos:scopeNote xml:lang="zh">攻击组织使用某技术，来自官方 uses 关系。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#Campaign">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="zh">攻击活动</rdfs:label>
+    <rdfs:comment xml:lang="zh">MITRE ATT&amp;CK campaign（C####）。</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://kgcourse.org/ontology/threat-intel#SecurityConcept"/>
+    <rdfs:isDefinedBy>MITRE ATT&amp;CK Enterprise STIX</rdfs:isDefinedBy>
+    <dcterms:source>MITRE ATT&amp;CK Enterprise STIX</dcterms:source>
+    <skos:scopeNote xml:lang="zh">与官方 ATT&amp;CK 本体对齐的预留层；本切片没有活动级数据，未实例化。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#detects">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="zh">检测</rdfs:label>
+    <rdfs:comment xml:lang="zh">检测规则覆盖某技术（Sigma tags: attack.t####）。</rdfs:comment>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#DetectionRule"/>
+    <rdfs:range rdf:resource="http://kgcourse.org/ontology/threat-intel#Technique"/>
+    <rdfs:isDefinedBy>Sigma rule tags attack.tXXXX</rdfs:isDefinedBy>
+    <dcterms:source>Sigma rule tags attack.tXXXX</dcterms:source>
+    <skos:scopeNote xml:lang="zh">Sigma 规则用元数据标签声明检测的技术，本作业只取标签不复制规则正文。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#has_weakness">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="zh">根因是</rdfs:label>
+    <rdfs:comment xml:lang="zh">漏洞的 CWE 弱点分类。</rdfs:comment>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Vulnerability"/>
+    <rdfs:range rdf:resource="http://kgcourse.org/ontology/threat-intel#Weakness"/>
+    <rdfs:isDefinedBy>NVD 2.0 weaknesses[] / CVE 5.0 problemTypes</rdfs:isDefinedBy>
+    <dcterms:source>NVD 2.0 weaknesses[] / CVE 5.0 problemTypes</dcterms:source>
+    <skos:scopeNote xml:lang="zh">CVE 记录与 NVD 都直接给出 CWE 分类，是根因的官方字段，不需要从正文推断。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#license">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="zh">许可证</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#belongs_to_tactic">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="zh">归属战术</rdfs:label>
+    <rdfs:comment xml:lang="zh">技术归属的 ATT&amp;CK 战术（kill_chain_phases）。</rdfs:comment>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Technique"/>
+    <rdfs:range rdf:resource="http://kgcourse.org/ontology/threat-intel#Tactic"/>
+    <rdfs:isDefinedBy>ATT&amp;CK STIX attack-pattern.kill_chain_phases</rdfs:isDefinedBy>
+    <dcterms:source>ATT&amp;CK STIX attack-pattern.kill_chain_phases</dcterms:source>
+    <skos:scopeNote xml:lang="zh">每个技术的 kill_chain_phases 直接给出所属战术。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#used_by">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="zh">被使用</rdfs:label>
+    <rdfs:comment xml:lang="zh">group_uses 的逆关系，便于从技术反查组织。</rdfs:comment>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Technique"/>
+    <rdfs:range rdf:resource="http://kgcourse.org/ontology/threat-intel#Group"/>
+    <rdfs:isDefinedBy>ATT&amp;CK STIX uses 的逆向视图</rdfs:isDefinedBy>
+    <dcterms:source>ATT&amp;CK STIX uses 的逆向视图</dcterms:source>
+    <skos:scopeNote xml:lang="zh">为查询方便保留的逆向关系，抽取阶段不单独产出。</skos:scopeNote>
+    <owl:inverseOf rdf:resource="http://kgcourse.org/ontology/threat-intel#group_uses"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#mentioned_in">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="zh">出现于</rdfs:label>
+    <rdfs:comment xml:lang="zh">实体出现在来源文档中（结构关系，用于三级溯源）。</rdfs:comment>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#SecurityConcept"/>
+    <rdfs:range rdf:resource="http://kgcourse.org/ontology/threat-intel#Document"/>
+    <rdfs:isDefinedBy>本作业的三级溯源结构（非领域事实）</rdfs:isDefinedBy>
+    <dcterms:source>本作业的三级溯源结构（非领域事实）</dcterms:source>
+    <skos:scopeNote xml:lang="zh">连接实体与来源文档；不参与知识推理，路径查询默认排除文档节点。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/created">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="zh">创建时间</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#implemented_by">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="zh">技术上实现为</rdfs:label>
+    <rdfs:comment xml:lang="zh">CAPEC 攻击模式在 ATT&amp;CK 中的技术实现（分析师 crosswalk，见 capec_attck_crosswalk.csv）。</rdfs:comment>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#AttackPattern"/>
+    <rdfs:range rdf:resource="http://kgcourse.org/ontology/threat-intel#Technique"/>
+    <rdfs:isDefinedBy>分析师 crosswalk（24 条，CC BY 4.0）</rdfs:isDefinedBy>
+    <dcterms:source>分析师 crosswalk（24 条，CC BY 4.0）</dcterms:source>
+    <skos:scopeNote xml:lang="zh">MITRE 没有官方 CAPEC→ATT&amp;CK 映射，只能显式人工映射并标注 confidence，不能伪装成官方标准。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#subtechnique_of">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="zh">子技术属于</rdfs:label>
+    <rdfs:comment xml:lang="zh">子技术与其父技术的关系（ATT&amp;CK subtechnique-of）。</rdfs:comment>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Technique"/>
+    <rdfs:range rdf:resource="http://kgcourse.org/ontology/threat-intel#Technique"/>
+    <rdfs:isDefinedBy>ATT&amp;CK STIX relationship: subtechnique-of</rdfs:isDefinedBy>
+    <dcterms:source>ATT&amp;CK STIX relationship: subtechnique-of</dcterms:source>
+    <skos:scopeNote xml:lang="zh">官方关系对象，方向固定为子技术→父技术。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#cpe_part">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">CPE 部件类型</rdfs:label>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Product"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#Tactic">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="zh">战术</rdfs:label>
+    <rdfs:comment xml:lang="zh">MITRE ATT&amp;CK Tactic（TA####），技术按 kill_chain_phases 归属。</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://kgcourse.org/ontology/threat-intel#SecurityConcept"/>
+    <rdfs:isDefinedBy>MITRE ATT&amp;CK Enterprise STIX</rdfs:isDefinedBy>
+    <dcterms:source>MITRE ATT&amp;CK Enterprise STIX</dcterms:source>
+    <skos:scopeNote xml:lang="zh">kill_chain_phases 给出技术所属攻击阶段，支撑按战术汇总。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#DetectionRule">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="zh">检测规则</rdfs:label>
+    <rdfs:comment xml:lang="zh">Sigma 检测规则（以 sigma:&lt;UUID&gt; 为主键）；本切片只保留元数据，不复制规则正文。</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://kgcourse.org/ontology/threat-intel#SecurityConcept"/>
+    <rdfs:isDefinedBy>SigmaHQ/sigma（DRL 1.1，仅元数据）</rdfs:isDefinedBy>
+    <dcterms:source>SigmaHQ/sigma（DRL 1.1，仅元数据）</dcterms:source>
+    <skos:scopeNote xml:lang="zh">Sigma 规则的 attack.tXXXX 标签提供检测覆盖证据（仅元数据，符合 DRL 1.1）。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#software_id">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">软件编号</rdfs:label>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Software"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#ExploitationRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="zh">在野利用记录</rdfs:label>
+    <rdfs:comment xml:lang="zh">CISA KEV 目录中的一条记录，携带 dateAdded / dueDate / knownRansomwareCampaignUse。</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://kgcourse.org/ontology/threat-intel#SecurityConcept"/>
+    <rdfs:isDefinedBy>CISA Known Exploited Vulnerabilities Catalog</rdfs:isDefinedBy>
+    <dcterms:source>CISA Known Exploited Vulnerabilities Catalog</dcterms:source>
+    <skos:scopeNote xml:lang="zh">KEV 条目是「已被在野利用」的权威记录；正文无独立编号，主键由所属 CVE 派生。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#Group">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="zh">攻击组织</rdfs:label>
+    <rdfs:comment xml:lang="zh">MITRE ATT&amp;CK intrusion-set（G####）。</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://kgcourse.org/ontology/threat-intel#SecurityConcept"/>
+    <rdfs:isDefinedBy>MITRE ATT&amp;CK Enterprise STIX</rdfs:isDefinedBy>
+    <dcterms:source>MITRE ATT&amp;CK Enterprise STIX</dcterms:source>
+    <skos:scopeNote xml:lang="zh">组织—技术关系用于威胁行为体画像；数据来自 ATT&amp;CK intrusion-set。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#affects_product">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="zh">影响产品</rdfs:label>
+    <rdfs:comment xml:lang="zh">漏洞影响的 CPE 产品（含版本）。</rdfs:comment>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Vulnerability"/>
+    <rdfs:range rdf:resource="http://kgcourse.org/ontology/threat-intel#Product"/>
+    <rdfs:isDefinedBy>NVD 2.0 configurations[].cpeMatch[].criteria</rdfs:isDefinedBy>
+    <dcterms:source>NVD 2.0 configurations[].cpeMatch[].criteria</dcterms:source>
+    <skos:scopeNote xml:lang="zh">受影响的平台由 NVD 以 CPE 枚举，是结构化的官方事实。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#cwe_id">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">CWE 编号</rdfs:label>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Weakness"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#cvss_score">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">CVSS 分值</rdfs:label>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Vulnerability"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#licenseCode">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="zh">许可证代码</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#kev_ransomware">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">勒索软件利用情况</rdfs:label>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#ExploitationRecord"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#officialId">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="zh">官方编号</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#sourceName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="zh">数据源名称</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#extractionMethod">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="zh">抽取方法</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#Product">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="zh">产品/平台</rdfs:label>
+    <rdfs:comment xml:lang="zh">CPE 2.3 标识的软件、操作系统或硬件产品（含版本）。</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://kgcourse.org/ontology/threat-intel#SecurityConcept"/>
+    <rdfs:isDefinedBy>NIST IR 7695 CPE 2.3 / NVD configurations</rdfs:isDefinedBy>
+    <dcterms:source>NIST IR 7695 CPE 2.3 / NVD configurations</dcterms:source>
+    <skos:scopeNote xml:lang="zh">CPE 2.3 是 NVD 对受影响平台的结构化标识，支撑「某型号设备暴露面」查询。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#Tool">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="zh">攻击工具</rdfs:label>
+    <rdfs:comment xml:lang="zh">ATT&amp;CK type=tool 的软件。</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://kgcourse.org/ontology/threat-intel#Software"/>
+    <rdfs:isDefinedBy>MITRE ATT&amp;CK Enterprise STIX</rdfs:isDefinedBy>
+    <dcterms:source>MITRE ATT&amp;CK Enterprise STIX</dcterms:source>
+    <skos:scopeNote xml:lang="zh">ATT&amp;CK 的 tool 子类；具体 kind 保存在实体属性中。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#published">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">发布日期</rdfs:label>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Vulnerability"/>
+    <compatibilityNote xml:lang="zh">原始声明 xsd:date；为满足 OWL 2 DL / HermiT，导出为 xsd:string，词法值保持 ISO 8601 日期。</compatibilityNote>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#tech_id">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">技术编号</rdfs:label>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Technique"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#cvss_vector">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">CVSS 向量</rdfs:label>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Vulnerability"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#uses">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="zh">使用</rdfs:label>
+    <rdfs:comment xml:lang="zh">攻击组织/软件/活动使用某技术的抽象父属性；具体来源类用下列子属性。</rdfs:comment>
+    <rdfs:isDefinedBy>ATT&amp;CK STIX relationship: uses</rdfs:isDefinedBy>
+    <dcterms:source>ATT&amp;CK STIX relationship: uses</dcterms:source>
+    <skos:scopeNote xml:lang="zh">STIX 的通用 uses 边；为避免域/值域含混，图中只实例化下列细分关系。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#dataSnapshot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="zh">实例快照日期</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/modified">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="zh">修改时间</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#known_exploited">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="zh">已被在野利用</rdfs:label>
+    <rdfs:comment xml:lang="zh">漏洞对应的 KEV 在野利用记录。</rdfs:comment>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Vulnerability"/>
+    <rdfs:range rdf:resource="http://kgcourse.org/ontology/threat-intel#ExploitationRecord"/>
+    <rdfs:isDefinedBy>CISA KEV cveID</rdfs:isDefinedBy>
+    <dcterms:source>CISA KEV cveID</dcterms:source>
+    <skos:scopeNote xml:lang="zh">KEV 目录以 cveID 关联漏洞，语义就是「已被在野利用」。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/source">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="zh">来源</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#Vulnerability">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="zh">漏洞</rdfs:label>
+    <rdfs:comment xml:lang="zh">CVE 编号标识的具体漏洞实例。</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://kgcourse.org/ontology/threat-intel#SecurityConcept"/>
+    <rdfs:isDefinedBy>CVE Program (cveawg.mitre.org) / NVD 2.0</rdfs:isDefinedBy>
+    <dcterms:source>CVE Program (cveawg.mitre.org) / NVD 2.0</dcterms:source>
+    <skos:scopeNote xml:lang="zh">CVE 是跨 CWE/CPE/KEV/ATT&amp;CK 关联的锚点，官方编号可直接作为主键。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#capec_id">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">CAPEC 编号</rdfs:label>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#AttackPattern"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#cpe_uri">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">CPE URI</rdfs:label>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Product"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#cvss_severity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">CVSS 等级</rdfs:label>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Vulnerability"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#tactic_id">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">战术编号</rdfs:label>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Tactic"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#scopeNote">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="zh">建模理由</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#Technique">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="zh">攻击技术</rdfs:label>
+    <rdfs:comment xml:lang="zh">MITRE ATT&amp;CK Technique（T#### / T####.###）。</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://kgcourse.org/ontology/threat-intel#SecurityConcept"/>
+    <rdfs:isDefinedBy>MITRE ATT&amp;CK Enterprise STIX</rdfs:isDefinedBy>
+    <dcterms:source>MITRE ATT&amp;CK Enterprise STIX</dcterms:source>
+    <skos:scopeNote xml:lang="zh">ATT&amp;CK 技术是检测覆盖分析与攻击链还原的基本单位。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#sourceDoc">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="zh">来源文档</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#evidence">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="zh">原文证据</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#announced_in">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="zh">公告于</rdfs:label>
+    <rdfs:comment xml:lang="zh">漏洞的官方/厂商公告（本切片未实例化）。</rdfs:comment>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Vulnerability"/>
+    <rdfs:range rdf:resource="http://kgcourse.org/ontology/threat-intel#Advisory"/>
+    <rdfs:isDefinedBy>CVE reference tags: vendor-advisory / GHSA</rdfs:isDefinedBy>
+    <dcterms:source>CVE reference tags: vendor-advisory / GHSA</dcterms:source>
+    <skos:scopeNote xml:lang="zh">公告关系来自官方参考链接的 advisory 标签；本切片未实例化公告节点。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#retrieved">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="zh">取数时间</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#Vendor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="zh">厂商</rdfs:label>
+    <rdfs:comment xml:lang="zh">CPE vendor 字段或 KEV vendorProject 标识的产品厂商。</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://kgcourse.org/ontology/threat-intel#SecurityConcept"/>
+    <rdfs:isDefinedBy>NIST IR 7695 CPE 2.3 / CISA KEV</rdfs:isDefinedBy>
+    <dcterms:source>NIST IR 7695 CPE 2.3 / CISA KEV</dcterms:source>
+    <skos:scopeNote xml:lang="zh">CPE 的 vendor 段可独立成节点，便于按厂商聚合暴露面；KEV 也提供 vendorProject。</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#ontologyVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="zh">本体版本</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#modelingNote">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="zh">建模备注</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#alias">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="zh">别名</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#confidence">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="zh">抽取置信度</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#product_version">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">产品版本</rdfs:label>
+    <rdfs:domain rdf:resource="http://kgcourse.org/ontology/threat-intel#Product"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kgcourse.org/ontology/threat-intel#Advisory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="zh">安全公告</rdfs:label>
+    <rdfs:comment xml:lang="zh">厂商公告 / GHSA / OSV 公告；本切片未实例化（源未提供稳定外部 ID）。</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://kgcourse.org/ontology/threat-intel#SecurityConcept"/>
+    <rdfs:isDefinedBy>GitHub Advisory Database / OSV（本切片未使用）</rdfs:isDefinedBy>
+    <dcterms:source>GitHub Advisory Database / OSV（本切片未使用）</dcterms:source>
+    <skos:scopeNote xml:lang="zh">预留扩展类（GHSA/OSV 未纳入本切片），用于承载厂商公告与修复版本。</skos:scopeNote>
+  </rdf:Description>
+</rdf:RDF>

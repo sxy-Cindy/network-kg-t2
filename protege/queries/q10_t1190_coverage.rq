@@ -1,0 +1,21 @@
+# 检测/缓解覆盖：T1190（Exploit Public-Facing Application）的 Sigma 规则与 ATT&CK 缓解
+PREFIX : <http://kgcourse.org/ontology/threat-intel#>
+SELECT ?kind ?id ?name
+WHERE {
+  {
+    ?r :detects ?t ;
+       :sigma_id ?id ;
+       :alias ?name .
+    BIND("sigma" AS ?kind)
+  }
+  UNION
+  {
+    ?m :mitigates ?t ;
+       :mitigation_id ?id ;
+       :alias ?name .
+    BIND("mitigation" AS ?kind)
+  }
+  ?t :tech_id ?tech .
+  FILTER(STR(?tech) = "T1190")
+}
+ORDER BY ?kind ?id ?name

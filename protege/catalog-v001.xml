@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="public">
+  <uri id="t2-threat-intel" name="http://kgcourse.org/ontology/threat-intel" uri="owl/t2-threat-intel.owl"/>
+</catalog>

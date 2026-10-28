@@ -1,0 +1,12 @@
+# 数据属性：被标记为 Known 勒索软件利用的 KEV 条目（按收录日期倒序）
+PREFIX : <http://kgcourse.org/ontology/threat-intel#>
+SELECT ?cve ?kev_date ?ransomware
+WHERE {
+  ?v :cve_id ?cve ;
+     :known_exploited ?k .
+  ?k :kev_date_added ?kev_date ;
+     :kev_ransomware ?ransomware .
+  FILTER(LCASE(STR(?ransomware)) = "known")
+}
+ORDER BY DESC(?kev_date) ?cve
+LIMIT 12

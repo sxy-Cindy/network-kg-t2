@@ -1,0 +1,14 @@
+# 跨源检测覆盖：CVE-2024-3400 的弱点/攻击模式/技术对应哪些 Sigma 规则？
+PREFIX : <http://kgcourse.org/ontology/threat-intel#>
+SELECT DISTINCT ?cve ?rule_id ?title
+WHERE {
+  ?v :cve_id ?cve ;
+     :has_weakness ?w .
+  FILTER(STR(?cve) = "CVE-2024-3400")
+  ?w :relates_to_pattern ?ap .
+  ?ap :implemented_by ?t .
+  ?r :detects ?t ;
+     :sigma_id ?rule_id .
+  OPTIONAL { ?r :alias ?title }
+}
+ORDER BY ?rule_id ?title

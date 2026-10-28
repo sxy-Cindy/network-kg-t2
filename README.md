@@ -5,6 +5,8 @@
 > 一条命令：`scripts\run_t2.cmd`（Windows）／见
 > [`topics/t2-cve-attack/README.md`](topics/t2-cve-attack/README.md)。
 > 报告：[`report/题目二-威胁情报知识图谱实验报告.md`](report/题目二-威胁情报知识图谱实验报告.md)；
+> **Protégé 实现与跑通详解**：[`题目二-Protégé实现与跑通详解.md`](题目二-Protégé实现与跑通详解.md)
+> （OWL 导出 17,966 三元组、HermiT 一致、0 不可满足类、10 条 SPARQL、桌面 Protégé 截图）；
 > 合规声明：[`docs/题目二-数据来源与合规声明.md`](docs/题目二-数据来源与合规声明.md)。
 > 数据快照 2026-10，提交前已通过 `tools/check_restricted_data.py`。
 >

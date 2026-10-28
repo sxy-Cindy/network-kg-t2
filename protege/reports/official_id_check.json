@@ -1,0 +1,86 @@
+{
+  "AttackPattern": {
+    "count": 24,
+    "valid": 24,
+    "invalid_count": 0,
+    "coverage": 1.0,
+    "invalid_examples": []
+  },
+  "DetectionRule": {
+    "count": 52,
+    "valid": 52,
+    "invalid_count": 0,
+    "coverage": 1.0,
+    "invalid_examples": []
+  },
+  "Document": {
+    "count": 15,
+    "valid": 15,
+    "invalid_count": 0,
+    "coverage": 1.0,
+    "invalid_examples": []
+  },
+  "ExploitationRecord": {
+    "count": 40,
+    "valid": 40,
+    "invalid_count": 0,
+    "coverage": 1.0,
+    "invalid_examples": []
+  },
+  "Group": {
+    "count": 14,
+    "valid": 14,
+    "invalid_count": 0,
+    "coverage": 1.0,
+    "invalid_examples": []
+  },
+  "Mitigation": {
+    "count": 21,
+    "valid": 21,
+    "invalid_count": 0,
+    "coverage": 1.0,
+    "invalid_examples": []
+  },
+  "Product": {
+    "count": 106,
+    "valid": 106,
+    "invalid_count": 0,
+    "coverage": 1.0,
+    "invalid_examples": []
+  },
+  "Software": {
+    "count": 14,
+    "valid": 14,
+    "invalid_count": 0,
+    "coverage": 1.0,
+    "invalid_examples": []
+  },
+  "Tactic": {
+    "count": 9,
+    "valid": 9,
+    "invalid_count": 0,
+    "coverage": 1.0,
+    "invalid_examples": []
+  },
+  "Technique": {
+    "count": 31,
+    "valid": 31,
+    "invalid_count": 0,
+    "coverage": 1.0,
+    "invalid_examples": []
+  },
+  "Vulnerability": {
+    "count": 45,
+    "valid": 45,
+    "invalid_count": 0,
+    "coverage": 1.0,
+    "invalid_examples": []
+  },
+  "Weakness": {
+    "count": 26,
+    "valid": 26,
+    "invalid_count": 0,
+    "coverage": 1.0,
+    "invalid_examples": []
+  }
+}

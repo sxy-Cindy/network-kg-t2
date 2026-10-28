@@ -1,0 +1,532 @@
+{
+  "owl": "protege\\owl\\t2-threat-intel.owl.ttl",
+  "triples": 17966,
+  "queries": [
+    {
+      "query": "q01_panos_exposure.rq",
+      "title": "暴露面：哪些漏洞影响 PAN-OS 10.2？是否进入 KEV？",
+      "vars": [
+        "cve",
+        "product",
+        "kev_date"
+      ],
+      "row_count": 1,
+      "rows": [
+        {
+          "cve": "CVE-2024-3400",
+          "product": "cpe:2.3:o:paloaltonetworks:pan-os:10.2.0:*:*:*:*:*:*:*",
+          "kev_date": "2024-04-12"
+        }
+      ]
+    },
+    {
+      "query": "q02_t1059_rules.rq",
+      "title": "检测覆盖：哪些 Sigma 规则声明检测 T1059.001？",
+      "vars": [
+        "rule_id",
+        "title"
+      ],
+      "row_count": 2,
+      "rows": [
+        {
+          "rule_id": "1ab3c5ed-5baf-417b-bb6b-78ca33f6c3df",
+          "title": "AWS EC2 Startup Shell Script Change"
+        },
+        {
+          "rule_id": "401e5d00-b944-11ea-8f9a-00163ecd60ae",
+          "title": "AppLocker Prevented Application or Script from Running"
+        }
+      ]
+    },
+    {
+      "query": "q03_ta0002_techniques.rq",
+      "title": "战术汇总：TA0002（Execution）下有哪些技术？",
+      "vars": [
+        "technique",
+        "name"
+      ],
+      "row_count": 7,
+      "rows": [
+        {
+          "technique": "T1021",
+          "name": "Remote Services"
+        },
+        {
+          "technique": "T1047",
+          "name": "Windows Management Instrumentation"
+        },
+        {
+          "technique": "T1059",
+          "name": "Command and Scripting Interpreter"
+        },
+        {
+          "technique": "T1059.001",
+          "name": "PowerShell"
+        },
+        {
+          "technique": "T1059.003",
+          "name": "Windows Command Shell"
+        },
+        {
+          "technique": "T1059.004",
+          "name": "Unix Shell"
+        },
+        {
+          "technique": "T1203",
+          "name": "Exploitation for Client Execution"
+        }
+      ]
+    },
+    {
+      "query": "q04_cve_multihop.rq",
+      "title": "多跳：CVE-2024-3400 -> CWE -> CAPEC -> ATT&CK 技术 -> 战术",
+      "vars": [
+        "weakness",
+        "pattern",
+        "technique",
+        "tactic"
+      ],
+      "row_count": 26,
+      "rows": [
+        {
+          "weakness": "CWE-20",
+          "pattern": "CAPEC-10",
+          "technique": "T1068",
+          "tactic": "TA0004"
+        },
+        {
+          "weakness": "CWE-20",
+          "pattern": "CAPEC-108",
+          "technique": "T1190",
+          "tactic": "TA0001"
+        },
+        {
+          "weakness": "CWE-20",
+          "pattern": "CAPEC-109",
+          "technique": "T1190",
+          "tactic": "TA0001"
+        },
+        {
+          "weakness": "CWE-20",
+          "pattern": "CAPEC-110",
+          "technique": "T1190",
+          "tactic": "TA0001"
+        },
+        {
+          "weakness": "CWE-20",
+          "pattern": "CAPEC-136",
+          "technique": "T1190",
+          "tactic": "TA0001"
+        },
+        {
+          "weakness": "CWE-20",
+          "pattern": "CAPEC-14",
+          "technique": "T1203",
+          "tactic": "TA0002"
+        },
+        {
+          "weakness": "CWE-20",
+          "pattern": "CAPEC-22",
+          "technique": "T1078",
+          "tactic": "TA0001"
+        },
+        {
+          "weakness": "CWE-20",
+          "pattern": "CAPEC-22",
+          "technique": "T1078",
+          "tactic": "TA0003"
+        },
+        {
+          "weakness": "CWE-20",
+          "pattern": "CAPEC-22",
+          "technique": "T1078",
+          "tactic": "TA0004"
+        },
+        {
+          "weakness": "CWE-20",
+          "pattern": "CAPEC-22",
+          "technique": "T1078",
+          "tactic": "TA0005"
+        },
+        {
+          "weakness": "CWE-20",
+          "pattern": "CAPEC-24",
+          "technique": "T1190",
+          "tactic": "TA0001"
+        },
+        {
+          "weakness": "CWE-20",
+          "pattern": "CAPEC-43",
+          "technique": "T1059",
+          "tactic": "TA0002"
+        },
+        {
+          "weakness": "CWE-20",
+          "pattern": "CAPEC-45",
+          "technique": "T1068",
+          "tactic": "TA0004"
+        },
+        {
+          "weakness": "CWE-20",
+          "pattern": "CAPEC-46",
+          "technique": "T1190",
+          "tactic": "TA0001"
+        },
+        {
+          "weakness": "CWE-20",
+          "pattern": "CAPEC-47",
+          "technique": "T1190",
+          "tactic": "TA0001"
+        },
+        {
+          "weakness": "CWE-20",
+          "pattern": "CAPEC-64",
+          "technique": "T1190",
+          "tactic": "TA0001"
+        },
+        {
+          "weakness": "CWE-20",
+          "pattern": "CAPEC-7",
+          "technique": "T1190",
+          "tactic": "TA0001"
+        },
+        {
+          "weakness": "CWE-20",
+          "pattern": "CAPEC-78",
+          "technique": "T1190",
+          "tactic": "TA0001"
+        },
+        {
+          "weakness": "CWE-20",
+          "pattern": "CAPEC-79",
+          "technique": "T1190",
+          "tactic": "TA0001"
+        },
+        {
+          "weakness": "CWE-20",
+          "pattern": "CAPEC-8",
+          "technique": "T1203",
+          "tactic": "TA0002"
+        },
+        {
+          "weakness": "CWE-20",
+          "pattern": "CAPEC-88",
+          "technique": "T1059",
+          "tactic": "TA0002"
+        },
+        {
+          "weakness": "CWE-20",
+          "pattern": "CAPEC-9",
+          "technique": "T1068",
+          "tactic": "TA0004"
+        },
+        {
+          "weakness": "CWE-77",
+          "pattern": "CAPEC-136",
+          "technique": "T1190",
+          "tactic": "TA0001"
+        },
+        {
+          "weakness": "CWE-77",
+          "pattern": "CAPEC-15",
+          "technique": "T1059",
+          "tactic": "TA0002"
+        },
+        {
+          "weakness": "CWE-77",
+          "pattern": "CAPEC-43",
+          "technique": "T1059",
+          "tactic": "TA0002"
+        },
+        {
+          "weakness": "CWE-77",
+          "pattern": "CAPEC-76",
+          "technique": "T1190",
+          "tactic": "TA0001"
+        }
+      ]
+    },
+    {
+      "query": "q05_kev_coverage.rq",
+      "title": "KEV 覆盖：切片内漏洞数与 KEV 记录数",
+      "vars": [
+        "vulnerabilities",
+        "kev_records"
+      ],
+      "row_count": 1,
+      "rows": [
+        {
+          "vulnerabilities": "45",
+          "kev_records": "40"
+        }
+      ]
+    },
+    {
+      "query": "q06_group_path.rq",
+      "title": "多跳：APT41（G0096）使用 T1059.001，后者属于 TA0002",
+      "vars": [
+        "group_id",
+        "technique",
+        "tactic"
+      ],
+      "row_count": 1,
+      "rows": [
+        {
+          "group_id": "G0096",
+          "technique": "T1059.001",
+          "tactic": "TA0002"
+        }
+      ]
+    },
+    {
+      "query": "q07_panos_detection.rq",
+      "title": "跨源检测覆盖：CVE-2024-3400 的弱点/攻击模式/技术对应哪些 Sigma 规则？",
+      "vars": [
+        "cve",
+        "rule_id",
+        "title"
+      ],
+      "row_count": 14,
+      "rows": [
+        {
+          "cve": "CVE-2024-3400",
+          "rule_id": "071d5e5a-9cef-47ec-bc4e-a42e34d8d0ed",
+          "title": "Possible Coin Miner CPU Priority Param"
+        },
+        {
+          "cve": "CVE-2024-3400",
+          "rule_id": "101a1877-2cf4-474d-abfd-7f6ac4788d1a",
+          "title": "Antivirus - APT Malware Signature"
+        },
+        {
+          "cve": "CVE-2024-3400",
+          "rule_id": "18b042f0-2ecd-4b6e-9f8d-aa7a7e7de781",
+          "title": "Buffer Overflow Attempts"
+        },
+        {
+          "cve": "CVE-2024-3400",
+          "rule_id": "238527ad-3c2c-4e4f-a1f6-92fd63adb864",
+          "title": "Antivirus - Exploitation Framework Signature"
+        },
+        {
+          "cve": "CVE-2024-3400",
+          "rule_id": "48d91a3a-2363-43ba-a456-ca71ac3da5c2",
+          "title": "Audit CVE Event"
+        },
+        {
+          "cve": "CVE-2024-3400",
+          "rule_id": "6991bc2b-ae2e-447f-bc55-3a1ba04c14e5",
+          "title": "OpenCanary - FTP Login Attempt"
+        },
+        {
+          "cve": "CVE-2024-3400",
+          "rule_id": "72af37e2-ec32-47dc-992b-bc288a2708cb",
+          "title": "Azure New CloudShell Created"
+        },
+        {
+          "cve": "CVE-2024-3400",
+          "rule_id": "808146b2-9332-4d78-9416-d7e47012d83d",
+          "title": "BPFDoor Abnormal Process ID or Lock File Accessed"
+        },
+        {
+          "cve": "CVE-2024-3400",
+          "rule_id": "bb0e9cec-d4da-46f5-997f-22efc59f3dca",
+          "title": "Potential JNDI Injection Exploitation In JVM Based Application"
+        },
+        {
+          "cve": "CVE-2024-3400",
+          "rule_id": "e0cfaecd-602d-41af-988d-f6ccebb2af26",
+          "title": "Suspicious Installer Package Child Process"
+        },
+        {
+          "cve": "CVE-2024-3400",
+          "rule_id": "e9a2b582-3f6a-48ac-b4a1-6849cdc50b3c",
+          "title": "Apache Threading Error"
+        },
+        {
+          "cve": "CVE-2024-3400",
+          "rule_id": "eed82177-38f5-4299-8a76-098d50d225ab",
+          "title": "Kubernetes Admission Controller Modification"
+        },
+        {
+          "cve": "CVE-2024-3400",
+          "rule_id": "fd435618-981e-4a7c-81f8-f78ce480d616",
+          "title": "Django Framework Exceptions"
+        },
+        {
+          "cve": "CVE-2024-3400",
+          "rule_id": "ff7139bc-fdb1-4437-92f2-6afefe8884cb",
+          "title": "OpenCanary - SSH Login Attempt"
+        }
+      ]
+    },
+    {
+      "query": "q08_kev_ransomware.rq",
+      "title": "数据属性：被标记为 Known 勒索软件利用的 KEV 条目（按收录日期倒序）",
+      "vars": [
+        "cve",
+        "kev_date",
+        "ransomware"
+      ],
+      "row_count": 12,
+      "rows": [
+        {
+          "cve": "CVE-2024-3400",
+          "kev_date": "2024-04-12",
+          "ransomware": "Known"
+        },
+        {
+          "cve": "CVE-2024-21893",
+          "kev_date": "2024-01-31",
+          "ransomware": "Known"
+        },
+        {
+          "cve": "CVE-2023-46805",
+          "kev_date": "2024-01-10",
+          "ransomware": "Known"
+        },
+        {
+          "cve": "CVE-2024-21887",
+          "kev_date": "2024-01-10",
+          "ransomware": "Known"
+        },
+        {
+          "cve": "CVE-2023-4966",
+          "kev_date": "2023-10-18",
+          "ransomware": "Known"
+        },
+        {
+          "cve": "CVE-2023-3519",
+          "kev_date": "2023-07-19",
+          "ransomware": "Known"
+        },
+        {
+          "cve": "CVE-2023-27997",
+          "kev_date": "2023-06-13",
+          "ransomware": "Known"
+        },
+        {
+          "cve": "CVE-2023-34362",
+          "kev_date": "2023-06-02",
+          "ransomware": "Known"
+        },
+        {
+          "cve": "CVE-2021-45046",
+          "kev_date": "2023-05-01",
+          "ransomware": "Known"
+        },
+        {
+          "cve": "CVE-2023-0669",
+          "kev_date": "2023-02-10",
+          "ransomware": "Known"
+        },
+        {
+          "cve": "CVE-2022-21587",
+          "kev_date": "2023-02-02",
+          "ransomware": "Known"
+        },
+        {
+          "cve": "CVE-2022-47966",
+          "kev_date": "2023-01-23",
+          "ransomware": "Known"
+        }
+      ]
+    },
+    {
+      "query": "q09_refusal_probe.rq",
+      "title": "拒答探针：图谱中不存在的 CVE 应返回 0 行",
+      "vars": [
+        "cve"
+      ],
+      "row_count": 0,
+      "rows": []
+    },
+    {
+      "query": "q10_t1190_coverage.rq",
+      "title": "检测/缓解覆盖：T1190（Exploit Public-Facing Application）的 Sigma 规则与 ATT&CK 缓解",
+      "vars": [
+        "kind",
+        "id",
+        "name"
+      ],
+      "row_count": 15,
+      "rows": [
+        {
+          "kind": "mitigation",
+          "id": "M1016",
+          "name": "Vulnerability Scanning"
+        },
+        {
+          "kind": "mitigation",
+          "id": "M1026",
+          "name": "M1026 Privileged Account Management"
+        },
+        {
+          "kind": "mitigation",
+          "id": "M1026",
+          "name": "Privileged Account Management"
+        },
+        {
+          "kind": "mitigation",
+          "id": "M1030",
+          "name": "Network Segmentation"
+        },
+        {
+          "kind": "mitigation",
+          "id": "M1035",
+          "name": "Limit Access to Resource Over Network"
+        },
+        {
+          "kind": "mitigation",
+          "id": "M1035",
+          "name": "M1035 Limit Access to Resource Over Network"
+        },
+        {
+          "kind": "mitigation",
+          "id": "M1037",
+          "name": "Filter Network Traffic"
+        },
+        {
+          "kind": "mitigation",
+          "id": "M1048",
+          "name": "Application Isolation and Sandboxing"
+        },
+        {
+          "kind": "mitigation",
+          "id": "M1050",
+          "name": "Exploit Protection"
+        },
+        {
+          "kind": "mitigation",
+          "id": "M1051",
+          "name": "M1051 Update Software"
+        },
+        {
+          "kind": "mitigation",
+          "id": "M1051",
+          "name": "Update Software"
+        },
+        {
+          "kind": "sigma",
+          "id": "6991bc2b-ae2e-447f-bc55-3a1ba04c14e5",
+          "name": "OpenCanary - FTP Login Attempt"
+        },
+        {
+          "kind": "sigma",
+          "id": "bb0e9cec-d4da-46f5-997f-22efc59f3dca",
+          "name": "Potential JNDI Injection Exploitation In JVM Based Application"
+        },
+        {
+          "kind": "sigma",
+          "id": "e9a2b582-3f6a-48ac-b4a1-6849cdc50b3c",
+          "name": "Apache Threading Error"
+        },
+        {
+          "kind": "sigma",
+          "id": "fd435618-981e-4a7c-81f8-f78ce480d616",
+          "name": "Django Framework Exceptions"
+        }
+      ]
+    }
+  ]
+}

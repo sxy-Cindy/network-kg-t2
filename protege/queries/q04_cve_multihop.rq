@@ -1,0 +1,16 @@
+# 多跳：CVE-2024-3400 -> CWE -> CAPEC -> ATT&CK 技术 -> 战术
+PREFIX : <http://kgcourse.org/ontology/threat-intel#>
+SELECT DISTINCT ?weakness ?pattern ?technique ?tactic
+WHERE {
+  ?v :cve_id ?cve ;
+     :has_weakness ?w .
+  FILTER(STR(?cve) = "CVE-2024-3400")
+  ?w :cwe_id ?weakness ;
+     :relates_to_pattern ?ap .
+  ?ap :capec_id ?pattern ;
+      :implemented_by ?t .
+  ?t :tech_id ?technique ;
+     :belongs_to_tactic ?ta .
+  ?ta :tactic_id ?tactic .
+}
+ORDER BY ?weakness ?pattern ?technique ?tactic

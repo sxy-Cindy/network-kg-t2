@@ -1,0 +1,12 @@
+# 检测覆盖：哪些 Sigma 规则声明检测 T1059.001？
+PREFIX : <http://kgcourse.org/ontology/threat-intel#>
+SELECT ?rule_id ?title
+WHERE {
+  ?r a :DetectionRule ;
+     :detects ?t ;
+     :sigma_id ?rule_id ;
+     :alias ?title .
+  ?t :tech_id ?tech .
+  FILTER(STR(?tech) = "T1059.001")
+}
+ORDER BY ?rule_id ?title
